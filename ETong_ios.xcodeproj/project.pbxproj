@@ -1,0 +1,1042 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B322F6C6B427769DB4C6019D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E75F0006B0BA7BA40D012B9E /* libPods.a */; };
+		F6177C5F1D46054700A2CB67 /* ETWelcomeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F6177C5E1D46054700A2CB67 /* ETWelcomeHelper.m */; };
+		F6177C621D460BCF00A2CB67 /* ETBaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F6177C611D460BCF00A2CB67 /* ETBaseHelper.m */; };
+		F61E821E1D470525001E16B5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61E821D1D470525001E16B5 /* SystemConfiguration.framework */; };
+		F61E82201D470539001E16B5 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61E821F1D470539001E16B5 /* ImageIO.framework */; };
+		F61E82221D471505001E16B5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61E82211D471505001E16B5 /* Security.framework */; };
+		F61E82241D471517001E16B5 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F61E82231D471517001E16B5 /* libiconv.tbd */; };
+		F61E82261D47152A001E16B5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61E82251D47152A001E16B5 /* CoreGraphics.framework */; };
+		F61E82281D471538001E16B5 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F61E82271D471538001E16B5 /* libsqlite3.tbd */; };
+		F61E822A1D471547001E16B5 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61E82291D471547001E16B5 /* CoreTelephony.framework */; };
+		F61E822C1D471557001E16B5 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F61E822B1D471557001E16B5 /* libstdc++.tbd */; };
+		F61E822E1D471560001E16B5 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F61E822D1D471560001E16B5 /* libz.tbd */; };
+		F61E82311D474463001E16B5 /* ETTimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F61E82301D474463001E16B5 /* ETTimeManager.m */; };
+		F6286FE01D49E8940052ADC3 /* ETHttpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F6286FDF1D49E8940052ADC3 /* ETHttpModel.m */; };
+		F6286FE31D4A096C0052ADC3 /* ConnectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F6286FE21D4A096C0052ADC3 /* ConnectModel.m */; };
+		F6286FE81D4A18210052ADC3 /* ETShopBeginAuthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F6286FE61D4A18210052ADC3 /* ETShopBeginAuthVC.m */; };
+		F6286FE91D4A18210052ADC3 /* ETShopBeginAuthVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6286FE71D4A18210052ADC3 /* ETShopBeginAuthVC.xib */; };
+		F6286FED1D4A19130052ADC3 /* ETShopAuthController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6286FEB1D4A19130052ADC3 /* ETShopAuthController.m */; };
+		F6286FEE1D4A19130052ADC3 /* ETShopAuthController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6286FEC1D4A19130052ADC3 /* ETShopAuthController.xib */; };
+		F62CF4751D431C600070BA2E /* ETDailyMarketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F62CF4731D431C600070BA2E /* ETDailyMarketCell.m */; };
+		F62CF4761D431C600070BA2E /* ETDailyMarketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62CF4741D431C600070BA2E /* ETDailyMarketCell.xib */; };
+		F62CF47A1D4320720070BA2E /* ETGuessYLikeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F62CF4781D4320720070BA2E /* ETGuessYLikeCell.m */; };
+		F62CF47B1D4320720070BA2E /* ETGuessYLikeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62CF4791D4320720070BA2E /* ETGuessYLikeCell.xib */; };
+		F632721F1D4DE90100A3C0FF /* ETShopManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F632721D1D4DE90100A3C0FF /* ETShopManagerController.swift */; };
+		F63272201D4DE90100A3C0FF /* ETShopManagerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F632721E1D4DE90100A3C0FF /* ETShopManagerController.xib */; };
+		F635C5E81D51C3B300CBBAD1 /* ETAllOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F635C5E61D51C3B300CBBAD1 /* ETAllOrderCell.swift */; };
+		F635C5E91D51C3B300CBBAD1 /* ETAllOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F635C5E71D51C3B300CBBAD1 /* ETAllOrderCell.xib */; };
+		F645B83D1D4069C700FD8211 /* ETShopCartHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = F645B83C1D4069C700FD8211 /* ETShopCartHeader.xib */; };
+		F64788A51D41BC3000294225 /* ETMyZoneController.m in Sources */ = {isa = PBXBuildFile; fileRef = F64788A31D41BC3000294225 /* ETMyZoneController.m */; };
+		F64788A61D41BC3000294225 /* ETMyZoneController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F64788A41D41BC3000294225 /* ETMyZoneController.xib */; };
+		F64788AA1D41BCDD00294225 /* ETSidelineZoneController.m in Sources */ = {isa = PBXBuildFile; fileRef = F64788A81D41BCDD00294225 /* ETSidelineZoneController.m */; };
+		F64788AB1D41BCDD00294225 /* ETSidelineZoneController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F64788A91D41BCDD00294225 /* ETSidelineZoneController.xib */; };
+		F64788AF1D41C7C900294225 /* ETMZoneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F64788AD1D41C7C900294225 /* ETMZoneCell.m */; };
+		F64788B01D41C7C900294225 /* ETMZoneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F64788AE1D41C7C900294225 /* ETMZoneCell.xib */; };
+		F65149DE1D4F356100ECFFFD /* ETUploadGoodsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65149DC1D4F356100ECFFFD /* ETUploadGoodsController.swift */; };
+		F65149DF1D4F356100ECFFFD /* ETUploadGoodsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F65149DD1D4F356100ECFFFD /* ETUploadGoodsController.xib */; };
+		F65149E21D4F363D00ECFFFD /* ETGoodsManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65149E01D4F363D00ECFFFD /* ETGoodsManagerController.swift */; };
+		F65149E31D4F363D00ECFFFD /* ETGoodsManagerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F65149E11D4F363D00ECFFFD /* ETGoodsManagerController.xib */; };
+		F65149E61D4F383D00ECFFFD /* ETGMSellCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65149E41D4F383D00ECFFFD /* ETGMSellCell.swift */; };
+		F65149E71D4F383D00ECFFFD /* ETGMSellCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F65149E51D4F383D00ECFFFD /* ETGMSellCell.xib */; };
+		F65149EA1D4F4F7D00ECFFFD /* ETOrderManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65149E81D4F4F7D00ECFFFD /* ETOrderManagerController.swift */; };
+		F65149EF1D4F56A000ECFFFD /* ETAllOrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65149ED1D4F56A000ECFFFD /* ETAllOrderController.swift */; };
+		F65149F01D4F56A000ECFFFD /* ETAllOrderController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F65149EE1D4F56A000ECFFFD /* ETAllOrderController.xib */; };
+		F65149F71D4F5BD700ECFFFD /* ETWaitDeliverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65149F51D4F5BD700ECFFFD /* ETWaitDeliverController.swift */; };
+		F65149F81D4F5BD700ECFFFD /* ETWaitDeliverController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F65149F61D4F5BD700ECFFFD /* ETWaitDeliverController.xib */; };
+		F65149FB1D4F5C4000ECFFFD /* ETWaitSignController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65149F91D4F5C4000ECFFFD /* ETWaitSignController.swift */; };
+		F65149FC1D4F5C4000ECFFFD /* ETWaitSignController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F65149FA1D4F5C4000ECFFFD /* ETWaitSignController.xib */; };
+		F65149FF1D4F5C7200ECFFFD /* ETCompleteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65149FD1D4F5C7200ECFFFD /* ETCompleteController.swift */; };
+		F6514A001D4F5C7200ECFFFD /* ETCompleteController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F65149FE1D4F5C7200ECFFFD /* ETCompleteController.xib */; };
+		F6545D7D1D533F480007C42C /* ETGMOffShelfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6545D7B1D533F480007C42C /* ETGMOffShelfCell.swift */; };
+		F6545D7E1D533F480007C42C /* ETGMOffShelfCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6545D7C1D533F480007C42C /* ETGMOffShelfCell.xib */; };
+		F6545D811D5360E20007C42C /* ETShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F6545D801D5360E20007C42C /* ETShopModel.m */; };
+		F65BF2FA1D3F1CA80003DB35 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F65BF2F91D3F1CA80003DB35 /* main.m */; };
+		F65BF2FD1D3F1CA80003DB35 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F65BF2FC1D3F1CA80003DB35 /* AppDelegate.m */; };
+		F65BF3051D3F1CA80003DB35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F65BF3041D3F1CA80003DB35 /* Assets.xcassets */; };
+		F65BF3081D3F1CA80003DB35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F65BF3061D3F1CA80003DB35 /* LaunchScreen.storyboard */; };
+		F65BF3111D3F31CB0003DB35 /* ETRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = F65BF3101D3F31CB0003DB35 /* ETRootController.m */; };
+		F65BF32A1D3F4FAB0003DB35 /* HomePageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F65BF3281D3F4FAB0003DB35 /* HomePageController.m */; };
+		F65BF32B1D3F4FAB0003DB35 /* HomePageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F65BF3291D3F4FAB0003DB35 /* HomePageController.xib */; };
+		F65BF32F1D3F4FD70003DB35 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F65BF32D1D3F4FD70003DB35 /* LocationViewController.m */; };
+		F65BF3301D3F4FD70003DB35 /* LocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F65BF32E1D3F4FD70003DB35 /* LocationViewController.xib */; };
+		F65BF3341D3F4FFE0003DB35 /* EZoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F65BF3321D3F4FFE0003DB35 /* EZoneViewController.m */; };
+		F65BF3391D3F501E0003DB35 /* ShopCartController.m in Sources */ = {isa = PBXBuildFile; fileRef = F65BF3371D3F501E0003DB35 /* ShopCartController.m */; };
+		F65BF33A1D3F501E0003DB35 /* ShopCartController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F65BF3381D3F501E0003DB35 /* ShopCartController.xib */; };
+		F65BF33E1D3F50390003DB35 /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F65BF33C1D3F50390003DB35 /* PersonViewController.m */; };
+		F65BF33F1D3F50390003DB35 /* PersonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F65BF33D1D3F50390003DB35 /* PersonViewController.xib */; };
+		F65BF3451D3F58C70003DB35 /* macro.m in Sources */ = {isa = PBXBuildFile; fileRef = F65BF3441D3F58C70003DB35 /* macro.m */; };
+		F65BF34D1D3F81560003DB35 /* ETCommodityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F65BF34B1D3F81560003DB35 /* ETCommodityCell.m */; };
+		F65BF34E1D3F81560003DB35 /* ETCommodityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F65BF34C1D3F81560003DB35 /* ETCommodityCell.xib */; };
+		F65BF3521D3FA69E0003DB35 /* ETCommodityEditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F65BF3501D3FA69E0003DB35 /* ETCommodityEditCell.m */; };
+		F65BF3531D3FA69E0003DB35 /* ETCommodityEditCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F65BF3511D3FA69E0003DB35 /* ETCommodityEditCell.xib */; };
+		F67B3DA71D4D9F8C00F2B544 /* ETMyShopController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67B3DA51D4D9F8C00F2B544 /* ETMyShopController.swift */; };
+		F67B3DA81D4D9F8C00F2B544 /* ETMyShopController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F67B3DA61D4D9F8C00F2B544 /* ETMyShopController.xib */; };
+		F6B65F851D48AE760069312B /* ETUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F6B65F841D48AE760069312B /* ETUserInfo.m */; };
+		F6B65F891D48BEBE0069312B /* ETZBarScanController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6B65F871D48BEBE0069312B /* ETZBarScanController.m */; };
+		F6C09BEC1D5081D4001C2987 /* ETCUserInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C09BEA1D5081D4001C2987 /* ETCUserInfoController.swift */; };
+		F6C09BED1D5081D4001C2987 /* ETCUserInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6C09BEB1D5081D4001C2987 /* ETCUserInfoController.xib */; };
+		F6C09BF01D509A73001C2987 /* ETSingleInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C09BEE1D509A73001C2987 /* ETSingleInfoController.swift */; };
+		F6C09BF11D509A73001C2987 /* ETSingleInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6C09BEF1D509A73001C2987 /* ETSingleInfoController.xib */; };
+		F6CF10AE1D4B3A2900555C4A /* ETShopInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CF10AC1D4B3A2900555C4A /* ETShopInfoController.m */; };
+		F6CF10AF1D4B3A2900555C4A /* ETShopInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6CF10AD1D4B3A2900555C4A /* ETShopInfoController.xib */; };
+		F6CF10B31D4B4BE700555C4A /* ETWaitForAuditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CF10B11D4B4BE700555C4A /* ETWaitForAuditVC.m */; };
+		F6CF10B41D4B4BE700555C4A /* ETWaitForAuditVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6CF10B21D4B4BE700555C4A /* ETWaitForAuditVC.xib */; };
+		F6CF10B71D4B83C400555C4A /* ETShopHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CF10B61D4B83C400555C4A /* ETShopHelper.m */; };
+		F6FED1CD1D44A0F700C5C776 /* ETLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FED1CB1D44A0F700C5C776 /* ETLogInViewController.m */; };
+		F6FED1CE1D44A0F700C5C776 /* ETLogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6FED1CC1D44A0F700C5C776 /* ETLogInViewController.xib */; };
+		F6FED1D21D44BDEB00C5C776 /* ETFgetPwdController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FED1D01D44BDEB00C5C776 /* ETFgetPwdController.m */; };
+		F6FED1D31D44BDEB00C5C776 /* ETFgetPwdController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6FED1D11D44BDEB00C5C776 /* ETFgetPwdController.xib */; };
+		F6FED1D71D44BE4400C5C776 /* ETRigestController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FED1D51D44BE4400C5C776 /* ETRigestController.m */; };
+		F6FED1D81D44BE4400C5C776 /* ETRigestController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6FED1D61D44BE4400C5C776 /* ETRigestController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BC727555E648AF38DE5BD102 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E75F0006B0BA7BA40D012B9E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6177C5D1D46054700A2CB67 /* ETWelcomeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETWelcomeHelper.h; sourceTree = "<group>"; };
+		F6177C5E1D46054700A2CB67 /* ETWelcomeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETWelcomeHelper.m; sourceTree = "<group>"; };
+		F6177C601D460BCF00A2CB67 /* ETBaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETBaseHelper.h; sourceTree = "<group>"; };
+		F6177C611D460BCF00A2CB67 /* ETBaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETBaseHelper.m; sourceTree = "<group>"; };
+		F61E821D1D470525001E16B5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F61E821F1D470539001E16B5 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		F61E82211D471505001E16B5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F61E82231D471517001E16B5 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		F61E82251D47152A001E16B5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F61E82271D471538001E16B5 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		F61E82291D471547001E16B5 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		F61E822B1D471557001E16B5 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		F61E822D1D471560001E16B5 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		F61E822F1D474463001E16B5 /* ETTimeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETTimeManager.h; sourceTree = "<group>"; };
+		F61E82301D474463001E16B5 /* ETTimeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETTimeManager.m; sourceTree = "<group>"; };
+		F6286FDE1D49E8940052ADC3 /* ETHttpModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETHttpModel.h; sourceTree = "<group>"; };
+		F6286FDF1D49E8940052ADC3 /* ETHttpModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETHttpModel.m; sourceTree = "<group>"; };
+		F6286FE11D4A096C0052ADC3 /* ConnectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectModel.h; sourceTree = "<group>"; };
+		F6286FE21D4A096C0052ADC3 /* ConnectModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectModel.m; sourceTree = "<group>"; };
+		F6286FE51D4A18210052ADC3 /* ETShopBeginAuthVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETShopBeginAuthVC.h; sourceTree = "<group>"; };
+		F6286FE61D4A18210052ADC3 /* ETShopBeginAuthVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETShopBeginAuthVC.m; sourceTree = "<group>"; };
+		F6286FE71D4A18210052ADC3 /* ETShopBeginAuthVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETShopBeginAuthVC.xib; sourceTree = "<group>"; };
+		F6286FEA1D4A19130052ADC3 /* ETShopAuthController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETShopAuthController.h; sourceTree = "<group>"; };
+		F6286FEB1D4A19130052ADC3 /* ETShopAuthController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETShopAuthController.m; sourceTree = "<group>"; };
+		F6286FEC1D4A19130052ADC3 /* ETShopAuthController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETShopAuthController.xib; sourceTree = "<group>"; };
+		F62CF4721D431C600070BA2E /* ETDailyMarketCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETDailyMarketCell.h; sourceTree = "<group>"; };
+		F62CF4731D431C600070BA2E /* ETDailyMarketCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETDailyMarketCell.m; sourceTree = "<group>"; };
+		F62CF4741D431C600070BA2E /* ETDailyMarketCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETDailyMarketCell.xib; sourceTree = "<group>"; };
+		F62CF4771D4320720070BA2E /* ETGuessYLikeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETGuessYLikeCell.h; sourceTree = "<group>"; };
+		F62CF4781D4320720070BA2E /* ETGuessYLikeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETGuessYLikeCell.m; sourceTree = "<group>"; };
+		F62CF4791D4320720070BA2E /* ETGuessYLikeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETGuessYLikeCell.xib; sourceTree = "<group>"; };
+		F632721D1D4DE90100A3C0FF /* ETShopManagerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETShopManagerController.swift; sourceTree = "<group>"; };
+		F632721E1D4DE90100A3C0FF /* ETShopManagerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETShopManagerController.xib; sourceTree = "<group>"; };
+		F635C5E61D51C3B300CBBAD1 /* ETAllOrderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETAllOrderCell.swift; sourceTree = "<group>"; };
+		F635C5E71D51C3B300CBBAD1 /* ETAllOrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETAllOrderCell.xib; sourceTree = "<group>"; };
+		F645B83C1D4069C700FD8211 /* ETShopCartHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETShopCartHeader.xib; sourceTree = "<group>"; };
+		F64788A21D41BC3000294225 /* ETMyZoneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETMyZoneController.h; sourceTree = "<group>"; };
+		F64788A31D41BC3000294225 /* ETMyZoneController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETMyZoneController.m; sourceTree = "<group>"; };
+		F64788A41D41BC3000294225 /* ETMyZoneController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETMyZoneController.xib; sourceTree = "<group>"; };
+		F64788A71D41BCDD00294225 /* ETSidelineZoneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSidelineZoneController.h; sourceTree = "<group>"; };
+		F64788A81D41BCDD00294225 /* ETSidelineZoneController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSidelineZoneController.m; sourceTree = "<group>"; };
+		F64788A91D41BCDD00294225 /* ETSidelineZoneController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETSidelineZoneController.xib; sourceTree = "<group>"; };
+		F64788AC1D41C7C900294225 /* ETMZoneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETMZoneCell.h; sourceTree = "<group>"; };
+		F64788AD1D41C7C900294225 /* ETMZoneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETMZoneCell.m; sourceTree = "<group>"; };
+		F64788AE1D41C7C900294225 /* ETMZoneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETMZoneCell.xib; sourceTree = "<group>"; };
+		F65149DC1D4F356100ECFFFD /* ETUploadGoodsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETUploadGoodsController.swift; sourceTree = "<group>"; };
+		F65149DD1D4F356100ECFFFD /* ETUploadGoodsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETUploadGoodsController.xib; sourceTree = "<group>"; };
+		F65149E01D4F363D00ECFFFD /* ETGoodsManagerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETGoodsManagerController.swift; sourceTree = "<group>"; };
+		F65149E11D4F363D00ECFFFD /* ETGoodsManagerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETGoodsManagerController.xib; sourceTree = "<group>"; };
+		F65149E41D4F383D00ECFFFD /* ETGMSellCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETGMSellCell.swift; sourceTree = "<group>"; };
+		F65149E51D4F383D00ECFFFD /* ETGMSellCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETGMSellCell.xib; sourceTree = "<group>"; };
+		F65149E81D4F4F7D00ECFFFD /* ETOrderManagerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETOrderManagerController.swift; sourceTree = "<group>"; };
+		F65149ED1D4F56A000ECFFFD /* ETAllOrderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETAllOrderController.swift; sourceTree = "<group>"; };
+		F65149EE1D4F56A000ECFFFD /* ETAllOrderController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETAllOrderController.xib; sourceTree = "<group>"; };
+		F65149F51D4F5BD700ECFFFD /* ETWaitDeliverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETWaitDeliverController.swift; sourceTree = "<group>"; };
+		F65149F61D4F5BD700ECFFFD /* ETWaitDeliverController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETWaitDeliverController.xib; sourceTree = "<group>"; };
+		F65149F91D4F5C4000ECFFFD /* ETWaitSignController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETWaitSignController.swift; sourceTree = "<group>"; };
+		F65149FA1D4F5C4000ECFFFD /* ETWaitSignController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETWaitSignController.xib; sourceTree = "<group>"; };
+		F65149FD1D4F5C7200ECFFFD /* ETCompleteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETCompleteController.swift; sourceTree = "<group>"; };
+		F65149FE1D4F5C7200ECFFFD /* ETCompleteController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETCompleteController.xib; sourceTree = "<group>"; };
+		F6545D7B1D533F480007C42C /* ETGMOffShelfCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETGMOffShelfCell.swift; sourceTree = "<group>"; };
+		F6545D7C1D533F480007C42C /* ETGMOffShelfCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETGMOffShelfCell.xib; sourceTree = "<group>"; };
+		F6545D7F1D5360E20007C42C /* ETShopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETShopModel.h; sourceTree = "<group>"; };
+		F6545D801D5360E20007C42C /* ETShopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETShopModel.m; sourceTree = "<group>"; };
+		F65BF2F51D3F1CA80003DB35 /* ETong_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ETong_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F65BF2F91D3F1CA80003DB35 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F65BF2FB1D3F1CA80003DB35 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F65BF2FC1D3F1CA80003DB35 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F65BF3041D3F1CA80003DB35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F65BF3071D3F1CA80003DB35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F65BF3091D3F1CA80003DB35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F65BF30F1D3F31CB0003DB35 /* ETRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRootController.h; sourceTree = "<group>"; };
+		F65BF3101D3F31CB0003DB35 /* ETRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRootController.m; sourceTree = "<group>"; };
+		F65BF3121D3F35940003DB35 /* ETong_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETong_Prefix.pch; sourceTree = "<group>"; };
+		F65BF3271D3F4FAB0003DB35 /* HomePageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageController.h; sourceTree = "<group>"; };
+		F65BF3281D3F4FAB0003DB35 /* HomePageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageController.m; sourceTree = "<group>"; };
+		F65BF3291D3F4FAB0003DB35 /* HomePageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageController.xib; sourceTree = "<group>"; };
+		F65BF32C1D3F4FD70003DB35 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
+		F65BF32D1D3F4FD70003DB35 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
+		F65BF32E1D3F4FD70003DB35 /* LocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationViewController.xib; sourceTree = "<group>"; };
+		F65BF3311D3F4FFE0003DB35 /* EZoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZoneViewController.h; sourceTree = "<group>"; };
+		F65BF3321D3F4FFE0003DB35 /* EZoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZoneViewController.m; sourceTree = "<group>"; };
+		F65BF3361D3F501E0003DB35 /* ShopCartController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCartController.h; sourceTree = "<group>"; };
+		F65BF3371D3F501E0003DB35 /* ShopCartController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCartController.m; sourceTree = "<group>"; };
+		F65BF3381D3F501E0003DB35 /* ShopCartController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopCartController.xib; sourceTree = "<group>"; };
+		F65BF33B1D3F50390003DB35 /* PersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonViewController.h; sourceTree = "<group>"; };
+		F65BF33C1D3F50390003DB35 /* PersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonViewController.m; sourceTree = "<group>"; };
+		F65BF33D1D3F50390003DB35 /* PersonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonViewController.xib; sourceTree = "<group>"; };
+		F65BF3431D3F58C70003DB35 /* macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = macro.h; sourceTree = "<group>"; };
+		F65BF3441D3F58C70003DB35 /* macro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = macro.m; sourceTree = "<group>"; };
+		F65BF34A1D3F81560003DB35 /* ETCommodityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETCommodityCell.h; sourceTree = "<group>"; };
+		F65BF34B1D3F81560003DB35 /* ETCommodityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETCommodityCell.m; sourceTree = "<group>"; };
+		F65BF34C1D3F81560003DB35 /* ETCommodityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETCommodityCell.xib; sourceTree = "<group>"; };
+		F65BF34F1D3FA69E0003DB35 /* ETCommodityEditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETCommodityEditCell.h; sourceTree = "<group>"; };
+		F65BF3501D3FA69E0003DB35 /* ETCommodityEditCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETCommodityEditCell.m; sourceTree = "<group>"; };
+		F65BF3511D3FA69E0003DB35 /* ETCommodityEditCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETCommodityEditCell.xib; sourceTree = "<group>"; };
+		F67B3DA01D4D9D2400F2B544 /* ETong_ios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ETong_ios-Bridging-Header.h"; path = "PersonalCenter/Controller/ETong_ios-Bridging-Header.h"; sourceTree = "<group>"; };
+		F67B3DA51D4D9F8C00F2B544 /* ETMyShopController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETMyShopController.swift; sourceTree = "<group>"; };
+		F67B3DA61D4D9F8C00F2B544 /* ETMyShopController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETMyShopController.xib; sourceTree = "<group>"; };
+		F6B65F831D48AE760069312B /* ETUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETUserInfo.h; sourceTree = "<group>"; };
+		F6B65F841D48AE760069312B /* ETUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETUserInfo.m; sourceTree = "<group>"; };
+		F6B65F861D48BEBE0069312B /* ETZBarScanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETZBarScanController.h; sourceTree = "<group>"; };
+		F6B65F871D48BEBE0069312B /* ETZBarScanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETZBarScanController.m; sourceTree = "<group>"; };
+		F6C09BEA1D5081D4001C2987 /* ETCUserInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETCUserInfoController.swift; sourceTree = "<group>"; };
+		F6C09BEB1D5081D4001C2987 /* ETCUserInfoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETCUserInfoController.xib; sourceTree = "<group>"; };
+		F6C09BEE1D509A73001C2987 /* ETSingleInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETSingleInfoController.swift; sourceTree = "<group>"; };
+		F6C09BEF1D509A73001C2987 /* ETSingleInfoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETSingleInfoController.xib; sourceTree = "<group>"; };
+		F6CF10AB1D4B3A2900555C4A /* ETShopInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETShopInfoController.h; sourceTree = "<group>"; };
+		F6CF10AC1D4B3A2900555C4A /* ETShopInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETShopInfoController.m; sourceTree = "<group>"; };
+		F6CF10AD1D4B3A2900555C4A /* ETShopInfoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETShopInfoController.xib; sourceTree = "<group>"; };
+		F6CF10B01D4B4BE700555C4A /* ETWaitForAuditVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETWaitForAuditVC.h; sourceTree = "<group>"; };
+		F6CF10B11D4B4BE700555C4A /* ETWaitForAuditVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETWaitForAuditVC.m; sourceTree = "<group>"; };
+		F6CF10B21D4B4BE700555C4A /* ETWaitForAuditVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETWaitForAuditVC.xib; sourceTree = "<group>"; };
+		F6CF10B51D4B83C400555C4A /* ETShopHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETShopHelper.h; sourceTree = "<group>"; };
+		F6CF10B61D4B83C400555C4A /* ETShopHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETShopHelper.m; sourceTree = "<group>"; };
+		F6FED1CA1D44A0F700C5C776 /* ETLogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETLogInViewController.h; sourceTree = "<group>"; };
+		F6FED1CB1D44A0F700C5C776 /* ETLogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETLogInViewController.m; sourceTree = "<group>"; };
+		F6FED1CC1D44A0F700C5C776 /* ETLogInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETLogInViewController.xib; sourceTree = "<group>"; };
+		F6FED1CF1D44BDEB00C5C776 /* ETFgetPwdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETFgetPwdController.h; sourceTree = "<group>"; };
+		F6FED1D01D44BDEB00C5C776 /* ETFgetPwdController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETFgetPwdController.m; sourceTree = "<group>"; };
+		F6FED1D11D44BDEB00C5C776 /* ETFgetPwdController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETFgetPwdController.xib; sourceTree = "<group>"; };
+		F6FED1D41D44BE4400C5C776 /* ETRigestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRigestController.h; sourceTree = "<group>"; };
+		F6FED1D51D44BE4400C5C776 /* ETRigestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRigestController.m; sourceTree = "<group>"; };
+		F6FED1D61D44BE4400C5C776 /* ETRigestController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETRigestController.xib; sourceTree = "<group>"; };
+		F83BAF691E4E7DF9CA6F505B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F65BF2F21D3F1CA80003DB35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F61E822E1D471560001E16B5 /* libz.tbd in Frameworks */,
+				F61E822C1D471557001E16B5 /* libstdc++.tbd in Frameworks */,
+				F61E822A1D471547001E16B5 /* CoreTelephony.framework in Frameworks */,
+				F61E82281D471538001E16B5 /* libsqlite3.tbd in Frameworks */,
+				F61E82261D47152A001E16B5 /* CoreGraphics.framework in Frameworks */,
+				F61E82241D471517001E16B5 /* libiconv.tbd in Frameworks */,
+				F61E82221D471505001E16B5 /* Security.framework in Frameworks */,
+				F61E82201D470539001E16B5 /* ImageIO.framework in Frameworks */,
+				F61E821E1D470525001E16B5 /* SystemConfiguration.framework in Frameworks */,
+				B322F6C6B427769DB4C6019D /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1176E07C4C9B64FBC8E87F5E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BC727555E648AF38DE5BD102 /* Pods.debug.xcconfig */,
+				F83BAF691E4E7DF9CA6F505B /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9530494A522D2346866C5A0C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F61E822D1D471560001E16B5 /* libz.tbd */,
+				F61E822B1D471557001E16B5 /* libstdc++.tbd */,
+				F61E82291D471547001E16B5 /* CoreTelephony.framework */,
+				F61E82271D471538001E16B5 /* libsqlite3.tbd */,
+				F61E82251D47152A001E16B5 /* CoreGraphics.framework */,
+				F61E82231D471517001E16B5 /* libiconv.tbd */,
+				F61E82211D471505001E16B5 /* Security.framework */,
+				F61E821F1D470539001E16B5 /* ImageIO.framework */,
+				F61E821D1D470525001E16B5 /* SystemConfiguration.framework */,
+				E75F0006B0BA7BA40D012B9E /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F6286FE41D4A16EF0052ADC3 /* OpenShop */ = {
+			isa = PBXGroup;
+			children = (
+				F6286FE51D4A18210052ADC3 /* ETShopBeginAuthVC.h */,
+				F6286FE61D4A18210052ADC3 /* ETShopBeginAuthVC.m */,
+				F6286FE71D4A18210052ADC3 /* ETShopBeginAuthVC.xib */,
+				F6286FEA1D4A19130052ADC3 /* ETShopAuthController.h */,
+				F6286FEB1D4A19130052ADC3 /* ETShopAuthController.m */,
+				F6286FEC1D4A19130052ADC3 /* ETShopAuthController.xib */,
+				F6CF10AB1D4B3A2900555C4A /* ETShopInfoController.h */,
+				F6CF10AC1D4B3A2900555C4A /* ETShopInfoController.m */,
+				F6CF10AD1D4B3A2900555C4A /* ETShopInfoController.xib */,
+				F6CF10B01D4B4BE700555C4A /* ETWaitForAuditVC.h */,
+				F6CF10B11D4B4BE700555C4A /* ETWaitForAuditVC.m */,
+				F6CF10B21D4B4BE700555C4A /* ETWaitForAuditVC.xib */,
+			);
+			name = OpenShop;
+			sourceTree = "<group>";
+		};
+		F645B8381D40697A00FD8211 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				F65BF34A1D3F81560003DB35 /* ETCommodityCell.h */,
+				F65BF34B1D3F81560003DB35 /* ETCommodityCell.m */,
+				F65BF34C1D3F81560003DB35 /* ETCommodityCell.xib */,
+				F65BF34F1D3FA69E0003DB35 /* ETCommodityEditCell.h */,
+				F65BF3501D3FA69E0003DB35 /* ETCommodityEditCell.m */,
+				F65BF3511D3FA69E0003DB35 /* ETCommodityEditCell.xib */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
+		F65149EC1D4F566A00ECFFFD /* OrderManager */ = {
+			isa = PBXGroup;
+			children = (
+				F65149ED1D4F56A000ECFFFD /* ETAllOrderController.swift */,
+				F65149EE1D4F56A000ECFFFD /* ETAllOrderController.xib */,
+				F65149F51D4F5BD700ECFFFD /* ETWaitDeliverController.swift */,
+				F65149F61D4F5BD700ECFFFD /* ETWaitDeliverController.xib */,
+				F65149F91D4F5C4000ECFFFD /* ETWaitSignController.swift */,
+				F65149FA1D4F5C4000ECFFFD /* ETWaitSignController.xib */,
+				F65149FD1D4F5C7200ECFFFD /* ETCompleteController.swift */,
+				F65149FE1D4F5C7200ECFFFD /* ETCompleteController.xib */,
+			);
+			name = OrderManager;
+			sourceTree = "<group>";
+		};
+		F65BF2EC1D3F1CA80003DB35 = {
+			isa = PBXGroup;
+			children = (
+				F65BF2F71D3F1CA80003DB35 /* ETong_ios */,
+				F65BF2F61D3F1CA80003DB35 /* Products */,
+				1176E07C4C9B64FBC8E87F5E /* Pods */,
+				9530494A522D2346866C5A0C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F65BF2F61D3F1CA80003DB35 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F65BF2F51D3F1CA80003DB35 /* ETong_ios.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F65BF2F71D3F1CA80003DB35 /* ETong_ios */ = {
+			isa = PBXGroup;
+			children = (
+				F65BF3421D3F58610003DB35 /* Macro */,
+				F65BF3411D3F585B0003DB35 /* Tools */,
+				F65BF3401D3F57840003DB35 /* Section */,
+				F65BF2FB1D3F1CA80003DB35 /* AppDelegate.h */,
+				F65BF2FC1D3F1CA80003DB35 /* AppDelegate.m */,
+				F65BF30F1D3F31CB0003DB35 /* ETRootController.h */,
+				F65BF3101D3F31CB0003DB35 /* ETRootController.m */,
+				F65BF3061D3F1CA80003DB35 /* LaunchScreen.storyboard */,
+				F67B3DA01D4D9D2400F2B544 /* ETong_ios-Bridging-Header.h */,
+				F65BF3121D3F35940003DB35 /* ETong_Prefix.pch */,
+				F65BF3091D3F1CA80003DB35 /* Info.plist */,
+				F65BF3041D3F1CA80003DB35 /* Assets.xcassets */,
+				F65BF2F81D3F1CA80003DB35 /* Supporting Files */,
+			);
+			path = ETong_ios;
+			sourceTree = "<group>";
+		};
+		F65BF2F81D3F1CA80003DB35 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F65BF2F91D3F1CA80003DB35 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F65BF3131D3F4F070003DB35 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F65BF3141D3F4F070003DB35 /* Controller */,
+				F65BF3151D3F4F070003DB35 /* Model */,
+				F65BF3161D3F4F070003DB35 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F65BF3141D3F4F070003DB35 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F65BF3271D3F4FAB0003DB35 /* HomePageController.h */,
+				F65BF3281D3F4FAB0003DB35 /* HomePageController.m */,
+				F65BF3291D3F4FAB0003DB35 /* HomePageController.xib */,
+				F6B65F861D48BEBE0069312B /* ETZBarScanController.h */,
+				F6B65F871D48BEBE0069312B /* ETZBarScanController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F65BF3151D3F4F070003DB35 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F65BF3161D3F4F070003DB35 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F62CF4721D431C600070BA2E /* ETDailyMarketCell.h */,
+				F62CF4731D431C600070BA2E /* ETDailyMarketCell.m */,
+				F62CF4741D431C600070BA2E /* ETDailyMarketCell.xib */,
+				F62CF4771D4320720070BA2E /* ETGuessYLikeCell.h */,
+				F62CF4781D4320720070BA2E /* ETGuessYLikeCell.m */,
+				F62CF4791D4320720070BA2E /* ETGuessYLikeCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F65BF3171D3F4F0F0003DB35 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				F65BF3181D3F4F0F0003DB35 /* Controller */,
+				F65BF3191D3F4F0F0003DB35 /* Model */,
+				F65BF31A1D3F4F0F0003DB35 /* View */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		F65BF3181D3F4F0F0003DB35 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F65BF32C1D3F4FD70003DB35 /* LocationViewController.h */,
+				F65BF32D1D3F4FD70003DB35 /* LocationViewController.m */,
+				F65BF32E1D3F4FD70003DB35 /* LocationViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F65BF3191D3F4F0F0003DB35 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F65BF31A1D3F4F0F0003DB35 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F65BF31B1D3F4F160003DB35 /* EZone */ = {
+			isa = PBXGroup;
+			children = (
+				F65BF31C1D3F4F160003DB35 /* Controller */,
+				F65BF31D1D3F4F160003DB35 /* Model */,
+				F65BF31E1D3F4F160003DB35 /* View */,
+			);
+			path = EZone;
+			sourceTree = "<group>";
+		};
+		F65BF31C1D3F4F160003DB35 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F65BF3311D3F4FFE0003DB35 /* EZoneViewController.h */,
+				F65BF3321D3F4FFE0003DB35 /* EZoneViewController.m */,
+				F64788A21D41BC3000294225 /* ETMyZoneController.h */,
+				F64788A31D41BC3000294225 /* ETMyZoneController.m */,
+				F64788A41D41BC3000294225 /* ETMyZoneController.xib */,
+				F64788A71D41BCDD00294225 /* ETSidelineZoneController.h */,
+				F64788A81D41BCDD00294225 /* ETSidelineZoneController.m */,
+				F64788A91D41BCDD00294225 /* ETSidelineZoneController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F65BF31D1D3F4F160003DB35 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F65BF31E1D3F4F160003DB35 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F64788AC1D41C7C900294225 /* ETMZoneCell.h */,
+				F64788AD1D41C7C900294225 /* ETMZoneCell.m */,
+				F64788AE1D41C7C900294225 /* ETMZoneCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F65BF31F1D3F4F1D0003DB35 /* ShoppingCart */ = {
+			isa = PBXGroup;
+			children = (
+				F65BF3201D3F4F1D0003DB35 /* Controller */,
+				F65BF3211D3F4F1D0003DB35 /* Model */,
+				F65BF3221D3F4F1D0003DB35 /* View */,
+			);
+			path = ShoppingCart;
+			sourceTree = "<group>";
+		};
+		F65BF3201D3F4F1D0003DB35 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F65BF3361D3F501E0003DB35 /* ShopCartController.h */,
+				F65BF3371D3F501E0003DB35 /* ShopCartController.m */,
+				F65BF3381D3F501E0003DB35 /* ShopCartController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F65BF3211D3F4F1D0003DB35 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F65BF3221D3F4F1D0003DB35 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F645B8381D40697A00FD8211 /* cell */,
+				F645B83C1D4069C700FD8211 /* ETShopCartHeader.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F65BF3231D3F4F250003DB35 /* PersonalCenter */ = {
+			isa = PBXGroup;
+			children = (
+				F65BF3241D3F4F250003DB35 /* Controller */,
+				F65BF3251D3F4F250003DB35 /* Model */,
+				F65BF3261D3F4F250003DB35 /* View */,
+			);
+			path = PersonalCenter;
+			sourceTree = "<group>";
+		};
+		F65BF3241D3F4F250003DB35 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F67B3D9F1D4D9CEA00F2B544 /* MyShop */,
+				F6286FE41D4A16EF0052ADC3 /* OpenShop */,
+				F65BF33B1D3F50390003DB35 /* PersonViewController.h */,
+				F65BF33C1D3F50390003DB35 /* PersonViewController.m */,
+				F65BF33D1D3F50390003DB35 /* PersonViewController.xib */,
+				F6C09BEA1D5081D4001C2987 /* ETCUserInfoController.swift */,
+				F6C09BEB1D5081D4001C2987 /* ETCUserInfoController.xib */,
+				F6C09BEE1D509A73001C2987 /* ETSingleInfoController.swift */,
+				F6C09BEF1D509A73001C2987 /* ETSingleInfoController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F65BF3251D3F4F250003DB35 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F6CF10B51D4B83C400555C4A /* ETShopHelper.h */,
+				F6CF10B61D4B83C400555C4A /* ETShopHelper.m */,
+				F6545D7F1D5360E20007C42C /* ETShopModel.h */,
+				F6545D801D5360E20007C42C /* ETShopModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F65BF3261D3F4F250003DB35 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F65149E41D4F383D00ECFFFD /* ETGMSellCell.swift */,
+				F65149E51D4F383D00ECFFFD /* ETGMSellCell.xib */,
+				F635C5E61D51C3B300CBBAD1 /* ETAllOrderCell.swift */,
+				F635C5E71D51C3B300CBBAD1 /* ETAllOrderCell.xib */,
+				F6545D7B1D533F480007C42C /* ETGMOffShelfCell.swift */,
+				F6545D7C1D533F480007C42C /* ETGMOffShelfCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F65BF3401D3F57840003DB35 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				F65BF3461D3F6C920003DB35 /* Welcome */,
+				F65BF3231D3F4F250003DB35 /* PersonalCenter */,
+				F65BF31F1D3F4F1D0003DB35 /* ShoppingCart */,
+				F65BF31B1D3F4F160003DB35 /* EZone */,
+				F65BF3171D3F4F0F0003DB35 /* Location */,
+				F65BF3131D3F4F070003DB35 /* Home */,
+			);
+			name = Section;
+			sourceTree = "<group>";
+		};
+		F65BF3411D3F585B0003DB35 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				F6286FE11D4A096C0052ADC3 /* ConnectModel.h */,
+				F6286FE21D4A096C0052ADC3 /* ConnectModel.m */,
+				F6177C601D460BCF00A2CB67 /* ETBaseHelper.h */,
+				F6177C611D460BCF00A2CB67 /* ETBaseHelper.m */,
+				F61E822F1D474463001E16B5 /* ETTimeManager.h */,
+				F61E82301D474463001E16B5 /* ETTimeManager.m */,
+				F6B65F831D48AE760069312B /* ETUserInfo.h */,
+				F6B65F841D48AE760069312B /* ETUserInfo.m */,
+				F6286FDE1D49E8940052ADC3 /* ETHttpModel.h */,
+				F6286FDF1D49E8940052ADC3 /* ETHttpModel.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		F65BF3421D3F58610003DB35 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				F65BF3431D3F58C70003DB35 /* macro.h */,
+				F65BF3441D3F58C70003DB35 /* macro.m */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		F65BF3461D3F6C920003DB35 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				F65BF3471D3F6C920003DB35 /* Controller */,
+				F65BF3481D3F6C920003DB35 /* Model */,
+				F65BF3491D3F6C920003DB35 /* View */,
+			);
+			name = Welcome;
+			path = welcome;
+			sourceTree = "<group>";
+		};
+		F65BF3471D3F6C920003DB35 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F6FED1CA1D44A0F700C5C776 /* ETLogInViewController.h */,
+				F6FED1CB1D44A0F700C5C776 /* ETLogInViewController.m */,
+				F6FED1CC1D44A0F700C5C776 /* ETLogInViewController.xib */,
+				F6FED1CF1D44BDEB00C5C776 /* ETFgetPwdController.h */,
+				F6FED1D01D44BDEB00C5C776 /* ETFgetPwdController.m */,
+				F6FED1D11D44BDEB00C5C776 /* ETFgetPwdController.xib */,
+				F6FED1D41D44BE4400C5C776 /* ETRigestController.h */,
+				F6FED1D51D44BE4400C5C776 /* ETRigestController.m */,
+				F6FED1D61D44BE4400C5C776 /* ETRigestController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F65BF3481D3F6C920003DB35 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F6177C5D1D46054700A2CB67 /* ETWelcomeHelper.h */,
+				F6177C5E1D46054700A2CB67 /* ETWelcomeHelper.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F65BF3491D3F6C920003DB35 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F67B3D9F1D4D9CEA00F2B544 /* MyShop */ = {
+			isa = PBXGroup;
+			children = (
+				F65149EC1D4F566A00ECFFFD /* OrderManager */,
+				F67B3DA51D4D9F8C00F2B544 /* ETMyShopController.swift */,
+				F67B3DA61D4D9F8C00F2B544 /* ETMyShopController.xib */,
+				F632721D1D4DE90100A3C0FF /* ETShopManagerController.swift */,
+				F632721E1D4DE90100A3C0FF /* ETShopManagerController.xib */,
+				F65149DC1D4F356100ECFFFD /* ETUploadGoodsController.swift */,
+				F65149DD1D4F356100ECFFFD /* ETUploadGoodsController.xib */,
+				F65149E01D4F363D00ECFFFD /* ETGoodsManagerController.swift */,
+				F65149E11D4F363D00ECFFFD /* ETGoodsManagerController.xib */,
+				F65149E81D4F4F7D00ECFFFD /* ETOrderManagerController.swift */,
+			);
+			name = MyShop;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F65BF2F41D3F1CA80003DB35 /* ETong_ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F65BF30C1D3F1CA80003DB35 /* Build configuration list for PBXNativeTarget "ETong_ios" */;
+			buildPhases = (
+				9483B87EFED4904B86E6A997 /* Check Pods Manifest.lock */,
+				F65BF2F11D3F1CA80003DB35 /* Sources */,
+				F65BF2F21D3F1CA80003DB35 /* Frameworks */,
+				F65BF2F31D3F1CA80003DB35 /* Resources */,
+				6C9D98F483ED0EE31CD9D505 /* Embed Pods Frameworks */,
+				95B393146343992A31BE4CEB /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ETong_ios;
+			productName = ETong_ios;
+			productReference = F65BF2F51D3F1CA80003DB35 /* ETong_ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F65BF2ED1D3F1CA80003DB35 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "北京校酷网络科技有限公司";
+				TargetAttributes = {
+					F65BF2F41D3F1CA80003DB35 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = H58LYH4V4T;
+					};
+				};
+			};
+			buildConfigurationList = F65BF2F01D3F1CA80003DB35 /* Build configuration list for PBXProject "ETong_ios" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F65BF2EC1D3F1CA80003DB35;
+			productRefGroup = F65BF2F61D3F1CA80003DB35 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F65BF2F41D3F1CA80003DB35 /* ETong_ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F65BF2F31D3F1CA80003DB35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6FED1CE1D44A0F700C5C776 /* ETLogInViewController.xib in Resources */,
+				F635C5E91D51C3B300CBBAD1 /* ETAllOrderCell.xib in Resources */,
+				F65BF3081D3F1CA80003DB35 /* LaunchScreen.storyboard in Resources */,
+				F65149DF1D4F356100ECFFFD /* ETUploadGoodsController.xib in Resources */,
+				F65BF3051D3F1CA80003DB35 /* Assets.xcassets in Resources */,
+				F6286FEE1D4A19130052ADC3 /* ETShopAuthController.xib in Resources */,
+				F65BF3531D3FA69E0003DB35 /* ETCommodityEditCell.xib in Resources */,
+				F65149F01D4F56A000ECFFFD /* ETAllOrderController.xib in Resources */,
+				F65149FC1D4F5C4000ECFFFD /* ETWaitSignController.xib in Resources */,
+				F645B83D1D4069C700FD8211 /* ETShopCartHeader.xib in Resources */,
+				F65BF34E1D3F81560003DB35 /* ETCommodityCell.xib in Resources */,
+				F6FED1D31D44BDEB00C5C776 /* ETFgetPwdController.xib in Resources */,
+				F65149E31D4F363D00ECFFFD /* ETGoodsManagerController.xib in Resources */,
+				F6FED1D81D44BE4400C5C776 /* ETRigestController.xib in Resources */,
+				F62CF4761D431C600070BA2E /* ETDailyMarketCell.xib in Resources */,
+				F65149F81D4F5BD700ECFFFD /* ETWaitDeliverController.xib in Resources */,
+				F6C09BED1D5081D4001C2987 /* ETCUserInfoController.xib in Resources */,
+				F65BF33A1D3F501E0003DB35 /* ShopCartController.xib in Resources */,
+				F62CF47B1D4320720070BA2E /* ETGuessYLikeCell.xib in Resources */,
+				F65149E71D4F383D00ECFFFD /* ETGMSellCell.xib in Resources */,
+				F6286FE91D4A18210052ADC3 /* ETShopBeginAuthVC.xib in Resources */,
+				F64788B01D41C7C900294225 /* ETMZoneCell.xib in Resources */,
+				F64788AB1D41BCDD00294225 /* ETSidelineZoneController.xib in Resources */,
+				F6C09BF11D509A73001C2987 /* ETSingleInfoController.xib in Resources */,
+				F65BF33F1D3F50390003DB35 /* PersonViewController.xib in Resources */,
+				F63272201D4DE90100A3C0FF /* ETShopManagerController.xib in Resources */,
+				F67B3DA81D4D9F8C00F2B544 /* ETMyShopController.xib in Resources */,
+				F6545D7E1D533F480007C42C /* ETGMOffShelfCell.xib in Resources */,
+				F6CF10AF1D4B3A2900555C4A /* ETShopInfoController.xib in Resources */,
+				F65BF32B1D3F4FAB0003DB35 /* HomePageController.xib in Resources */,
+				F6CF10B41D4B4BE700555C4A /* ETWaitForAuditVC.xib in Resources */,
+				F6514A001D4F5C7200ECFFFD /* ETCompleteController.xib in Resources */,
+				F64788A61D41BC3000294225 /* ETMyZoneController.xib in Resources */,
+				F65BF3301D3F4FD70003DB35 /* LocationViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6C9D98F483ED0EE31CD9D505 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9483B87EFED4904B86E6A997 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		95B393146343992A31BE4CEB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F65BF2F11D3F1CA80003DB35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F65BF3451D3F58C70003DB35 /* macro.m in Sources */,
+				F65BF2FD1D3F1CA80003DB35 /* AppDelegate.m in Sources */,
+				F65149FF1D4F5C7200ECFFFD /* ETCompleteController.swift in Sources */,
+				F6B65F891D48BEBE0069312B /* ETZBarScanController.m in Sources */,
+				F6CF10B71D4B83C400555C4A /* ETShopHelper.m in Sources */,
+				F64788A51D41BC3000294225 /* ETMyZoneController.m in Sources */,
+				F65BF3521D3FA69E0003DB35 /* ETCommodityEditCell.m in Sources */,
+				F6FED1D21D44BDEB00C5C776 /* ETFgetPwdController.m in Sources */,
+				F64788AF1D41C7C900294225 /* ETMZoneCell.m in Sources */,
+				F65149FB1D4F5C4000ECFFFD /* ETWaitSignController.swift in Sources */,
+				F65BF34D1D3F81560003DB35 /* ETCommodityCell.m in Sources */,
+				F61E82311D474463001E16B5 /* ETTimeManager.m in Sources */,
+				F65149DE1D4F356100ECFFFD /* ETUploadGoodsController.swift in Sources */,
+				F65BF32A1D3F4FAB0003DB35 /* HomePageController.m in Sources */,
+				F6545D811D5360E20007C42C /* ETShopModel.m in Sources */,
+				F65149F71D4F5BD700ECFFFD /* ETWaitDeliverController.swift in Sources */,
+				F6FED1D71D44BE4400C5C776 /* ETRigestController.m in Sources */,
+				F64788AA1D41BCDD00294225 /* ETSidelineZoneController.m in Sources */,
+				F635C5E81D51C3B300CBBAD1 /* ETAllOrderCell.swift in Sources */,
+				F6286FE81D4A18210052ADC3 /* ETShopBeginAuthVC.m in Sources */,
+				F6FED1CD1D44A0F700C5C776 /* ETLogInViewController.m in Sources */,
+				F632721F1D4DE90100A3C0FF /* ETShopManagerController.swift in Sources */,
+				F6286FED1D4A19130052ADC3 /* ETShopAuthController.m in Sources */,
+				F65149E21D4F363D00ECFFFD /* ETGoodsManagerController.swift in Sources */,
+				F67B3DA71D4D9F8C00F2B544 /* ETMyShopController.swift in Sources */,
+				F6177C621D460BCF00A2CB67 /* ETBaseHelper.m in Sources */,
+				F6CF10AE1D4B3A2900555C4A /* ETShopInfoController.m in Sources */,
+				F6C09BEC1D5081D4001C2987 /* ETCUserInfoController.swift in Sources */,
+				F65149E61D4F383D00ECFFFD /* ETGMSellCell.swift in Sources */,
+				F6286FE01D49E8940052ADC3 /* ETHttpModel.m in Sources */,
+				F65149EA1D4F4F7D00ECFFFD /* ETOrderManagerController.swift in Sources */,
+				F65BF3111D3F31CB0003DB35 /* ETRootController.m in Sources */,
+				F65BF3391D3F501E0003DB35 /* ShopCartController.m in Sources */,
+				F6CF10B31D4B4BE700555C4A /* ETWaitForAuditVC.m in Sources */,
+				F65BF2FA1D3F1CA80003DB35 /* main.m in Sources */,
+				F6286FE31D4A096C0052ADC3 /* ConnectModel.m in Sources */,
+				F6C09BF01D509A73001C2987 /* ETSingleInfoController.swift in Sources */,
+				F62CF47A1D4320720070BA2E /* ETGuessYLikeCell.m in Sources */,
+				F62CF4751D431C600070BA2E /* ETDailyMarketCell.m in Sources */,
+				F6B65F851D48AE760069312B /* ETUserInfo.m in Sources */,
+				F65BF3341D3F4FFE0003DB35 /* EZoneViewController.m in Sources */,
+				F6177C5F1D46054700A2CB67 /* ETWelcomeHelper.m in Sources */,
+				F65BF32F1D3F4FD70003DB35 /* LocationViewController.m in Sources */,
+				F65BF33E1D3F50390003DB35 /* PersonViewController.m in Sources */,
+				F6545D7D1D533F480007C42C /* ETGMOffShelfCell.swift in Sources */,
+				F65149EF1D4F56A000ECFFFD /* ETAllOrderController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F65BF3061D3F1CA80003DB35 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F65BF3071D3F1CA80003DB35 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F65BF30A1D3F1CA80003DB35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F65BF30B1D3F1CA80003DB35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F65BF30D1D3F1CA80003DB35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC727555E648AF38DE5BD102 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PREFIX_HEADER = ./ETong_ios/ETong_Prefix.pch;
+				INFOPLIST_FILE = ETong_ios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ETong.xiaocool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ETong_ios/PersonalCenter/Controller/ETong_ios-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
+			};
+			name = Debug;
+		};
+		F65BF30E1D3F1CA80003DB35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F83BAF691E4E7DF9CA6F505B /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PREFIX_HEADER = ./ETong_ios/ETong_Prefix.pch;
+				INFOPLIST_FILE = ETong_ios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ETong.xiaocool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ETong_ios/PersonalCenter/Controller/ETong_ios-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F65BF2F01D3F1CA80003DB35 /* Build configuration list for PBXProject "ETong_ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F65BF30A1D3F1CA80003DB35 /* Debug */,
+				F65BF30B1D3F1CA80003DB35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F65BF30C1D3F1CA80003DB35 /* Build configuration list for PBXNativeTarget "ETong_ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F65BF30D1D3F1CA80003DB35 /* Debug */,
+				F65BF30E1D3F1CA80003DB35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F65BF2ED1D3F1CA80003DB35 /* Project object */;
+}

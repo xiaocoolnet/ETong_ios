@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ETGoodsManagerController" customModule="ETong_ios" customModuleProvider="target">
+            <connections>
+                <outlet property="goodsList" destination="uRs-LE-R5F" id="UaJ-Jy-r2b"/>
+                <outlet property="searchBar" destination="oJE-Kg-4wG" id="AwU-U2-fkx"/>
+                <outlet property="segmentView" destination="ZuD-dW-hqn" id="PfX-yQ-g6y"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" searchBarStyle="prominent" translatesAutoresizingMaskIntoConstraints="NO" id="oJE-Kg-4wG">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZuD-dW-hqn">
+                    <rect key="frame" x="8" y="50" width="304" height="29"/>
+                    <segments>
+                        <segment title="出售中"/>
+                        <segment title="已下架"/>
+                    </segments>
+                    <color key="tintColor" red="0.93725490199999995" green="0.23137254900000001" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="segmentValueChanged:" destination="-1" eventType="valueChanged" id="Tar-q8-TwP"/>
+                    </connections>
+                </segmentedControl>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uRs-LE-R5F">
+                    <rect key="frame" x="0.0" y="86" width="320" height="482"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="50u-rW-TZG"/>
+                        <outlet property="delegate" destination="-1" id="OUo-Pa-Zlr"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ZuD-dW-hqn" firstAttribute="top" secondItem="oJE-Kg-4wG" secondAttribute="bottom" constant="6" id="F4i-sb-gQ3"/>
+                <constraint firstAttribute="trailing" secondItem="oJE-Kg-4wG" secondAttribute="trailing" id="e6H-oq-Ykx"/>
+                <constraint firstItem="uRs-LE-R5F" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="eoa-oj-iiz"/>
+                <constraint firstAttribute="trailing" secondItem="ZuD-dW-hqn" secondAttribute="trailing" constant="8" id="g8D-0c-SDJ"/>
+                <constraint firstItem="oJE-Kg-4wG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mpf-tv-O8i"/>
+                <constraint firstItem="ZuD-dW-hqn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="n5a-FR-ncJ"/>
+                <constraint firstAttribute="bottom" secondItem="uRs-LE-R5F" secondAttribute="bottom" id="slj-Ff-xla"/>
+                <constraint firstItem="uRs-LE-R5F" firstAttribute="top" secondItem="ZuD-dW-hqn" secondAttribute="bottom" constant="8" id="tSd-Ze-MTo"/>
+                <constraint firstItem="oJE-Kg-4wG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="v6v-IH-fAn"/>
+                <constraint firstAttribute="trailing" secondItem="uRs-LE-R5F" secondAttribute="trailing" id="xDZ-cV-QUf"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>
