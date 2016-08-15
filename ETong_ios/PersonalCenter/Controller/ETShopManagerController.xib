@@ -7,6 +7,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ETShopManagerController" customModule="ETong_ios" customModuleProvider="target">
             <connections>
+                <outlet property="backImage" destination="3kf-tu-b5B" id="IZQ-Ti-Hi6"/>
+                <outlet property="descrpt" destination="KR4-kK-6CT" id="Dzd-Mz-zdw"/>
+                <outlet property="linkWay" destination="s11-Yf-bAY" id="Bbi-i0-fMA"/>
+                <outlet property="receive" destination="dm8-c0-dx7" id="odu-0g-ncC"/>
+                <outlet property="sendAddress" destination="C3X-Q6-dbM" id="zhx-CE-rVA"/>
+                <outlet property="shopAddress" destination="Yhz-pO-SxM" id="WB2-27-aVM"/>
+                <outlet property="shopImage" destination="Pce-8a-SGt" id="CUG-aQ-NId"/>
+                <outlet property="shopName" destination="1CV-Vg-na3" id="0W1-Xj-Py4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

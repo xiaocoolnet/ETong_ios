@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ETUploadGoodsController: UIViewController,UIScrollViewDelegate {
+class ETUploadGoodsController: UIViewController,UIScrollViewDelegate,ETGoodsLoopControllerDelegate {
     
     @IBOutlet weak var goodsTitle:UITextField!//标题
     @IBOutlet weak var goodsBrand:UITextField!//品牌
@@ -21,7 +21,9 @@ class ETUploadGoodsController: UIViewController,UIScrollViewDelegate {
     @IBOutlet weak var goodsDetail:UITextField!//宝贝详情
     @IBOutlet weak var place:UITextField!//发货地
     @IBOutlet weak var goodsClass:UIButton!//商品分类
-    
+    var goodsModel:ETGoodsDataModel?
+    var helper:ETShopHelper = ETShopHelper()
+    var piclist:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "上传宝贝"
@@ -36,7 +38,8 @@ class ETUploadGoodsController: UIViewController,UIScrollViewDelegate {
     }
     //商品轮播图
     @IBAction func goodsLoopImage(sender: AnyObject){
-        
+        let vc = ETGoodsLoopController(nibName: "ETGoodsLoopController", bundle: nil)
+        navigationController?.pushViewController(vc, animated: true)
     }
     //商品分类
     @IBAction func goodsClass(sender: AnyObject){
@@ -44,6 +47,17 @@ class ETUploadGoodsController: UIViewController,UIScrollViewDelegate {
     }
     //上传
     @IBAction func uploadAction(sender: AnyObject){
+        goodsModel = ETGoodsDataModel.init(showid: "1", piclist: piclist, goodsname: goodsTitle.text, type: "1", oprice: originalPrice.text, price: price.text, description: goodsDetail.text, unit: goodsSpec.text, address: place.text, longitude: "1", latitude: "1", freight: freight.text, band: goodsBrand.text)
         
+        helper.uploadGoodsWithGoodsModel(goodsModel, success: {[unowned self] (dic) in
+            st_dispatch_async_main({ 
+                SVProgressHUD.showSuccessWithStatus("上传成功")
+                self.navigationController?.popViewControllerAnimated(true)
+            })
+            }, faild: nil)
+        }
+    // MARK: --ETGoodsLoopControllerDelegate
+    func selectImages(imageNames:Array<String>){
+        piclist = NSArray(array: imageNames).componentsJoinedByString(",")
     }
 }

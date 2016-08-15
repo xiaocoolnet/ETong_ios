@@ -15,6 +15,8 @@ class ETSingleInfoController: UIViewController {
     @IBOutlet weak var changeInfo:UITextField!
     var infoText = ""
     var myHandle:SingleInfoHandle?
+    var changeType = 0
+    let helper = ETShopHelper()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +29,31 @@ class ETSingleInfoController: UIViewController {
         rightButton.addTarget(self, action: #selector(rightBarButtonClicked), forControlEvents: .TouchUpInside)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: rightButton)
     }
+    
     func rightBarButtonClicked(){
-        if myHandle != nil {
-            myHandle!(str: changeInfo.text!)
+        let str = changeInfo.text
+        if changeType == 0 {
+            helper.updataUserNameWithUserid(ETUserInfo.sharedETUserInfo().id, nicename:str , success: { [unowned self] (dic) in
+                ETUserInfo.sharedETUserInfo().name = str
+                if self.myHandle != nil {
+                    self.myHandle!(str: self.changeInfo.text!)
+                }
+                st_dispatch_async_main({ 
+                    SVProgressHUD.showSuccessWithStatus("修改成功")
+                    self.navigationController?.popViewControllerAnimated(true)
+                })
+                }, faild: { [unowned self] (str, err) in
+                    st_dispatch_async_main({
+                        SVProgressHUD.showErrorWithStatus("修改失败")
+                        self.navigationController?.popViewControllerAnimated(true)
+                    })
+            })
+        }else if changeType == 1{
+            self.navigationController?.popViewControllerAnimated(true)
         }
-        navigationController?.popViewControllerAnimated(true)
+        
     }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         changeInfo.becomeFirstResponder()

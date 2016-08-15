@@ -86,6 +86,11 @@
 		F6C09BED1D5081D4001C2987 /* ETCUserInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6C09BEB1D5081D4001C2987 /* ETCUserInfoController.xib */; };
 		F6C09BF01D509A73001C2987 /* ETSingleInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C09BEE1D509A73001C2987 /* ETSingleInfoController.swift */; };
 		F6C09BF11D509A73001C2987 /* ETSingleInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6C09BEF1D509A73001C2987 /* ETSingleInfoController.xib */; };
+		F6C94C491D58AA4B00280E86 /* ETGoodsLoopController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C94C471D58AA4B00280E86 /* ETGoodsLoopController.swift */; };
+		F6C94C4A1D58AA4B00280E86 /* ETGoodsLoopController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6C94C481D58AA4B00280E86 /* ETGoodsLoopController.xib */; };
+		F6C94C4D1D58AC1E00280E86 /* ETGoodsLoopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C94C4B1D58AC1E00280E86 /* ETGoodsLoopCell.swift */; };
+		F6C94C4E1D58AC1E00280E86 /* ETGoodsLoopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6C94C4C1D58AC1E00280E86 /* ETGoodsLoopCell.xib */; };
+		F6CEAF701D58763300518835 /* ETGoodsDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CEAF6F1D58763300518835 /* ETGoodsDataModel.m */; };
 		F6CF10AE1D4B3A2900555C4A /* ETShopInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CF10AC1D4B3A2900555C4A /* ETShopInfoController.m */; };
 		F6CF10AF1D4B3A2900555C4A /* ETShopInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6CF10AD1D4B3A2900555C4A /* ETShopInfoController.xib */; };
 		F6CF10B31D4B4BE700555C4A /* ETWaitForAuditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CF10B11D4B4BE700555C4A /* ETWaitForAuditVC.m */; };
@@ -209,6 +214,12 @@
 		F6C09BEB1D5081D4001C2987 /* ETCUserInfoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETCUserInfoController.xib; sourceTree = "<group>"; };
 		F6C09BEE1D509A73001C2987 /* ETSingleInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETSingleInfoController.swift; sourceTree = "<group>"; };
 		F6C09BEF1D509A73001C2987 /* ETSingleInfoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETSingleInfoController.xib; sourceTree = "<group>"; };
+		F6C94C471D58AA4B00280E86 /* ETGoodsLoopController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETGoodsLoopController.swift; sourceTree = "<group>"; };
+		F6C94C481D58AA4B00280E86 /* ETGoodsLoopController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETGoodsLoopController.xib; sourceTree = "<group>"; };
+		F6C94C4B1D58AC1E00280E86 /* ETGoodsLoopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETGoodsLoopCell.swift; sourceTree = "<group>"; };
+		F6C94C4C1D58AC1E00280E86 /* ETGoodsLoopCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETGoodsLoopCell.xib; sourceTree = "<group>"; };
+		F6CEAF6E1D58763300518835 /* ETGoodsDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETGoodsDataModel.h; sourceTree = "<group>"; };
+		F6CEAF6F1D58763300518835 /* ETGoodsDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETGoodsDataModel.m; sourceTree = "<group>"; };
 		F6CF10AB1D4B3A2900555C4A /* ETShopInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETShopInfoController.h; sourceTree = "<group>"; };
 		F6CF10AC1D4B3A2900555C4A /* ETShopInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETShopInfoController.m; sourceTree = "<group>"; };
 		F6CF10AD1D4B3A2900555C4A /* ETShopInfoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETShopInfoController.xib; sourceTree = "<group>"; };
@@ -556,6 +567,8 @@
 				F6CF10B61D4B83C400555C4A /* ETShopHelper.m */,
 				F6545D7F1D5360E20007C42C /* ETShopModel.h */,
 				F6545D801D5360E20007C42C /* ETShopModel.m */,
+				F6CEAF6E1D58763300518835 /* ETGoodsDataModel.h */,
+				F6CEAF6F1D58763300518835 /* ETGoodsDataModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -569,6 +582,8 @@
 				F635C5E71D51C3B300CBBAD1 /* ETAllOrderCell.xib */,
 				F6545D7B1D533F480007C42C /* ETGMOffShelfCell.swift */,
 				F6545D7C1D533F480007C42C /* ETGMOffShelfCell.xib */,
+				F6C94C4B1D58AC1E00280E86 /* ETGoodsLoopCell.swift */,
+				F6C94C4C1D58AC1E00280E86 /* ETGoodsLoopCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -668,6 +683,8 @@
 				F65149E01D4F363D00ECFFFD /* ETGoodsManagerController.swift */,
 				F65149E11D4F363D00ECFFFD /* ETGoodsManagerController.xib */,
 				F65149E81D4F4F7D00ECFFFD /* ETOrderManagerController.swift */,
+				F6C94C471D58AA4B00280E86 /* ETGoodsLoopController.swift */,
+				F6C94C481D58AA4B00280E86 /* ETGoodsLoopController.xib */,
 			);
 			name = MyShop;
 			sourceTree = "<group>";
@@ -740,6 +757,7 @@
 				F65BF3051D3F1CA80003DB35 /* Assets.xcassets in Resources */,
 				F6286FEE1D4A19130052ADC3 /* ETShopAuthController.xib in Resources */,
 				F65BF3531D3FA69E0003DB35 /* ETCommodityEditCell.xib in Resources */,
+				F6C94C4E1D58AC1E00280E86 /* ETGoodsLoopCell.xib in Resources */,
 				F65149F01D4F56A000ECFFFD /* ETAllOrderController.xib in Resources */,
 				F65149FC1D4F5C4000ECFFFD /* ETWaitSignController.xib in Resources */,
 				F645B83D1D4069C700FD8211 /* ETShopCartHeader.xib in Resources */,
@@ -757,6 +775,7 @@
 				F64788B01D41C7C900294225 /* ETMZoneCell.xib in Resources */,
 				F64788AB1D41BCDD00294225 /* ETSidelineZoneController.xib in Resources */,
 				F6C09BF11D509A73001C2987 /* ETSingleInfoController.xib in Resources */,
+				F6C94C4A1D58AA4B00280E86 /* ETGoodsLoopController.xib in Resources */,
 				F65BF33F1D3F50390003DB35 /* PersonViewController.xib in Resources */,
 				F63272201D4DE90100A3C0FF /* ETShopManagerController.xib in Resources */,
 				F67B3DA81D4D9F8C00F2B544 /* ETMyShopController.xib in Resources */,
@@ -834,6 +853,7 @@
 				F65BF3521D3FA69E0003DB35 /* ETCommodityEditCell.m in Sources */,
 				F6FED1D21D44BDEB00C5C776 /* ETFgetPwdController.m in Sources */,
 				F64788AF1D41C7C900294225 /* ETMZoneCell.m in Sources */,
+				F6C94C491D58AA4B00280E86 /* ETGoodsLoopController.swift in Sources */,
 				F65149FB1D4F5C4000ECFFFD /* ETWaitSignController.swift in Sources */,
 				F65BF34D1D3F81560003DB35 /* ETCommodityCell.m in Sources */,
 				F61E82311D474463001E16B5 /* ETTimeManager.m in Sources */,
@@ -848,6 +868,7 @@
 				F6FED1CD1D44A0F700C5C776 /* ETLogInViewController.m in Sources */,
 				F632721F1D4DE90100A3C0FF /* ETShopManagerController.swift in Sources */,
 				F6286FED1D4A19130052ADC3 /* ETShopAuthController.m in Sources */,
+				F6CEAF701D58763300518835 /* ETGoodsDataModel.m in Sources */,
 				F65149E21D4F363D00ECFFFD /* ETGoodsManagerController.swift in Sources */,
 				F67B3DA71D4D9F8C00F2B544 /* ETMyShopController.swift in Sources */,
 				F6177C621D460BCF00A2CB67 /* ETBaseHelper.m in Sources */,
@@ -862,6 +883,7 @@
 				F65BF2FA1D3F1CA80003DB35 /* main.m in Sources */,
 				F6286FE31D4A096C0052ADC3 /* ConnectModel.m in Sources */,
 				F6C09BF01D509A73001C2987 /* ETSingleInfoController.swift in Sources */,
+				F6C94C4D1D58AC1E00280E86 /* ETGoodsLoopCell.swift in Sources */,
 				F62CF47A1D4320720070BA2E /* ETGuessYLikeCell.m in Sources */,
 				F62CF4751D431C600070BA2E /* ETDailyMarketCell.m in Sources */,
 				F6B65F851D48AE760069312B /* ETUserInfo.m in Sources */,

@@ -162,6 +162,16 @@
                     <constraint firstAttribute="bottomMargin" secondItem="gns-vW-zA5" secondAttribute="bottom" constant="-8" id="xii-je-P7i"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="deleteBtn" destination="1Nl-Ye-H72" id="2mT-tq-u3w"/>
+                <outlet property="editGoods" destination="4m4-ob-YaC" id="Il6-qN-Efw"/>
+                <outlet property="goodsImage" destination="gee-xe-twS" id="DI5-c9-Or5"/>
+                <outlet property="goodsName" destination="wU5-op-C0g" id="UoO-kS-ocG"/>
+                <outlet property="goodsPrice" destination="Gge-FH-B1g" id="G1X-a6-INI"/>
+                <outlet property="hasSaleNum" destination="caG-Sw-4bE" id="W1H-O8-Aba"/>
+                <outlet property="offSaleBtn" destination="ghc-Dg-3UZ" id="9f6-OP-Z9W"/>
+                <outlet property="shareBtn" destination="tEU-gW-pgh" id="6rD-k4-P5d"/>
+            </connections>
             <point key="canvasLocation" x="374" y="316"/>
         </tableViewCell>
     </objects>

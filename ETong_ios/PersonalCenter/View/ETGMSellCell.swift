@@ -10,11 +10,36 @@ import UIKit
 
 class ETGMSellCell: UITableViewCell {
     
+    @IBOutlet weak var goodsImage:UIImageView!
+    @IBOutlet weak var editGoods:UIButton!
+    @IBOutlet weak var offSaleBtn:UIButton!
+    @IBOutlet weak var shareBtn:UIButton!
+    @IBOutlet weak var deleteBtn:UIButton!
+    
+    @IBOutlet weak var goodsName:UILabel!
+    @IBOutlet weak var hasSaleNum:UILabel!
+    @IBOutlet weak var goodsPrice:UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        editGoods.tag = self.tag
+        offSaleBtn.tag = self.tag
+        shareBtn.tag = self.tag
+        deleteBtn.tag = self.tag
     }
-
+    
+    func showForModel(model:ETGoodsDataModel){
+        goodsImage.sd_setImageWithURL(NSURL(string:kIMAGE_URL_HEAD + model.picture.componentsSeparatedByString(",").first!) , placeholderImage: UIImage(named: "ic_xihuan"))
+        goodsName.text = model.goodsname
+        hasSaleNum.text = "已售:"+"库存:"
+        goodsPrice.text = model.price
+    }
+    
+    override func layoutSubviews() {
+        
+    }
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state

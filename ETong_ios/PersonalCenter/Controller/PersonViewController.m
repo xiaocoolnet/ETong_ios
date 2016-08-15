@@ -77,9 +77,14 @@
 
 - (void)configureUser{
     if ([ETUserInfo sharedETUserInfo].isLogin) {
-        NSString *avatarUrlStr = [NSString stringWithFormat:@"%@/%@",kIMAGE_URL_HEAD,[ETUserInfo sharedETUserInfo].photo];
-        [_avatarBtn sd_setImageWithURL:[NSURL URLWithString:avatarUrlStr] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"ic_touxiang"]];
-        _nameLabel.text = [ETUserInfo sharedETUserInfo].name;
+        WEAKSELF
+        [self.helper updataUserInfo:^(NSDictionary *response) {
+            st_dispatch_async_main(^{
+                NSString *avatarUrlStr = [NSString stringWithFormat:@"%@/%@",kIMAGE_URL_HEAD,[ETUserInfo sharedETUserInfo].photo];
+                [weakSelf.avatarBtn sd_setImageWithURL:[NSURL URLWithString:avatarUrlStr] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"ic_touxiang"]];
+                weakSelf.nameLabel.text = [ETUserInfo sharedETUserInfo].name;
+            });
+        }];
     }
 }
 

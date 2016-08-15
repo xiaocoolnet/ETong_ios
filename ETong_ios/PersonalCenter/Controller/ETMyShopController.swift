@@ -11,6 +11,7 @@ import UIKit
 class ETMyShopController: UIViewController {
     @IBOutlet weak var shopTitle:UILabel!
     @IBOutlet weak var shopImage:UIButton!
+    @IBOutlet weak var avatarBack:UIView!
     
     var model:ETShopModel?
     
@@ -19,10 +20,14 @@ class ETMyShopController: UIViewController {
         self.hidesBottomBarWhenPushed = true
         self.title = "我的店铺"
         shopTitle.text = model?.shopname
+        shopImage.sd_setImageWithURL(NSURL(string: kIMAGE_URL_HEAD + (model?.photo)!), forState: UIControlState.Normal, placeholderImage: UIImage(named: "ic_xihuan"))
+        avatarBack.layer.borderColor = UIColor.whiteColor().CGColor
+        avatarBack.layer.borderWidth = 1
     }
     //店铺管理
     @IBAction func shopManagerAction(sender: AnyObject) {
         let vc = ETShopManagerController(nibName: "ETShopManagerController", bundle: nil)
+        vc.shopModel = model
         navigationController?.pushViewController(vc, animated: true)
     }
     //上传宝贝
@@ -33,6 +38,7 @@ class ETMyShopController: UIViewController {
     //宝贝管理
     @IBAction func goodsManagerAction(sender: AnyObject) {
         let managerVC = ETGoodsManagerController(nibName: "ETGoodsManagerController", bundle: nil)
+        managerVC.shopModel = model
         navigationController?.pushViewController(managerVC, animated: true)
     }
     //订单管理

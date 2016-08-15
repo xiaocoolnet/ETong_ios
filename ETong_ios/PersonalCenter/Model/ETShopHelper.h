@@ -8,6 +8,8 @@
 
 #import "ETBaseHelper.h"
 
+@class ETGoodsDataModel;
+
 @interface ETShopHelper : ETBaseHelper
 /**
  *  提交开店数据
@@ -43,4 +45,19 @@
  *  修改地址
  */
 - (void)updataUserAddress:(NSString *)address userid:(NSString *)userid success:(ETResponseBlock) success faild:(ETResponseErrorBlock)faild;
+/**
+ *  上传宝贝
+ *
+ *  @param model   商品model
+ */
+- (void)uploadGoodsWithGoodsModel:(ETGoodsDataModel *)model success:(ETResponseBlock) success faild:(ETResponseErrorBlock) faild;
+/**
+ *  获取店铺商品
+ *
+ *  @param shopid 店铺ID
+ *  @param userid 用户ID
+ *  @param xiajia 选填 1表示获取下架列表
+ */
+- (void)getShopGoodsListWithShopid:(NSString *)shopid userid:(NSString *)userid xiajia:(NSString *)xiajia success:(ETResponseBlock) success faild:(ETResponseErrorBlock) faild;
+
 @end

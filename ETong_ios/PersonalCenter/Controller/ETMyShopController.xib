@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ETMyShopController" customModule="ETong_ios" customModuleProvider="target">
             <connections>
+                <outlet property="avatarBack" destination="XOo-ZJ-dep" id="Dpz-UP-c06"/>
                 <outlet property="shopImage" destination="abJ-rf-zKF" id="Iid-Yd-nru"/>
                 <outlet property="shopTitle" destination="3Ec-Ee-dpt" id="s7M-Ae-57j"/>
                 <outlet property="view" destination="di2-IK-aLV" id="EZy-Yl-X0U"/>
@@ -36,7 +37,7 @@
                                                     <state key="normal" backgroundImage="ic_touxiang_tu"/>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="0.93725490199999995" green="0.23137254900000001" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="abJ-rf-zKF" secondAttribute="bottom" constant="5" id="2om-Iv-YjW"/>
                                                 <constraint firstItem="abJ-rf-zKF" firstAttribute="leading" secondItem="XOo-ZJ-dep" secondAttribute="leading" constant="5" id="Kew-Sw-tCP"/>
@@ -397,7 +398,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_pingjia" translatesAutoresizingMaskIntoConstraints="NO" id="0wL-jZ-jca">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_pingjia-1" translatesAutoresizingMaskIntoConstraints="NO" id="0wL-jZ-jca">
                                                     <rect key="frame" x="18" y="18" width="44" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="0wL-jZ-jca" secondAttribute="height" multiplier="1:1" id="QTv-k4-IwX"/>
@@ -431,7 +432,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_pingjia" translatesAutoresizingMaskIntoConstraints="NO" id="zOj-Ye-Egr">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_phone-1" translatesAutoresizingMaskIntoConstraints="NO" id="zOj-Ye-Egr">
                                                     <rect key="frame" x="18" y="18" width="44" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="zOj-Ye-Egr" secondAttribute="height" multiplier="1:1" id="f6C-hb-LOp"/>
@@ -465,7 +466,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_pingjia" translatesAutoresizingMaskIntoConstraints="NO" id="APD-ka-dPx">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_question" translatesAutoresizingMaskIntoConstraints="NO" id="APD-ka-dPx">
                                                     <rect key="frame" x="18" y="18" width="44" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="APD-ka-dPx" secondAttribute="height" multiplier="1:1" id="fKt-VZ-ZVH"/>
@@ -571,7 +572,9 @@
         <image name="ic_bag" width="60" height="60"/>
         <image name="ic_dingdan" width="60" height="60"/>
         <image name="ic_guanggao" width="375" height="75"/>
-        <image name="ic_pingjia" width="50" height="50"/>
+        <image name="ic_phone-1" width="60" height="60"/>
+        <image name="ic_pingjia-1" width="60" height="60"/>
+        <image name="ic_question" width="60" height="60"/>
         <image name="ic_shouhou" width="60" height="60"/>
         <image name="ic_store" width="60" height="60"/>
         <image name="ic_touxiang_tu" width="68" height="68"/>

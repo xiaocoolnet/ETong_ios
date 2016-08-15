@@ -21,4 +21,17 @@
     }
     return self;
 }
+- (void)updataUserInfo:(ETResponseBlock)handle;{
+    NSDictionary *para = @{@"a":@"getuserinfo",@"userid":[ETUserInfo sharedETUserInfo].id};
+    [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
+        if ([model.status isEqualToString:@"success"]) {
+            [ETUserInfo mj_objectWithKeyValues:model.data];
+        }
+        handle(nil);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+         handle(nil);
+    }];
+
+}
 @end

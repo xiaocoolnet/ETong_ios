@@ -15,4 +15,5 @@ typedef void (^ETResponseErrorBlock)(NSString *response, NSError *error);
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
 
 +(instancetype)helper;
+- (void)updataUserInfo:(ETResponseBlock)handle;
 @end
