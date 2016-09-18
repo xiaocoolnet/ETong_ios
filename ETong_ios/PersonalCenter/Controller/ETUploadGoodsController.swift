@@ -39,6 +39,7 @@ class ETUploadGoodsController: UIViewController,UIScrollViewDelegate,ETGoodsLoop
     //商品轮播图
     @IBAction func goodsLoopImage(sender: AnyObject){
         let vc = ETGoodsLoopController(nibName: "ETGoodsLoopController", bundle: nil)
+        vc.delegate = self
         navigationController?.pushViewController(vc, animated: true)
     }
     //商品分类

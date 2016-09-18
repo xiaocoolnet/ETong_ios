@@ -144,11 +144,205 @@
                 NSArray *models = [ETGoodsDataModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
             success(@{@"goods":models});
         }else{
+            faild(@"", nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        faild(nil,nil);
+    }];
+}
+//修改商品名称
+- (void)updateGoodsNameWithGoodsId:(NSString *)goodsid goodsName:(NSString *)goodsName success:(ETResponseBlock)success faild:(ETResponseErrorBlock) faild;{
+    NSDictionary *para = @{@"a":@"UpdateGoodsName",@"id":goodsid,@"goodsname":goodsName};
+    
+    [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
+        if ([model.status isEqualToString:@"success"]) {
+            success(responseObject);
+        }else{
+            faild(@"",nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        faild(nil,nil);
+    }];
+
+}
+//修改商品现价
+- (void)updateGoodsPriceWithGoodsId:(NSString *)goodsid goodsprice:(NSString *)price success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;{
+    NSDictionary *para = @{@"a":@"UpdateGoodsPrice",@"id":goodsid,@"price":price};
+    
+    [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
+        if ([model.status isEqualToString:@"success"]) {
+            success(responseObject);
+        }else{
+            faild(@"",nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        faild(nil,nil);
+    }];
+
+}
+//修改商品原价
+- (void)updateGoodsOPriceWithGoodsId:(NSString *)goodsid OPrice:(NSString *)price success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;{
+    NSDictionary *para = @{@"a":@"UpdateGoodsOPrice",@"id":goodsid,@"oprice":price};
+    
+    [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
+        if ([model.status isEqualToString:@"success"]) {
+            NSArray *models = [ETGoodsDataModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+            success(@{@"goods":models});
+        }else{
+            faild(@"",nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        faild(nil,nil);
+    }];
+
+}
+//修改商品描述
+- (void)updateGoodsDescriptionWithGoodsid:(NSString *)goodsid description:(NSString *)description success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;{
+    NSDictionary *para = @{@"a":@"UpdateGoodsDescription",@"id":goodsid,@"description":description};
+    
+    [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
+        if ([model.status isEqualToString:@"success"]) {
+            
+        }else{
+            faild(@"",nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        faild(nil,nil);
+    }];
+
+}
+//修改商品品牌
+- (void)updateGoodsBrandWithGoodsid:(NSString *)goodsid band:(NSString *)band success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;{
+    NSDictionary *para = @{@"a":@"UpdateGoodsBand",@"id":goodsid,@"band":band};
+    
+    [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
+        if ([model.status isEqualToString:@"success"]) {
+            NSArray *models = [ETGoodsDataModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+            success(@{@"goods":models});
+        }else{
+            faild(@"",nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        faild(nil,nil);
+    }];
+
+}
+//修改商品类型
+- (void)updateGoodsTypeWithGoodsid:(NSString *)goodsid type:(NSString *)type success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;{
+    NSDictionary *para = @{@"a":@"UpdateGoodsType",@"id":goodsid,@"type":type};
+    
+    [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
+        if ([model.status isEqualToString:@"success"]) {
+            NSArray *models = [ETGoodsDataModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+            success(@{@"goods":models});
+        }else{
+            faild(@"",nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        faild(nil,nil);
+    }];
+
+}
+//获取商品对应附加属性列表
+- (void)getGoodPropertyListWithGoodsType:(NSString *)goodtype success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;{
+    NSDictionary *para = @{@"a":@"GetGoodPropertyList",@"goodstype":goodtype};
+    
+    [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
+        if ([model.status isEqualToString:@"success"]) {
+            NSArray *models = [ETGoodsDataModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+            success(@{@"goods":models});
+        }else{
+            faild(@"",nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        faild(nil,nil);
+    }];
+
+}
+//获取单个商品资料
+- (void)getGoodsInfoWithGoodsId:(NSString *)goodsid success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;{
+    
+    NSDictionary *para = @{@"a":@"GetGoodsInfo",@"id":goodsid};
+    [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
+        if ([model.status isEqualToString:@"success"]) {
+            
+        }else{
+            faild(@"",nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        faild(nil,nil);
+    }];
+
+}
+//添加购物车
+- (void)addShoppingCartWithShopid:(NSString *)shopid goodsid:(NSString *)goodsid goodsnum:(NSString *)goodsnum success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;{
+    NSDictionary *para = @{@"a":@"AddShoppingCart",@"userid":[ETUserInfo sharedETUserInfo].id,@"goodsid":goodsid,@"goodsnum":goodsnum};
+    
+    [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
+        if ([model.status isEqualToString:@"success"]) {
+            
+        }else{
+            faild(@"",nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        faild(nil,nil);
+    }];
+
+}
+//删除购物车
+- (void)deleteShoppingCartWithGoodsid:(NSString *)goodsid success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;{
+    NSDictionary *para = @{@"a":@"DeleteShoppingCart",@"userid":[ETUserInfo sharedETUserInfo].id,@"goodsid":goodsid};
+    
+    [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
+        if ([model.status isEqualToString:@"success"]) {
+            NSArray *models = [ETGoodsDataModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+            success(@{@"goods":models});
+        }else{
+            faild(@"",nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        faild(nil,nil);
+    }];
+
+}
+//获取我的购物车
+- (void)getShoppingCartWithUserid:(NSString *)userid success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;{
+    NSDictionary *para = @{@"a":@"GetShoppingCart",@"userid":[ETUserInfo sharedETUserInfo].id};
+    
+    [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
+        if ([model.status isEqualToString:@"success"]) {
+            
+        }else{
+            faild(@"",nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        faild(nil,nil);
+    }];
+
+}
+//删除产品
+- (void)deleteGoodsWithGoodsid:(NSString *)goodid success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;{
+    NSDictionary *para = @{@"a":@"DeleteGoods",@"id":goodid};
+    [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
+        if ([model.status isEqualToString:@"success"]) {
+           
+        }else{
             faild(@"",nil);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         faild(nil,nil);
     }];
 }
-
 @end

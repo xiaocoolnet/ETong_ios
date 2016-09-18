@@ -3,8 +3,9 @@
 //
 #import "SVProgressHUD.h"
 #import "MJRefresh.h"
-//#import "RCTRootView.h"
+#import "JSCartViewController.h"
 #import "YPTabBarController.h"
+#import "SDCycleScrollView.h"
 #import "UIButton+WebCache.h"
 #import "UIImageView+WebCache.h"
 #import "macro.h"
@@ -14,3 +15,5 @@
 #import "ETShopHelper.h"
 #import "ETBaseHelper.h"
 #import "ETGoodsDataModel.h"
+#import "GoodAttrModel.h"
+#import "GoodAttributesView.h"

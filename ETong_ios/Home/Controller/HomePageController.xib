@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomePageController">
@@ -40,72 +41,104 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gBy-CA-DYU">
                                                     <rect key="frame" x="0.0" y="0.0" width="119" height="119"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="限时抢购" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHU-Rh-Ywz">
-                                                            <rect key="frame" x="23" y="18" width="73" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="限时抢购" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHU-Rh-Ywz">
+                                                            <rect key="frame" x="26" y="8" width="68" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.97254901959999995" green="0.24313725489999999" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="限时抢购抢货季" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LO8-zU-ZCL">
-                                                            <rect key="frame" x="15" y="37" width="88" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="限时抢购抢货季" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LO8-zU-ZCL">
+                                                            <rect key="frame" x="18" y="30" width="84" height="15"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_qianggou" translatesAutoresizingMaskIntoConstraints="NO" id="ChS-aQ-E3p">
-                                                            <rect key="frame" x="30" y="55" width="58" height="58"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_qianggou" translatesAutoresizingMaskIntoConstraints="NO" id="ChS-aQ-E3p">
+                                                            <rect key="frame" x="30" y="47" width="58" height="58"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="58" id="VWn-op-Rjh"/>
+                                                                <constraint firstAttribute="width" constant="58" id="YIy-dV-lfN"/>
+                                                            </constraints>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
+                                                        <constraint firstItem="ChS-aQ-E3p" firstAttribute="centerX" secondItem="gBy-CA-DYU" secondAttribute="centerX" id="01R-h3-cGd"/>
+                                                        <constraint firstItem="LO8-zU-ZCL" firstAttribute="top" secondItem="OHU-Rh-Ywz" secondAttribute="bottom" constant="1" id="Km4-xE-KMW"/>
                                                         <constraint firstAttribute="width" constant="119" id="SLA-Yo-rhF"/>
+                                                        <constraint firstItem="OHU-Rh-Ywz" firstAttribute="top" secondItem="gBy-CA-DYU" secondAttribute="top" constant="8" id="Thd-OC-VEM"/>
+                                                        <constraint firstItem="OHU-Rh-Ywz" firstAttribute="centerX" secondItem="gBy-CA-DYU" secondAttribute="centerX" id="gIr-sf-hSI"/>
+                                                        <constraint firstItem="LO8-zU-ZCL" firstAttribute="centerX" secondItem="gBy-CA-DYU" secondAttribute="centerX" id="kGT-kl-aWX"/>
                                                         <constraint firstAttribute="height" constant="119" id="pCz-hy-57a"/>
+                                                        <constraint firstItem="ChS-aQ-E3p" firstAttribute="top" secondItem="LO8-zU-ZCL" secondAttribute="bottom" constant="2" id="z0b-bO-aPC"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hml-T8-f8N">
                                                     <rect key="frame" x="120" y="0.0" width="200" height="59"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="每日精选" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2b-p4-W2x">
-                                                            <rect key="frame" x="8" y="8" width="73" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="每日精选" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2b-p4-W2x">
+                                                            <rect key="frame" x="8" y="8" width="68" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.1843137255" green="0.69803921570000005" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="限时抢购抢货季" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sED-wU-G1v">
-                                                            <rect key="frame" x="8" y="30" width="88" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="限时抢购抢货季" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sED-wU-G1v">
+                                                            <rect key="frame" x="8" y="30" width="84" height="15"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_jingxuan" translatesAutoresizingMaskIntoConstraints="NO" id="4aw-CL-wSr">
-                                                            <rect key="frame" x="129" y="1" width="58" height="58"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_jingxuan" translatesAutoresizingMaskIntoConstraints="NO" id="4aw-CL-wSr">
+                                                            <rect key="frame" x="120" y="2" width="55" height="55"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="55" id="IK2-3X-02t"/>
+                                                                <constraint firstAttribute="height" constant="55" id="Quw-A1-eX8"/>
+                                                            </constraints>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
+                                                        <constraint firstItem="sED-wU-G1v" firstAttribute="leading" secondItem="hml-T8-f8N" secondAttribute="leading" constant="8" id="1qU-Mg-aBP"/>
+                                                        <constraint firstAttribute="trailing" secondItem="4aw-CL-wSr" secondAttribute="trailing" multiplier="8:7" id="ISU-qM-4hp"/>
+                                                        <constraint firstItem="X2b-p4-W2x" firstAttribute="top" secondItem="hml-T8-f8N" secondAttribute="top" constant="8" id="PfC-Ve-y4J"/>
+                                                        <constraint firstItem="X2b-p4-W2x" firstAttribute="leading" secondItem="hml-T8-f8N" secondAttribute="leading" constant="8" id="RxS-ul-7eL"/>
+                                                        <constraint firstItem="4aw-CL-wSr" firstAttribute="centerY" secondItem="hml-T8-f8N" secondAttribute="centerY" id="hFb-t4-785"/>
+                                                        <constraint firstItem="sED-wU-G1v" firstAttribute="top" secondItem="X2b-p4-W2x" secondAttribute="bottom" constant="1" id="l9C-KT-iFN"/>
                                                         <constraint firstAttribute="height" constant="59" id="ml5-bm-4Wd"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ih6-nx-nvd">
                                                     <rect key="frame" x="120" y="60" width="200" height="59"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="天天特价" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v24-Td-PfC">
-                                                            <rect key="frame" x="8" y="8" width="73" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天天特价" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v24-Td-PfC">
+                                                            <rect key="frame" x="8" y="7" width="68" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.92941176469999998" green="0.50588235290000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="限时抢购抢货季" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhk-Hk-1xS">
-                                                            <rect key="frame" x="8" y="30" width="88" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="限时抢购抢货季" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhk-Hk-1xS">
+                                                            <rect key="frame" x="8" y="32" width="84" height="15"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_tiantiantejia" translatesAutoresizingMaskIntoConstraints="NO" id="aYx-bp-fPf">
-                                                            <rect key="frame" x="128" y="0.0" width="58" height="58"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_tiantiantejia" translatesAutoresizingMaskIntoConstraints="NO" id="aYx-bp-fPf">
+                                                            <rect key="frame" x="113" y="2" width="55" height="55"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="55" id="D36-gk-Qpb"/>
+                                                                <constraint firstAttribute="width" constant="55" id="EHU-ni-0fr"/>
+                                                            </constraints>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="v24-Td-PfC" firstAttribute="leading" secondItem="Ih6-nx-nvd" secondAttribute="leading" constant="8" id="HQ8-qy-T6y"/>
+                                                        <constraint firstItem="aYx-bp-fPf" firstAttribute="centerY" secondItem="Ih6-nx-nvd" secondAttribute="centerY" id="UGN-qu-wjf"/>
+                                                        <constraint firstItem="mhk-Hk-1xS" firstAttribute="leading" secondItem="Ih6-nx-nvd" secondAttribute="leading" constant="8" id="UIS-hy-q9c"/>
+                                                        <constraint firstAttribute="trailing" secondItem="aYx-bp-fPf" secondAttribute="trailing" multiplier="8:7" constant="8" id="YPn-fn-YWl"/>
+                                                        <constraint firstItem="mhk-Hk-1xS" firstAttribute="top" secondItem="v24-Td-PfC" secondAttribute="bottom" constant="4" id="bCc-Q6-G0b"/>
+                                                        <constraint firstItem="v24-Td-PfC" firstAttribute="top" secondItem="Ih6-nx-nvd" secondAttribute="top" constant="7" id="yVG-pa-Hrt"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -127,68 +160,102 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ft6-NA-ZcZ">
                                                     <rect key="frame" x="201" y="0.0" width="119" height="119"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="品质生活" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkM-FY-s9D">
-                                                            <rect key="frame" x="23" y="14" width="73" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="品质生活" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkM-FY-s9D">
+                                                            <rect key="frame" x="26" y="8" width="68" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.97254901959999995" green="0.24313725489999999" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="限时抢购抢货季" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4p-uo-cbI">
-                                                            <rect key="frame" x="15" y="35" width="88" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="限时抢购抢货季" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4p-uo-cbI">
+                                                            <rect key="frame" x="17" y="30" width="84" height="15"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_pinzhishenghuo" translatesAutoresizingMaskIntoConstraints="NO" id="Cfi-oh-vbK">
-                                                            <rect key="frame" x="30" y="53" width="58" height="58"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_pinzhishenghuo" translatesAutoresizingMaskIntoConstraints="NO" id="Cfi-oh-vbK">
+                                                            <rect key="frame" x="30" y="47" width="58" height="58"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="58" id="gEM-j9-HJQ"/>
+                                                                <constraint firstAttribute="width" constant="58" id="ggK-2X-hYP"/>
+                                                            </constraints>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
+                                                        <constraint firstItem="Cfi-oh-vbK" firstAttribute="top" secondItem="R4p-uo-cbI" secondAttribute="bottom" constant="2" id="5Gr-qg-Dv4"/>
+                                                        <constraint firstItem="xkM-FY-s9D" firstAttribute="top" secondItem="Ft6-NA-ZcZ" secondAttribute="top" constant="8" id="6IK-eM-jzf"/>
+                                                        <constraint firstItem="Cfi-oh-vbK" firstAttribute="centerX" secondItem="Ft6-NA-ZcZ" secondAttribute="centerX" id="HvZ-U7-y3O"/>
+                                                        <constraint firstItem="xkM-FY-s9D" firstAttribute="centerX" secondItem="Ft6-NA-ZcZ" secondAttribute="centerX" id="Nmz-m9-gp5"/>
                                                         <constraint firstAttribute="width" constant="119" id="PKb-Vx-O96"/>
+                                                        <constraint firstItem="R4p-uo-cbI" firstAttribute="centerX" secondItem="Ft6-NA-ZcZ" secondAttribute="centerX" id="bJm-J7-eNY"/>
+                                                        <constraint firstItem="R4p-uo-cbI" firstAttribute="top" secondItem="xkM-FY-s9D" secondAttribute="bottom" constant="1" id="dTN-8z-BlL"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d43-XA-lzc">
                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="59"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="新品上市" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxL-Bc-yaK">
-                                                            <rect key="frame" x="8" y="8" width="73" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新品上市" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxL-Bc-yaK">
+                                                            <rect key="frame" x="8" y="8" width="68" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.074509803920000006" green="0.60784313729999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="限时抢购抢货季" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCP-5f-NMc">
-                                                            <rect key="frame" x="8" y="30" width="88" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="限时抢购抢货季" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCP-5f-NMc">
+                                                            <rect key="frame" x="8" y="30" width="84" height="15"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_xinpinshangshi" translatesAutoresizingMaskIntoConstraints="NO" id="J4K-6w-bPQ">
-                                                            <rect key="frame" x="128" y="0.0" width="58" height="58"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_xinpinshangshi" translatesAutoresizingMaskIntoConstraints="NO" id="J4K-6w-bPQ">
+                                                            <rect key="frame" x="113" y="2" width="55" height="55"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="55" id="TWh-Ok-9Zs"/>
+                                                                <constraint firstAttribute="height" constant="55" id="g4U-Ma-PL5"/>
+                                                            </constraints>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="gxL-Bc-yaK" firstAttribute="top" secondItem="d43-XA-lzc" secondAttribute="top" constant="8" id="6N8-6O-UoK"/>
+                                                        <constraint firstItem="aCP-5f-NMc" firstAttribute="leading" secondItem="d43-XA-lzc" secondAttribute="leading" constant="8" id="GmO-zt-Pia"/>
+                                                        <constraint firstItem="J4K-6w-bPQ" firstAttribute="centerY" secondItem="d43-XA-lzc" secondAttribute="centerY" id="HGr-ob-SHR"/>
+                                                        <constraint firstAttribute="trailing" secondItem="J4K-6w-bPQ" secondAttribute="trailing" multiplier="8:7" constant="8" id="kQ1-Db-v2f"/>
+                                                        <constraint firstItem="aCP-5f-NMc" firstAttribute="top" secondItem="gxL-Bc-yaK" secondAttribute="bottom" constant="1" id="mUF-cF-X32"/>
+                                                        <constraint firstItem="gxL-Bc-yaK" firstAttribute="leading" secondItem="d43-XA-lzc" secondAttribute="leading" constant="8" id="qNm-Uy-Q5K"/>
+                                                    </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Acl-tF-wbg">
                                                     <rect key="frame" x="0.0" y="60" width="200" height="59"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0元购" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFb-XZ-mag">
-                                                            <rect key="frame" x="8" y="8" width="73" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0元购" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFb-XZ-mag">
+                                                            <rect key="frame" x="8" y="8" width="45" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.50588235290000005" green="0.20000000000000001" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="限时抢购抢货季" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpe-Xk-aLg">
-                                                            <rect key="frame" x="8" y="30" width="88" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="限时抢购抢货季" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpe-Xk-aLg">
+                                                            <rect key="frame" x="8" y="31" width="84" height="15"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_0yuangou" translatesAutoresizingMaskIntoConstraints="NO" id="bkq-Ur-wWm">
-                                                            <rect key="frame" x="128" y="1" width="58" height="58"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_0yuangou" translatesAutoresizingMaskIntoConstraints="NO" id="bkq-Ur-wWm">
+                                                            <rect key="frame" x="113" y="2" width="55" height="55"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="55" id="CtV-M4-KiK"/>
+                                                                <constraint firstAttribute="width" constant="55" id="mAA-8z-Cr7"/>
+                                                            </constraints>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="bkq-Ur-wWm" secondAttribute="trailing" multiplier="8:7" constant="8" id="MLx-P2-6bD"/>
+                                                        <constraint firstItem="kpe-Xk-aLg" firstAttribute="leading" secondItem="Acl-tF-wbg" secondAttribute="leading" constant="8" id="Mbr-KZ-aq2"/>
+                                                        <constraint firstItem="FFb-XZ-mag" firstAttribute="leading" secondItem="Acl-tF-wbg" secondAttribute="leading" constant="8" id="XYY-cJ-3o2"/>
+                                                        <constraint firstItem="kpe-Xk-aLg" firstAttribute="top" secondItem="FFb-XZ-mag" secondAttribute="bottom" constant="2" id="e9D-Iu-DNj"/>
+                                                        <constraint firstItem="FFb-XZ-mag" firstAttribute="top" secondItem="Acl-tF-wbg" secondAttribute="top" constant="8" id="i5k-fd-eJy"/>
+                                                        <constraint firstItem="bkq-Ur-wWm" firstAttribute="centerY" secondItem="Acl-tF-wbg" secondAttribute="centerY" id="pDx-dF-8zm"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>

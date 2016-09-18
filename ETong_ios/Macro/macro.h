@@ -21,7 +21,6 @@ extern "C" {
 #define kURL_HEAD @"http://mwn.xiaocool.net/index.php?g=apps&m=index"
 #define kIMAGE_URL_HEAD @"http://mwn.xiaocool.net/uploads/microblog/"
 #define kUPLOAD_URL_HEAD @"http://mwn.xiaocool.net/index.php?g=apps&m=index&a=uploadavatar"
-    
 //登录信息
 #define USER_NAME @"username"
 #define USER_PWD @"userpassword"

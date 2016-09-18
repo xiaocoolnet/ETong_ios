@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 protocol ETGoodsLoopControllerDelegate:NSObjectProtocol {
     func selectImages(imageNames:Array<String>)
 }
@@ -45,7 +46,6 @@ class ETGoodsLoopController: UIViewController,UITableViewDelegate,UITableViewDat
         
     }
     func takePhoto(){
-        
         let sourceType = UIImagePickerControllerSourceType.Camera
         if UIImagePickerController.isSourceTypeAvailable(sourceType) {
             let picker = UIImagePickerController()
@@ -107,7 +107,6 @@ class ETGoodsLoopController: UIViewController,UITableViewDelegate,UITableViewDat
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! ETGoodsLoopCell
         
         cell.selectionStyle = .None
@@ -116,7 +115,7 @@ class ETGoodsLoopController: UIViewController,UITableViewDelegate,UITableViewDat
         if indexPath.row == 1 {
             cell.imageAlert.text = "请设置第二张轮播图（非必填）"
         }
-            
+        
         else if indexPath.row == 2 {
             cell.imageAlert.text = "请设置第三张轮播图（非必填）"
         }

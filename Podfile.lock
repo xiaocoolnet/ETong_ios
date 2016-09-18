@@ -16,13 +16,9 @@ PODS:
     - AFNetworking/NSURLSession
   - MJExtension (3.0.13)
   - MJRefresh (3.1.10)
-  - React (0.11.0):
-    - React/Core (= 0.11.0)
-  - React/Core (0.11.0)
-  - React/RCTText (0.11.0):
-    - React/Core
-  - React/RCTWebSocket (0.11.0):
-    - React/Core
+  - ReactiveCocoa (4.2.2):
+    - Result (~> 2.0)
+  - Result (2.1.3)
   - SDCycleScrollView (1.65):
     - SDWebImage (~> 3.7)
   - SDWebImage (3.7.6):
@@ -32,34 +28,38 @@ PODS:
   - TPKeyboardAvoiding (1.3)
   - UMengSocialCOM (5.2.1)
   - YPTabBarController (2.0.6)
+  - YYCategories (1.0.3):
+    - YYCategories/no-arc (= 1.0.3)
+  - YYCategories/no-arc (1.0.3)
   - ZBarSDK (1.3.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - MJExtension (~> 3.0.12)
   - MJRefresh (~> 3.1.0)
-  - React
-  - React/RCTText
-  - React/RCTWebSocket
+  - ReactiveCocoa (~> 4.2.1)
   - SDCycleScrollView (~> 1.64)
   - SDWebImage (~> 3.7.6)
   - SVProgressHUD (~> 1.0)
   - TPKeyboardAvoiding (~> 1.3)
   - UMengSocialCOM (~> 5.2.1)
   - YPTabBarController (~> 2.0.6)
+  - YYCategories (~> 1.0.3)
   - ZBarSDK (~> 1.3.1)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: bb72948c985914b0b5cecac573a2c69a8915fb02
-  React: ab1a2e21deb34965c38328d5ec40cc7d12c6050a
+  ReactiveCocoa: 72263e7ac0770c274617ccd345e01049d0ca38ae
+  Result: 18e1a7597fbcca5923c565b40a25a98afafdee02
   SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
   TPKeyboardAvoiding: a5138f318c06fb3e151f886e18ce4a72695d9cbe
   UMengSocialCOM: 074c135ce349aa4c8848d3fb8458757bcb6ffb67
   YPTabBarController: 8e09fce391e9c00d89e27043bad04cb4373b8495
+  YYCategories: 0fd4d9eb0994d8d0e355beb4081c8f7202a82b7b
   ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
 
 COCOAPODS: 0.39.0

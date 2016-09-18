@@ -8,7 +8,6 @@
 
 #import "ETRootController.h"
 #import "PersonViewController.h"
-#import "ShopCartController.h"
 #import "EZoneViewController.h"
 #import "LocationViewController.h"
 #import "HomePageController.h"
@@ -16,7 +15,7 @@
 @interface ETRootController ()
 
 @property(nonatomic,strong) PersonViewController *person;
-@property(nonatomic,strong) ShopCartController *shopCart;
+@property(nonatomic,strong) JSCartViewController *shopCart;
 @property(nonatomic,strong) EZoneViewController *eZone;
 @property(nonatomic,strong) LocationViewController *location;
 @property(nonatomic,strong) HomePageController *home;
@@ -33,9 +32,9 @@
     return _person;
 }
 
--(ShopCartController *)shopCart{
+-(JSCartViewController *)shopCart{
     if (!_shopCart) {
-        _shopCart = [[ShopCartController alloc]initWithNibName:@"ShopCartController" bundle:nil];
+        _shopCart = [[JSCartViewController alloc]init];
         _shopCart.title = @"购物车";
     }
     return _shopCart;

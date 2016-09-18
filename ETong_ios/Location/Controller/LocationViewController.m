@@ -12,7 +12,6 @@
 
 @interface LocationViewController ()<SDCycleScrollViewDelegate>
 
-
 @property (weak, nonatomic) IBOutlet UIView *headView;
 
 @end

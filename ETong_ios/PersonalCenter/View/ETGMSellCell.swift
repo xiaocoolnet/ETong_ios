@@ -15,7 +15,6 @@ class ETGMSellCell: UITableViewCell {
     @IBOutlet weak var offSaleBtn:UIButton!
     @IBOutlet weak var shareBtn:UIButton!
     @IBOutlet weak var deleteBtn:UIButton!
-    
     @IBOutlet weak var goodsName:UILabel!
     @IBOutlet weak var hasSaleNum:UILabel!
     @IBOutlet weak var goodsPrice:UILabel!
@@ -23,10 +22,7 @@ class ETGMSellCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        editGoods.tag = self.tag
-        offSaleBtn.tag = self.tag
-        shareBtn.tag = self.tag
-        deleteBtn.tag = self.tag
+        
     }
     
     func showForModel(model:ETGoodsDataModel){
@@ -36,8 +32,11 @@ class ETGMSellCell: UITableViewCell {
         goodsPrice.text = model.price
     }
     
-    override func layoutSubviews() {
-        
+    func setViewsTag(viewTag:Int){
+        editGoods.tag = viewTag
+        offSaleBtn.tag = viewTag
+        shareBtn.tag = viewTag
+        deleteBtn.tag = viewTag
     }
     
     override func setSelected(selected: Bool, animated: Bool) {

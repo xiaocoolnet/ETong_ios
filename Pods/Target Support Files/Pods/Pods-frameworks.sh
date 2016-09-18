@@ -82,3 +82,32 @@ strip_invalid_archs() {
   fi
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods/AFNetworking.framework"
+  install_framework "Pods/MJExtension.framework"
+  install_framework "Pods/MJRefresh.framework"
+  install_framework "Pods/ReactiveCocoa.framework"
+  install_framework "Pods/Result.framework"
+  install_framework "Pods/SDCycleScrollView.framework"
+  install_framework "Pods/SDWebImage.framework"
+  install_framework "Pods/SVProgressHUD.framework"
+  install_framework "Pods/TPKeyboardAvoiding.framework"
+  install_framework "Pods/YPTabBarController.framework"
+  install_framework "Pods/YYCategories.framework"
+  install_framework "Pods/ZBarSDK.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods/AFNetworking.framework"
+  install_framework "Pods/MJExtension.framework"
+  install_framework "Pods/MJRefresh.framework"
+  install_framework "Pods/ReactiveCocoa.framework"
+  install_framework "Pods/Result.framework"
+  install_framework "Pods/SDCycleScrollView.framework"
+  install_framework "Pods/SDWebImage.framework"
+  install_framework "Pods/SVProgressHUD.framework"
+  install_framework "Pods/TPKeyboardAvoiding.framework"
+  install_framework "Pods/YPTabBarController.framework"
+  install_framework "Pods/YYCategories.framework"
+  install_framework "Pods/ZBarSDK.framework"
+fi

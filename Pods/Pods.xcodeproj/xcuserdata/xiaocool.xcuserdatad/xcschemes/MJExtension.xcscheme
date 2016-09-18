@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'A2FA085FD268846E70467564'
+               BlueprintIdentifier = '8E40EEC57FCA013A644DC5B7'
                BlueprintName = 'MJExtension'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libMJExtension.a'>
+               BuildableName = 'MJExtension.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

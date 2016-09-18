@@ -11,6 +11,7 @@
 #import "ETZBarScanController.h"
 
 @interface HomePageController ()<SDCycleScrollViewDelegate,UIScrollViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+
 @property (weak, nonatomic) IBOutlet UIView *headView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewHeightLayout;
 @property (weak, nonatomic) IBOutlet UICollectionView *myColView;
