@@ -91,7 +91,8 @@
     goodsNameLbl.font = [UIFont systemFontOfSize:15];
     CGFloat goodsNameLblX = CGRectGetMaxX(iconBackView.frame) + 10;
     CGFloat goodsNameLblY = XBtn.frame.origin.y;
-    CGSize size = [goodsNameLbl.text sizeWithFont:goodsNameLbl.font];
+    CGSize size = [goodsNameLbl.text sizeWithAttributes:@{NSFontAttributeName:goodsNameLbl.font}];
+    
     goodsNameLbl.frame = (CGRect){goodsNameLblX, goodsNameLblY, size};
     [contentView addSubview:goodsNameLbl];
     self.goodsNameLbl = goodsNameLbl;

@@ -10,7 +10,6 @@
 #import "ETDailySpacialCell.h"
 
 @interface ETDailySpecialController ()<UITableViewDelegate,UITableViewDataSource>
-
 @property (nonatomic, weak) IBOutlet UITableView *goodstableView;
 @property (nonatomic, weak) IBOutlet UIImageView *imageView;
 @end
