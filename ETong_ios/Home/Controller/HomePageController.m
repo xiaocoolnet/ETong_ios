@@ -10,12 +10,15 @@
 #import "SDCycleScrollView.h"
 #import "ETZBarScanController.h"
 #import "ETLimitTimeController.h"
+#import "ETDailySpecialController.h"
+#import "ETSpacialSaleController.h"
 
 @interface HomePageController ()<SDCycleScrollViewDelegate,UIScrollViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UIView *headView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewHeightLayout;
 @property (weak, nonatomic) IBOutlet UICollectionView *myColView;
+@property (weak, nonatomic) IBOutlet UIScrollView *backScroll;
 @end
 
 @implementation HomePageController
@@ -43,6 +46,9 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+    if (_backScroll.contentOffset.y == 0) {
+        [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:0];
+    }
     if (_myColView.contentSize.height > _myColView.frame.size.height) {
         CGFloat changeHeight = _myColView.contentSize.height-_myColView.frame.size.height;
         _viewHeightLayout.constant +=changeHeight;
@@ -101,8 +107,12 @@
     [self.navigationController pushViewController:controller animated:true];
 }
 - (IBAction)dailySelectionAction:(id)sender {
+    ETDailySpecialController * cotroller = [[ETDailySpecialController alloc]initWithNibName:@"ETDailySpecialController" bundle:nil];
+    [self.navigationController pushViewController:cotroller animated:true];
 }
 - (IBAction)dailySpecialSaleAction:(id)sender {
+    ETSpacialSaleController *controller = [[ETSpacialSaleController alloc]initWithNibName:@"ETSpacialSaleController" bundle:nil];
+    [self.navigationController pushViewController:controller animated:true];
 }
 - (IBAction)qualityLifeAction:(id)sender {
 }
@@ -118,11 +128,13 @@
 {
     NSLog(@"---点击了第%ld张图片", (long)index);
 }
+
 #pragma mark - collectionViewDelegate
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
     return 2;
 }
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return 4;

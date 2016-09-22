@@ -7,16 +7,39 @@
 //
 
 #import "ETDailySpecialController.h"
+#import "ETDailySpacialCell.h"
 
-@interface ETDailySpecialController ()
+@interface ETDailySpecialController ()<UITableViewDelegate,UITableViewDataSource>
 
+@property (nonatomic, weak) IBOutlet UITableView *goodstableView;
+@property (nonatomic, weak) IBOutlet UIImageView *imageView;
 @end
 
 @implementation ETDailySpecialController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.title = @"每日精选";
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:1];
+    [self.goodstableView registerNib:[UINib nibWithNibName:@"ETDailySpacialCell" bundle:nil] forCellReuseIdentifier:@"cell"];
+    self.goodstableView.tableFooterView = [[UIView alloc]init];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;{
+    return 5;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 96;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;{
+    
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    
+    return cell;
 }
 
 @end

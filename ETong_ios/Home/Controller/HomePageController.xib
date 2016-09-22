@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomePageController">
             <connections>
+                <outlet property="backScroll" destination="zFm-s6-GS0" id="HiC-QH-nRO"/>
                 <outlet property="headView" destination="yqU-3m-5tI" id="c1f-wD-zJS"/>
                 <outlet property="myColView" destination="21x-Hy-YdR" id="AC2-R0-I7F"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

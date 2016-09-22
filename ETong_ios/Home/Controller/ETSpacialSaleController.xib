@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ETSpacialSaleController">
+            <connections>
+                <outlet property="boundImage" destination="pID-2k-NjL" id="x8n-yL-szl"/>
+                <outlet property="goodsCollection" destination="Ltf-5g-Kmb" id="z0c-uj-rWb"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_lunbotu" translatesAutoresizingMaskIntoConstraints="NO" id="pID-2k-NjL">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="110" id="oSb-1k-cfQ"/>
+                    </constraints>
+                </imageView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ltf-5g-Kmb">
+                    <rect key="frame" x="0.0" y="110" width="320" height="458"/>
+                    <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3aL-8j-JUc">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="op5-tS-vqH"/>
+                        <outlet property="delegate" destination="-1" id="1WM-EP-wCb"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="pID-2k-NjL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="17T-Pq-n1U"/>
+                <constraint firstItem="Ltf-5g-Kmb" firstAttribute="top" secondItem="pID-2k-NjL" secondAttribute="bottom" id="4DT-Ux-24f"/>
+                <constraint firstAttribute="bottom" secondItem="Ltf-5g-Kmb" secondAttribute="bottom" id="FAe-Y5-MZS"/>
+                <constraint firstItem="pID-2k-NjL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="UUm-fm-lYm"/>
+                <constraint firstAttribute="trailing" secondItem="pID-2k-NjL" secondAttribute="trailing" id="auZ-h8-juh"/>
+                <constraint firstAttribute="trailing" secondItem="Ltf-5g-Kmb" secondAttribute="trailing" id="qgw-cI-RYM"/>
+                <constraint firstItem="Ltf-5g-Kmb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rRV-yP-FHn"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_lunbotu" width="375" height="170"/>
+    </resources>
+</document>

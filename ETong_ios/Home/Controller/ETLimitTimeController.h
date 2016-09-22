@@ -8,6 +8,5 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ETLimitTimeController : UIViewController
-
+@interface ETLimitTimeController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 @end

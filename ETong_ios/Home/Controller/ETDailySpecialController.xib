@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ETDailySpecialController">
             <connections>
+                <outlet property="goodstableView" destination="BVu-fT-YC2" id="iaG-3g-31s"/>
+                <outlet property="imageView" destination="eiy-O0-yrL" id="kKU-so-dBl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,9 +16,37 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_lunbotu" translatesAutoresizingMaskIntoConstraints="NO" id="eiy-O0-yrL">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="110" id="l8P-6X-jpg"/>
+                    </constraints>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BVu-fT-YC2" userLabel="goodstable View">
+                    <rect key="frame" x="0.0" y="110" width="320" height="458"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="eG5-sF-LMK"/>
+                        <outlet property="delegate" destination="-1" id="JOi-y6-k5c"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="eiy-O0-yrL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="2CS-Ik-dtD"/>
+                <constraint firstItem="BVu-fT-YC2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="54g-8g-6hp"/>
+                <constraint firstItem="eiy-O0-yrL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9y2-Gd-Nbc"/>
+                <constraint firstItem="BVu-fT-YC2" firstAttribute="top" secondItem="eiy-O0-yrL" secondAttribute="bottom" id="JoN-Yh-uvi"/>
+                <constraint firstAttribute="trailing" secondItem="eiy-O0-yrL" secondAttribute="trailing" id="ac0-xa-8j2"/>
+                <constraint firstAttribute="bottom" secondItem="BVu-fT-YC2" secondAttribute="bottom" id="isU-7O-v2j"/>
+                <constraint firstAttribute="trailing" secondItem="BVu-fT-YC2" secondAttribute="trailing" id="kxV-QW-J3H"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
+    <resources>
+        <image name="ic_lunbotu" width="375" height="170"/>
+    </resources>
 </document>
