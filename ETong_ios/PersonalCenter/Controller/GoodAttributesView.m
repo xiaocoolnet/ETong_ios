@@ -51,7 +51,7 @@
  */
 - (void)setupBasicView {
     // 添加手势，点击背景视图消失
-    /** 使用的时候注意名字不能用错，害我定格了几天才发现。FK
+    /** 使用的时候注意名字不能用错，害我定格了几天才发现。FK(哈哈，菜B)
      UIGestureRecognizer
      UITapGestureRecognizer // 点击手势
      UISwipeGestureRecognizer // 轻扫手势

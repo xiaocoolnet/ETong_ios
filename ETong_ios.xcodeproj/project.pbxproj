@@ -93,6 +93,8 @@
 		F6C09BED1D5081D4001C2987 /* ETCUserInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6C09BEB1D5081D4001C2987 /* ETCUserInfoController.xib */; };
 		F6C09BF01D509A73001C2987 /* ETSingleInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C09BEE1D509A73001C2987 /* ETSingleInfoController.swift */; };
 		F6C09BF11D509A73001C2987 /* ETSingleInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6C09BEF1D509A73001C2987 /* ETSingleInfoController.xib */; };
+		F6C0EA081D913C4D002654DE /* ETDailySpecialController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C0EA061D913C4D002654DE /* ETDailySpecialController.m */; };
+		F6C0EA091D913C4D002654DE /* ETDailySpecialController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6C0EA071D913C4D002654DE /* ETDailySpecialController.xib */; };
 		F6C94C491D58AA4B00280E86 /* ETGoodsLoopController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C94C471D58AA4B00280E86 /* ETGoodsLoopController.swift */; };
 		F6C94C4A1D58AA4B00280E86 /* ETGoodsLoopController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6C94C481D58AA4B00280E86 /* ETGoodsLoopController.xib */; };
 		F6C94C4D1D58AC1E00280E86 /* ETGoodsLoopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C94C4B1D58AC1E00280E86 /* ETGoodsLoopCell.swift */; };
@@ -113,6 +115,10 @@
 		F6EAB5371D84FCA2008FF8FA /* JSCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EAB52A1D84FCA2008FF8FA /* JSCartViewController.m */; };
 		F6EAB5381D84FCA2008FF8FA /* JSCartUIService.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EAB52D1D84FCA2008FF8FA /* JSCartUIService.m */; };
 		F6EAB5391D84FCA2008FF8FA /* JSCartViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EAB52F1D84FCA2008FF8FA /* JSCartViewModel.m */; };
+		F6F840961D8FB8D2007163A2 /* ETLimitTimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F840941D8FB8D2007163A2 /* ETLimitTimeController.m */; };
+		F6F840971D8FB8D2007163A2 /* ETLimitTimeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6F840951D8FB8D2007163A2 /* ETLimitTimeController.xib */; };
+		F6F840A01D8FC6E4007163A2 /* ETLimitSaleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F8409E1D8FC6E4007163A2 /* ETLimitSaleCell.m */; };
+		F6F840A11D8FC6E4007163A2 /* ETLimitSaleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6F8409F1D8FC6E4007163A2 /* ETLimitSaleCell.xib */; };
 		F6FED1CD1D44A0F700C5C776 /* ETLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FED1CB1D44A0F700C5C776 /* ETLogInViewController.m */; };
 		F6FED1CE1D44A0F700C5C776 /* ETLogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6FED1CC1D44A0F700C5C776 /* ETLogInViewController.xib */; };
 		F6FED1D21D44BDEB00C5C776 /* ETFgetPwdController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FED1D01D44BDEB00C5C776 /* ETFgetPwdController.m */; };
@@ -241,6 +247,9 @@
 		F6C09BEB1D5081D4001C2987 /* ETCUserInfoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETCUserInfoController.xib; sourceTree = "<group>"; };
 		F6C09BEE1D509A73001C2987 /* ETSingleInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETSingleInfoController.swift; sourceTree = "<group>"; };
 		F6C09BEF1D509A73001C2987 /* ETSingleInfoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETSingleInfoController.xib; sourceTree = "<group>"; };
+		F6C0EA051D913C4D002654DE /* ETDailySpecialController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETDailySpecialController.h; sourceTree = "<group>"; };
+		F6C0EA061D913C4D002654DE /* ETDailySpecialController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETDailySpecialController.m; sourceTree = "<group>"; };
+		F6C0EA071D913C4D002654DE /* ETDailySpecialController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETDailySpecialController.xib; sourceTree = "<group>"; };
 		F6C94C471D58AA4B00280E86 /* ETGoodsLoopController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETGoodsLoopController.swift; sourceTree = "<group>"; };
 		F6C94C481D58AA4B00280E86 /* ETGoodsLoopController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETGoodsLoopController.xib; sourceTree = "<group>"; };
 		F6C94C4B1D58AC1E00280E86 /* ETGoodsLoopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETGoodsLoopCell.swift; sourceTree = "<group>"; };
@@ -274,6 +283,12 @@
 		F6EAB52D1D84FCA2008FF8FA /* JSCartUIService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSCartUIService.m; sourceTree = "<group>"; };
 		F6EAB52E1D84FCA2008FF8FA /* JSCartViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSCartViewModel.h; sourceTree = "<group>"; };
 		F6EAB52F1D84FCA2008FF8FA /* JSCartViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSCartViewModel.m; sourceTree = "<group>"; };
+		F6F840931D8FB8D2007163A2 /* ETLimitTimeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETLimitTimeController.h; sourceTree = "<group>"; };
+		F6F840941D8FB8D2007163A2 /* ETLimitTimeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETLimitTimeController.m; sourceTree = "<group>"; };
+		F6F840951D8FB8D2007163A2 /* ETLimitTimeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETLimitTimeController.xib; sourceTree = "<group>"; };
+		F6F8409D1D8FC6E4007163A2 /* ETLimitSaleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETLimitSaleCell.h; sourceTree = "<group>"; };
+		F6F8409E1D8FC6E4007163A2 /* ETLimitSaleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETLimitSaleCell.m; sourceTree = "<group>"; };
+		F6F8409F1D8FC6E4007163A2 /* ETLimitSaleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETLimitSaleCell.xib; sourceTree = "<group>"; };
 		F6FED1CA1D44A0F700C5C776 /* ETLogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETLogInViewController.h; sourceTree = "<group>"; };
 		F6FED1CB1D44A0F700C5C776 /* ETLogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETLogInViewController.m; sourceTree = "<group>"; };
 		F6FED1CC1D44A0F700C5C776 /* ETLogInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETLogInViewController.xib; sourceTree = "<group>"; };
@@ -450,6 +465,7 @@
 		F65BF3141D3F4F070003DB35 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F6F840921D8FB817007163A2 /* UpPartController */,
 				F65BF3271D3F4FAB0003DB35 /* HomePageController.h */,
 				F65BF3281D3F4FAB0003DB35 /* HomePageController.m */,
 				F65BF3291D3F4FAB0003DB35 /* HomePageController.xib */,
@@ -475,6 +491,9 @@
 				F62CF4771D4320720070BA2E /* ETGuessYLikeCell.h */,
 				F62CF4781D4320720070BA2E /* ETGuessYLikeCell.m */,
 				F62CF4791D4320720070BA2E /* ETGuessYLikeCell.xib */,
+				F6F8409D1D8FC6E4007163A2 /* ETLimitSaleCell.h */,
+				F6F8409E1D8FC6E4007163A2 /* ETLimitSaleCell.m */,
+				F6F8409F1D8FC6E4007163A2 /* ETLimitSaleCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -796,6 +815,19 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		F6F840921D8FB817007163A2 /* UpPartController */ = {
+			isa = PBXGroup;
+			children = (
+				F6F840931D8FB8D2007163A2 /* ETLimitTimeController.h */,
+				F6F840941D8FB8D2007163A2 /* ETLimitTimeController.m */,
+				F6F840951D8FB8D2007163A2 /* ETLimitTimeController.xib */,
+				F6C0EA051D913C4D002654DE /* ETDailySpecialController.h */,
+				F6C0EA061D913C4D002654DE /* ETDailySpecialController.m */,
+				F6C0EA071D913C4D002654DE /* ETDailySpecialController.xib */,
+			);
+			name = UpPartController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -863,6 +895,7 @@
 				F65149DF1D4F356100ECFFFD /* ETUploadGoodsController.xib in Resources */,
 				F65BF3051D3F1CA80003DB35 /* Assets.xcassets in Resources */,
 				F6286FEE1D4A19130052ADC3 /* ETShopAuthController.xib in Resources */,
+				F6C0EA091D913C4D002654DE /* ETDailySpecialController.xib in Resources */,
 				F6C94C4E1D58AC1E00280E86 /* ETGoodsLoopCell.xib in Resources */,
 				F6508EF91D66FD440019BFFB /* ETGoodsSelectView.xib in Resources */,
 				F65149F01D4F56A000ECFFFD /* ETAllOrderController.xib in Resources */,
@@ -872,6 +905,8 @@
 				F6032EFD1D654A7000A8407F /* ETGoodsDetailController.xib in Resources */,
 				F6FED1D81D44BE4400C5C776 /* ETRigestController.xib in Resources */,
 				F62CF4761D431C600070BA2E /* ETDailyMarketCell.xib in Resources */,
+				F6F840971D8FB8D2007163A2 /* ETLimitTimeController.xib in Resources */,
+				F6F840A11D8FC6E4007163A2 /* ETLimitSaleCell.xib in Resources */,
 				F65149F81D4F5BD700ECFFFD /* ETWaitDeliverController.xib in Resources */,
 				F6C09BED1D5081D4001C2987 /* ETCUserInfoController.xib in Resources */,
 				F62CF47B1D4320720070BA2E /* ETGuessYLikeCell.xib in Resources */,
@@ -954,6 +989,7 @@
 			files = (
 				F65BF3451D3F58C70003DB35 /* macro.m in Sources */,
 				F65BF2FD1D3F1CA80003DB35 /* AppDelegate.m in Sources */,
+				F6C0EA081D913C4D002654DE /* ETDailySpecialController.m in Sources */,
 				F65149FF1D4F5C7200ECFFFD /* ETCompleteController.swift in Sources */,
 				F6B65F891D48BEBE0069312B /* ETZBarScanController.m in Sources */,
 				F6CF10B71D4B83C400555C4A /* ETShopHelper.m in Sources */,
@@ -973,6 +1009,7 @@
 				F65BF32A1D3F4FAB0003DB35 /* HomePageController.m in Sources */,
 				F6545D811D5360E20007C42C /* ETShopModel.m in Sources */,
 				F65149F71D4F5BD700ECFFFD /* ETWaitDeliverController.swift in Sources */,
+				F6F840961D8FB8D2007163A2 /* ETLimitTimeController.m in Sources */,
 				F6FED1D71D44BE4400C5C776 /* ETRigestController.m in Sources */,
 				F64788AA1D41BCDD00294225 /* ETSidelineZoneController.m in Sources */,
 				F635C5E81D51C3B300CBBAD1 /* ETAllOrderCell.swift in Sources */,
@@ -981,6 +1018,7 @@
 				F632721F1D4DE90100A3C0FF /* ETShopManagerController.swift in Sources */,
 				F6286FED1D4A19130052ADC3 /* ETShopAuthController.m in Sources */,
 				F6EAB5351D84FCA2008FF8FA /* JSCartHeaderView.m in Sources */,
+				F6F840A01D8FC6E4007163A2 /* ETLimitSaleCell.m in Sources */,
 				F6EAB5391D84FCA2008FF8FA /* JSCartViewModel.m in Sources */,
 				F6CEAF701D58763300518835 /* ETGoodsDataModel.m in Sources */,
 				F65149E21D4F363D00ECFFFD /* ETGoodsManagerController.swift in Sources */,

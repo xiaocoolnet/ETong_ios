@@ -24,10 +24,11 @@ class ETUploadGoodsController: UIViewController,UIScrollViewDelegate,ETGoodsLoop
     var goodsModel:ETGoodsDataModel?
     var helper:ETShopHelper = ETShopHelper()
     var piclist:String?
+    var imageNamesArr:Array<String>?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "上传宝贝"
-        
         goodsClass.layer.borderColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1).CGColor
         goodsClass.layer.borderWidth = 1
         goodsClass.layer.cornerRadius = 4
@@ -40,6 +41,9 @@ class ETUploadGoodsController: UIViewController,UIScrollViewDelegate,ETGoodsLoop
     @IBAction func goodsLoopImage(sender: AnyObject){
         let vc = ETGoodsLoopController(nibName: "ETGoodsLoopController", bundle: nil)
         vc.delegate = self
+        if imageNamesArr != nil {
+            vc.imageNames = imageNamesArr!
+        }
         navigationController?.pushViewController(vc, animated: true)
     }
     //商品分类
@@ -48,17 +52,19 @@ class ETUploadGoodsController: UIViewController,UIScrollViewDelegate,ETGoodsLoop
     }
     //上传
     @IBAction func uploadAction(sender: AnyObject){
-        goodsModel = ETGoodsDataModel.init(showid: "1", piclist: piclist, goodsname: goodsTitle.text, type: "1", oprice: originalPrice.text, price: price.text, description: goodsDetail.text, unit: goodsSpec.text, address: place.text, longitude: "1", latitude: "1", freight: freight.text, band: goodsBrand.text)
+        goodsModel = ETGoodsDataModel.init(showid: ETUserInfo.sharedETUserInfo().shopid, piclist: piclist, goodsname: goodsTitle.text, type: "1", oprice: originalPrice.text, price: price.text, description: goodsDetail.text, unit: goodsSpec.text, address: place.text, longitude: "1", latitude: "1", freight: freight.text, band: goodsBrand.text)
         
         helper.uploadGoodsWithGoodsModel(goodsModel, success: {[unowned self] (dic) in
-            st_dispatch_async_main({ 
+            st_dispatch_async_main({
                 SVProgressHUD.showSuccessWithStatus("上传成功")
                 self.navigationController?.popViewControllerAnimated(true)
             })
-            }, faild: nil)
-        }
+        }, faild: nil)
+    }
+    
     // MARK: --ETGoodsLoopControllerDelegate
     func selectImages(imageNames:Array<String>){
+        imageNamesArr = imageNames
         piclist = NSArray(array: imageNames).componentsJoinedByString(",")
     }
 }

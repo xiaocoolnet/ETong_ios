@@ -17,10 +17,14 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
     @IBOutlet weak var collectBtn:UIButton!
     @IBOutlet weak var descript:UILabel!
     @IBOutlet weak var judgeList:UITableView!
+    var valueArr = NSArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.edgesForExtendedLayout = UIRectEdge.None
+        self.automaticallyAdjustsScrollViewInsets = false
         judgeList.registerNib(UINib(nibName: "ETGoodsJudgeCell",bundle: nil), forCellReuseIdentifier: "cell")
+        createData()
         // Do any additional setup after loading the view.
         title = "宝贝详情"
         print("进来了")
@@ -39,25 +43,53 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
         let model0 = GoodAttrModel()
         model0.attr_id = "10"
         model0.attr_name = "尺寸"
+        let value1 = GoodAttrValueModel()
+        value1.attr_value = "165"
+        
+        let value2 = GoodAttrValueModel()
+        value2.attr_value = "170"
+        
+        let value3 = GoodAttrValueModel()
+        value3.attr_value = "175"
+        
+        let value4 = GoodAttrValueModel()
+        value4.attr_value = "180"
+        
+        let value5 = GoodAttrValueModel()
+        value5.attr_value = "185"
+        
+        let value6 = GoodAttrValueModel()
+        value6.attr_value = "190"
+        
+        model0.attr_value = [value1,value2,value3,value4,value5,value6]
+        
         
         let model1 = GoodAttrModel()
         model1.attr_id = "11"
         model1.attr_name = "颜色"
         
+        let value10 = GoodAttrValueModel()
+        value10.attr_value = "红色"
+        let value20 = GoodAttrValueModel()
+        value20.attr_value = "蓝色"
+        let value30 = GoodAttrValueModel()
+        value30.attr_value = "橘红色"
+        let value40 = GoodAttrValueModel()
+        value40.attr_value = "藏青色"
+        
+        model1.attr_value = [value10,value20,value30,value40]
+        
+        valueArr = [model0,model1]
     }
     
     @IBAction func immediatelyBuy(sender: AnyObject) {
-        let model0 = GoodAttrModel()
-        model0.attr_id = "10"
-        model0.attr_name = "尺寸"
         
-        let model1 = GoodAttrModel()
-        model1.attr_id = "11"
-        model1.attr_name = "颜色"
-        
-        let view = GoodAttributesView(frame: CGRectMake(0, 0, self.view.frame.width, self.view.frame.height))
-        view.goodAttrsArr = [model0,model1]
-        view.showInView(self.view)
+        let editView = GoodAttributesView(frame: CGRectMake(0, 0, self.navigationController!.view.frame.width, self.navigationController!.view.frame.height))
+        editView.goodAttrsArr = valueArr as [AnyObject]
+        editView.sureBtnsClick = {(str:String!,str2:String!,str3:String!,str4:String!) in
+            print(str+str2+str3+str4)
+        }
+        editView.showInView(self.navigationController?.view)
     }
     
     @IBAction func addToShopCart(sender: AnyObject) {

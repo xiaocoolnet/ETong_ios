@@ -120,7 +120,7 @@
 }
 - (void)uploadGoodsWithGoodsModel:(ETGoodsDataModel *)model success:(ETResponseBlock) success faild:(ETResponseErrorBlock) faild;{
     
-    NSDictionary *para = @{@"a":@"UpdateUserAddress",@"userid":[ETUserInfo sharedETUserInfo].id,@"shopid":model.shopid,@"piclist":model.piclist,@"goodsname":model.goodsname,@"type":model.type,@"oprice":model.oprice,@"price":model.price,@"description":model.description,@"unit":model.unit,@"address":model.address,@"longitude":model.longitude,@"latitude":model.latitude,@"freight":model.freight,@"band":model.brand};
+    NSDictionary *para = @{@"a":@"PublishGoods",@"userid":[ETUserInfo sharedETUserInfo].id,@"shopid":model.shopid,@"piclist":model.piclist,@"goodsname":model.goodsname,@"type":model.type,@"oprice":model.oprice,@"price":model.price,@"description":model.description,@"unit":model.unit,@"address":model.address,@"longitude":model.longitude,@"latitude":model.latitude,@"freight":model.freight,@"band":model.brand};
     
     [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];

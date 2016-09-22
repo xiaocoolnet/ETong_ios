@@ -20,6 +20,7 @@ class ETMyShopController: UIViewController {
         self.hidesBottomBarWhenPushed = true
         self.title = "我的店铺"
         shopTitle.text = model?.shopname
+        ETUserInfo.sharedETUserInfo().shopid = model?.id
         shopImage.sd_setImageWithURL(NSURL(string: kIMAGE_URL_HEAD + (model?.photo)!), forState: UIControlState.Normal, placeholderImage: UIImage(named: "ic_xihuan"))
         avatarBack.layer.borderColor = UIColor.whiteColor().CGColor
         avatarBack.layer.borderWidth = 1

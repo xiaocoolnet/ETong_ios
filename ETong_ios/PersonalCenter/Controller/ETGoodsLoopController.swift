@@ -81,7 +81,9 @@ class ETGoodsLoopController: UIViewController,UITableViewDelegate,UITableViewDat
         ConnectModel.uploadWithImageName(imageName, imageData: data, URL: kUPLOAD_URL_HEAD) { [unowned self] (data) in
                 st_dispatch_async_main({
                     self.currentBtn?.setImage(image, forState: .Normal)
-                    self.imageNames.append(imageName+".png")
+                    if !self.imageNames.contains(imageName+".png") {
+                        self.imageNames.append(imageName+".png")
+                    }
                 })
         }
         picker.dismissViewControllerAnimated(true, completion: nil)
@@ -112,6 +114,10 @@ class ETGoodsLoopController: UIViewController,UITableViewDelegate,UITableViewDat
         cell.selectionStyle = .None
         cell.imageBtn.tag = indexPath.row
         
+        if imageNames.count-1 >= indexPath.row {
+            let imageUrl = NSURL(string: kIMAGE_URL_HEAD+imageNames[indexPath.row])
+            cell.imageBtn.sd_setImageWithURL(imageUrl, forState: .Normal)
+        }
         if indexPath.row == 1 {
             cell.imageAlert.text = "请设置第二张轮播图（非必填）"
         }

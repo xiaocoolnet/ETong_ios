@@ -9,6 +9,7 @@
 #import "HomePageController.h"
 #import "SDCycleScrollView.h"
 #import "ETZBarScanController.h"
+#import "ETLimitTimeController.h"
 
 @interface HomePageController ()<SDCycleScrollViewDelegate,UIScrollViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -29,14 +30,17 @@
     
     [self configureUI];
 }
+
 - (void)rightNavBtnAction:(UIButton*)btn{
     
 }
+
 - (void)leftNavBtnAction:(UIButton*)btn{
     ETZBarScanController *vc =[[ETZBarScanController alloc]init];
     vc.hidesBottomBarWhenPushed = YES;
     [self presentViewController:vc animated:true completion:nil];
 }
+
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     if (_myColView.contentSize.height > _myColView.frame.size.height) {
@@ -88,8 +92,26 @@
     cycleScrollView.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     // --- 轮播时间间隔，默认1.0秒，可自定义
     //cycleScrollView.autoScrollTimeInterval = 4.0;
-    
 }
+
+#pragma mark - UPPartButtonAction
+
+- (IBAction)limitSaleAction:(id)sender {
+    ETLimitTimeController * controller = [[ETLimitTimeController alloc]initWithNibName:@"ETLimitTimeController" bundle:nil];
+    [self.navigationController pushViewController:controller animated:true];
+}
+- (IBAction)dailySelectionAction:(id)sender {
+}
+- (IBAction)dailySpecialSaleAction:(id)sender {
+}
+- (IBAction)qualityLifeAction:(id)sender {
+}
+- (IBAction)newGoodsAction:(id)sender {
+}
+- (IBAction)freeOfCharge:(id)sender {
+}
+
+
 #pragma mark - SDCycleScrollViewDelegate
 
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
