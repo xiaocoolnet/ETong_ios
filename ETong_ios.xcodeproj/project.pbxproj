@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		4CB79079BD72EF3E97F69D38 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66936F17ED3F666A6A6B37F5 /* Pods.framework */; };
+		640F61D31D93AAF600614657 /* NewProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 640F61D21D93AAF600614657 /* NewProductsViewController.m */; };
+		640F61D61D93B15A00614657 /* QualityLifeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 640F61D51D93B15A00614657 /* QualityLifeViewController.m */; };
+		640F61D91D93B1DE00614657 /* FreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 640F61D81D93B1DE00614657 /* FreeViewController.m */; };
+		640F61DC1D93B8E000614657 /* NewProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 640F61DB1D93B8E000614657 /* NewProductCollectionViewCell.m */; };
+		640F61DF1D93CB5100614657 /* QualityLifeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 640F61DE1D93CB5100614657 /* QualityLifeCollectionViewCell.m */; };
+		640F61E51D93D79C00614657 /* FreeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 640F61E41D93D79C00614657 /* FreeTableViewCell.m */; };
 		F6032EFC1D654A7000A8407F /* ETGoodsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6032EFA1D654A7000A8407F /* ETGoodsDetailController.swift */; };
 		F6032EFD1D654A7000A8407F /* ETGoodsDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6032EFB1D654A7000A8407F /* ETGoodsDetailController.xib */; };
 		F6177C5F1D46054700A2CB67 /* ETWelcomeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F6177C5E1D46054700A2CB67 /* ETWelcomeHelper.m */; };
@@ -128,6 +134,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		640F61D11D93AAF600614657 /* NewProductsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewProductsViewController.h; sourceTree = "<group>"; };
+		640F61D21D93AAF600614657 /* NewProductsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewProductsViewController.m; sourceTree = "<group>"; };
+		640F61D41D93B15A00614657 /* QualityLifeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QualityLifeViewController.h; sourceTree = "<group>"; };
+		640F61D51D93B15A00614657 /* QualityLifeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QualityLifeViewController.m; sourceTree = "<group>"; };
+		640F61D71D93B1DE00614657 /* FreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreeViewController.h; sourceTree = "<group>"; };
+		640F61D81D93B1DE00614657 /* FreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreeViewController.m; sourceTree = "<group>"; };
+		640F61DA1D93B8E000614657 /* NewProductCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewProductCollectionViewCell.h; sourceTree = "<group>"; };
+		640F61DB1D93B8E000614657 /* NewProductCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewProductCollectionViewCell.m; sourceTree = "<group>"; };
+		640F61DD1D93CB5100614657 /* QualityLifeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QualityLifeCollectionViewCell.h; sourceTree = "<group>"; };
+		640F61DE1D93CB5100614657 /* QualityLifeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QualityLifeCollectionViewCell.m; sourceTree = "<group>"; };
+		640F61E31D93D79C00614657 /* FreeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreeTableViewCell.h; sourceTree = "<group>"; };
+		640F61E41D93D79C00614657 /* FreeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreeTableViewCell.m; sourceTree = "<group>"; };
 		66936F17ED3F666A6A6B37F5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC727555E648AF38DE5BD102 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F6032EFA1D654A7000A8407F /* ETGoodsDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETGoodsDetailController.swift; sourceTree = "<group>"; };
@@ -494,6 +512,12 @@
 				F6F8409D1D8FC6E4007163A2 /* ETLimitSaleCell.h */,
 				F6F8409E1D8FC6E4007163A2 /* ETLimitSaleCell.m */,
 				F6F8409F1D8FC6E4007163A2 /* ETLimitSaleCell.xib */,
+				640F61DA1D93B8E000614657 /* NewProductCollectionViewCell.h */,
+				640F61DB1D93B8E000614657 /* NewProductCollectionViewCell.m */,
+				640F61DD1D93CB5100614657 /* QualityLifeCollectionViewCell.h */,
+				640F61DE1D93CB5100614657 /* QualityLifeCollectionViewCell.m */,
+				640F61E31D93D79C00614657 /* FreeTableViewCell.h */,
+				640F61E41D93D79C00614657 /* FreeTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -824,6 +848,12 @@
 				F6C0EA051D913C4D002654DE /* ETDailySpecialController.h */,
 				F6C0EA061D913C4D002654DE /* ETDailySpecialController.m */,
 				F6C0EA071D913C4D002654DE /* ETDailySpecialController.xib */,
+				640F61D11D93AAF600614657 /* NewProductsViewController.h */,
+				640F61D21D93AAF600614657 /* NewProductsViewController.m */,
+				640F61D41D93B15A00614657 /* QualityLifeViewController.h */,
+				640F61D51D93B15A00614657 /* QualityLifeViewController.m */,
+				640F61D71D93B1DE00614657 /* FreeViewController.h */,
+				640F61D81D93B1DE00614657 /* FreeViewController.m */,
 			);
 			name = UpPartController;
 			sourceTree = "<group>";
@@ -1001,6 +1031,7 @@
 				F65E002A1D86854C005FDD83 /* UIBarButtonItem+Extension.m in Sources */,
 				F6508EF71D66FD020019BFFB /* ETGoodsSelectView.swift in Sources */,
 				F65149FB1D4F5C4000ECFFFD /* ETWaitSignController.swift in Sources */,
+				640F61D31D93AAF600614657 /* NewProductsViewController.m in Sources */,
 				F61E82311D474463001E16B5 /* ETTimeManager.m in Sources */,
 				F65E00331D868688005FDD83 /* GoodAttributesView.m in Sources */,
 				F643088F1D618FA90037FD9F /* ETEditGoodsController.swift in Sources */,
@@ -1017,6 +1048,7 @@
 				F6FED1CD1D44A0F700C5C776 /* ETLogInViewController.m in Sources */,
 				F632721F1D4DE90100A3C0FF /* ETShopManagerController.swift in Sources */,
 				F6286FED1D4A19130052ADC3 /* ETShopAuthController.m in Sources */,
+				640F61D91D93B1DE00614657 /* FreeViewController.m in Sources */,
 				F6EAB5351D84FCA2008FF8FA /* JSCartHeaderView.m in Sources */,
 				F6F840A01D8FC6E4007163A2 /* ETLimitSaleCell.m in Sources */,
 				F6EAB5391D84FCA2008FF8FA /* JSCartViewModel.m in Sources */,
@@ -1024,10 +1056,12 @@
 				F65149E21D4F363D00ECFFFD /* ETGoodsManagerController.swift in Sources */,
 				F67B3DA71D4D9F8C00F2B544 /* ETMyShopController.swift in Sources */,
 				F6177C621D460BCF00A2CB67 /* ETBaseHelper.m in Sources */,
+				640F61E51D93D79C00614657 /* FreeTableViewCell.m in Sources */,
 				F6CF10AE1D4B3A2900555C4A /* ETShopInfoController.m in Sources */,
 				F64308931D61A3640037FD9F /* ETEditInfoController.swift in Sources */,
 				F6EAB5311D84FCA2008FF8FA /* JSCartBar.m in Sources */,
 				F6EAB5371D84FCA2008FF8FA /* JSCartViewController.m in Sources */,
+				640F61DC1D93B8E000614657 /* NewProductCollectionViewCell.m in Sources */,
 				F6C09BEC1D5081D4001C2987 /* ETCUserInfoController.swift in Sources */,
 				F65149E61D4F383D00ECFFFD /* ETGMSellCell.swift in Sources */,
 				F6508EF41D66EFA20019BFFB /* ETGoodsJudgeCell.swift in Sources */,
@@ -1036,6 +1070,7 @@
 				F65BF3111D3F31CB0003DB35 /* ETRootController.m in Sources */,
 				F6EAB5301D84FCA2008FF8FA /* JSCartModel.m in Sources */,
 				F6CF10B31D4B4BE700555C4A /* ETWaitForAuditVC.m in Sources */,
+				640F61DF1D93CB5100614657 /* QualityLifeCollectionViewCell.m in Sources */,
 				F65E002C1D86854C005FDD83 /* UIView+Extension.m in Sources */,
 				F65BF2FA1D3F1CA80003DB35 /* main.m in Sources */,
 				F6286FE31D4A096C0052ADC3 /* ConnectModel.m in Sources */,
@@ -1050,6 +1085,7 @@
 				F6EAB5321D84FCA2008FF8FA /* JSCartCell.m in Sources */,
 				F6177C5F1D46054700A2CB67 /* ETWelcomeHelper.m in Sources */,
 				F6EAB5341D84FCA2008FF8FA /* JSCartFooterView.m in Sources */,
+				640F61D61D93B15A00614657 /* QualityLifeViewController.m in Sources */,
 				F65BF32F1D3F4FD70003DB35 /* LocationViewController.m in Sources */,
 				F65BF33E1D3F50390003DB35 /* PersonViewController.m in Sources */,
 				F6545D7D1D533F480007C42C /* ETGMOffShelfCell.swift in Sources */,

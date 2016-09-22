@@ -10,6 +10,9 @@
 #import "SDCycleScrollView.h"
 #import "ETZBarScanController.h"
 #import "ETLimitTimeController.h"
+#import "NewProductsViewController.h"
+#import "QualityLifeViewController.h"
+#import "FreeViewController.h"
 
 @interface HomePageController ()<SDCycleScrollViewDelegate,UIScrollViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -105,10 +108,16 @@
 - (IBAction)dailySpecialSaleAction:(id)sender {
 }
 - (IBAction)qualityLifeAction:(id)sender {
+    QualityLifeViewController *vc = [[QualityLifeViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 - (IBAction)newGoodsAction:(id)sender {
+    NewProductsViewController *vc = [[NewProductsViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 - (IBAction)freeOfCharge:(id)sender {
+    FreeViewController *vc = [[FreeViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

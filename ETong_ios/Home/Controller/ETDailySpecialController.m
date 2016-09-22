@@ -8,7 +8,7 @@
 
 #import "ETDailySpecialController.h"
 
-@interface ETDailySpecialController ()
+@interface ETDailySpecialController () 
 
 @end
 
