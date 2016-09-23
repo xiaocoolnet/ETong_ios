@@ -65,6 +65,12 @@
                 <constraint firstAttribute="trailing" secondItem="DPG-xY-PZS" secondAttribute="trailing" id="upa-hS-cWs"/>
             </constraints>
             <size key="customSize" width="186" height="174"/>
+            <connections>
+                <outlet property="btn" destination="G65-ec-IBQ" id="PEg-VP-XX2"/>
+                <outlet property="busisLab" destination="01F-G3-KDf" id="qVP-dd-Yil"/>
+                <outlet property="imgView" destination="DPG-xY-PZS" id="O8U-by-b9Q"/>
+                <outlet property="nameLab" destination="g1o-sF-kpC" id="Q2C-Ql-Kbe"/>
+            </connections>
             <point key="canvasLocation" x="445" y="355"/>
         </collectionViewCell>
     </objects>

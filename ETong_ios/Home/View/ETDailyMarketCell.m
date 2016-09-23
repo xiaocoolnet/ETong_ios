@@ -8,11 +8,19 @@
 
 #import "ETDailyMarketCell.h"
 
+
+@interface ETDailyMarketCell ()
+
+@end
+
+
 @implementation ETDailyMarketCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    
+    
 }
 
 @end

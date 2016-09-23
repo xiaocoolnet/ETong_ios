@@ -15,6 +15,11 @@
 #import "NewProductsViewController.h"
 #import "QualityLifeViewController.h"
 #import "FreeViewController.h"
+#import "EveryDayHelper.h"
+#import "ETDailyMarketCell.h"
+#import "ETGuessYLikeCell.h"
+#import "LikeModel.h"
+#import "GoodShopViewController.h"
 
 @interface HomePageController ()<SDCycleScrollViewDelegate,UIScrollViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -22,9 +27,24 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewHeightLayout;
 @property (weak, nonatomic) IBOutlet UICollectionView *myColView;
 @property (weak, nonatomic) IBOutlet UIScrollView *backScroll;
+@property (strong, nonatomic) EveryDayHelper *helper;
+
+@property (strong, nonatomic) NSMutableArray *dataArray;
+@property (strong, nonatomic) NSMutableArray *likeArray;
+@property (strong, nonatomic) UIImageView *imageView;
+@property (strong, nonatomic) UIImageView *imageVie;
+
 @end
 
 @implementation HomePageController
+
+
+-(EveryDayHelper *)helper{
+    if (!_helper) {
+        _helper = [EveryDayHelper helper];
+    }
+    return _helper;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,7 +55,70 @@
     _myColView.scrollEnabled = false;
     
     [self configureUI];
+//    [self reloadate];
+    [self getDate];
+    [self getData];
 }
+
+#pragma mark - 获取每日好店数据
+-(void)getDate{
+    
+    [self.helper getGoodShopInfoWithType:@"10" success:^(NSArray *response) {
+        if ([response isKindOfClass:[NSString class]]) {
+            return ;
+        }
+        st_dispatch_async_main(^{
+            self.dataArray = [[NSMutableArray alloc] init];
+            for (int i=0; i<response.count; i++) {
+                
+                ETShopModel *model = [ETShopModel mj_objectWithKeyValues:response[i]];
+                [self.dataArray addObject:model];
+                 NSLog(@"%@",model);
+                NSLog(@"lalalalala");
+                NSLog(@"%@",self.dataArray);
+                NSLog(@"%@",model.shopname);
+//                NSLog(@"%@",self.dataArray[i][@"shopname"]);
+            }
+            [self.myColView reloadData];
+            [self reloadate];
+            
+            
+        });
+        return ;
+    } faild:^(NSString *response, NSError *error) {
+        
+    }];
+}
+#pragma mark - 获取猜你喜欢
+-(void)getData{
+    
+    [self.helper getGoodShopInfoWithIsLike:nil success:^(NSArray *response) {
+        if ([response isKindOfClass:[NSString class]]) {
+            return ;
+        }
+        st_dispatch_async_main(^{
+            self.likeArray = [[NSMutableArray alloc] init];
+            for (int i=0; i<response.count; i++) {
+                
+                LikeModel *model = [LikeModel mj_objectWithKeyValues:response[i]];
+                [self.likeArray addObject:model];
+                NSLog(@"%@",model);
+                NSLog(@"lalalalala");
+                NSLog(@"%@",self.likeArray);
+                NSLog(@"%@",model.unit);
+                NSLog(@"%@",model.descriptio);
+            }
+            [self.myColView reloadData];
+            [self reloadate];
+            
+        });
+        return ;
+    } faild:^(NSString *response, NSError *error) {
+        
+    }];
+}
+
+
 
 - (void)rightNavBtnAction:(UIButton*)btn{
     
@@ -47,14 +130,36 @@
     [self presentViewController:vc animated:true completion:nil];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.tabBarController.tabBar.hidden = NO;
+}
+
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+//    if (_backScroll.contentOffset.y == 0) {
+//        [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:0];
+//    }
+//    if (_myColView.contentSize.height > _myColView.frame.size.height) {
+//        CGFloat changeHeight = _myColView.contentSize.height-_myColView.frame.size.height;
+//        _viewHeightLayout.constant +=changeHeight;
+//        
+//    }
+    [self reloadate];
+}
+
+- (void) reloadate{
     if (_backScroll.contentOffset.y == 0) {
         [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:0];
     }
-    if (_myColView.contentSize.height > _myColView.frame.size.height) {
-        CGFloat changeHeight = _myColView.contentSize.height-_myColView.frame.size.height;
-        _viewHeightLayout.constant +=changeHeight;
+//    if (_myColView.contentSize.height > _myColView.frame.size.height) {
+//        CGFloat changeHeight = _myColView.contentSize.height-_myColView.frame.size.height;
+//        _viewHeightLayout.constant +=changeHeight;
+//        
+//    }
+    if (CGRectGetMinY(_myColView.frame)+_myColView.contentSize.height > kScreenHeight) {
+//        CGFloat changeHeight = _myColView.contentSize.height-_myColView.frame.size.height;
+        _viewHeightLayout.constant = CGRectGetMinY(_myColView.frame)+_myColView.contentSize.height;
         
     }
 }
@@ -101,6 +206,9 @@
     cycleScrollView.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     // --- 轮播时间间隔，默认1.0秒，可自定义
     //cycleScrollView.autoScrollTimeInterval = 4.0;
+    
+    self.imageView = [[UIImageView alloc] init];
+    self.imageVie = [[UIImageView alloc] init];
 }
 
 #pragma mark - UPPartButtonAction
@@ -146,19 +254,39 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 4;
+    if (section == 0) {
+        return self.dataArray.count;
+    }else{
+        return self.likeArray.count;
+    }
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell;
+//    ETDailyMarketCell *cell;
+    [self reloadate];
     if (indexPath.section == 0) {
-        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell1" forIndexPath:indexPath];
+        ETDailyMarketCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell1" forIndexPath:indexPath];
+        ETShopModel * model = self.dataArray[indexPath.item];
+        cell.nameLab.text = model.shopname;
+        cell.busisLab.text = [model.businesslicense stringByAppendingString:@"人已收藏"];
+        NSString *avatarUrlStr = [NSString stringWithFormat:@"%@/%@",kIMAGE_URL_HEAD,model.photo];
+        [cell.imgView sd_setImageWithURL:[NSURL URLWithString:avatarUrlStr] placeholderImage:[UIImage imageNamed:@"ic_xihuan"]];
+        NSLog(@"%@",model.shopname);
+//        [self reloadate];
+        return cell;
     }else{
-        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell2" forIndexPath:indexPath];
+        ETGuessYLikeCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell2" forIndexPath:indexPath];
+        LikeModel * model = self.likeArray[indexPath.item];
+        cell.titleLab.text = model.goodsname;
+        cell.priceLab.text = [@"¥" stringByAppendingString:model.price];
+        cell.busisLab.text = [model.recommend stringByAppendingString:@"人已收藏"];
+        NSString *avatarUrlStr = [NSString stringWithFormat:@"%@/%@",kIMAGE_URL_HEAD,model.picture];
+        [cell.imgView sd_setImageWithURL:[NSURL URLWithString:avatarUrlStr] placeholderImage:[UIImage imageNamed:@"ic_xihuan"]];
+//        [self reloadate];
+        return cell;
     }
     
     
-    return cell;
 }
 // 和UITableView类似，UICollectionView也可设置段头段尾
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
@@ -166,16 +294,24 @@
     if([kind isEqualToString:UICollectionElementKindSectionHeader])
     {
         UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"header" forIndexPath:indexPath];
-        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 2, kScreenWidth, 16)];
-        if (indexPath.section ==0) {
-            [imageView setImage:[UIImage imageNamed:@"ic_meirihaodian"]];
-        }else{
-            [imageView setImage:[UIImage imageNamed:@"ic_cainixihuan"]];
-        }
-        [headerView addSubview:imageView];
-        headerView.backgroundColor = [UIColor whiteColor];
+//        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 2, kScreenWidth, 16)];
         
-        return headerView;
+        if (indexPath.section ==0) {
+            self.imageVie.frame = CGRectMake(0, 2, kScreenWidth, 16);
+            [self.imageVie setImage:[UIImage imageNamed:@"ic_meirihaodian"]];
+            [headerView addSubview:self.imageVie];
+            headerView.backgroundColor = [UIColor whiteColor];
+            return headerView;
+
+        }else{
+            self.imageView.frame = CGRectMake(0, 2, kScreenWidth, 16);
+            [self.imageView setImage:[UIImage imageNamed:@"ic_cainixihuan"]];
+            [headerView addSubview:self.imageView];
+            headerView.backgroundColor = [UIColor whiteColor];
+            return headerView;
+
+        }
+        
     }
     return nil;
 }
@@ -183,6 +319,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+
     if (indexPath.section == 0) {
         return (CGSize){(kScreenWidth-20)/2 ,(kScreenWidth-20)/2};
     }
@@ -213,6 +350,14 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
 {
     return (CGSize){kScreenWidth,20};
+}
+
+#pragma mark - collectionView跳转页面
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        GoodShopViewController *vc = [[GoodShopViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 #pragma mark - ScrollViewDelegate -

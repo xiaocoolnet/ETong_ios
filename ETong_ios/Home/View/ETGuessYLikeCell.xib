@@ -64,6 +64,12 @@
                 <constraint firstItem="GV2-Gl-Yk0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="sxH-GE-DvL"/>
             </constraints>
             <size key="customSize" width="182" height="196"/>
+            <connections>
+                <outlet property="busisLab" destination="AhM-Uw-yoS" id="fOB-Ah-aWj"/>
+                <outlet property="imgView" destination="XlM-dx-95J" id="OA7-nP-8BW"/>
+                <outlet property="priceLab" destination="BzT-yO-F0l" id="Xt3-5n-o8z"/>
+                <outlet property="titleLab" destination="eMH-Xj-rJR" id="rpA-6t-Zns"/>
+            </connections>
             <point key="canvasLocation" x="157" y="241"/>
         </collectionViewCell>
     </objects>

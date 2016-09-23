@@ -7,9 +7,11 @@
 //
 #import "AFNetworking.h"
 #import "ETHttpModel.h"
+#import "HttpModel.h"
 
 typedef void (^ETResponseBlock)(NSDictionary *response);
 typedef void (^ETResponseErrorBlock)(NSString *response, NSError *error);
+typedef void (^ResponseBlock)(NSArray *response);
 
 @interface ETBaseHelper : NSObject
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
