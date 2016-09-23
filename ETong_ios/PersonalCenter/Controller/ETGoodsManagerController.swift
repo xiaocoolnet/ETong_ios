@@ -90,6 +90,7 @@ class ETGoodsManagerController: UIViewController,UITableViewDelegate,UITableView
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         if listType == 0 {
             let vc = ETGoodsDetailController(nibName: "ETGoodsDetailController", bundle: nil)
+            vc.goodModel = dataSource[indexPath.row] as? ETGoodsDataModel
             navigationController?.pushViewController(vc, animated: true)
         }
     }

@@ -33,7 +33,6 @@
     [_myColView registerNib:[UINib nibWithNibName:@"ETGuessYLikeCell" bundle:nil] forCellWithReuseIdentifier:@"cell2"];
     [_myColView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
     _myColView.scrollEnabled = false;
-    
     [self configureUI];
 }
 

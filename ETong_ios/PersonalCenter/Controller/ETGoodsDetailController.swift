@@ -17,6 +17,8 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
     @IBOutlet weak var collectBtn:UIButton!
     @IBOutlet weak var descript:UILabel!
     @IBOutlet weak var judgeList:UITableView!
+    var imageNames = Array<String>()
+    var goodModel:ETGoodsDataModel?
     var valueArr = NSArray()
     
     override func viewDidLoad() {
@@ -27,13 +29,13 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
         createData()
         // Do any additional setup after loading the view.
         title = "宝贝详情"
-        print("进来了")
     }
     
     override func viewDidAppear(animated: Bool) {
-        let imageNames = ["ic_lunbotu","ic_lunbotu","ic_lunbotu","ic_lunbotu"]
-        let cycleScrollView = SDCycleScrollView.init(frame: CGRectMake(0, 0, imageBackView.frame.width, imageBackView.frame.height), shouldInfiniteLoop: true, imageNamesGroup: imageNames)
+        
+        let cycleScrollView = SDCycleScrollView(frame: CGRectMake(0, 0, imageBackView.frame.width, imageBackView.frame.height), delegate: self, placeholderImage: UIImage(named: "ic_lunbotu"))
         cycleScrollView.delegate = self
+        cycleScrollView.imageURLStringsGroup = imageNames
         cycleScrollView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated
         imageBackView.addSubview(cycleScrollView)
         cycleScrollView.scrollDirection = .Horizontal
@@ -80,20 +82,49 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
         model1.attr_value = [value10,value20,value30,value40]
         
         valueArr = [model0,model1]
+        
+        if goodModel == nil {
+            return
+        }
+        
+        goodsName.text = goodModel!.goodsname
+        imageNames = goodModel!.picture.componentsSeparatedByString(",")
+        imageNames = imageNames.filter { (str) -> Bool in
+            return !str.isEmpty
+        }
+        var images = Array<String>()
+        for str in imageNames {
+            let imageStr = kIMAGE_URL_HEAD + str;
+            images.append(imageStr)
+        }
+        imageNames = images
+        descript.text = goodModel?.description
+        shenma.text = goodModel?.address
+        
     }
     
-    @IBAction func immediatelyBuy(sender: AnyObject) {
-        
+    func showPropertyView(){
         let editView = GoodAttributesView(frame: CGRectMake(0, 0, self.navigationController!.view.frame.width, self.navigationController!.view.frame.height))
         editView.goodAttrsArr = valueArr as [AnyObject]
         editView.sureBtnsClick = {(str:String!,str2:String!,str3:String!,str4:String!) in
-            print(str+str2+str3+str4)
+            
         }
         editView.showInView(self.navigationController?.view)
     }
     
+    @IBAction func immediatelyBuy(sender: AnyObject) {
+       showPropertyView()
+    }
+    
     @IBAction func addToShopCart(sender: AnyObject) {
-        
+        if goodModel == nil {
+            return;
+        }
+        ETShopHelper().addShoppingCartWithShopid(goodModel?.shopid, goodsid: goodModel?.id, goodsnum: "1", success: { (_: [NSObject : AnyObject]!) in
+            
+            }) { (String, NSError) in
+                
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
