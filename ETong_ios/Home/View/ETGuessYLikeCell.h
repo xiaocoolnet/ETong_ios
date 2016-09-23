@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ETGuessYLikeCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *imgView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLab;
+@property (weak, nonatomic) IBOutlet UILabel *priceLab;
+@property (weak, nonatomic) IBOutlet UILabel *busisLab;
 
 @end
