@@ -18,6 +18,8 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
     @IBOutlet weak var descript:UILabel!
     @IBOutlet weak var judgeList:UITableView!
     var valueArr = NSArray()
+    var model = NewProductModel()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +39,12 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
         cycleScrollView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated
         imageBackView.addSubview(cycleScrollView)
         cycleScrollView.scrollDirection = .Horizontal
+        
+        goodsName.text = model.goodsname
+        price.text = "¥" +  model.price
+        express.text = "快递: " + model.pays
+        shenma.text = model.address
+        descript.text = model.descriptio
     }
     
     func createData(){

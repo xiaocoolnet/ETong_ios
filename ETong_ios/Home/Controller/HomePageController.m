@@ -18,7 +18,7 @@
 #import "EveryDayHelper.h"
 #import "ETDailyMarketCell.h"
 #import "ETGuessYLikeCell.h"
-#import "LikeModel.h"
+#import "NewProductModel.h"
 #import "GoodShopViewController.h"
 
 @interface HomePageController ()<SDCycleScrollViewDelegate,UIScrollViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
@@ -100,7 +100,7 @@
             self.likeArray = [[NSMutableArray alloc] init];
             for (int i=0; i<response.count; i++) {
                 
-                LikeModel *model = [LikeModel mj_objectWithKeyValues:response[i]];
+                NewProductModel *model = [NewProductModel mj_objectWithKeyValues:response[i]];
                 [self.likeArray addObject:model];
                 NSLog(@"%@",model);
                 NSLog(@"lalalalala");
@@ -276,7 +276,7 @@
         return cell;
     }else{
         ETGuessYLikeCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell2" forIndexPath:indexPath];
-        LikeModel * model = self.likeArray[indexPath.item];
+        NewProductModel * model = self.likeArray[indexPath.item];
         cell.titleLab.text = model.goodsname;
         cell.priceLab.text = [@"¥" stringByAppendingString:model.price];
         cell.busisLab.text = [model.recommend stringByAppendingString:@"人已收藏"];
@@ -356,6 +356,8 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         GoodShopViewController *vc = [[GoodShopViewController alloc] init];
+        ETShopModel *model = self.dataArray[indexPath.item];
+        vc.shopModel = model;
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

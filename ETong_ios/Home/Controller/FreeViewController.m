@@ -37,7 +37,13 @@
     [self.view addSubview:_tableView];
     
     [self.tableView registerClass:[FreeTableViewCell class] forCellReuseIdentifier:@"cell"];
-   
+    
+    UIImageView *img = [[UIImageView alloc] init];
+    img.frame = CGRectMake(0, 0, self.view.frame.size.width, 150);
+    img.contentMode=UIViewContentModeScaleAspectFill;
+    img.clipsToBounds=YES;
+    img.image=[UIImage imageNamed:@"ic_lunbotu-1"];
+    self.tableView.tableHeaderView = img;
 }
 
 /// 视图(tableView)

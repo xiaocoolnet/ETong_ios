@@ -17,3 +17,4 @@
 #import "ETGoodsDataModel.h"
 #import "GoodAttrModel.h"
 #import "GoodAttributesView.h"
+#import "NewProductModel.h"

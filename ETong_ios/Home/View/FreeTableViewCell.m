@@ -40,7 +40,7 @@
         
         self.btn = [[UIButton alloc] init];
         [self.contentView addSubview:self.btn];
-//        [self.btn setTitle:@"马上购" forState:];
+        [self.btn setTitle:@"马上购" forState:UIControlStateNormal];
         self.btn.backgroundColor = [UIColor redColor];
         
         self.imgView = [[UIImageView alloc] init];

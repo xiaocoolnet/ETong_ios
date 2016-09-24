@@ -10,4 +10,6 @@
 
 @interface GoodShopViewController : UIViewController
 
+@property (strong, nonatomic) ETShopModel *shopModel;
+
 @end

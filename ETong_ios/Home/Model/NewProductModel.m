@@ -7,16 +7,19 @@
 //
 
 #import "NewProductModel.h"
+#import "MJExtension.h"
+
 
 @implementation NewProductModel
 
-- (void)setValue:(id)value forUndefinedKey:(NSString *)key{
-    
-    if ([key isEqualToString:@"description"]) {
-        self.descriptio = value;
-    }
-    
+
++ (NSDictionary *)replacedKeyFromPropertyName
+{
+    return @{
+             @"descriptio" : @"description",
+             };
 }
+
 
 
 @end
