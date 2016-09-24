@@ -280,7 +280,9 @@
         cell.titleLab.text = model.goodsname;
         cell.priceLab.text = [@"¥" stringByAppendingString:model.price];
         cell.busisLab.text = [model.recommend stringByAppendingString:@"人已收藏"];
-        NSString *avatarUrlStr = [NSString stringWithFormat:@"%@/%@",kIMAGE_URL_HEAD,model.picture];
+        // 将string字符串转换为array数组
+        NSArray  *array = [model.picture componentsSeparatedByString:@","]; //--分隔符
+        NSString *avatarUrlStr = [NSString stringWithFormat:@"%@/%@",kIMAGE_URL_HEAD,array.firstObject];
         [cell.imgView sd_setImageWithURL:[NSURL URLWithString:avatarUrlStr] placeholderImage:[UIImage imageNamed:@"ic_xihuan"]];
 //        [self reloadate];
         return cell;
