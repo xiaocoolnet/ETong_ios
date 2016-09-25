@@ -109,11 +109,20 @@
     cell.nameLab.text = model.goodsname;
     cell.priceLab.text = [@"¥" stringByAppendingString:model.price];
     cell.costLab.text = [@"¥" stringByAppendingString:model.oprice];
-    NSString *avatarUrlStr = [NSString stringWithFormat:@"%@/%@",kIMAGE_URL_HEAD,model.picture];
+    // 将string字符串转换为array数组
+    NSArray  *array = [model.picture componentsSeparatedByString:@","]; //--分隔符
+    NSString *avatarUrlStr = [NSString stringWithFormat:@"%@/%@",kIMAGE_URL_HEAD,array.firstObject];
     [cell.imgView sd_setImageWithURL:[NSURL URLWithString:avatarUrlStr] placeholderImage:[UIImage imageNamed:@"ic_xihuan"]];
     NSLog(@"%@", avatarUrlStr);
     
     return cell;
+}
+
+// 跳转详情页
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    ETGoodsDetailController *vc = [[ETGoodsDetailController alloc] initWithNibName:@"ETGoodsDetailController" bundle:nil];
+    vc.model = self.dataArray[indexPath.item];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 //  返回头视图

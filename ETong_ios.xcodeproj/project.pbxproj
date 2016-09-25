@@ -17,8 +17,21 @@
 		649AF2E41D94FF2E00D8B840 /* LikeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF2E31D94FF2E00D8B840 /* LikeModel.m */; };
 		649AF2E91D95121E00D8B840 /* GoodShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF2E81D95121E00D8B840 /* GoodShopViewController.m */; };
 		649AF2EC1D95142000D8B840 /* GoodShopCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF2EB1D95142000D8B840 /* GoodShopCollectionViewCell.m */; };
-		649AF2EF1D9520FC00D8B840 /* NewProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF2EE1D9520FC00D8B840 /* NewProductModel.m */; };
-		64BAA7F01D94C968001B5B24 /* EveryDayHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BAA7EF1D94C968001B5B24 /* EveryDayHelper.m */; };
+		649AF2F41D9612E500D8B840 /* EveryDayHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF2F11D9612E500D8B840 /* EveryDayHelper.m */; };
+		649AF2F51D9612E500D8B840 /* NewProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF2F31D9612E500D8B840 /* NewProductModel.m */; };
+		649AF3011D9769B700D8B840 /* SelectCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF3001D9769B700D8B840 /* SelectCityViewController.m */; };
+		649AF3091D976A5C00D8B840 /* Address.plist in Resources */ = {isa = PBXBuildFile; fileRef = 649AF3081D976A5C00D8B840 /* Address.plist */; };
+		649AF30C1D976AA400D8B840 /* JSAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF30B1D976AA400D8B840 /* JSAddressPickerView.m */; };
+		649AF3121D97A27E00D8B840 /* FoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF3111D97A27E00D8B840 /* FoodViewController.m */; };
+		649AF3161D97A32800D8B840 /* AllFoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF3151D97A32800D8B840 /* AllFoodViewController.m */; };
+		649AF3191D97A36900D8B840 /* AroundFoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF3181D97A36900D8B840 /* AroundFoodViewController.m */; };
+		649AF31C1D97A88E00D8B840 /* FoodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF31B1D97A88E00D8B840 /* FoodTableViewCell.m */; };
+		649AF3201D97B7FA00D8B840 /* HotelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF31F1D97B7FA00D8B840 /* HotelViewController.m */; };
+		649AF3231D97B8F800D8B840 /* AroundHotelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF3221D97B8F800D8B840 /* AroundHotelViewController.m */; };
+		649AF3261D97BA1E00D8B840 /* DistanceHotelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF3251D97BA1E00D8B840 /* DistanceHotelViewController.m */; };
+		649AF3291D97BAF100D8B840 /* HotelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF3281D97BAF100D8B840 /* HotelTableViewCell.m */; };
+		649AF32D1D97C32800D8B840 /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF32C1D97C32800D8B840 /* MovieViewController.m */; };
+		649AF3371D97CAEB00D8B840 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 649AF3361D97CAEB00D8B840 /* CoreLocation.framework */; };
 		64BAA7F31D94CD16001B5B24 /* HttpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BAA7F21D94CD16001B5B24 /* HttpModel.m */; };
 		F6032EFC1D654A7000A8407F /* ETGoodsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6032EFA1D654A7000A8407F /* ETGoodsDetailController.swift */; };
 		F6032EFD1D654A7000A8407F /* ETGoodsDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6032EFB1D654A7000A8407F /* ETGoodsDetailController.xib */; };
@@ -164,10 +177,34 @@
 		649AF2E81D95121E00D8B840 /* GoodShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodShopViewController.m; sourceTree = "<group>"; };
 		649AF2EA1D95142000D8B840 /* GoodShopCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodShopCollectionViewCell.h; sourceTree = "<group>"; };
 		649AF2EB1D95142000D8B840 /* GoodShopCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodShopCollectionViewCell.m; sourceTree = "<group>"; };
-		649AF2ED1D9520FC00D8B840 /* NewProductModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewProductModel.h; path = ETong_ios/Home/View/NewProductModel.h; sourceTree = SOURCE_ROOT; };
-		649AF2EE1D9520FC00D8B840 /* NewProductModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewProductModel.m; path = ETong_ios/Home/View/NewProductModel.m; sourceTree = SOURCE_ROOT; };
-		64BAA7EE1D94C968001B5B24 /* EveryDayHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EveryDayHelper.h; sourceTree = SOURCE_ROOT; };
-		64BAA7EF1D94C968001B5B24 /* EveryDayHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EveryDayHelper.m; sourceTree = SOURCE_ROOT; };
+		649AF2F01D9612E500D8B840 /* EveryDayHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EveryDayHelper.h; sourceTree = "<group>"; };
+		649AF2F11D9612E500D8B840 /* EveryDayHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EveryDayHelper.m; sourceTree = "<group>"; };
+		649AF2F21D9612E500D8B840 /* NewProductModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewProductModel.h; sourceTree = "<group>"; };
+		649AF2F31D9612E500D8B840 /* NewProductModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewProductModel.m; sourceTree = "<group>"; };
+		649AF2FF1D9769B700D8B840 /* SelectCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectCityViewController.h; sourceTree = "<group>"; };
+		649AF3001D9769B700D8B840 /* SelectCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCityViewController.m; sourceTree = "<group>"; };
+		649AF3081D976A5C00D8B840 /* Address.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Address.plist; sourceTree = "<group>"; };
+		649AF30A1D976AA400D8B840 /* JSAddressPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSAddressPickerView.h; sourceTree = "<group>"; };
+		649AF30B1D976AA400D8B840 /* JSAddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSAddressPickerView.m; sourceTree = "<group>"; };
+		649AF3101D97A27E00D8B840 /* FoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodViewController.h; sourceTree = "<group>"; };
+		649AF3111D97A27E00D8B840 /* FoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodViewController.m; sourceTree = "<group>"; };
+		649AF3141D97A32800D8B840 /* AllFoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllFoodViewController.h; sourceTree = "<group>"; };
+		649AF3151D97A32800D8B840 /* AllFoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllFoodViewController.m; sourceTree = "<group>"; };
+		649AF3171D97A36900D8B840 /* AroundFoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AroundFoodViewController.h; sourceTree = "<group>"; };
+		649AF3181D97A36900D8B840 /* AroundFoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AroundFoodViewController.m; sourceTree = "<group>"; };
+		649AF31A1D97A88E00D8B840 /* FoodTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodTableViewCell.h; sourceTree = "<group>"; };
+		649AF31B1D97A88E00D8B840 /* FoodTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodTableViewCell.m; sourceTree = "<group>"; };
+		649AF31E1D97B7FA00D8B840 /* HotelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelViewController.h; sourceTree = "<group>"; };
+		649AF31F1D97B7FA00D8B840 /* HotelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelViewController.m; sourceTree = "<group>"; };
+		649AF3211D97B8F800D8B840 /* AroundHotelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AroundHotelViewController.h; sourceTree = "<group>"; };
+		649AF3221D97B8F800D8B840 /* AroundHotelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AroundHotelViewController.m; sourceTree = "<group>"; };
+		649AF3241D97BA1E00D8B840 /* DistanceHotelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistanceHotelViewController.h; sourceTree = "<group>"; };
+		649AF3251D97BA1E00D8B840 /* DistanceHotelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistanceHotelViewController.m; sourceTree = "<group>"; };
+		649AF3271D97BAF100D8B840 /* HotelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelTableViewCell.h; sourceTree = "<group>"; };
+		649AF3281D97BAF100D8B840 /* HotelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelTableViewCell.m; sourceTree = "<group>"; };
+		649AF32B1D97C32800D8B840 /* MovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
+		649AF32C1D97C32800D8B840 /* MovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
+		649AF3361D97CAEB00D8B840 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		64BAA7F11D94CD16001B5B24 /* HttpModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpModel.h; sourceTree = "<group>"; };
 		64BAA7F21D94CD16001B5B24 /* HttpModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpModel.m; sourceTree = "<group>"; };
 		66936F17ED3F666A6A6B37F5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -357,6 +394,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				649AF3371D97CAEB00D8B840 /* CoreLocation.framework in Frameworks */,
 				F61E822E1D471560001E16B5 /* libz.tbd in Frameworks */,
 				F61E822C1D471557001E16B5 /* libstdc++.tbd in Frameworks */,
 				F61E822A1D471547001E16B5 /* CoreTelephony.framework in Frameworks */,
@@ -400,9 +438,45 @@
 			name = "每日好店";
 			sourceTree = "<group>";
 		};
+		649AF3131D97A2FC00D8B840 /* 美食 */ = {
+			isa = PBXGroup;
+			children = (
+				649AF3101D97A27E00D8B840 /* FoodViewController.h */,
+				649AF3111D97A27E00D8B840 /* FoodViewController.m */,
+				649AF3141D97A32800D8B840 /* AllFoodViewController.h */,
+				649AF3151D97A32800D8B840 /* AllFoodViewController.m */,
+				649AF3171D97A36900D8B840 /* AroundFoodViewController.h */,
+				649AF3181D97A36900D8B840 /* AroundFoodViewController.m */,
+			);
+			name = "美食";
+			sourceTree = "<group>";
+		};
+		649AF31D1D97B79C00D8B840 /* 酒店 */ = {
+			isa = PBXGroup;
+			children = (
+				649AF31E1D97B7FA00D8B840 /* HotelViewController.h */,
+				649AF31F1D97B7FA00D8B840 /* HotelViewController.m */,
+				649AF3211D97B8F800D8B840 /* AroundHotelViewController.h */,
+				649AF3221D97B8F800D8B840 /* AroundHotelViewController.m */,
+				649AF3241D97BA1E00D8B840 /* DistanceHotelViewController.h */,
+				649AF3251D97BA1E00D8B840 /* DistanceHotelViewController.m */,
+			);
+			name = "酒店";
+			sourceTree = "<group>";
+		};
+		649AF32A1D97C30300D8B840 /* 电影 */ = {
+			isa = PBXGroup;
+			children = (
+				649AF32B1D97C32800D8B840 /* MovieViewController.h */,
+				649AF32C1D97C32800D8B840 /* MovieViewController.m */,
+			);
+			name = "电影";
+			sourceTree = "<group>";
+		};
 		9530494A522D2346866C5A0C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				649AF3361D97CAEB00D8B840 /* CoreLocation.framework */,
 				F61E822D1D471560001E16B5 /* libz.tbd */,
 				F61E822B1D471557001E16B5 /* libstdc++.tbd */,
 				F61E82291D471547001E16B5 /* CoreTelephony.framework */,
@@ -507,6 +581,7 @@
 				F67B3DA01D4D9D2400F2B544 /* ETong_ios-Bridging-Header.h */,
 				F65BF3121D3F35940003DB35 /* ETong_Prefix.pch */,
 				F65BF3091D3F1CA80003DB35 /* Info.plist */,
+				649AF3081D976A5C00D8B840 /* Address.plist */,
 				F65BF3041D3F1CA80003DB35 /* Assets.xcassets */,
 				F65BF2F81D3F1CA80003DB35 /* Supporting Files */,
 			);
@@ -548,12 +623,12 @@
 		F65BF3151D3F4F070003DB35 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				64BAA7EE1D94C968001B5B24 /* EveryDayHelper.h */,
-				64BAA7EF1D94C968001B5B24 /* EveryDayHelper.m */,
 				649AF2E21D94FF2E00D8B840 /* LikeModel.h */,
 				649AF2E31D94FF2E00D8B840 /* LikeModel.m */,
-				649AF2ED1D9520FC00D8B840 /* NewProductModel.h */,
-				649AF2EE1D9520FC00D8B840 /* NewProductModel.m */,
+				649AF2F01D9612E500D8B840 /* EveryDayHelper.h */,
+				649AF2F11D9612E500D8B840 /* EveryDayHelper.m */,
+				649AF2F21D9612E500D8B840 /* NewProductModel.h */,
+				649AF2F31D9612E500D8B840 /* NewProductModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -603,6 +678,11 @@
 				F65BF32C1D3F4FD70003DB35 /* LocationViewController.h */,
 				F65BF32D1D3F4FD70003DB35 /* LocationViewController.m */,
 				F65BF32E1D3F4FD70003DB35 /* LocationViewController.xib */,
+				649AF2FF1D9769B700D8B840 /* SelectCityViewController.h */,
+				649AF3001D9769B700D8B840 /* SelectCityViewController.m */,
+				649AF3131D97A2FC00D8B840 /* 美食 */,
+				649AF32A1D97C30300D8B840 /* 电影 */,
+				649AF31D1D97B79C00D8B840 /* 酒店 */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -617,6 +697,12 @@
 		F65BF31A1D3F4F0F0003DB35 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				649AF30A1D976AA400D8B840 /* JSAddressPickerView.h */,
+				649AF30B1D976AA400D8B840 /* JSAddressPickerView.m */,
+				649AF31A1D97A88E00D8B840 /* FoodTableViewCell.h */,
+				649AF31B1D97A88E00D8B840 /* FoodTableViewCell.m */,
+				649AF3271D97BAF100D8B840 /* HotelTableViewCell.h */,
+				649AF3281D97BAF100D8B840 /* HotelTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1022,6 +1108,7 @@
 				F65BF33F1D3F50390003DB35 /* PersonViewController.xib in Resources */,
 				F63272201D4DE90100A3C0FF /* ETShopManagerController.xib in Resources */,
 				F67B3DA81D4D9F8C00F2B544 /* ETMyShopController.xib in Resources */,
+				649AF3091D976A5C00D8B840 /* Address.plist in Resources */,
 				F6545D7E1D533F480007C42C /* ETGMOffShelfCell.xib in Resources */,
 				F6CF10AF1D4B3A2900555C4A /* ETShopInfoController.xib in Resources */,
 				F6EAB5331D84FCA2008FF8FA /* JSCartCell.xib in Resources */,
@@ -1094,17 +1181,22 @@
 				F65BF2FD1D3F1CA80003DB35 /* AppDelegate.m in Sources */,
 				F6C36AD51D937A71008737D5 /* ETDailySpacialCell.m in Sources */,
 				F6C0EA081D913C4D002654DE /* ETDailySpecialController.m in Sources */,
+				649AF2F41D9612E500D8B840 /* EveryDayHelper.m in Sources */,
+				649AF3011D9769B700D8B840 /* SelectCityViewController.m in Sources */,
 				F65149FF1D4F5C7200ECFFFD /* ETCompleteController.swift in Sources */,
 				F6B65F891D48BEBE0069312B /* ETZBarScanController.m in Sources */,
 				F6CF10B71D4B83C400555C4A /* ETShopHelper.m in Sources */,
 				F6C36ADA1D9388A3008737D5 /* ETSpacialSaleController.m in Sources */,
+				649AF3261D97BA1E00D8B840 /* DistanceHotelViewController.m in Sources */,
 				F6EAB5361D84FCA2008FF8FA /* JSNummberCount.m in Sources */,
 				F64788A51D41BC3000294225 /* ETMyZoneController.m in Sources */,
 				F6FED1D21D44BDEB00C5C776 /* ETFgetPwdController.m in Sources */,
+				649AF3231D97B8F800D8B840 /* AroundHotelViewController.m in Sources */,
 				F64788AF1D41C7C900294225 /* ETMZoneCell.m in Sources */,
 				F6C94C491D58AA4B00280E86 /* ETGoodsLoopController.swift in Sources */,
 				64BAA7F31D94CD16001B5B24 /* HttpModel.m in Sources */,
 				F65E002A1D86854C005FDD83 /* UIBarButtonItem+Extension.m in Sources */,
+				649AF30C1D976AA400D8B840 /* JSAddressPickerView.m in Sources */,
 				F6508EF71D66FD020019BFFB /* ETGoodsSelectView.swift in Sources */,
 				F65149FB1D4F5C4000ECFFFD /* ETWaitSignController.swift in Sources */,
 				640F61D31D93AAF600614657 /* NewProductsViewController.m in Sources */,
@@ -1114,6 +1206,7 @@
 				649AF2E91D95121E00D8B840 /* GoodShopViewController.m in Sources */,
 				F6EAB5381D84FCA2008FF8FA /* JSCartUIService.m in Sources */,
 				F65149DE1D4F356100ECFFFD /* ETUploadGoodsController.swift in Sources */,
+				649AF32D1D97C32800D8B840 /* MovieViewController.m in Sources */,
 				F65BF32A1D3F4FAB0003DB35 /* HomePageController.m in Sources */,
 				F6545D811D5360E20007C42C /* ETShopModel.m in Sources */,
 				F65149F71D4F5BD700ECFFFD /* ETWaitDeliverController.swift in Sources */,
@@ -1131,6 +1224,7 @@
 				F6EAB5391D84FCA2008FF8FA /* JSCartViewModel.m in Sources */,
 				F6CEAF701D58763300518835 /* ETGoodsDataModel.m in Sources */,
 				F65149E21D4F363D00ECFFFD /* ETGoodsManagerController.swift in Sources */,
+				649AF3121D97A27E00D8B840 /* FoodViewController.m in Sources */,
 				F67B3DA71D4D9F8C00F2B544 /* ETMyShopController.swift in Sources */,
 				F6177C621D460BCF00A2CB67 /* ETBaseHelper.m in Sources */,
 				649AF2EC1D95142000D8B840 /* GoodShopCollectionViewCell.m in Sources */,
@@ -1143,8 +1237,10 @@
 				640F61DC1D93B8E000614657 /* NewProductCollectionViewCell.m in Sources */,
 				F6C09BEC1D5081D4001C2987 /* ETCUserInfoController.swift in Sources */,
 				F65149E61D4F383D00ECFFFD /* ETGMSellCell.swift in Sources */,
+				649AF3201D97B7FA00D8B840 /* HotelViewController.m in Sources */,
 				F6508EF41D66EFA20019BFFB /* ETGoodsJudgeCell.swift in Sources */,
 				F6286FE01D49E8940052ADC3 /* ETHttpModel.m in Sources */,
+				649AF31C1D97A88E00D8B840 /* FoodTableViewCell.m in Sources */,
 				F65149EA1D4F4F7D00ECFFFD /* ETOrderManagerController.swift in Sources */,
 				F65BF3111D3F31CB0003DB35 /* ETRootController.m in Sources */,
 				F6EAB5301D84FCA2008FF8FA /* JSCartModel.m in Sources */,
@@ -1155,8 +1251,10 @@
 				F6286FE31D4A096C0052ADC3 /* ConnectModel.m in Sources */,
 				F6C09BF01D509A73001C2987 /* ETSingleInfoController.swift in Sources */,
 				F6C94C4D1D58AC1E00280E86 /* ETGoodsLoopCell.swift in Sources */,
+				649AF3191D97A36900D8B840 /* AroundFoodViewController.m in Sources */,
+				649AF2F51D9612E500D8B840 /* NewProductModel.m in Sources */,
+				649AF3291D97BAF100D8B840 /* HotelTableViewCell.m in Sources */,
 				F6C36AE41D93CCD3008737D5 /* ETSpecialSaleCell.m in Sources */,
-				649AF2EF1D9520FC00D8B840 /* NewProductModel.m in Sources */,
 				F62CF47A1D4320720070BA2E /* ETGuessYLikeCell.m in Sources */,
 				F62CF4751D431C600070BA2E /* ETDailyMarketCell.m in Sources */,
 				F6032EFC1D654A7000A8407F /* ETGoodsDetailController.swift in Sources */,
@@ -1164,6 +1262,7 @@
 				F65BF3341D3F4FFE0003DB35 /* EZoneViewController.m in Sources */,
 				F65E002B1D86854C005FDD83 /* UIButton+Bootstrap.m in Sources */,
 				F6EAB5321D84FCA2008FF8FA /* JSCartCell.m in Sources */,
+				649AF3161D97A32800D8B840 /* AllFoodViewController.m in Sources */,
 				F6177C5F1D46054700A2CB67 /* ETWelcomeHelper.m in Sources */,
 				F6EAB5341D84FCA2008FF8FA /* JSCartFooterView.m in Sources */,
 				640F61D61D93B15A00614657 /* QualityLifeViewController.m in Sources */,
@@ -1171,7 +1270,6 @@
 				F65BF33E1D3F50390003DB35 /* PersonViewController.m in Sources */,
 				F6545D7D1D533F480007C42C /* ETGMOffShelfCell.swift in Sources */,
 				F65149EF1D4F56A000ECFFFD /* ETAllOrderController.swift in Sources */,
-				64BAA7F01D94C968001B5B24 /* EveryDayHelper.m in Sources */,
 				F65E00301D86857E005FDD83 /* GoodAttrModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

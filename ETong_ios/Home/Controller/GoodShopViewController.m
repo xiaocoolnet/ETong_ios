@@ -8,6 +8,8 @@
 
 #import "GoodShopViewController.h"
 #import "GoodShopCollectionViewCell.h"
+#import "EveryDayHelper.h"
+#import "NewProductModel.h"
 
 @interface GoodShopViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -15,9 +17,22 @@
 @property(nonatomic, strong) UIImageView *headerImage;
 @property(nonatomic, strong) UIButton *btn;
 
+@property (strong, nonatomic) EveryDayHelper *helper;
+
+@property (strong, nonatomic) NSMutableArray *dataArray;
+
+
 @end
 
 @implementation GoodShopViewController
+
+-(EveryDayHelper *)helper{
+    if (!_helper) {
+        _helper = [EveryDayHelper helper];
+    }
+    return _helper;
+}
+
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -26,6 +41,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tabBarController.tabBar.hidden = YES;
     self.view.backgroundColor = [UIColor whiteColor];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.automaticallyAdjustsScrollViewInsets = NO;
@@ -36,6 +52,7 @@
 
     [self addCollectionView];
     [self addLowView];
+    [self getDate];
 }
 
 -(void)addLowView{
@@ -49,6 +66,37 @@
         [lowBtn setTitleColor:[UIColor blackColor]forState:UIControlStateNormal];
         [self.view addSubview:lowBtn];
     }
+}
+
+#pragma mark - 获取商铺商品数据
+-(void) getDate{
+    
+    [self.helper getGoodShopInfoWithShopid:self.shopModel.id Userid:self.shopModel.uid success:^(NSArray *response) {
+        if ([response isKindOfClass:[NSString class]]) {
+            return ;
+        }
+        st_dispatch_async_main(^{
+            self.dataArray = [[NSMutableArray alloc] init];
+            for (int i=0; i<response.count; i++) {
+                
+                NewProductModel *model = [NewProductModel mj_objectWithKeyValues:response[i]];
+                [self.dataArray addObject:model];
+                NSLog(@"%@",model);
+                NSLog(@"lalalalala");
+                NSLog(@"%@",self.dataArray);
+                NSLog(@"%@",model.unit);
+                NSLog(@"%@",model.descriptio);
+                
+            }
+            [self.collection reloadData];
+            
+        });
+        NSLog(@"啦啦啦＝%@",self.dataArray[0][@"description"]);
+        return ;
+    } faild:^(NSString *response, NSError *error) {
+        
+    }];
+
 }
 
 -(void)addCollectionView
@@ -76,7 +124,7 @@
 //定义展示的UICollectionViewCell的个数
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 10;
+    return self.dataArray.count;
 }
 //定义展示的Section的个数
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -87,8 +135,21 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     GoodShopCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    
+    NewProductModel *model = self.dataArray[indexPath.item];
+    cell.nameLab.text = model.goodsname;
+    cell.priceLab.text = [model.price stringByAppendingString:@"¥"];
+    // 将string字符串转换为array数组
+    NSArray  *array = [model.picture componentsSeparatedByString:@","]; //--分隔符
+    NSString *avatarUrlStr = [NSString stringWithFormat:@"%@/%@",kIMAGE_URL_HEAD,array.firstObject];
+    [cell.imgView sd_setImageWithURL:[NSURL URLWithString:avatarUrlStr] placeholderImage:[UIImage imageNamed:@"ic_xihuan"]];
     return cell;
+}
+
+// 跳转详情页
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    ETGoodsDetailController *vc = [[ETGoodsDetailController alloc] initWithNibName:@"ETGoodsDetailController" bundle:nil];
+    vc.model = self.dataArray[indexPath.item];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 //  返回头视图
@@ -116,8 +177,36 @@
     headerImage.contentMode=UIViewContentModeScaleAspectFill;
     headerImage.clipsToBounds=YES;
     headerImage.frame=CGRectMake(0, 0, self.view.frame.size.width, 150);
-    headerImage.image=[UIImage imageNamed:@"ic_lunbotu-1"];
+    headerImage.image=[UIImage imageNamed:@"ic_tejiakuang"];
     self.headerImage=headerImage;
+    
+    UIImageView *headImage=[[UIImageView alloc]init];
+    headImage.contentMode=UIViewContentModeScaleAspectFill;
+    headImage.clipsToBounds=YES;
+    headImage.frame=CGRectMake(0, 35, 80, 80);
+    NSString *avatarUrlStr = [NSString stringWithFormat:@"%@/%@",kIMAGE_URL_HEAD,_shopModel.photo];
+    [headImage sd_setImageWithURL:[NSURL URLWithString:avatarUrlStr] placeholderImage:[UIImage imageNamed:@"ic_xihuan"]];
+    [headerImage addSubview:headImage];
+    
+    UILabel *name = [[UILabel alloc] init];
+    name.frame = CGRectMake(100, 50, 150, 20);
+    name.text = self.shopModel.shopname;
+    name.textColor = [UIColor whiteColor];
+    [headerImage addSubview:name];
+    
+    UIButton *shoucang = [[UIButton alloc] init];
+    shoucang.frame = CGRectMake(self.view.frame.size.width - 80, 40, 70, 30);
+    shoucang.backgroundColor = [UIColor redColor];
+    [shoucang setTitle:@"收藏" forState:UIControlStateNormal];
+    [headerImage addSubview:shoucang];
+    
+    UILabel *collect = [[UILabel alloc] init];
+    collect.frame = CGRectMake(self.view.frame.size.width - 120, 80, 110, 30);
+    collect.textAlignment = NSTextAlignmentRight;
+    collect.text = [NSString stringWithFormat:@"收藏:%@人",self.shopModel.businesslicense];
+    collect.textColor = [UIColor whiteColor];
+    collect.font = [UIFont systemFontOfSize:15];
+    [headerImage addSubview:collect];
     
     UIButton *btn = [[UIButton alloc] init];
     btn.frame = CGRectMake(0, 160, self.view.frame.size.width, 40);
@@ -129,6 +218,16 @@
     lable.text = @"全部宝贝";
     lable.textAlignment = NSTextAlignmentLeft;
     [btn addSubview:lable];
+    
+    UIImageView *img = [[UIImageView alloc] init];
+    img.frame = CGRectMake(self.view.frame.size.width - 35, 5, 20, 30);
+    img.image = [UIImage imageNamed:@"ic_next-1"];
+    [btn addSubview:img];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.tabBarController.tabBar.hidden = NO;
 }
 
 

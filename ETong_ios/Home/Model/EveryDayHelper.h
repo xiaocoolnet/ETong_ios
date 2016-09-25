@@ -30,5 +30,13 @@
                           success:(ResponseBlock)success
                             faild:(ETResponseErrorBlock)faild;
 
+/**
+ *  获取每日好店店铺商品
+ */
+- (void)getGoodShopInfoWithShopid:(NSString *)shopid Userid:(NSString *)userid
+                        success:(ResponseBlock)success
+                          faild:(ETResponseErrorBlock)faild;
+
+
 
 @end

@@ -72,6 +72,8 @@
 
 @property (nonatomic, copy) NSString *descriptio;
 
+@property (nonatomic, copy) NSString *stock;
+
 
 @end
 @interface Shop_Name : NSObject
@@ -79,4 +81,3 @@
 @property (nonatomic, copy) NSString *shopname;
 
 @end
-

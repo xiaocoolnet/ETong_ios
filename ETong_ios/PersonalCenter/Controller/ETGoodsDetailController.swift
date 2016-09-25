@@ -20,6 +20,8 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
     var imageNames = Array<String>()
     var goodModel:ETGoodsDataModel?
     var valueArr = NSArray()
+    var model = NewProductModel()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +41,12 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
         cycleScrollView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated
         imageBackView.addSubview(cycleScrollView)
         cycleScrollView.scrollDirection = .Horizontal
+        
+        goodsName.text = model.goodsname
+        price.text = "¥" +  model.price
+        express.text = "快递: " + model.pays
+        shenma.text = model.address
+        descript.text = model.descriptio
     }
     
     func createData(){
@@ -127,6 +135,9 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
         }
     }
     
+    @IBAction func ClickCollectBtn(sender: AnyObject) {
+        
+    }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return 2
     }
