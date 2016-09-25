@@ -104,6 +104,9 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
         
     }
     
+    @IBAction func ClickCollectBtn(sender: AnyObject) {
+        
+    }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return 2
     }

@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LocationViewController">
             <connections>
+                <outlet property="foodBtn" destination="4xS-Wb-wJP" id="0zC-K5-05F"/>
                 <outlet property="headView" destination="wMr-wB-8T5" id="ibQ-xP-aPi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -37,6 +38,9 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6z9-ck-5j4">
                                                     <rect key="frame" x="0.0" y="0.0" width="64" height="70"/>
+                                                    <connections>
+                                                        <action selector="ClickFoodBtn:" destination="-1" eventType="touchUpInside" id="Knt-AI-vZO"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_meishi" translatesAutoresizingMaskIntoConstraints="NO" id="4xS-Wb-wJP">
                                                     <rect key="frame" x="15" y="8" width="35" height="35"/>
@@ -70,6 +74,9 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOG-bH-oq1">
                                                     <rect key="frame" x="0.0" y="0.0" width="64" height="70"/>
+                                                    <connections>
+                                                        <action selector="ClickMovieBtn:" destination="-1" eventType="touchUpInside" id="ScF-lv-UxB"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_dianying" translatesAutoresizingMaskIntoConstraints="NO" id="QQs-XU-Ik0">
                                                     <rect key="frame" x="15" y="8" width="35" height="35"/>
@@ -103,6 +110,9 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQr-VF-8KA">
                                                     <rect key="frame" x="0.0" y="0.0" width="64" height="70"/>
+                                                    <connections>
+                                                        <action selector="ClickHotelBtn:" destination="-1" eventType="touchUpInside" id="5SZ-Kh-X4K"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_jiudian" translatesAutoresizingMaskIntoConstraints="NO" id="BT3-Hg-FZy">
                                                     <rect key="frame" x="15" y="8" width="35" height="35"/>
