@@ -213,7 +213,6 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         faild(nil,nil);
     }];
-
 }
 //修改商品品牌
 - (void)updateGoodsBrandWithGoodsid:(NSString *)goodsid band:(NSString *)band success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;{
@@ -264,7 +263,6 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         faild(nil,nil);
     }];
-
 }
 //获取单个商品资料
 - (void)getGoodsInfoWithGoodsId:(NSString *)goodsid success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;{
@@ -284,7 +282,7 @@
 }
 //添加购物车
 - (void)addShoppingCartWithShopid:(NSString *)shopid goodsid:(NSString *)goodsid goodsnum:(NSString *)goodsnum success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;{
-    NSDictionary *para = @{@"a":@"AddShoppingCart",@"userid":[ETUserInfo sharedETUserInfo].id,@"goodsid":goodsid,@"goodsnum":goodsnum};
+    NSDictionary *para = @{@"a":@"AddShoppingCart",@"userid":[ETUserInfo sharedETUserInfo].id,@"goodsid":goodsid,@"goodsnum":goodsnum,@"shopid":shopid};
     
     [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
@@ -296,7 +294,6 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         faild(nil,nil);
     }];
-
 }
 //删除购物车
 - (void)deleteShoppingCartWithGoodsid:(NSString *)goodsid success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;{
@@ -313,7 +310,6 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         faild(nil,nil);
     }];
-
 }
 //获取我的购物车
 - (void)getShoppingCartWithUserid:(NSString *)userid success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;{
@@ -329,7 +325,6 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         faild(nil,nil);
     }];
-
 }
 //删除产品
 - (void)deleteGoodsWithGoodsid:(NSString *)goodid success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;{
