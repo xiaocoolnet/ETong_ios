@@ -8,6 +8,7 @@
 
 #import "ETShopHelper.h"
 #import "ETGoodsDataModel.h"
+#import "ETShopCartModel.h"
 
 @implementation ETShopHelper
 
@@ -314,10 +315,11 @@
 //获取我的购物车
 - (void)getShoppingCartWithUserid:(NSString *)userid success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;{
     NSDictionary *para = @{@"a":@"GetShoppingCart",@"userid":[ETUserInfo sharedETUserInfo].id};
-    
     [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
+        
+        ETHttpArrayModel *model = [ETHttpArrayModel mj_objectWithKeyValues:responseObject];
         if ([model.status isEqualToString:@"success"]) {
+            NSArray *models = [ETShopCartModel mj_objectArrayWithKeyValuesArray:model.data];
             
         }else{
             faild(@"",nil);

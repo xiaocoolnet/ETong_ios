@@ -127,7 +127,6 @@
 - (UITableView *)cartTableView{
     
     if (!_cartTableView) {
-        
         _cartTableView = [[UITableView alloc] initWithFrame:self.view.frame
                                                       style:UITableViewStyleGrouped];
         SetViewSizeHeight(_cartTableView, self.view.frame.size.height - self.tabBarController.tabBar.frame.size.height - 64);

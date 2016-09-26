@@ -8,14 +8,13 @@
 
 #import "JSCartViewModel.h"
 #import "JSCartModel.h"
+#import "ETShopHelper.h"
 
 @interface JSCartViewModel (){
-    
     NSArray *_shopGoodsCount;
     NSArray *_goodsPicArray;
     NSArray *_goodsPriceArray;
     NSArray *_goodsQuantityArray;
-    
 }
 //随机获取店铺下商品数
 @property (nonatomic, assign) NSInteger random;
@@ -53,6 +52,17 @@
 #pragma mark - make data
 
 - (void)getData{
+    if (![ETUserInfo sharedETUserInfo].isLogin) {
+        [SVProgressHUD showErrorWithStatus:@"请先登录"];
+        return;
+    }
+    
+    ETShopHelper *helper = [[ETShopHelper alloc]init];
+    [helper getShoppingCartWithUserid:[ETUserInfo sharedETUserInfo].id success:^(NSDictionary *response) {
+        
+    } faild:^(NSString *response, NSError *error) {
+        
+    }];
     //数据个数
     NSInteger allCount = 20;
     NSInteger allGoodsCount = 0;

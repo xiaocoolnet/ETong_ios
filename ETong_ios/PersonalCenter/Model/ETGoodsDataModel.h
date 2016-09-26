@@ -56,5 +56,12 @@
 
 @property (nonatomic, copy) NSString *type;
 
+@property (nonatomic, copy) NSString *number;
+
+@property (nonatomic, copy) NSString *gid;
+
+@property (nonatomic, copy) NSDictionary *property;
+
 + (instancetype) modelWithShowid:(NSString *)showid piclist:(NSString *)piclist goodsname:(NSString *)goodsname type:(NSString *)type oprice:(NSString *)oprice price:(NSString *)price description:(NSString *)description unit:(NSString *)unit address:(NSString *)address longitude:(NSString *)longitude latitude:(NSString *)latitude freight:(NSString *)freight band:(NSString *)band;
+
 @end

@@ -146,6 +146,9 @@
 		F6EAB5371D84FCA2008FF8FA /* JSCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EAB52A1D84FCA2008FF8FA /* JSCartViewController.m */; };
 		F6EAB5381D84FCA2008FF8FA /* JSCartUIService.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EAB52D1D84FCA2008FF8FA /* JSCartUIService.m */; };
 		F6EAB5391D84FCA2008FF8FA /* JSCartViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EAB52F1D84FCA2008FF8FA /* JSCartViewModel.m */; };
+		F6F6E0781D98FB1D00C02257 /* ETPropertyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F6E0771D98FB1D00C02257 /* ETPropertyModel.m */; };
+		F6F6E07B1D99150000C02257 /* ETShopCartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F6E07A1D99150000C02257 /* ETShopCartModel.m */; };
+		F6F6E07E1D99168D00C02257 /* ETHttpArrayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F6E07D1D99168D00C02257 /* ETHttpArrayModel.m */; };
 		F6F840961D8FB8D2007163A2 /* ETLimitTimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F840941D8FB8D2007163A2 /* ETLimitTimeController.m */; };
 		F6F840971D8FB8D2007163A2 /* ETLimitTimeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6F840951D8FB8D2007163A2 /* ETLimitTimeController.xib */; };
 		F6F840A01D8FC6E4007163A2 /* ETLimitSaleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F8409E1D8FC6E4007163A2 /* ETLimitSaleCell.m */; };
@@ -371,6 +374,12 @@
 		F6EAB52D1D84FCA2008FF8FA /* JSCartUIService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSCartUIService.m; sourceTree = "<group>"; };
 		F6EAB52E1D84FCA2008FF8FA /* JSCartViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSCartViewModel.h; sourceTree = "<group>"; };
 		F6EAB52F1D84FCA2008FF8FA /* JSCartViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSCartViewModel.m; sourceTree = "<group>"; };
+		F6F6E0761D98FB1D00C02257 /* ETPropertyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETPropertyModel.h; sourceTree = "<group>"; };
+		F6F6E0771D98FB1D00C02257 /* ETPropertyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETPropertyModel.m; sourceTree = "<group>"; };
+		F6F6E0791D99150000C02257 /* ETShopCartModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETShopCartModel.h; sourceTree = "<group>"; };
+		F6F6E07A1D99150000C02257 /* ETShopCartModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETShopCartModel.m; sourceTree = "<group>"; };
+		F6F6E07C1D99168D00C02257 /* ETHttpArrayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETHttpArrayModel.h; path = Category/ETHttpArrayModel.h; sourceTree = "<group>"; };
+		F6F6E07D1D99168D00C02257 /* ETHttpArrayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETHttpArrayModel.m; path = Category/ETHttpArrayModel.m; sourceTree = "<group>"; };
 		F6F840931D8FB8D2007163A2 /* ETLimitTimeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETLimitTimeController.h; sourceTree = "<group>"; };
 		F6F840941D8FB8D2007163A2 /* ETLimitTimeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETLimitTimeController.m; sourceTree = "<group>"; };
 		F6F840951D8FB8D2007163A2 /* ETLimitTimeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETLimitTimeController.xib; sourceTree = "<group>"; };
@@ -796,6 +805,10 @@
 				F6545D801D5360E20007C42C /* ETShopModel.m */,
 				F6CEAF6E1D58763300518835 /* ETGoodsDataModel.h */,
 				F6CEAF6F1D58763300518835 /* ETGoodsDataModel.m */,
+				F6F6E0761D98FB1D00C02257 /* ETPropertyModel.h */,
+				F6F6E0771D98FB1D00C02257 /* ETPropertyModel.m */,
+				F6F6E0791D99150000C02257 /* ETShopCartModel.h */,
+				F6F6E07A1D99150000C02257 /* ETShopCartModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -846,6 +859,8 @@
 				F6B65F841D48AE760069312B /* ETUserInfo.m */,
 				F6286FDE1D49E8940052ADC3 /* ETHttpModel.h */,
 				F6286FDF1D49E8940052ADC3 /* ETHttpModel.m */,
+				F6F6E07C1D99168D00C02257 /* ETHttpArrayModel.h */,
+				F6F6E07D1D99168D00C02257 /* ETHttpArrayModel.m */,
 				64BAA7F11D94CD16001B5B24 /* HttpModel.h */,
 				64BAA7F21D94CD16001B5B24 /* HttpModel.m */,
 				F65E00341D8686B5005FDD83 /* GlobalDefine.h */,
@@ -1263,10 +1278,13 @@
 				F65E002B1D86854C005FDD83 /* UIButton+Bootstrap.m in Sources */,
 				F6EAB5321D84FCA2008FF8FA /* JSCartCell.m in Sources */,
 				649AF3161D97A32800D8B840 /* AllFoodViewController.m in Sources */,
+				F6F6E07E1D99168D00C02257 /* ETHttpArrayModel.m in Sources */,
 				F6177C5F1D46054700A2CB67 /* ETWelcomeHelper.m in Sources */,
 				F6EAB5341D84FCA2008FF8FA /* JSCartFooterView.m in Sources */,
 				640F61D61D93B15A00614657 /* QualityLifeViewController.m in Sources */,
 				F65BF32F1D3F4FD70003DB35 /* LocationViewController.m in Sources */,
+				F6F6E07B1D99150000C02257 /* ETShopCartModel.m in Sources */,
+				F6F6E0781D98FB1D00C02257 /* ETPropertyModel.m in Sources */,
 				F65BF33E1D3F50390003DB35 /* PersonViewController.m in Sources */,
 				F6545D7D1D533F480007C42C /* ETGMOffShelfCell.swift in Sources */,
 				F65149EF1D4F56A000ECFFFD /* ETAllOrderController.swift in Sources */,

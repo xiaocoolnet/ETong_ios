@@ -34,5 +34,6 @@
 #import "ETUserInfo.h"
 #import "ETong_ios-Swift.h"
 #import "ReactiveCocoa.h"
+#import "ETHttpArrayModel.h"
 
 #endif
