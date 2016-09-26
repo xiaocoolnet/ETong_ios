@@ -1,21 +1,22 @@
+
 //
-//  AroundHotelViewController.m
+//  AllLifeViewController.m
 //  ETong_ios
 //
-//  Created by 沈晓龙 on 16/9/25.
+//  Created by 沈晓龙 on 16/9/26.
 //  Copyright © 2016年 北京校酷网络科技有限公司. All rights reserved.
 //
 
-#import "AroundHotelViewController.h"
+#import "AllLifeViewController.h"
 #import "HotelTableViewCell.h"
 
-@interface AroundHotelViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface AllLifeViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 
 @end
 
-@implementation AroundHotelViewController
+@implementation AllLifeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

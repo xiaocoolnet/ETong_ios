@@ -32,6 +32,18 @@
 		649AF3291D97BAF100D8B840 /* HotelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF3281D97BAF100D8B840 /* HotelTableViewCell.m */; };
 		649AF32D1D97C32800D8B840 /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF32C1D97C32800D8B840 /* MovieViewController.m */; };
 		649AF3371D97CAEB00D8B840 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 649AF3361D97CAEB00D8B840 /* CoreLocation.framework */; };
+		649AF3401D98BEB800D8B840 /* AroundTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF33F1D98BEB800D8B840 /* AroundTravelViewController.m */; };
+		649AF3441D98F58B00D8B840 /* LifeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF3431D98F58B00D8B840 /* LifeViewController.m */; };
+		649AF3471D98F61600D8B840 /* AllLifeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF3461D98F61600D8B840 /* AllLifeViewController.m */; };
+		649AF34A1D98F62500D8B840 /* AroundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF3491D98F62500D8B840 /* AroundViewController.m */; };
+		649AF34E1D98F81000D8B840 /* KTVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF34D1D98F81000D8B840 /* KTVViewController.m */; };
+		649AF3511D98F87600D8B840 /* AllKTVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF3501D98F87600D8B840 /* AllKTVViewController.m */; };
+		649AF3541D98F89100D8B840 /* AroundKTVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF3531D98F89100D8B840 /* AroundKTVViewController.m */; };
+		649AF3581D98FA1A00D8B840 /* RechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF3571D98FA1A00D8B840 /* RechargeViewController.m */; };
+		649AF35C1D9910A200D8B840 /* ALLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF35B1D9910A200D8B840 /* ALLViewController.m */; };
+		649AF35F1D99116B00D8B840 /* AllTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF35E1D99116B00D8B840 /* AllTableViewCell.m */; };
+		649AF3631D9917DA00D8B840 /* TakeOutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF3611D9917DA00D8B840 /* TakeOutTableViewCell.m */; };
+		649AF3641D9917DA00D8B840 /* TakeOutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 649AF3621D9917DA00D8B840 /* TakeOutTableViewCell.xib */; };
 		64BAA7F31D94CD16001B5B24 /* HttpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BAA7F21D94CD16001B5B24 /* HttpModel.m */; };
 		F6032EFC1D654A7000A8407F /* ETGoodsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6032EFA1D654A7000A8407F /* ETGoodsDetailController.swift */; };
 		F6032EFD1D654A7000A8407F /* ETGoodsDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6032EFB1D654A7000A8407F /* ETGoodsDetailController.xib */; };
@@ -208,6 +220,29 @@
 		649AF32B1D97C32800D8B840 /* MovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
 		649AF32C1D97C32800D8B840 /* MovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
 		649AF3361D97CAEB00D8B840 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		649AF33E1D98BEB800D8B840 /* AroundTravelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AroundTravelViewController.h; sourceTree = "<group>"; };
+		649AF33F1D98BEB800D8B840 /* AroundTravelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AroundTravelViewController.m; sourceTree = "<group>"; };
+		649AF3421D98F58B00D8B840 /* LifeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LifeViewController.h; sourceTree = "<group>"; };
+		649AF3431D98F58B00D8B840 /* LifeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LifeViewController.m; sourceTree = "<group>"; };
+		649AF3451D98F61600D8B840 /* AllLifeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllLifeViewController.h; sourceTree = "<group>"; };
+		649AF3461D98F61600D8B840 /* AllLifeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllLifeViewController.m; sourceTree = "<group>"; };
+		649AF3481D98F62500D8B840 /* AroundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AroundViewController.h; sourceTree = "<group>"; };
+		649AF3491D98F62500D8B840 /* AroundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AroundViewController.m; sourceTree = "<group>"; };
+		649AF34C1D98F81000D8B840 /* KTVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVViewController.h; sourceTree = "<group>"; };
+		649AF34D1D98F81000D8B840 /* KTVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTVViewController.m; sourceTree = "<group>"; };
+		649AF34F1D98F87600D8B840 /* AllKTVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllKTVViewController.h; sourceTree = "<group>"; };
+		649AF3501D98F87600D8B840 /* AllKTVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllKTVViewController.m; sourceTree = "<group>"; };
+		649AF3521D98F89100D8B840 /* AroundKTVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AroundKTVViewController.h; sourceTree = "<group>"; };
+		649AF3531D98F89100D8B840 /* AroundKTVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AroundKTVViewController.m; sourceTree = "<group>"; };
+		649AF3561D98FA1A00D8B840 /* RechargeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RechargeViewController.h; sourceTree = "<group>"; };
+		649AF3571D98FA1A00D8B840 /* RechargeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RechargeViewController.m; sourceTree = "<group>"; };
+		649AF35A1D9910A200D8B840 /* ALLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALLViewController.h; sourceTree = "<group>"; };
+		649AF35B1D9910A200D8B840 /* ALLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALLViewController.m; sourceTree = "<group>"; };
+		649AF35D1D99116B00D8B840 /* AllTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllTableViewCell.h; sourceTree = "<group>"; };
+		649AF35E1D99116B00D8B840 /* AllTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllTableViewCell.m; sourceTree = "<group>"; };
+		649AF3601D9917DA00D8B840 /* TakeOutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeOutTableViewCell.h; sourceTree = "<group>"; };
+		649AF3611D9917DA00D8B840 /* TakeOutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeOutTableViewCell.m; sourceTree = "<group>"; };
+		649AF3621D9917DA00D8B840 /* TakeOutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TakeOutTableViewCell.xib; sourceTree = "<group>"; };
 		64BAA7F11D94CD16001B5B24 /* HttpModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpModel.h; sourceTree = "<group>"; };
 		64BAA7F21D94CD16001B5B24 /* HttpModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpModel.m; sourceTree = "<group>"; };
 		66936F17ED3F666A6A6B37F5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -482,6 +517,59 @@
 			name = "电影";
 			sourceTree = "<group>";
 		};
+		649AF33D1D98BE6200D8B840 /* 周边游 */ = {
+			isa = PBXGroup;
+			children = (
+				649AF33E1D98BEB800D8B840 /* AroundTravelViewController.h */,
+				649AF33F1D98BEB800D8B840 /* AroundTravelViewController.m */,
+			);
+			name = "周边游";
+			sourceTree = "<group>";
+		};
+		649AF3411D98F53C00D8B840 /* 生活服务 */ = {
+			isa = PBXGroup;
+			children = (
+				649AF3421D98F58B00D8B840 /* LifeViewController.h */,
+				649AF3431D98F58B00D8B840 /* LifeViewController.m */,
+				649AF3451D98F61600D8B840 /* AllLifeViewController.h */,
+				649AF3461D98F61600D8B840 /* AllLifeViewController.m */,
+				649AF3481D98F62500D8B840 /* AroundViewController.h */,
+				649AF3491D98F62500D8B840 /* AroundViewController.m */,
+			);
+			name = "生活服务";
+			sourceTree = "<group>";
+		};
+		649AF34B1D98F7DA00D8B840 /* KTV */ = {
+			isa = PBXGroup;
+			children = (
+				649AF34C1D98F81000D8B840 /* KTVViewController.h */,
+				649AF34D1D98F81000D8B840 /* KTVViewController.m */,
+				649AF34F1D98F87600D8B840 /* AllKTVViewController.h */,
+				649AF3501D98F87600D8B840 /* AllKTVViewController.m */,
+				649AF3521D98F89100D8B840 /* AroundKTVViewController.h */,
+				649AF3531D98F89100D8B840 /* AroundKTVViewController.m */,
+			);
+			name = KTV;
+			sourceTree = "<group>";
+		};
+		649AF3551D98F9D200D8B840 /* 手机充值 */ = {
+			isa = PBXGroup;
+			children = (
+				649AF3561D98FA1A00D8B840 /* RechargeViewController.h */,
+				649AF3571D98FA1A00D8B840 /* RechargeViewController.m */,
+			);
+			name = "手机充值";
+			sourceTree = "<group>";
+		};
+		649AF3591D99108B00D8B840 /* 全部 */ = {
+			isa = PBXGroup;
+			children = (
+				649AF35A1D9910A200D8B840 /* ALLViewController.h */,
+				649AF35B1D9910A200D8B840 /* ALLViewController.m */,
+			);
+			name = "全部";
+			sourceTree = "<group>";
+		};
 		9530494A522D2346866C5A0C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -689,9 +777,14 @@
 				F65BF32E1D3F4FD70003DB35 /* LocationViewController.xib */,
 				649AF2FF1D9769B700D8B840 /* SelectCityViewController.h */,
 				649AF3001D9769B700D8B840 /* SelectCityViewController.m */,
+				649AF3591D99108B00D8B840 /* 全部 */,
+				649AF3551D98F9D200D8B840 /* 手机充值 */,
+				649AF34B1D98F7DA00D8B840 /* KTV */,
 				649AF3131D97A2FC00D8B840 /* 美食 */,
 				649AF32A1D97C30300D8B840 /* 电影 */,
 				649AF31D1D97B79C00D8B840 /* 酒店 */,
+				649AF33D1D98BE6200D8B840 /* 周边游 */,
+				649AF3411D98F53C00D8B840 /* 生活服务 */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -712,6 +805,11 @@
 				649AF31B1D97A88E00D8B840 /* FoodTableViewCell.m */,
 				649AF3271D97BAF100D8B840 /* HotelTableViewCell.h */,
 				649AF3281D97BAF100D8B840 /* HotelTableViewCell.m */,
+				649AF35D1D99116B00D8B840 /* AllTableViewCell.h */,
+				649AF35E1D99116B00D8B840 /* AllTableViewCell.m */,
+				649AF3601D9917DA00D8B840 /* TakeOutTableViewCell.h */,
+				649AF3611D9917DA00D8B840 /* TakeOutTableViewCell.m */,
+				649AF3621D9917DA00D8B840 /* TakeOutTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1120,6 +1218,7 @@
 				F64788AB1D41BCDD00294225 /* ETSidelineZoneController.xib in Resources */,
 				F6C09BF11D509A73001C2987 /* ETSingleInfoController.xib in Resources */,
 				F6C94C4A1D58AA4B00280E86 /* ETGoodsLoopController.xib in Resources */,
+				649AF3641D9917DA00D8B840 /* TakeOutTableViewCell.xib in Resources */,
 				F65BF33F1D3F50390003DB35 /* PersonViewController.xib in Resources */,
 				F63272201D4DE90100A3C0FF /* ETShopManagerController.xib in Resources */,
 				F67B3DA81D4D9F8C00F2B544 /* ETMyShopController.xib in Resources */,
@@ -1192,11 +1291,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				649AF3401D98BEB800D8B840 /* AroundTravelViewController.m in Sources */,
 				F65BF3451D3F58C70003DB35 /* macro.m in Sources */,
 				F65BF2FD1D3F1CA80003DB35 /* AppDelegate.m in Sources */,
+				649AF35C1D9910A200D8B840 /* ALLViewController.m in Sources */,
 				F6C36AD51D937A71008737D5 /* ETDailySpacialCell.m in Sources */,
 				F6C0EA081D913C4D002654DE /* ETDailySpecialController.m in Sources */,
 				649AF2F41D9612E500D8B840 /* EveryDayHelper.m in Sources */,
+				649AF3511D98F87600D8B840 /* AllKTVViewController.m in Sources */,
 				649AF3011D9769B700D8B840 /* SelectCityViewController.m in Sources */,
 				F65149FF1D4F5C7200ECFFFD /* ETCompleteController.swift in Sources */,
 				F6B65F891D48BEBE0069312B /* ETZBarScanController.m in Sources */,
@@ -1211,6 +1313,7 @@
 				F6C94C491D58AA4B00280E86 /* ETGoodsLoopController.swift in Sources */,
 				64BAA7F31D94CD16001B5B24 /* HttpModel.m in Sources */,
 				F65E002A1D86854C005FDD83 /* UIBarButtonItem+Extension.m in Sources */,
+				649AF3631D9917DA00D8B840 /* TakeOutTableViewCell.m in Sources */,
 				649AF30C1D976AA400D8B840 /* JSAddressPickerView.m in Sources */,
 				F6508EF71D66FD020019BFFB /* ETGoodsSelectView.swift in Sources */,
 				F65149FB1D4F5C4000ECFFFD /* ETWaitSignController.swift in Sources */,
@@ -1230,21 +1333,26 @@
 				F64788AA1D41BCDD00294225 /* ETSidelineZoneController.m in Sources */,
 				F635C5E81D51C3B300CBBAD1 /* ETAllOrderCell.swift in Sources */,
 				F6286FE81D4A18210052ADC3 /* ETShopBeginAuthVC.m in Sources */,
+				649AF35F1D99116B00D8B840 /* AllTableViewCell.m in Sources */,
 				F6FED1CD1D44A0F700C5C776 /* ETLogInViewController.m in Sources */,
 				F632721F1D4DE90100A3C0FF /* ETShopManagerController.swift in Sources */,
 				F6286FED1D4A19130052ADC3 /* ETShopAuthController.m in Sources */,
+				649AF3581D98FA1A00D8B840 /* RechargeViewController.m in Sources */,
 				640F61D91D93B1DE00614657 /* FreeViewController.m in Sources */,
 				F6EAB5351D84FCA2008FF8FA /* JSCartHeaderView.m in Sources */,
 				F6F840A01D8FC6E4007163A2 /* ETLimitSaleCell.m in Sources */,
 				F6EAB5391D84FCA2008FF8FA /* JSCartViewModel.m in Sources */,
+				649AF3441D98F58B00D8B840 /* LifeViewController.m in Sources */,
 				F6CEAF701D58763300518835 /* ETGoodsDataModel.m in Sources */,
 				F65149E21D4F363D00ECFFFD /* ETGoodsManagerController.swift in Sources */,
 				649AF3121D97A27E00D8B840 /* FoodViewController.m in Sources */,
+				649AF3541D98F89100D8B840 /* AroundKTVViewController.m in Sources */,
 				F67B3DA71D4D9F8C00F2B544 /* ETMyShopController.swift in Sources */,
 				F6177C621D460BCF00A2CB67 /* ETBaseHelper.m in Sources */,
 				649AF2EC1D95142000D8B840 /* GoodShopCollectionViewCell.m in Sources */,
 				640F61E51D93D79C00614657 /* FreeTableViewCell.m in Sources */,
 				F6CF10AE1D4B3A2900555C4A /* ETShopInfoController.m in Sources */,
+				649AF34A1D98F62500D8B840 /* AroundViewController.m in Sources */,
 				649AF2E41D94FF2E00D8B840 /* LikeModel.m in Sources */,
 				F64308931D61A3640037FD9F /* ETEditInfoController.swift in Sources */,
 				F6EAB5311D84FCA2008FF8FA /* JSCartBar.m in Sources */,
@@ -1256,6 +1364,7 @@
 				F6508EF41D66EFA20019BFFB /* ETGoodsJudgeCell.swift in Sources */,
 				F6286FE01D49E8940052ADC3 /* ETHttpModel.m in Sources */,
 				649AF31C1D97A88E00D8B840 /* FoodTableViewCell.m in Sources */,
+				649AF34E1D98F81000D8B840 /* KTVViewController.m in Sources */,
 				F65149EA1D4F4F7D00ECFFFD /* ETOrderManagerController.swift in Sources */,
 				F65BF3111D3F31CB0003DB35 /* ETRootController.m in Sources */,
 				F6EAB5301D84FCA2008FF8FA /* JSCartModel.m in Sources */,
@@ -1268,6 +1377,7 @@
 				F6C94C4D1D58AC1E00280E86 /* ETGoodsLoopCell.swift in Sources */,
 				649AF3191D97A36900D8B840 /* AroundFoodViewController.m in Sources */,
 				649AF2F51D9612E500D8B840 /* NewProductModel.m in Sources */,
+				649AF3471D98F61600D8B840 /* AllLifeViewController.m in Sources */,
 				649AF3291D97BAF100D8B840 /* HotelTableViewCell.m in Sources */,
 				F6C36AE41D93CCD3008737D5 /* ETSpecialSaleCell.m in Sources */,
 				F62CF47A1D4320720070BA2E /* ETGuessYLikeCell.m in Sources */,
