@@ -13,7 +13,7 @@
 #import "FoodViewController.h"
 #import "HotelViewController.h"
 #import "MovieViewController.h"
-#import <CoreLocation/CoreLocation.h>
+
 
 @interface LocationViewController ()<SDCycleScrollViewDelegate, CLLocationManagerDelegate>
 
@@ -71,6 +71,10 @@
         }
     }];
     
+}
+
+-(void)locationManager:(CLLocationManager *)manager didFinishDeferredUpdatesWithError:(NSError *)error{
+    NSLog(@"hahahahahh = %@",error);
 }
 
 - (void)configureUI{

@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "SelectCityViewController.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface LocationViewController : UIViewController<PassTrendValueDelegate>
+
 
 @end
