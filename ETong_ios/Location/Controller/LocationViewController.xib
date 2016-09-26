@@ -111,7 +111,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQr-VF-8KA">
                                                     <rect key="frame" x="0.0" y="0.0" width="64" height="70"/>
                                                     <connections>
-                                                        <action selector="ClickHotelBtn:" destination="-1" eventType="touchUpInside" id="5SZ-Kh-X4K"/>
+                                                        <action selector="ClickHotelBtn:" destination="-1" eventType="touchUpInside" id="9L4-Cx-WPr"/>
                                                     </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_jiudian" translatesAutoresizingMaskIntoConstraints="NO" id="BT3-Hg-FZy">
@@ -212,6 +212,9 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82p-zU-siA">
                                                     <rect key="frame" x="0.0" y="0.0" width="64" height="70"/>
+                                                    <connections>
+                                                        <action selector="ClickTravelBtn:" destination="-1" eventType="touchUpInside" id="RiV-0q-TPk"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_zhoubianyou-0" translatesAutoresizingMaskIntoConstraints="NO" id="4VX-Hw-KEL">
                                                     <rect key="frame" x="15" y="8" width="35" height="35"/>
@@ -245,6 +248,9 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CeH-N7-I7D">
                                                     <rect key="frame" x="0.0" y="0.0" width="64" height="70"/>
+                                                    <connections>
+                                                        <action selector="ClickLifeBtn:" destination="-1" eventType="touchUpInside" id="Oma-SF-2sp"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_shenghuo" translatesAutoresizingMaskIntoConstraints="NO" id="fpf-G4-kVr">
                                                     <rect key="frame" x="15" y="8" width="35" height="35"/>
@@ -311,6 +317,9 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HuP-jo-v79">
                                                     <rect key="frame" x="0.0" y="0.0" width="64" height="70"/>
+                                                    <connections>
+                                                        <action selector="ClickRechargeBtn:" destination="-1" eventType="touchUpInside" id="GGd-LU-i9N"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_shoujichongzhi" translatesAutoresizingMaskIntoConstraints="NO" id="aB7-V3-HC5">
                                                     <rect key="frame" x="15" y="8" width="35" height="35"/>
@@ -344,6 +353,9 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSE-Cq-xIh">
                                                     <rect key="frame" x="0.0" y="0.0" width="64" height="70"/>
+                                                    <connections>
+                                                        <action selector="ClickAllBtn:" destination="-1" eventType="touchUpInside" id="IQy-k2-mQN"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_all" translatesAutoresizingMaskIntoConstraints="NO" id="5rz-TA-FT9">
                                                     <rect key="frame" x="15" y="8" width="35" height="35"/>

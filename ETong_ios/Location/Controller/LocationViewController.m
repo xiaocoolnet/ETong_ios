@@ -13,6 +13,10 @@
 #import "FoodViewController.h"
 #import "HotelViewController.h"
 #import "MovieViewController.h"
+#import "AroundTravelViewController.h"
+#import "LifeViewController.h"
+#import "RechargeViewController.h"
+#import "ALLViewController.h"
 
 
 @interface LocationViewController ()<SDCycleScrollViewDelegate, CLLocationManagerDelegate>
@@ -126,7 +130,7 @@
 }
 
 -(void)passTrendValues:(NSString *)city{
-    [self.leftBtn setTitle:self.str forState:UIControlStateNormal];
+    [self.leftBtn setTitle:city forState:UIControlStateNormal];
     NSLog(@"%@", city);
 }
 
@@ -146,7 +150,15 @@
 #pragma mark - 电影
 - (IBAction)ClickMovieBtn:(id)sender {
     MovieViewController *vc = [[MovieViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = true;
     vc.title = @"电影";
+    [self.navigationController pushViewController:vc animated:YES];
+}
+#pragma mark - 周边游
+- (IBAction)ClickTravelBtn:(id)sender {
+    AroundTravelViewController *vc = [[AroundTravelViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = true;
+    vc.title = @"周边游";
     [self.navigationController pushViewController:vc animated:YES];
 }
 #pragma mark - 酒店
@@ -156,5 +168,26 @@
     vc.title = @"酒店";
     [self.navigationController pushViewController:vc animated:YES];
 }
+#pragma mark - 生活服务
+- (IBAction)ClickLifeBtn:(id)sender {
+    LifeViewController *vc = [[LifeViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = true;
+    vc.title = @"生活服务";
+    [self.navigationController pushViewController:vc animated:true];
+}
+#pragma mark - 手机充值
+- (IBAction)ClickRechargeBtn:(id)sender {
+    RechargeViewController *vc = [[RechargeViewController alloc] init];
+    vc.title = @"手机充值";
+    vc.hidesBottomBarWhenPushed = true;
+    [self.navigationController pushViewController:vc animated:true];
+}
+- (IBAction)ClickAllBtn:(id)sender {
+    ALLViewController *vc = [[ALLViewController alloc] init];
+    vc.title = @"全部";
+    vc.hidesBottomBarWhenPushed = true;
+    [self.navigationController pushViewController:vc animated:true];
+}
+
 
 @end
