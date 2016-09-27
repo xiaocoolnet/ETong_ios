@@ -14,6 +14,21 @@
 		640F61DC1D93B8E000614657 /* NewProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 640F61DB1D93B8E000614657 /* NewProductCollectionViewCell.m */; };
 		640F61DF1D93CB5100614657 /* QualityLifeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 640F61DE1D93CB5100614657 /* QualityLifeCollectionViewCell.m */; };
 		640F61E51D93D79C00614657 /* FreeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 640F61E41D93D79C00614657 /* FreeTableViewCell.m */; };
+		647A3DEA1D9A0B3C000B6802 /* TakeOutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A3DE81D9A0B3C000B6802 /* TakeOutTableViewCell.m */; };
+		647A3DEB1D9A0B3C000B6802 /* TakeOutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 647A3DE91D9A0B3C000B6802 /* TakeOutTableViewCell.xib */; };
+		647A3DEE1D9A0B7C000B6802 /* TakeOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A3DED1D9A0B7C000B6802 /* TakeOutViewController.m */; };
+		647A3DF11D9A0B90000B6802 /* AllTakeOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A3DF01D9A0B90000B6802 /* AllTakeOutViewController.m */; };
+		647A3DF41D9A0BBB000B6802 /* DisTanceTakeOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A3DF31D9A0BBB000B6802 /* DisTanceTakeOutViewController.m */; };
+		647A3DF81D9A1746000B6802 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A3DF71D9A1746000B6802 /* OrderViewController.m */; };
+		647A3DFA1D9A1F3D000B6802 /* DaiPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647A3DF91D9A1F3D000B6802 /* DaiPayViewController.swift */; };
+		647A3DFC1D9A1F86000B6802 /* DaiUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647A3DFB1D9A1F86000B6802 /* DaiUserViewController.swift */; };
+		647A3DFE1D9A1FA5000B6802 /* DaiSippingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647A3DFD1D9A1FA5000B6802 /* DaiSippingViewController.swift */; };
+		647A3E001D9A1FC0000B6802 /* AllOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647A3DFF1D9A1FC0000B6802 /* AllOrderViewController.swift */; };
+		647A3E021D9A1FD2000B6802 /* DaiSureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647A3E011D9A1FD2000B6802 /* DaiSureViewController.swift */; };
+		647A3E041D9A2000000B6802 /* DaiValuationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647A3E031D9A2000000B6802 /* DaiValuationViewController.swift */; };
+		647A3E071D9A469C000B6802 /* OrderListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A3E061D9A469C000B6802 /* OrderListModel.m */; };
+		647A3E0A1D9A4E8E000B6802 /* AllOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647A3E081D9A4E8E000B6802 /* AllOrderTableViewCell.swift */; };
+		647A3E0B1D9A4E8E000B6802 /* AllOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 647A3E091D9A4E8E000B6802 /* AllOrderTableViewCell.xib */; };
 		649AF2E41D94FF2E00D8B840 /* LikeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF2E31D94FF2E00D8B840 /* LikeModel.m */; };
 		649AF2E91D95121E00D8B840 /* GoodShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF2E81D95121E00D8B840 /* GoodShopViewController.m */; };
 		649AF2EC1D95142000D8B840 /* GoodShopCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF2EB1D95142000D8B840 /* GoodShopCollectionViewCell.m */; };
@@ -42,8 +57,6 @@
 		649AF3581D98FA1A00D8B840 /* RechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF3571D98FA1A00D8B840 /* RechargeViewController.m */; };
 		649AF35C1D9910A200D8B840 /* ALLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF35B1D9910A200D8B840 /* ALLViewController.m */; };
 		649AF35F1D99116B00D8B840 /* AllTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF35E1D99116B00D8B840 /* AllTableViewCell.m */; };
-		649AF3631D9917DA00D8B840 /* TakeOutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF3611D9917DA00D8B840 /* TakeOutTableViewCell.m */; };
-		649AF3641D9917DA00D8B840 /* TakeOutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 649AF3621D9917DA00D8B840 /* TakeOutTableViewCell.xib */; };
 		64BAA7F31D94CD16001B5B24 /* HttpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BAA7F21D94CD16001B5B24 /* HttpModel.m */; };
 		F6032EFC1D654A7000A8407F /* ETGoodsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6032EFA1D654A7000A8407F /* ETGoodsDetailController.swift */; };
 		F6032EFD1D654A7000A8407F /* ETGoodsDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6032EFB1D654A7000A8407F /* ETGoodsDetailController.xib */; };
@@ -186,6 +199,27 @@
 		640F61DE1D93CB5100614657 /* QualityLifeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QualityLifeCollectionViewCell.m; sourceTree = "<group>"; };
 		640F61E31D93D79C00614657 /* FreeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreeTableViewCell.h; sourceTree = "<group>"; };
 		640F61E41D93D79C00614657 /* FreeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreeTableViewCell.m; sourceTree = "<group>"; };
+		647A3DE71D9A0B3C000B6802 /* TakeOutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeOutTableViewCell.h; sourceTree = "<group>"; };
+		647A3DE81D9A0B3C000B6802 /* TakeOutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeOutTableViewCell.m; sourceTree = "<group>"; };
+		647A3DE91D9A0B3C000B6802 /* TakeOutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TakeOutTableViewCell.xib; sourceTree = "<group>"; };
+		647A3DEC1D9A0B7C000B6802 /* TakeOutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeOutViewController.h; sourceTree = "<group>"; };
+		647A3DED1D9A0B7C000B6802 /* TakeOutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeOutViewController.m; sourceTree = "<group>"; };
+		647A3DEF1D9A0B90000B6802 /* AllTakeOutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllTakeOutViewController.h; sourceTree = "<group>"; };
+		647A3DF01D9A0B90000B6802 /* AllTakeOutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllTakeOutViewController.m; sourceTree = "<group>"; };
+		647A3DF21D9A0BBB000B6802 /* DisTanceTakeOutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisTanceTakeOutViewController.h; sourceTree = "<group>"; };
+		647A3DF31D9A0BBB000B6802 /* DisTanceTakeOutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisTanceTakeOutViewController.m; sourceTree = "<group>"; };
+		647A3DF61D9A1746000B6802 /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
+		647A3DF71D9A1746000B6802 /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
+		647A3DF91D9A1F3D000B6802 /* DaiPayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaiPayViewController.swift; sourceTree = "<group>"; };
+		647A3DFB1D9A1F86000B6802 /* DaiUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaiUserViewController.swift; sourceTree = "<group>"; };
+		647A3DFD1D9A1FA5000B6802 /* DaiSippingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaiSippingViewController.swift; sourceTree = "<group>"; };
+		647A3DFF1D9A1FC0000B6802 /* AllOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllOrderViewController.swift; sourceTree = "<group>"; };
+		647A3E011D9A1FD2000B6802 /* DaiSureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaiSureViewController.swift; sourceTree = "<group>"; };
+		647A3E031D9A2000000B6802 /* DaiValuationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaiValuationViewController.swift; sourceTree = "<group>"; };
+		647A3E051D9A469C000B6802 /* OrderListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderListModel.h; sourceTree = "<group>"; };
+		647A3E061D9A469C000B6802 /* OrderListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderListModel.m; sourceTree = "<group>"; };
+		647A3E081D9A4E8E000B6802 /* AllOrderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllOrderTableViewCell.swift; sourceTree = "<group>"; };
+		647A3E091D9A4E8E000B6802 /* AllOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllOrderTableViewCell.xib; sourceTree = "<group>"; };
 		649AF2E21D94FF2E00D8B840 /* LikeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LikeModel.h; path = ETong_ios/Tools/LikeModel.h; sourceTree = SOURCE_ROOT; };
 		649AF2E31D94FF2E00D8B840 /* LikeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LikeModel.m; path = ETong_ios/Tools/LikeModel.m; sourceTree = SOURCE_ROOT; };
 		649AF2E71D95121E00D8B840 /* GoodShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodShopViewController.h; sourceTree = "<group>"; };
@@ -240,9 +274,6 @@
 		649AF35B1D9910A200D8B840 /* ALLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALLViewController.m; sourceTree = "<group>"; };
 		649AF35D1D99116B00D8B840 /* AllTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllTableViewCell.h; sourceTree = "<group>"; };
 		649AF35E1D99116B00D8B840 /* AllTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllTableViewCell.m; sourceTree = "<group>"; };
-		649AF3601D9917DA00D8B840 /* TakeOutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeOutTableViewCell.h; sourceTree = "<group>"; };
-		649AF3611D9917DA00D8B840 /* TakeOutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeOutTableViewCell.m; sourceTree = "<group>"; };
-		649AF3621D9917DA00D8B840 /* TakeOutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TakeOutTableViewCell.xib; sourceTree = "<group>"; };
 		64BAA7F11D94CD16001B5B24 /* HttpModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpModel.h; sourceTree = "<group>"; };
 		64BAA7F21D94CD16001B5B24 /* HttpModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpModel.m; sourceTree = "<group>"; };
 		66936F17ED3F666A6A6B37F5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -462,6 +493,34 @@
 				F83BAF691E4E7DF9CA6F505B /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		647A3DE61D9A0AB4000B6802 /* 外卖 */ = {
+			isa = PBXGroup;
+			children = (
+				647A3DEC1D9A0B7C000B6802 /* TakeOutViewController.h */,
+				647A3DED1D9A0B7C000B6802 /* TakeOutViewController.m */,
+				647A3DEF1D9A0B90000B6802 /* AllTakeOutViewController.h */,
+				647A3DF01D9A0B90000B6802 /* AllTakeOutViewController.m */,
+				647A3DF21D9A0BBB000B6802 /* DisTanceTakeOutViewController.h */,
+				647A3DF31D9A0BBB000B6802 /* DisTanceTakeOutViewController.m */,
+			);
+			name = "外卖";
+			sourceTree = "<group>";
+		};
+		647A3DF51D9A16C6000B6802 /* 我的订单 */ = {
+			isa = PBXGroup;
+			children = (
+				647A3DF61D9A1746000B6802 /* OrderViewController.h */,
+				647A3DF71D9A1746000B6802 /* OrderViewController.m */,
+				647A3DFF1D9A1FC0000B6802 /* AllOrderViewController.swift */,
+				647A3DF91D9A1F3D000B6802 /* DaiPayViewController.swift */,
+				647A3DFB1D9A1F86000B6802 /* DaiUserViewController.swift */,
+				647A3DFD1D9A1FA5000B6802 /* DaiSippingViewController.swift */,
+				647A3E011D9A1FD2000B6802 /* DaiSureViewController.swift */,
+				647A3E031D9A2000000B6802 /* DaiValuationViewController.swift */,
+			);
+			name = "我的订单";
 			sourceTree = "<group>";
 		};
 		649AF2E51D95117B00D8B840 /* 每日好店 */ = {
@@ -777,6 +836,7 @@
 				F65BF32E1D3F4FD70003DB35 /* LocationViewController.xib */,
 				649AF2FF1D9769B700D8B840 /* SelectCityViewController.h */,
 				649AF3001D9769B700D8B840 /* SelectCityViewController.m */,
+				647A3DE61D9A0AB4000B6802 /* 外卖 */,
 				649AF3591D99108B00D8B840 /* 全部 */,
 				649AF3551D98F9D200D8B840 /* 手机充值 */,
 				649AF34B1D98F7DA00D8B840 /* KTV */,
@@ -807,9 +867,9 @@
 				649AF3281D97BAF100D8B840 /* HotelTableViewCell.m */,
 				649AF35D1D99116B00D8B840 /* AllTableViewCell.h */,
 				649AF35E1D99116B00D8B840 /* AllTableViewCell.m */,
-				649AF3601D9917DA00D8B840 /* TakeOutTableViewCell.h */,
-				649AF3611D9917DA00D8B840 /* TakeOutTableViewCell.m */,
-				649AF3621D9917DA00D8B840 /* TakeOutTableViewCell.xib */,
+				647A3DE71D9A0B3C000B6802 /* TakeOutTableViewCell.h */,
+				647A3DE81D9A0B3C000B6802 /* TakeOutTableViewCell.m */,
+				647A3DE91D9A0B3C000B6802 /* TakeOutTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -880,6 +940,7 @@
 		F65BF3241D3F4F250003DB35 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				647A3DF51D9A16C6000B6802 /* 我的订单 */,
 				F643B7691D6468D8007E3530 /* GoodsDetail */,
 				F67B3D9F1D4D9CEA00F2B544 /* MyShop */,
 				F6286FE41D4A16EF0052ADC3 /* OpenShop */,
@@ -907,6 +968,8 @@
 				F6F6E0771D98FB1D00C02257 /* ETPropertyModel.m */,
 				F6F6E0791D99150000C02257 /* ETShopCartModel.h */,
 				F6F6E07A1D99150000C02257 /* ETShopCartModel.m */,
+				647A3E051D9A469C000B6802 /* OrderListModel.h */,
+				647A3E061D9A469C000B6802 /* OrderListModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -926,6 +989,8 @@
 				F6508EF31D66EFA20019BFFB /* ETGoodsJudgeCell.xib */,
 				F6508EF61D66FD020019BFFB /* ETGoodsSelectView.swift */,
 				F6508EF81D66FD440019BFFB /* ETGoodsSelectView.xib */,
+				647A3E081D9A4E8E000B6802 /* AllOrderTableViewCell.swift */,
+				647A3E091D9A4E8E000B6802 /* AllOrderTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1218,8 +1283,9 @@
 				F64788AB1D41BCDD00294225 /* ETSidelineZoneController.xib in Resources */,
 				F6C09BF11D509A73001C2987 /* ETSingleInfoController.xib in Resources */,
 				F6C94C4A1D58AA4B00280E86 /* ETGoodsLoopController.xib in Resources */,
-				649AF3641D9917DA00D8B840 /* TakeOutTableViewCell.xib in Resources */,
+				647A3DEB1D9A0B3C000B6802 /* TakeOutTableViewCell.xib in Resources */,
 				F65BF33F1D3F50390003DB35 /* PersonViewController.xib in Resources */,
+				647A3E0B1D9A4E8E000B6802 /* AllOrderTableViewCell.xib in Resources */,
 				F63272201D4DE90100A3C0FF /* ETShopManagerController.xib in Resources */,
 				F67B3DA81D4D9F8C00F2B544 /* ETMyShopController.xib in Resources */,
 				649AF3091D976A5C00D8B840 /* Address.plist in Resources */,
@@ -1293,6 +1359,7 @@
 			files = (
 				649AF3401D98BEB800D8B840 /* AroundTravelViewController.m in Sources */,
 				F65BF3451D3F58C70003DB35 /* macro.m in Sources */,
+				647A3E041D9A2000000B6802 /* DaiValuationViewController.swift in Sources */,
 				F65BF2FD1D3F1CA80003DB35 /* AppDelegate.m in Sources */,
 				649AF35C1D9910A200D8B840 /* ALLViewController.m in Sources */,
 				F6C36AD51D937A71008737D5 /* ETDailySpacialCell.m in Sources */,
@@ -1302,18 +1369,20 @@
 				649AF3011D9769B700D8B840 /* SelectCityViewController.m in Sources */,
 				F65149FF1D4F5C7200ECFFFD /* ETCompleteController.swift in Sources */,
 				F6B65F891D48BEBE0069312B /* ETZBarScanController.m in Sources */,
+				647A3E071D9A469C000B6802 /* OrderListModel.m in Sources */,
+				647A3DF81D9A1746000B6802 /* OrderViewController.m in Sources */,
 				F6CF10B71D4B83C400555C4A /* ETShopHelper.m in Sources */,
 				F6C36ADA1D9388A3008737D5 /* ETSpacialSaleController.m in Sources */,
 				649AF3261D97BA1E00D8B840 /* DistanceHotelViewController.m in Sources */,
 				F6EAB5361D84FCA2008FF8FA /* JSNummberCount.m in Sources */,
 				F64788A51D41BC3000294225 /* ETMyZoneController.m in Sources */,
+				647A3E021D9A1FD2000B6802 /* DaiSureViewController.swift in Sources */,
 				F6FED1D21D44BDEB00C5C776 /* ETFgetPwdController.m in Sources */,
 				649AF3231D97B8F800D8B840 /* AroundHotelViewController.m in Sources */,
 				F64788AF1D41C7C900294225 /* ETMZoneCell.m in Sources */,
 				F6C94C491D58AA4B00280E86 /* ETGoodsLoopController.swift in Sources */,
 				64BAA7F31D94CD16001B5B24 /* HttpModel.m in Sources */,
 				F65E002A1D86854C005FDD83 /* UIBarButtonItem+Extension.m in Sources */,
-				649AF3631D9917DA00D8B840 /* TakeOutTableViewCell.m in Sources */,
 				649AF30C1D976AA400D8B840 /* JSAddressPickerView.m in Sources */,
 				F6508EF71D66FD020019BFFB /* ETGoodsSelectView.swift in Sources */,
 				F65149FB1D4F5C4000ECFFFD /* ETWaitSignController.swift in Sources */,
@@ -1326,10 +1395,13 @@
 				F65149DE1D4F356100ECFFFD /* ETUploadGoodsController.swift in Sources */,
 				649AF32D1D97C32800D8B840 /* MovieViewController.m in Sources */,
 				F65BF32A1D3F4FAB0003DB35 /* HomePageController.m in Sources */,
+				647A3DEE1D9A0B7C000B6802 /* TakeOutViewController.m in Sources */,
 				F6545D811D5360E20007C42C /* ETShopModel.m in Sources */,
 				F65149F71D4F5BD700ECFFFD /* ETWaitDeliverController.swift in Sources */,
 				F6F840961D8FB8D2007163A2 /* ETLimitTimeController.m in Sources */,
+				647A3DEA1D9A0B3C000B6802 /* TakeOutTableViewCell.m in Sources */,
 				F6FED1D71D44BE4400C5C776 /* ETRigestController.m in Sources */,
+				647A3DF11D9A0B90000B6802 /* AllTakeOutViewController.m in Sources */,
 				F64788AA1D41BCDD00294225 /* ETSidelineZoneController.m in Sources */,
 				F635C5E81D51C3B300CBBAD1 /* ETAllOrderCell.swift in Sources */,
 				F6286FE81D4A18210052ADC3 /* ETShopBeginAuthVC.m in Sources */,
@@ -1355,11 +1427,16 @@
 				649AF34A1D98F62500D8B840 /* AroundViewController.m in Sources */,
 				649AF2E41D94FF2E00D8B840 /* LikeModel.m in Sources */,
 				F64308931D61A3640037FD9F /* ETEditInfoController.swift in Sources */,
+				647A3E0A1D9A4E8E000B6802 /* AllOrderTableViewCell.swift in Sources */,
 				F6EAB5311D84FCA2008FF8FA /* JSCartBar.m in Sources */,
+				647A3DF41D9A0BBB000B6802 /* DisTanceTakeOutViewController.m in Sources */,
 				F6EAB5371D84FCA2008FF8FA /* JSCartViewController.m in Sources */,
 				640F61DC1D93B8E000614657 /* NewProductCollectionViewCell.m in Sources */,
+				647A3E001D9A1FC0000B6802 /* AllOrderViewController.swift in Sources */,
+				647A3DFA1D9A1F3D000B6802 /* DaiPayViewController.swift in Sources */,
 				F6C09BEC1D5081D4001C2987 /* ETCUserInfoController.swift in Sources */,
 				F65149E61D4F383D00ECFFFD /* ETGMSellCell.swift in Sources */,
+				647A3DFC1D9A1F86000B6802 /* DaiUserViewController.swift in Sources */,
 				649AF3201D97B7FA00D8B840 /* HotelViewController.m in Sources */,
 				F6508EF41D66EFA20019BFFB /* ETGoodsJudgeCell.swift in Sources */,
 				F6286FE01D49E8940052ADC3 /* ETHttpModel.m in Sources */,
@@ -1396,6 +1473,7 @@
 				F6F6E07B1D99150000C02257 /* ETShopCartModel.m in Sources */,
 				F6F6E0781D98FB1D00C02257 /* ETPropertyModel.m in Sources */,
 				F65BF33E1D3F50390003DB35 /* PersonViewController.m in Sources */,
+				647A3DFE1D9A1FA5000B6802 /* DaiSippingViewController.swift in Sources */,
 				F6545D7D1D533F480007C42C /* ETGMOffShelfCell.swift in Sources */,
 				F65149EF1D4F56A000ECFFFD /* ETAllOrderController.swift in Sources */,
 				F65E00301D86857E005FDD83 /* GoodAttrModel.m in Sources */,

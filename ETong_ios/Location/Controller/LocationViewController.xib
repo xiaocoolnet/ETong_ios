@@ -146,6 +146,9 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iss-uj-iQA">
                                                     <rect key="frame" x="0.0" y="0.0" width="64" height="70"/>
+                                                    <connections>
+                                                        <action selector="ClickTakeOutBtn:" destination="-1" eventType="touchUpInside" id="J9k-VD-e9P"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_waimai" translatesAutoresizingMaskIntoConstraints="NO" id="AAX-N1-2Th">
                                                     <rect key="frame" x="15" y="8" width="35" height="35"/>
@@ -284,6 +287,9 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fm5-rd-nlV">
                                                     <rect key="frame" x="0.0" y="0.0" width="64" height="70"/>
+                                                    <connections>
+                                                        <action selector="ClickKTVBtn:" destination="-1" eventType="touchUpInside" id="kgx-G5-5oj"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_ktv" translatesAutoresizingMaskIntoConstraints="NO" id="m3o-Z0-z6e">
                                                     <rect key="frame" x="15" y="8" width="35" height="35"/>

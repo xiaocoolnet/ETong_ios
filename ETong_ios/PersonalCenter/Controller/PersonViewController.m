@@ -11,6 +11,7 @@
 #import "ETShopBeginAuthVC.h"
 #import "ETShopHelper.h"
 #import "ETShopModel.h"
+#import "OrderViewController.h"
 
 @interface PersonViewController ()
 
@@ -26,6 +27,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *daiSHbtn;
 @property (weak, nonatomic) IBOutlet UIButton *daiPJBtn;
 @property (strong, nonatomic) ETShopHelper *helper;
+@property (strong, nonatomic) NSMutableArray *dataArray;
+@property (strong, nonatomic) OrderViewController *vc;
 
 @end
 
@@ -135,16 +138,34 @@
 - (IBAction)qianbaoClicked:(id)sender {
 }
 - (IBAction)daiPJClicked:(id)sender {
+    self.vc = [[OrderViewController alloc] init];
+    self.vc.str = @"5";
+    [self getData];
 }
 - (IBAction)daiSHClicked:(id)sender {
+    self.vc = [[OrderViewController alloc] init];
+    self.vc.str = @"4";
+    [self getData];
 }
 - (IBAction)darFHClicked:(id)sender {
+    self.vc = [[OrderViewController alloc] init];
+    self.vc.str = @"3";
+    [self getData];
 }
 - (IBAction)daiSYCilcked:(id)sender {
+    self.vc = [[OrderViewController alloc] init];
+    self.vc.str = @"2";
+    [self getData];
 }
 - (IBAction)daiFKClicked:(id)sender {
+    self.vc = [[OrderViewController alloc] init];
+    self.vc.str = @"1";
+    [self getData];
+    
 }
 - (IBAction)allOrderClicked:(id)sender {
+    self.vc = [[OrderViewController alloc] init];
+    [self getData];
 }
 - (IBAction)youhuiBtnClicked:(id)sender {
 }
@@ -156,4 +177,48 @@
     ETCUserInfoController *vc =[[ETCUserInfoController alloc] initWithNibName:@"ETCUserInfoController" bundle:nil];
     [self.navigationController pushViewController:vc animated:true];
 }
+
+-(void)getData{
+//    OrderViewController *vc = [[OrderViewController alloc] init];
+    if (![ETUserInfo sharedETUserInfo].isLogin) {
+        [SVProgressHUD showErrorWithStatus:@"请先登录"];
+        return;
+    }
+    WEAKSELF
+    [self.helper getMyShopInfoWithUserid:[ETUserInfo sharedETUserInfo].id success:^(NSDictionary *response) {
+        if ([response isKindOfClass:[NSString class]]) {
+            return ;
+        }
+        st_dispatch_async_main(^{
+            [self.helper getOrderListInfoWithUserid:[ETUserInfo sharedETUserInfo].id success:^(NSArray *response) {
+                if ([response isKindOfClass:[NSString class]]) {
+                    return ;
+                }
+                st_dispatch_async_main(^{
+                    self.dataArray = [[NSMutableArray alloc] init];
+                    for (int i=0; i<response.count; i++) {
+                        
+                        OrderListModel *model = [OrderListModel mj_objectWithKeyValues:response[i]];
+                        [self.dataArray addObject:model];
+                        NSLog(@"%lu",(unsigned long)self.dataArray.count);
+                    }
+                    self.vc.dataArray = self.dataArray;
+                    [weakSelf.navigationController pushViewController:self.vc animated:true];
+                });
+                
+                return ;
+            } faild:^(NSString *response, NSError *error) {
+                
+            }];
+            
+            self.vc.title = @"订单管理";
+            self.vc.hidesBottomBarWhenPushed = true;
+        });
+        return ;
+    } faild:^(NSString *response, NSError *error) {
+        
+    }];
+
+}
+
 @end

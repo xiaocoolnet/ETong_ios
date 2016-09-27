@@ -10,4 +10,6 @@
 
 @interface TakeOutTableViewCell : UITableViewCell
 
+@property(nonatomic, strong) UILabel *line;
+
 @end

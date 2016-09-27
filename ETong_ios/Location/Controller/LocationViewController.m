@@ -17,6 +17,8 @@
 #import "LifeViewController.h"
 #import "RechargeViewController.h"
 #import "ALLViewController.h"
+#import "KTVViewController.h"
+#import "TakeOutViewController.h"
 
 
 @interface LocationViewController ()<SDCycleScrollViewDelegate, CLLocationManagerDelegate>
@@ -182,12 +184,26 @@
     vc.hidesBottomBarWhenPushed = true;
     [self.navigationController pushViewController:vc animated:true];
 }
+#pragma mark - 全部
 - (IBAction)ClickAllBtn:(id)sender {
     ALLViewController *vc = [[ALLViewController alloc] init];
     vc.title = @"全部";
     vc.hidesBottomBarWhenPushed = true;
     [self.navigationController pushViewController:vc animated:true];
 }
-
+#pragma mark - 外卖
+- (IBAction)ClickTakeOutBtn:(id)sender {
+    TakeOutViewController *vc = [[TakeOutViewController alloc] init];
+    vc.title = @"外卖";
+    vc.hidesBottomBarWhenPushed = true;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+#pragma mark - KTV
+- (IBAction)ClickKTVBtn:(id)sender {
+    KTVViewController *vc = [[KTVViewController alloc] init];
+    vc.title = @"KTV";
+    vc.hidesBottomBarWhenPushed = true;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 @end
