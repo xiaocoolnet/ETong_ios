@@ -11,7 +11,7 @@
 @interface RechargeViewController ()
 
 @property (nonatomic, strong) UITextField *textField;
-@property(nonatomic, strong) UIButton *leftBtn;
+@property (nonatomic, strong) UIButton *leftBtn;
 @property (nonatomic, strong) UIButton *rightBtn;
 @property (nonatomic, strong) UIView *phoneView;
 @property (nonatomic, strong) UIView *flowView;

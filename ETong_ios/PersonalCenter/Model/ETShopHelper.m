@@ -320,7 +320,7 @@
         ETHttpArrayModel *model = [ETHttpArrayModel mj_objectWithKeyValues:responseObject];
         if ([model.status isEqualToString:@"success"]) {
             NSArray *models = [ETShopCartModel mj_objectArrayWithKeyValuesArray:model.data];
-            
+            success(@{@"cartGoods":models});
         }else{
             faild(@"",nil);
         }

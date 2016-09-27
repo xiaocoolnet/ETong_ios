@@ -7,6 +7,7 @@
 //
 
 #import "ETGoodsDataModel.h"
+#import "JSCartModel.h"
 
 @implementation ETGoodsDataModel
 @synthesize description = _description;
@@ -31,5 +32,16 @@
 }
 - (void)setDescription:(NSString *)description{
     _description = description;
+}
+
+-(JSCartModel *)converToJSCartModel;{
+    JSCartModel *model = [[JSCartModel alloc]init];
+    model.p_name = self.goodsname;
+    model.p_price = self.price.floatValue;
+    model.p_quantity = self.number.integerValue;
+    NSString * imageName = [[self.picture componentsSeparatedByString:@","] firstObject];
+    NSString * urlStr = [NSString stringWithFormat:@"%@%@",kIMAGE_URL_HEAD,imageName];
+    model.p_imageUrl = urlStr;
+    return  model;
 }
 @end
