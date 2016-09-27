@@ -9,6 +9,7 @@
 #import "JSCartViewModel.h"
 #import "JSCartModel.h"
 #import "ETShopHelper.h"
+#import "ETShopCartModel.h"
 
 @interface JSCartViewModel (){
     NSArray *_shopGoodsCount;
@@ -16,6 +17,7 @@
     NSArray *_goodsPriceArray;
     NSArray *_goodsQuantityArray;
 }
+
 //随机获取店铺下商品数
 @property (nonatomic, assign) NSInteger random;
 @end
@@ -58,38 +60,34 @@
     }
     
     ETShopHelper *helper = [[ETShopHelper alloc]init];
+    
+    __block NSInteger allGoodsCount = 0;
+    __block NSMutableArray *storeArray = [NSMutableArray array];
+    __block NSMutableArray *shopSelectAarry = [NSMutableArray array];
+    WEAKSELF
     [helper getShoppingCartWithUserid:[ETUserInfo sharedETUserInfo].id success:^(NSDictionary *response) {
-        
+        NSArray *cartModels = response[@"cartGoods"];
+        //把ETShopCartModel转成JSCartModel
+        [cartModels enumerateObjectsUsingBlock:^(ETShopCartModel *obj, NSUInteger idx, BOOL * stop) {
+            NSMutableArray *goodsArray = [NSMutableArray array];
+            for (ETGoodsDataModel *good in obj.goodslist) {
+                JSCartModel *cartModel = [good converToJSCartModel];
+                cartModel.s_id = obj.shopid;
+                cartModel.s_name = obj.shopname;
+                [goodsArray addObject:cartModel];
+                allGoodsCount++;
+            }
+            [storeArray addObject:goodsArray];
+            [shopSelectAarry addObject:@(NO)];
+        }];
+        weakSelf.shopSelectArray = shopSelectAarry;
+        weakSelf.cartGoodsCount = allGoodsCount;
+        weakSelf.cartData = storeArray;//这里kvo发送信号刷新页面
     } faild:^(NSString *response, NSError *error) {
-        
+        [SVProgressHUD showErrorWithStatus:@"数据加载失败"];
     }];
-    //数据个数
-    NSInteger allCount = 20;
-    NSInteger allGoodsCount = 0;
-    NSMutableArray *storeArray = [NSMutableArray arrayWithCapacity:allCount];
-    NSMutableArray *shopSelectAarry = [NSMutableArray arrayWithCapacity:allCount];
-    //创造店铺数据
-    for (int i = 0; i<allCount; i++) {
-        //创造店铺下商品数据
-        NSInteger goodsCount = [_shopGoodsCount[self.random] intValue];
-        NSMutableArray *goodsArray = [NSMutableArray arrayWithCapacity:goodsCount];
-        for (int x = 0; x<goodsCount; x++) {
-            JSCartModel *cartModel = [[JSCartModel alloc] init];
-            cartModel.p_id         = @"122115465400";
-            cartModel.p_price      = [_goodsPriceArray[self.random] floatValue];
-            cartModel.p_name       = [NSString stringWithFormat:@"%@这是一个很长很长的名字呀呀呀呀呀呀",@(x)];
-            cartModel.p_stock      = 22;
-            cartModel.p_imageUrl   = _goodsPicArray[self.random];
-            cartModel.p_quantity   = [_goodsQuantityArray[self.random] integerValue];
-            [goodsArray addObject:cartModel];
-            allGoodsCount++;
-        }
-        [storeArray addObject:goodsArray];
-        [shopSelectAarry addObject:@(NO)];
-    }
-    self.cartData = storeArray;
-    self.shopSelectArray = shopSelectAarry;
-    self.cartGoodsCount = allGoodsCount;
+
+    
 }
 
 - (float)getAllPrices{

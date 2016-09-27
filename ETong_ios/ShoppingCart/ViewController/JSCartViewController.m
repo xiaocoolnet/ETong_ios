@@ -95,9 +95,6 @@
         }
         
     }];
-    
-    
-    
 }
 
 
@@ -157,7 +154,16 @@
     /**
      *  获取数据
      */
+    [[self.viewModel rac_valuesAndChangesForKeyPath:@"cartData" options:NSKeyValueObservingOptionNew observer:nil] subscribeNext:^(id x) {
+        st_dispatch_async_main(^{
+            [self.cartTableView reloadData];
+        });
+    }];
     [self.viewModel getData];
+    
+}
+
+- (void)reloadCartList{
     [self.cartTableView reloadData];
 }
 
