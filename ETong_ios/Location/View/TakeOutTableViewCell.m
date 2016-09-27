@@ -10,15 +10,22 @@
 
 @implementation TakeOutTableViewCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
+
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        
+        self.line = [[UILabel alloc] init];
+        self.line.backgroundColor = [UIColor colorWithRed:241/255.0 green:241/255.0 blue:241/255.0 alpha:1.0];
+        [self.contentView addSubview:self.line];
+        
+    }
+    return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)layoutSubviews{
+    [super layoutSubviews];
+    self.line.frame = CGRectMake(10, 60, self.contentView.frame.size.width - 20, 0.5);
 }
-
 @end
