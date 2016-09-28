@@ -90,5 +90,11 @@
 - (void)getOrderListInfoWithUserid:(NSString *)userid
                           success:(ResponseBlock)success
                             faild:(ETResponseErrorBlock)faild;
+/**
+ *  获取收藏列表
+ */
+- (void)getCollectListInfoWithUserid:(NSString *)userid Type:(NSString *)type
+                           success:(ResponseBlock)success
+                             faild:(ETResponseErrorBlock)faild;
 
 @end

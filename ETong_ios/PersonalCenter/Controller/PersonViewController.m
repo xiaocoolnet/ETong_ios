@@ -12,6 +12,7 @@
 #import "ETShopHelper.h"
 #import "ETShopModel.h"
 #import "OrderViewController.h"
+#import "CollectViewController.h"
 
 @interface PersonViewController ()
 
@@ -170,6 +171,28 @@
 - (IBAction)youhuiBtnClicked:(id)sender {
 }
 - (IBAction)shoucangBtnClicked:(id)sender {
+    if (![ETUserInfo sharedETUserInfo].isLogin) {
+        [SVProgressHUD showErrorWithStatus:@"请先登录"];
+        return;
+    }
+    WEAKSELF
+    [self.helper getMyShopInfoWithUserid:[ETUserInfo sharedETUserInfo].id success:^(NSDictionary *response) {
+        NSLog(@"%@",[ETUserInfo sharedETUserInfo].id);
+        if ([response isKindOfClass:[NSString class]]) {
+            return ;
+        }
+        st_dispatch_async_main(^{
+           
+            CollectViewController *vc = [[CollectViewController alloc] init];
+            vc.title = @"收藏";
+            vc.hidesBottomBarWhenPushed = true;
+            [weakSelf.navigationController pushViewController:vc animated:true];
+        });
+        return ;
+    } faild:^(NSString *response, NSError *error) {
+        
+    }];
+    
 }
 - (IBAction)egouBtnClicked:(id)sender {
 }

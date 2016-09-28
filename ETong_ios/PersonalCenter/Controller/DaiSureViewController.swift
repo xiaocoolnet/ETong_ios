@@ -12,12 +12,24 @@ class DaiSureViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     let tableView = UITableView()
     var dataSource = NSMutableArray()
+    var arr = NSMutableArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 242/255, alpha: 1)
         self.AddTableView()
-        
+        for i in 0...dataSource.count - 1 {
+            let str = String(self.dataSource[i].statusname)
+            print(str)
+            if str != "nil"{
+                
+                if str == "已取消" {
+                    self.arr.addObject(self.dataSource[i])
+                }
+            }
+            print(self.arr.count)
+        }
+
     }
     
     func AddTableView(){
@@ -30,7 +42,7 @@ class DaiSureViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.dataSource.count
+        return self.arr.count
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -41,7 +53,7 @@ class DaiSureViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCellWithIdentifier("cell1") as! AllOrderTableViewCell
         cell.selectionStyle = .None
         tableView.separatorStyle = .None
-        let model = dataSource[indexPath.row] as! OrderListModel
+        let model = arr[indexPath.row] as! OrderListModel
         //        cell.nameLab.text = model.peoplename
         cell.sizeNumLab.text = model.number
         cell.moneyLab.text = "¥" + (model.money)
