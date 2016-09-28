@@ -48,7 +48,6 @@
     NSInteger to   = 5;
     
     return (NSInteger)(from + (arc4random() % (to - from + 1)));
-    
 }
 
 #pragma mark - make data
@@ -86,8 +85,6 @@
     } faild:^(NSString *response, NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"数据加载失败"];
     }];
-
-    
 }
 
 - (float)getAllPrices{

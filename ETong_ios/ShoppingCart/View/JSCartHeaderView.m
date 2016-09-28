@@ -10,7 +10,7 @@
 
 @interface JSCartHeaderView()
 
-@property (nonatomic, strong) UIButton *storeNameButton;
+
 
 @end
 

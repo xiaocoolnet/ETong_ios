@@ -44,17 +44,18 @@
     self.title = @"购物车";
     /*eidit button*/
     _isIdit = NO;
-    _makeDataItem = [[UIBarButtonItem alloc]initWithTitle:@"新数据"
-                    style:UIBarButtonItemStyleDone
-                    target:self
-                    action:@selector(makeNewData:)];
-    _makeDataItem.tintColor = [UIColor whiteColor];
-    self.navigationItem.leftBarButtonItem = _makeDataItem;
+//    _makeDataItem = [[UIBarButtonItem alloc]initWithTitle:@"新数据"
+//                    style:UIBarButtonItemStyleDone
+//                    target:self
+//                    action:@selector(makeNewData:)];
+//    _makeDataItem.tintColor = [UIColor whiteColor];
+//    self.navigationItem.leftBarButtonItem = _makeDataItem;
     
     _editItem = [[UIBarButtonItem alloc] initWithTitle:@"编辑"
                                                  style:UIBarButtonItemStyleDone
                                                 target:self
                                                 action:@selector(editClick:)];
+    
     _editItem.tintColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItem = _editItem;
     /*add view*/
@@ -112,7 +113,6 @@
 
 
 - (JSCartUIService *)service{
-    
     if (!_service) {
         _service = [[JSCartUIService alloc] init];
         _service.viewModel = self.viewModel;
@@ -122,7 +122,6 @@
 
 
 - (UITableView *)cartTableView{
-    
     if (!_cartTableView) {
         _cartTableView = [[UITableView alloc] initWithFrame:self.view.frame
                                                       style:UITableViewStyleGrouped];
@@ -160,7 +159,6 @@
         });
     }];
     [self.viewModel getData];
-    
 }
 
 - (void)reloadCartList{
@@ -174,8 +172,8 @@
     self.cartBar.isNormalState = !_isIdit;
 }
 
-- (void)makeNewData:(UIBarButtonItem *)item{
-    [self getNewData];
-}
+//- (void)makeNewData:(UIBarButtonItem *)item{
+//    [self getNewData];
+//}
 
 @end

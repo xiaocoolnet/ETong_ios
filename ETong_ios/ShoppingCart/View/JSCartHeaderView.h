@@ -11,7 +11,7 @@
 @interface JSCartHeaderView : UITableViewHeaderFooterView
 
 @property (nonatomic, strong) UIButton *selectStoreGoodsButton;
-
+@property (nonatomic, strong) UIButton *storeNameButton;
 + (CGFloat)getCartHeaderHeight;
 
 @end

@@ -129,12 +129,12 @@ static CGFloat const Wd = 28;
     RACSignal *subSignal =  [RACObserve(self, currentCountNumber) map:^id(NSNumber *subValue) {
         return @(subValue.integerValue>1);
     }];
-    RACSignal *addSignal =  [RACObserve(self, currentCountNumber) map:^id(NSNumber *addValue) {
-        return @(addValue.integerValue<self.totalNum);
-    }];
+//    RACSignal *addSignal =  [RACObserve(self, currentCountNumber) map:^id(NSNumber *addValue) {
+//        return @(addValue.integerValue<self.totalNum);
+//    }];
     RAC(self.subButton,enabled)  = subSignal;
-    RAC(self.addButton,enabled)  = addSignal;
-    /* 内容颜色显示 */
+//    RAC(self.addButton,enabled)  = addSignal;
+//     内容颜色显示 
     RACSignal *numColorSignal = [RACObserve(self, totalNum) map:^id(NSNumber *totalValue) {
         return totalValue.integerValue==0?[UIColor redColor]:[UIColor blackColor];
     }];
