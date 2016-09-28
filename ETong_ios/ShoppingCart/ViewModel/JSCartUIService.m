@@ -38,7 +38,6 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     
     NSMutableArray *shopArray = self.viewModel.cartData[section];
-
     JSCartHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"JSCartHeaderView"];
     //店铺全选
     [[[headerView.selectStoreGoodsButton rac_signalForControlEvents:UIControlEventTouchUpInside]takeUntil:headerView.rac_prepareForReuseSignal] subscribeNext:^(UIButton *xx) {
@@ -54,6 +53,8 @@
     }];
     //店铺选中状态
     headerView.selectStoreGoodsButton.selected = [self.viewModel.shopSelectArray[section] boolValue];
+    NSString * shopName = ((JSCartModel *)((NSArray *)self.viewModel.cartData[section]).firstObject).s_name;
+    [headerView.storeNameButton setTitle:shopName forState:UIControlStateNormal];
     
     return headerView;
 }
@@ -120,7 +121,6 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     return @"删除";
 }
 
