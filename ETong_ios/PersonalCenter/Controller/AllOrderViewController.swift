@@ -54,6 +54,10 @@ class AllOrderViewController: UIViewController, UITableViewDelegate, UITableView
         cell.cancelBtn.layer.borderColor = UIColor.lightGrayColor().CGColor
         cell.cancelBtn.layer.cornerRadius = 10
         
+        let strArray = model.picture.componentsSeparatedByString(",")
+        let str = kIMAGE_URL_HEAD + strArray.first!
+        let photourl = NSURL(string: str)
+        cell.imgView.sd_setImageWithURL(photourl, placeholderImage: UIImage(named: "ic_xihuan"))
         
      
         return cell

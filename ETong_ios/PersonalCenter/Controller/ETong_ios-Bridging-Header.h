@@ -19,3 +19,4 @@
 #import "GoodAttributesView.h"
 #import "NewProductModel.h"
 #import "OrderListModel.h"
+#import "SortView.h"

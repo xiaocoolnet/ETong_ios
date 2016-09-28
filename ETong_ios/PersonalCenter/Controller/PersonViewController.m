@@ -13,6 +13,8 @@
 #import "ETShopModel.h"
 #import "OrderViewController.h"
 #import "CollectViewController.h"
+#import "EvaluateViewController.h"
+#import "NewsViewController.h"
 
 @interface PersonViewController ()
 
@@ -103,8 +105,46 @@
 - (IBAction)edailiClicked:(id)sender {
 }
 - (IBAction)pingjiaClicked:(id)sender {
+    if (![ETUserInfo sharedETUserInfo].isLogin) {
+        [SVProgressHUD showErrorWithStatus:@"请先登录"];
+        return;
+    }
+    WEAKSELF
+    [self.helper getMyShopInfoWithUserid:[ETUserInfo sharedETUserInfo].id success:^(NSDictionary *response) {
+        if ([response isKindOfClass:[NSString class]]) {
+            return ;
+        }
+        st_dispatch_async_main(^{
+            EvaluateViewController *vc = [[EvaluateViewController alloc] init];
+            vc.title = @"评价";
+            vc.hidesBottomBarWhenPushed = true;
+            [weakSelf.navigationController pushViewController:vc animated:true];
+        });
+        return ;
+    } faild:^(NSString *response, NSError *error) {
+        
+    }];
 }
 - (IBAction)fenxiangClicked:(id)sender {
+    if (![ETUserInfo sharedETUserInfo].isLogin) {
+        [SVProgressHUD showErrorWithStatus:@"请先登录"];
+        return;
+    }
+    WEAKSELF
+    [self.helper getMyShopInfoWithUserid:[ETUserInfo sharedETUserInfo].id success:^(NSDictionary *response) {
+        if ([response isKindOfClass:[NSString class]]) {
+            return ;
+        }
+        st_dispatch_async_main(^{
+            NewsViewController *vc = [[NewsViewController alloc] init];
+            vc.title = @"消息列表";
+            vc.hidesBottomBarWhenPushed = true;
+            [weakSelf.navigationController pushViewController:vc animated:true];
+        });
+        return ;
+    } faild:^(NSString *response, NSError *error) {
+        
+    }];
 }
 
 //我要开店

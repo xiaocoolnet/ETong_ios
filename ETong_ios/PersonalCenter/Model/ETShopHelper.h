@@ -96,5 +96,17 @@
 - (void)getCollectListInfoWithUserid:(NSString *)userid Type:(NSString *)type
                            success:(ResponseBlock)success
                              faild:(ETResponseErrorBlock)faild;
+/**
+ *  获取评论列表
+ */
+- (void)getEvaluateListInfoWithUserid:(NSString *)userid Type:(NSString *)type
+                             success:(ResponseBlock)success
+                               faild:(ETResponseErrorBlock)faild;
+/**
+ *  获取聊天列表
+ */
+- (void)getNewsListInfoWithUserid:(NSString *)userid
+                           success:(ResponseBlock)success
+                             faild:(ETResponseErrorBlock)faild;
 
 @end

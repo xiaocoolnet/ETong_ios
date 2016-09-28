@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ETUploadGoodsController: UIViewController,UIScrollViewDelegate,ETGoodsLoopControllerDelegate {
+class ETUploadGoodsController: UIViewController,UIScrollViewDelegate,ETGoodsLoopControllerDelegate,SortPickerDelegate {
     
     @IBOutlet weak var goodsTitle:UITextField!//标题
     @IBOutlet weak var goodsBrand:UITextField!//品牌
@@ -21,6 +21,8 @@ class ETUploadGoodsController: UIViewController,UIScrollViewDelegate,ETGoodsLoop
     @IBOutlet weak var goodsDetail:UITextField!//宝贝详情
     @IBOutlet weak var place:UITextField!//发货地
     @IBOutlet weak var goodsClass:UIButton!//商品分类
+    var pickerView : SortView?
+    
     var goodsModel:ETGoodsDataModel?
     var helper:ETShopHelper = ETShopHelper()
     var piclist:String?
@@ -48,7 +50,19 @@ class ETUploadGoodsController: UIViewController,UIScrollViewDelegate,ETGoodsLoop
     }
     //商品分类
     @IBAction func goodsClass(sender: AnyObject){
-        
+        self.pickerView = SortView.init(frame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height))
+//        pickerView!.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
+        pickerView!.delegate = self
+        pickerView!.font = UIFont.systemFontOfSize(16)
+        self.view.addSubview(pickerView!)
+    }
+    
+    func JSAddressCancleAction(senter: AnyObject!) {
+        self.pickerView!.removeFromSuperview()
+    }
+    func JSAddressPickerRerurnBlockWithProvince(province: String!, city: String!, town: String!) {
+        self.goodsClass.setTitle(province + "-" + city + "-" + town, forState: .Normal)
+        self.pickerView!.removeFromSuperview()
     }
     //上传
     @IBAction func uploadAction(sender: AnyObject){
