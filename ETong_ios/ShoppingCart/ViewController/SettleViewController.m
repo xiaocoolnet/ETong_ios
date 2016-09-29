@@ -8,6 +8,7 @@
 
 #import "SettleViewController.h"
 #import "SettleTableViewCell.h"
+#import "JSCartModel.h"
 
 @interface SettleViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -71,6 +72,9 @@
     lable.font = [UIFont systemFontOfSize:15];
     [backBtn addSubview:lable];
     
+    for (int i = 1; i<self.dataArray.count; i++) {
+        
+    }
 }
 
 -(void) addAddressBtn{
@@ -83,11 +87,11 @@
 /// 视图(tableView)
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 5;
+    return self.dataArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    return [self.dataArray[section] count];
 }
 #pragma mark - cell高
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -105,6 +109,8 @@
 #pragma mark - 分区头设置
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     
+//    JSCartModel *model = self.dataArray[section];
+    
     UIView *view = [[UIView alloc] init];
     view.frame = CGRectMake(0, 0, self.view.frame.size.width, 40);
     view.backgroundColor = [UIColor whiteColor];
@@ -120,6 +126,12 @@
 }
 #pragma mark - 分区尾视图设置
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    
+//    for (int i = 0; i < [self.dataArray[section] count]; i++) {
+//        JSCartModel *model = self.dataArray[section][i];
+//        float price = model.p_price;
+//    }
+    
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
     view.backgroundColor = [UIColor whiteColor];
     
@@ -170,7 +182,10 @@
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     SettleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    
+    JSCartModel *model = self.dataArray[indexPath.section][indexPath.row];
+    cell.nameLab.text = model.p_name;
+    cell.priceLab.text = [@"￥" stringByAppendingString: [NSString stringWithFormat:@"%.2f",model.p_price]];
+    cell.numLab.text = [NSString stringWithFormat:@"%ld",(long)model.p_quantity];
     return cell;
 }
 

@@ -76,15 +76,20 @@
     }];
     //结算
     [[self.cartBar.balanceButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIButton *x) {
-//        [self.viewModel getAllPrices];
-        NSMutableArray *selectModel = [[[[self.viewModel.cartData rac_sequence] filter:^BOOL(JSCartModel *value) {
-            return value.isSelect;
+
+        NSMutableArray *selectModel = [[[[[self.viewModel.cartData rac_sequence] map:^id(NSMutableArray *value) {
+            return  [[[[value rac_sequence] filter:^BOOL(JSCartModel *value) {
+                return value.isSelect;
+            }] array] mutableCopy];
+            
+        }] filter:^BOOL(NSMutableArray *value) {
+            return value.count>0;
         }] array] mutableCopy];
         
         SettleViewController *vc = [[SettleViewController alloc] init];
         vc.hidesBottomBarWhenPushed = true;
         vc.dataArray = selectModel;
-        
+        NSLog(@"%@",vc.dataArray);
         [self.navigationController pushViewController:vc animated:YES];
     }];
     /* 观察价格属性 */

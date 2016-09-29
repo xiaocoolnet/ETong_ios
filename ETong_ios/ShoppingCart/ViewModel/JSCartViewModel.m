@@ -106,7 +106,6 @@
 //            return @(model.p_name);
         }];
     }] array];
-    NSLog(@"%lu",(unsigned long)pricesArray.count);
     for (NSArray *priceA in pricesArray) {
         for (NSNumber *price in priceA) {
             allPrices += price.floatValue;
