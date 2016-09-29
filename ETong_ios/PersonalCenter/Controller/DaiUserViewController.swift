@@ -23,7 +23,7 @@ class DaiUserViewController: UIViewController, UITableViewDelegate, UITableViewD
             print(str)
             if str != "nil"{
                 
-                if str == "已取消" {
+                if str == "待使用" {
                     self.arr.addObject(self.dataSource[i])
                 }
             }

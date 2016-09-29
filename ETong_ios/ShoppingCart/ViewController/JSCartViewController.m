@@ -10,6 +10,8 @@
 #import "JSCartUIService.h"
 #import "JSCartViewModel.h"
 #import "JSCartBar.h"
+#import "JSCartModel.h"
+#import "SettleViewController.h"
 
 @interface JSCartViewController ()
 {
@@ -74,7 +76,16 @@
     }];
     //结算
     [[self.cartBar.balanceButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIButton *x) {
+//        [self.viewModel getAllPrices];
+        NSMutableArray *selectModel = [[[[self.viewModel.cartData rac_sequence] filter:^BOOL(JSCartModel *value) {
+            return value.isSelect;
+        }] array] mutableCopy];
         
+        SettleViewController *vc = [[SettleViewController alloc] init];
+        vc.hidesBottomBarWhenPushed = true;
+        vc.dataArray = selectModel;
+        
+        [self.navigationController pushViewController:vc animated:YES];
     }];
     /* 观察价格属性 */
     WEAK

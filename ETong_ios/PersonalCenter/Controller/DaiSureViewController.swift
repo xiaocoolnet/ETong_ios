@@ -23,7 +23,7 @@ class DaiSureViewController: UIViewController, UITableViewDelegate, UITableViewD
             print(str)
             if str != "nil"{
                 
-                if str == "已取消" {
+                if str == "待收货" {
                     self.arr.addObject(self.dataSource[i])
                 }
             }

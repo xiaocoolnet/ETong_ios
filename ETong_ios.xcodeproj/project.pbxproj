@@ -45,6 +45,11 @@
 		6493B7F21D9BB6B2008EE7C8 /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6493B7F11D9BB6B2008EE7C8 /* NewsTableViewCell.m */; };
 		6493B7F61D9BBCD8008EE7C8 /* Sort.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6493B7F51D9BBCD8008EE7C8 /* Sort.plist */; };
 		6493B7F91D9BC413008EE7C8 /* SortView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6493B7F81D9BC413008EE7C8 /* SortView.m */; };
+		6493B7FC1D9CE5F3008EE7C8 /* SettleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6493B7FB1D9CE5F3008EE7C8 /* SettleViewController.m */; };
+		6493B8001D9CE68C008EE7C8 /* SettleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6493B7FE1D9CE68C008EE7C8 /* SettleTableViewCell.m */; };
+		6493B8011D9CE68C008EE7C8 /* SettleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6493B7FF1D9CE68C008EE7C8 /* SettleTableViewCell.xib */; };
+		6493B8091D9D016A008EE7C8 /* AdditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6493B8081D9D016A008EE7C8 /* AdditionViewController.swift */; };
+		6493B80F1D9D0734008EE7C8 /* AddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6493B80E1D9D0734008EE7C8 /* AddressView.m */; };
 		649AF2E41D94FF2E00D8B840 /* LikeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF2E31D94FF2E00D8B840 /* LikeModel.m */; };
 		649AF2E91D95121E00D8B840 /* GoodShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF2E81D95121E00D8B840 /* GoodShopViewController.m */; };
 		649AF2EC1D95142000D8B840 /* GoodShopCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF2EB1D95142000D8B840 /* GoodShopCollectionViewCell.m */; };
@@ -266,6 +271,14 @@
 		6493B7F51D9BBCD8008EE7C8 /* Sort.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Sort.plist; sourceTree = "<group>"; };
 		6493B7F71D9BC413008EE7C8 /* SortView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortView.h; sourceTree = "<group>"; };
 		6493B7F81D9BC413008EE7C8 /* SortView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortView.m; sourceTree = "<group>"; };
+		6493B7FA1D9CE5F3008EE7C8 /* SettleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettleViewController.h; sourceTree = "<group>"; };
+		6493B7FB1D9CE5F3008EE7C8 /* SettleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettleViewController.m; sourceTree = "<group>"; };
+		6493B7FD1D9CE68C008EE7C8 /* SettleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettleTableViewCell.h; sourceTree = "<group>"; };
+		6493B7FE1D9CE68C008EE7C8 /* SettleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettleTableViewCell.m; sourceTree = "<group>"; };
+		6493B7FF1D9CE68C008EE7C8 /* SettleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettleTableViewCell.xib; sourceTree = "<group>"; };
+		6493B8081D9D016A008EE7C8 /* AdditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionViewController.swift; sourceTree = "<group>"; };
+		6493B80D1D9D0734008EE7C8 /* AddressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressView.h; sourceTree = "<group>"; };
+		6493B80E1D9D0734008EE7C8 /* AddressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressView.m; sourceTree = "<group>"; };
 		649AF2E21D94FF2E00D8B840 /* LikeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LikeModel.h; path = ETong_ios/Tools/LikeModel.h; sourceTree = SOURCE_ROOT; };
 		649AF2E31D94FF2E00D8B840 /* LikeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LikeModel.m; path = ETong_ios/Tools/LikeModel.m; sourceTree = SOURCE_ROOT; };
 		649AF2E71D95121E00D8B840 /* GoodShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodShopViewController.h; sourceTree = "<group>"; };
@@ -1246,6 +1259,9 @@
 				F6EAB5251D84FCA2008FF8FA /* JSCartHeaderView.m */,
 				F6EAB5261D84FCA2008FF8FA /* JSNummberCount.h */,
 				F6EAB5271D84FCA2008FF8FA /* JSNummberCount.m */,
+				6493B7FD1D9CE68C008EE7C8 /* SettleTableViewCell.h */,
+				6493B7FE1D9CE68C008EE7C8 /* SettleTableViewCell.m */,
+				6493B7FF1D9CE68C008EE7C8 /* SettleTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1255,6 +1271,9 @@
 			children = (
 				F6EAB5291D84FCA2008FF8FA /* JSCartViewController.h */,
 				F6EAB52A1D84FCA2008FF8FA /* JSCartViewController.m */,
+				6493B7FA1D9CE5F3008EE7C8 /* SettleViewController.h */,
+				6493B7FB1D9CE5F3008EE7C8 /* SettleViewController.m */,
+				6493B8081D9D016A008EE7C8 /* AdditionViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1266,6 +1285,8 @@
 				F6EAB52D1D84FCA2008FF8FA /* JSCartUIService.m */,
 				F6EAB52E1D84FCA2008FF8FA /* JSCartViewModel.h */,
 				F6EAB52F1D84FCA2008FF8FA /* JSCartViewModel.m */,
+				6493B80D1D9D0734008EE7C8 /* AddressView.h */,
+				6493B80E1D9D0734008EE7C8 /* AddressView.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1362,6 +1383,7 @@
 				F6C0EA091D913C4D002654DE /* ETDailySpecialController.xib in Resources */,
 				F6C94C4E1D58AC1E00280E86 /* ETGoodsLoopCell.xib in Resources */,
 				F6508EF91D66FD440019BFFB /* ETGoodsSelectView.xib in Resources */,
+				6493B8011D9CE68C008EE7C8 /* SettleTableViewCell.xib in Resources */,
 				F6C36AE51D93CCD3008737D5 /* ETSpecialSaleCell.xib in Resources */,
 				F65149F01D4F56A000ECFFFD /* ETAllOrderController.xib in Resources */,
 				F65149FC1D4F5C4000ECFFFD /* ETWaitSignController.xib in Resources */,
@@ -1486,6 +1508,7 @@
 				F64788AF1D41C7C900294225 /* ETMZoneCell.m in Sources */,
 				F6C94C491D58AA4B00280E86 /* ETGoodsLoopController.swift in Sources */,
 				64BAA7F31D94CD16001B5B24 /* HttpModel.m in Sources */,
+				6493B80F1D9D0734008EE7C8 /* AddressView.m in Sources */,
 				6493B7EF1D9BB311008EE7C8 /* NewsViewController.m in Sources */,
 				F65E002A1D86854C005FDD83 /* UIBarButtonItem+Extension.m in Sources */,
 				649AF30C1D976AA400D8B840 /* JSAddressPickerView.m in Sources */,
@@ -1543,6 +1566,7 @@
 				647A3DF41D9A0BBB000B6802 /* DisTanceTakeOutViewController.m in Sources */,
 				F6EAB5371D84FCA2008FF8FA /* JSCartViewController.m in Sources */,
 				640F61DC1D93B8E000614657 /* NewProductCollectionViewCell.m in Sources */,
+				6493B8001D9CE68C008EE7C8 /* SettleTableViewCell.m in Sources */,
 				647A3E001D9A1FC0000B6802 /* AllOrderViewController.swift in Sources */,
 				647A3DFA1D9A1F3D000B6802 /* DaiPayViewController.swift in Sources */,
 				F6C09BEC1D5081D4001C2987 /* ETCUserInfoController.swift in Sources */,
@@ -1568,6 +1592,7 @@
 				F6C94C4D1D58AC1E00280E86 /* ETGoodsLoopCell.swift in Sources */,
 				649AF3191D97A36900D8B840 /* AroundFoodViewController.m in Sources */,
 				6493B7CA1D9B6B67008EE7C8 /* CollectViewController.m in Sources */,
+				6493B7FC1D9CE5F3008EE7C8 /* SettleViewController.m in Sources */,
 				649AF2F51D9612E500D8B840 /* NewProductModel.m in Sources */,
 				649AF3471D98F61600D8B840 /* AllLifeViewController.m in Sources */,
 				649AF3291D97BAF100D8B840 /* HotelTableViewCell.m in Sources */,
@@ -1583,6 +1608,7 @@
 				649AF3161D97A32800D8B840 /* AllFoodViewController.m in Sources */,
 				F6F6E07E1D99168D00C02257 /* ETHttpArrayModel.m in Sources */,
 				F6177C5F1D46054700A2CB67 /* ETWelcomeHelper.m in Sources */,
+				6493B8091D9D016A008EE7C8 /* AdditionViewController.swift in Sources */,
 				F6EAB5341D84FCA2008FF8FA /* JSCartFooterView.m in Sources */,
 				640F61D61D93B15A00614657 /* QualityLifeViewController.m in Sources */,
 				F65BF32F1D3F4FD70003DB35 /* LocationViewController.m in Sources */,

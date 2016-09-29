@@ -20,6 +20,7 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
     var imageNames = Array<String>()
     var goodModel:ETGoodsDataModel?
     var valueArr = NSArray()
+    var str = 0
     var model = NewProductModel()
     
     
@@ -41,12 +42,20 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
         cycleScrollView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated
         imageBackView.addSubview(cycleScrollView)
         cycleScrollView.scrollDirection = .Horizontal
-        
-        goodsName.text = model.goodsname
-        price.text = "¥" +  model.price
-        express.text = "快递: " + model.pays
-        shenma.text = model.address
-        descript.text = model.descriptio
+//        if str == 1 {
+            goodsName.text = goodModel!.goodsname
+            price.text = "¥" +  goodModel!.price
+            express.text = "快递: " + (goodModel?.price)!
+            shenma.text = goodModel!.address
+            descript.text = goodModel!.description
+//        }else{
+//            
+//            goodsName.text = model.goodsname
+//            price.text = "¥" +  model.price
+//            express.text = "快递: " + model.pays
+//            shenma.text = model.address
+//            descript.text = model.descriptio
+//        }
     }
     
     func createData(){

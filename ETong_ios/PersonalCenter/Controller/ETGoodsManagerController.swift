@@ -91,6 +91,8 @@ class ETGoodsManagerController: UIViewController,UITableViewDelegate,UITableView
         if listType == 0 {
             let vc = ETGoodsDetailController(nibName: "ETGoodsDetailController", bundle: nil)
             vc.goodModel = dataSource[indexPath.row] as? ETGoodsDataModel
+            print(vc.goodModel?.price)
+            vc.str = 1
             navigationController?.pushViewController(vc, animated: true)
         }
     }

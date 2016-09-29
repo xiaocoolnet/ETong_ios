@@ -9,7 +9,7 @@
 #import "GoodShopViewController.h"
 #import "GoodShopCollectionViewCell.h"
 #import "EveryDayHelper.h"
-#import "NewProductModel.h"
+#import "ETGoodsDataModel.h"
 
 @interface GoodShopViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -79,13 +79,8 @@
             self.dataArray = [[NSMutableArray alloc] init];
             for (int i=0; i<response.count; i++) {
                 
-                NewProductModel *model = [NewProductModel mj_objectWithKeyValues:response[i]];
+                ETGoodsDataModel *model = [ETGoodsDataModel mj_objectWithKeyValues:response[i]];
                 [self.dataArray addObject:model];
-                NSLog(@"%@",model);
-                NSLog(@"lalalalala");
-                NSLog(@"%@",self.dataArray);
-                NSLog(@"%@",model.unit);
-                NSLog(@"%@",model.descriptio);
                 
             }
             [self.collection reloadData];
@@ -135,7 +130,7 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     GoodShopCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    NewProductModel *model = self.dataArray[indexPath.item];
+    ETGoodsDataModel *model = self.dataArray[indexPath.item];
     cell.nameLab.text = model.goodsname;
     cell.priceLab.text = [model.price stringByAppendingString:@"¥"];
     // 将string字符串转换为array数组
@@ -148,7 +143,7 @@
 // 跳转详情页
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     ETGoodsDetailController *vc = [[ETGoodsDetailController alloc] initWithNibName:@"ETGoodsDetailController" bundle:nil];
-    vc.model = self.dataArray[indexPath.item];
+    vc.goodModel = self.dataArray[indexPath.item];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

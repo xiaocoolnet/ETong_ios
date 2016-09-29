@@ -103,8 +103,10 @@
             return model.isSelect;
         }] map:^id(JSCartModel *model) {
             return @(model.p_quantity*model.p_price);
+//            return @(model.p_name);
         }];
     }] array];
+    NSLog(@"%lu",(unsigned long)pricesArray.count);
     for (NSArray *priceA in pricesArray) {
         for (NSNumber *price in priceA) {
             allPrices += price.floatValue;
@@ -227,5 +229,6 @@
     /*重新计算价格*/
     self.allPrices = [self getAllPrices];
 }
+
 
 @end

@@ -24,7 +24,7 @@ class DaiPayViewController: UIViewController, UITableViewDelegate, UITableViewDa
             print(str)
             if str != "nil"{
                 
-                if str == "已取消" {
+                if str == "未付款" {
                     self.arr.addObject(self.dataSource[i])
                 }
             }
@@ -64,10 +64,9 @@ class DaiPayViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.titleLab.text = model.goodsname
         cell.btn.layer.borderWidth = 1
         cell.btn.layer.borderColor = UIColor.redColor().CGColor
+        cell.btn.setTitle("马上付款", forState: .Normal)
         cell.btn.layer.cornerRadius = 10
-        cell.cancelBtn.layer.borderWidth = 1
-        cell.cancelBtn.layer.borderColor = UIColor.lightGrayColor().CGColor
-        cell.cancelBtn.layer.cornerRadius = 10
+        cell.cancelBtn.removeFromSuperview()
         let strArray = model.picture.componentsSeparatedByString(",")
         let str = kIMAGE_URL_HEAD + strArray.first!
         let photourl = NSURL(string: str)

@@ -7,8 +7,6 @@
 //
 
 #import "OrderViewController.h"
-#import "OrderListModel.h"
-#import "ETShopHelper.h"
 
 @interface OrderViewController ()
 
@@ -17,13 +15,6 @@
 @end
 
 @implementation OrderViewController
-
--(ETShopHelper *)helper{
-    if (!_helper) {
-        _helper = [ETShopHelper helper];
-    }
-    return _helper;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

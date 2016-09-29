@@ -51,7 +51,6 @@ class ETUploadGoodsController: UIViewController,UIScrollViewDelegate,ETGoodsLoop
     //商品分类
     @IBAction func goodsClass(sender: AnyObject){
         self.pickerView = SortView.init(frame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height))
-//        pickerView!.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
         pickerView!.delegate = self
         pickerView!.font = UIFont.systemFontOfSize(16)
         self.view.addSubview(pickerView!)

@@ -22,7 +22,7 @@ class DaiSippingViewController: UIViewController, UITableViewDelegate, UITableVi
             print(str)
             if str != "nil"{
                 
-                if str == "已取消" {
+                if str == "待发货" {
                     self.arr.addObject(self.dataSource[i])
                 }
             }

@@ -23,7 +23,7 @@ class DaiValuationViewController: UIViewController, UITableViewDelegate, UITable
             print(str)
             if str != "nil"{
                 
-                if str == "已取消" {
+                if str == "待评价" {
                     self.arr.addObject(self.dataSource[i])
                 }
             }

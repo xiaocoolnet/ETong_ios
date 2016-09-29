@@ -36,6 +36,9 @@
  */
 @property (nonatomic, assign) NSInteger             currentSelectCartGoodsCount;
 
+@property (nonatomic, assign) NSString               *allPrice;
+
+
 //获取数据
 - (void)getData;
 

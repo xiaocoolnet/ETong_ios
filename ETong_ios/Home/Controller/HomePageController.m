@@ -99,13 +99,9 @@
             self.likeArray = [[NSMutableArray alloc] init];
             for (int i=0; i<response.count; i++) {
                 
-                NewProductModel *model = [NewProductModel mj_objectWithKeyValues:response[i]];
+                ETGoodsDataModel *model = [ETGoodsDataModel mj_objectWithKeyValues:response[i]];
                 [self.likeArray addObject:model];
-                NSLog(@"%@",model);
-                NSLog(@"lalalalala");
-                NSLog(@"%@",self.likeArray);
-                NSLog(@"%@",model.unit);
-                NSLog(@"%@",model.descriptio);
+        
             }
             [self.myColView reloadData];
             [self reloadate];
@@ -275,7 +271,7 @@
         return cell;
     }else{
         ETGuessYLikeCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell2" forIndexPath:indexPath];
-        NewProductModel * model = self.likeArray[indexPath.item];
+        ETGoodsDataModel * model = self.likeArray[indexPath.item];
         cell.titleLab.text = model.goodsname;
         cell.priceLab.text = [@"¥" stringByAppendingString:model.price];
         cell.busisLab.text = [model.recommend stringByAppendingString:@"人已收藏"];
