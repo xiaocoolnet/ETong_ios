@@ -356,6 +356,11 @@
         ETShopModel *model = self.dataArray[indexPath.item];
         vc.shopModel = model;
         [self.navigationController pushViewController:vc animated:YES];
+    }else{
+        ETGoodsDetailController *controller = [[ETGoodsDetailController alloc]init];
+        ETGoodsDataModel *model = self.likeArray[indexPath.row];
+        controller.goodModel = model;
+        [self.navigationController pushViewController:controller animated:true];
     }
 }
 

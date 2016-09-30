@@ -50,8 +50,14 @@
 		6493B8011D9CE68C008EE7C8 /* SettleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6493B7FF1D9CE68C008EE7C8 /* SettleTableViewCell.xib */; };
 		6493B8091D9D016A008EE7C8 /* AdditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6493B8081D9D016A008EE7C8 /* AdditionViewController.swift */; };
 		6493B80F1D9D0734008EE7C8 /* AddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6493B80E1D9D0734008EE7C8 /* AddressView.m */; };
-		6493B8141D9E4F7E008EE7C8 /* AfterSaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6493B8121D9E4F7E008EE7C8 /* AfterSaleViewController.swift */; };
-		6493B8151D9E4F7E008EE7C8 /* AfterSaleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6493B8131D9E4F7E008EE7C8 /* AfterSaleViewController.xib */; };
+		6493B8171D9E5119008EE7C8 /* AfterSaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6493B8161D9E5119008EE7C8 /* AfterSaleViewController.swift */; };
+		6493B81A1D9E53BA008EE7C8 /* AppraiseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6493B8191D9E53BA008EE7C8 /* AppraiseViewController.m */; };
+		6493B81D1D9E5429008EE7C8 /* NOAppraiseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6493B81C1D9E5429008EE7C8 /* NOAppraiseViewController.m */; };
+		6493B8201D9E546C008EE7C8 /* YesAppraiseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6493B81F1D9E546C008EE7C8 /* YesAppraiseViewController.m */; };
+		6493B8251D9E5606008EE7C8 /* AppraiseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6493B8231D9E5606008EE7C8 /* AppraiseTableViewCell.m */; };
+		6493B8261D9E5606008EE7C8 /* AppraiseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6493B8241D9E5606008EE7C8 /* AppraiseTableViewCell.xib */; };
+		6493B82A1D9E6DA9008EE7C8 /* YiAppraiseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6493B8281D9E6DA9008EE7C8 /* YiAppraiseTableViewCell.m */; };
+		6493B82B1D9E6DA9008EE7C8 /* YiAppraiseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6493B8291D9E6DA9008EE7C8 /* YiAppraiseTableViewCell.xib */; };
 		649AF2E41D94FF2E00D8B840 /* LikeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF2E31D94FF2E00D8B840 /* LikeModel.m */; };
 		649AF2E91D95121E00D8B840 /* GoodShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF2E81D95121E00D8B840 /* GoodShopViewController.m */; };
 		649AF2EC1D95142000D8B840 /* GoodShopCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF2EB1D95142000D8B840 /* GoodShopCollectionViewCell.m */; };
@@ -283,8 +289,19 @@
 		6493B8081D9D016A008EE7C8 /* AdditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionViewController.swift; sourceTree = "<group>"; };
 		6493B80D1D9D0734008EE7C8 /* AddressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressView.h; sourceTree = "<group>"; };
 		6493B80E1D9D0734008EE7C8 /* AddressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressView.m; sourceTree = "<group>"; };
-		6493B8121D9E4F7E008EE7C8 /* AfterSaleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AfterSaleViewController.swift; sourceTree = "<group>"; };
-		6493B8131D9E4F7E008EE7C8 /* AfterSaleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AfterSaleViewController.xib; sourceTree = "<group>"; };
+		6493B8161D9E5119008EE7C8 /* AfterSaleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AfterSaleViewController.swift; sourceTree = "<group>"; };
+		6493B8181D9E53BA008EE7C8 /* AppraiseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppraiseViewController.h; sourceTree = "<group>"; };
+		6493B8191D9E53BA008EE7C8 /* AppraiseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppraiseViewController.m; sourceTree = "<group>"; };
+		6493B81B1D9E5429008EE7C8 /* NOAppraiseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOAppraiseViewController.h; sourceTree = "<group>"; };
+		6493B81C1D9E5429008EE7C8 /* NOAppraiseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOAppraiseViewController.m; sourceTree = "<group>"; };
+		6493B81E1D9E546C008EE7C8 /* YesAppraiseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YesAppraiseViewController.h; sourceTree = "<group>"; };
+		6493B81F1D9E546C008EE7C8 /* YesAppraiseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YesAppraiseViewController.m; sourceTree = "<group>"; };
+		6493B8221D9E5606008EE7C8 /* AppraiseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppraiseTableViewCell.h; sourceTree = "<group>"; };
+		6493B8231D9E5606008EE7C8 /* AppraiseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppraiseTableViewCell.m; sourceTree = "<group>"; };
+		6493B8241D9E5606008EE7C8 /* AppraiseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppraiseTableViewCell.xib; sourceTree = "<group>"; };
+		6493B8271D9E6DA9008EE7C8 /* YiAppraiseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YiAppraiseTableViewCell.h; sourceTree = "<group>"; };
+		6493B8281D9E6DA9008EE7C8 /* YiAppraiseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YiAppraiseTableViewCell.m; sourceTree = "<group>"; };
+		6493B8291D9E6DA9008EE7C8 /* YiAppraiseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YiAppraiseTableViewCell.xib; sourceTree = "<group>"; };
 		649AF2E21D94FF2E00D8B840 /* LikeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LikeModel.h; path = ETong_ios/Tools/LikeModel.h; sourceTree = SOURCE_ROOT; };
 		649AF2E31D94FF2E00D8B840 /* LikeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LikeModel.m; path = ETong_ios/Tools/LikeModel.m; sourceTree = SOURCE_ROOT; };
 		649AF2E71D95121E00D8B840 /* GoodShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodShopViewController.h; sourceTree = "<group>"; };
@@ -624,6 +641,19 @@
 				6493B7EE1D9BB311008EE7C8 /* NewsViewController.m */,
 			);
 			name = "消息";
+			sourceTree = "<group>";
+		};
+		6493B8211D9E5596008EE7C8 /* 评价管理 */ = {
+			isa = PBXGroup;
+			children = (
+				6493B8181D9E53BA008EE7C8 /* AppraiseViewController.h */,
+				6493B8191D9E53BA008EE7C8 /* AppraiseViewController.m */,
+				6493B81B1D9E5429008EE7C8 /* NOAppraiseViewController.h */,
+				6493B81C1D9E5429008EE7C8 /* NOAppraiseViewController.m */,
+				6493B81E1D9E546C008EE7C8 /* YesAppraiseViewController.h */,
+				6493B81F1D9E546C008EE7C8 /* YesAppraiseViewController.m */,
+			);
+			name = "评价管理";
 			sourceTree = "<group>";
 		};
 		649AF2E51D95117B00D8B840 /* 每日好店 */ = {
@@ -1114,6 +1144,12 @@
 				6493B7E71D9BAC95008EE7C8 /* EvaluateTableViewCell.m */,
 				6493B7F01D9BB6B2008EE7C8 /* NewsTableViewCell.h */,
 				6493B7F11D9BB6B2008EE7C8 /* NewsTableViewCell.m */,
+				6493B8221D9E5606008EE7C8 /* AppraiseTableViewCell.h */,
+				6493B8231D9E5606008EE7C8 /* AppraiseTableViewCell.m */,
+				6493B8241D9E5606008EE7C8 /* AppraiseTableViewCell.xib */,
+				6493B8271D9E6DA9008EE7C8 /* YiAppraiseTableViewCell.h */,
+				6493B8281D9E6DA9008EE7C8 /* YiAppraiseTableViewCell.m */,
+				6493B8291D9E6DA9008EE7C8 /* YiAppraiseTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1244,8 +1280,8 @@
 				F65149E81D4F4F7D00ECFFFD /* ETOrderManagerController.swift */,
 				F6C94C471D58AA4B00280E86 /* ETGoodsLoopController.swift */,
 				F6C94C481D58AA4B00280E86 /* ETGoodsLoopController.xib */,
-				6493B8121D9E4F7E008EE7C8 /* AfterSaleViewController.swift */,
-				6493B8131D9E4F7E008EE7C8 /* AfterSaleViewController.xib */,
+				6493B8161D9E5119008EE7C8 /* AfterSaleViewController.swift */,
+				6493B8211D9E5596008EE7C8 /* 评价管理 */,
 			);
 			name = MyShop;
 			sourceTree = "<group>";
@@ -1414,6 +1450,7 @@
 				F6C09BED1D5081D4001C2987 /* ETCUserInfoController.xib in Resources */,
 				F62CF47B1D4320720070BA2E /* ETGuessYLikeCell.xib in Resources */,
 				F65149E71D4F383D00ECFFFD /* ETGMSellCell.xib in Resources */,
+				6493B82B1D9E6DA9008EE7C8 /* YiAppraiseTableViewCell.xib in Resources */,
 				F6C36AD61D937A71008737D5 /* ETDailySpacialCell.xib in Resources */,
 				F6508EF51D66EFA20019BFFB /* ETGoodsJudgeCell.xib in Resources */,
 				F6286FE91D4A18210052ADC3 /* ETShopBeginAuthVC.xib in Resources */,
@@ -1427,7 +1464,6 @@
 				647A3E0B1D9A4E8E000B6802 /* AllOrderTableViewCell.xib in Resources */,
 				F63272201D4DE90100A3C0FF /* ETShopManagerController.xib in Resources */,
 				F67B3DA81D4D9F8C00F2B544 /* ETMyShopController.xib in Resources */,
-				6493B8151D9E4F7E008EE7C8 /* AfterSaleViewController.xib in Resources */,
 				649AF3091D976A5C00D8B840 /* Address.plist in Resources */,
 				F6545D7E1D533F480007C42C /* ETGMOffShelfCell.xib in Resources */,
 				F6CF10AF1D4B3A2900555C4A /* ETShopInfoController.xib in Resources */,
@@ -1435,6 +1471,7 @@
 				F65BF32B1D3F4FAB0003DB35 /* HomePageController.xib in Resources */,
 				F6CF10B41D4B4BE700555C4A /* ETWaitForAuditVC.xib in Resources */,
 				F6514A001D4F5C7200ECFFFD /* ETCompleteController.xib in Resources */,
+				6493B8261D9E5606008EE7C8 /* AppraiseTableViewCell.xib in Resources */,
 				F64788A61D41BC3000294225 /* ETMyZoneController.xib in Resources */,
 				F64308941D61A3640037FD9F /* ETEditInfoController.xib in Resources */,
 				F65BF3301D3F4FD70003DB35 /* LocationViewController.xib in Resources */,
@@ -1549,6 +1586,7 @@
 				F6FED1D71D44BE4400C5C776 /* ETRigestController.m in Sources */,
 				647A3DF11D9A0B90000B6802 /* AllTakeOutViewController.m in Sources */,
 				F64788AA1D41BCDD00294225 /* ETSidelineZoneController.m in Sources */,
+				6493B81D1D9E5429008EE7C8 /* NOAppraiseViewController.m in Sources */,
 				F635C5E81D51C3B300CBBAD1 /* ETAllOrderCell.swift in Sources */,
 				F6286FE81D4A18210052ADC3 /* ETShopBeginAuthVC.m in Sources */,
 				649AF35F1D99116B00D8B840 /* AllTableViewCell.m in Sources */,
@@ -1567,6 +1605,7 @@
 				649AF3541D98F89100D8B840 /* AroundKTVViewController.m in Sources */,
 				F67B3DA71D4D9F8C00F2B544 /* ETMyShopController.swift in Sources */,
 				F6177C621D460BCF00A2CB67 /* ETBaseHelper.m in Sources */,
+				6493B82A1D9E6DA9008EE7C8 /* YiAppraiseTableViewCell.m in Sources */,
 				649AF2EC1D95142000D8B840 /* GoodShopCollectionViewCell.m in Sources */,
 				6493B7D81D9B992B008EE7C8 /* CollectModel.m in Sources */,
 				640F61E51D93D79C00614657 /* FreeTableViewCell.m in Sources */,
@@ -1581,7 +1620,6 @@
 				F6EAB5311D84FCA2008FF8FA /* JSCartBar.m in Sources */,
 				6493B7E51D9BABB0008EE7C8 /* EvaluateModel.m in Sources */,
 				647A3DF41D9A0BBB000B6802 /* DisTanceTakeOutViewController.m in Sources */,
-				6493B8141D9E4F7E008EE7C8 /* AfterSaleViewController.swift in Sources */,
 				F6EAB5371D84FCA2008FF8FA /* JSCartViewController.m in Sources */,
 				640F61DC1D93B8E000614657 /* NewProductCollectionViewCell.m in Sources */,
 				6493B8001D9CE68C008EE7C8 /* SettleTableViewCell.m in Sources */,
@@ -1619,8 +1657,10 @@
 				F62CF47A1D4320720070BA2E /* ETGuessYLikeCell.m in Sources */,
 				F62CF4751D431C600070BA2E /* ETDailyMarketCell.m in Sources */,
 				F6032EFC1D654A7000A8407F /* ETGoodsDetailController.swift in Sources */,
+				6493B8251D9E5606008EE7C8 /* AppraiseTableViewCell.m in Sources */,
 				F6B65F851D48AE760069312B /* ETUserInfo.m in Sources */,
 				F65BF3341D3F4FFE0003DB35 /* EZoneViewController.m in Sources */,
+				6493B81A1D9E53BA008EE7C8 /* AppraiseViewController.m in Sources */,
 				F65E002B1D86854C005FDD83 /* UIButton+Bootstrap.m in Sources */,
 				F6EAB5321D84FCA2008FF8FA /* JSCartCell.m in Sources */,
 				649AF3161D97A32800D8B840 /* AllFoodViewController.m in Sources */,
@@ -1632,10 +1672,12 @@
 				F65BF32F1D3F4FD70003DB35 /* LocationViewController.m in Sources */,
 				F6F6E07B1D99150000C02257 /* ETShopCartModel.m in Sources */,
 				F6F6E0781D98FB1D00C02257 /* ETPropertyModel.m in Sources */,
+				6493B8201D9E546C008EE7C8 /* YesAppraiseViewController.m in Sources */,
 				F65BF33E1D3F50390003DB35 /* PersonViewController.m in Sources */,
 				647A3DFE1D9A1FA5000B6802 /* DaiSippingViewController.swift in Sources */,
 				F6545D7D1D533F480007C42C /* ETGMOffShelfCell.swift in Sources */,
 				F65149EF1D4F56A000ECFFFD /* ETAllOrderController.swift in Sources */,
+				6493B8171D9E5119008EE7C8 /* AfterSaleViewController.swift in Sources */,
 				F65E00301D86857E005FDD83 /* GoodAttrModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

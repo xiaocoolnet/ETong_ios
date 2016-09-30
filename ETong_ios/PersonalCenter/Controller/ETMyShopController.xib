@@ -394,6 +394,9 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vcd-0E-IaM">
                                                     <rect key="frame" x="0.0" y="0.0" width="80" height="116"/>
+                                                    <connections>
+                                                        <action selector="AppraiseManager:" destination="-1" eventType="touchUpInside" id="Qai-7A-dQl"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="评价管理" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5n-y4-8Rw">
                                                     <rect key="frame" x="0.0" y="68" width="80" height="48"/>
@@ -428,6 +431,9 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEd-GU-apx">
                                                     <rect key="frame" x="0.0" y="0.0" width="80" height="116"/>
+                                                    <connections>
+                                                        <action selector="ClickHelperBtn:" destination="-1" eventType="touchUpInside" id="fJU-QS-m9m"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我要求助" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eu4-8m-Chj">
                                                     <rect key="frame" x="0.0" y="68" width="80" height="48"/>

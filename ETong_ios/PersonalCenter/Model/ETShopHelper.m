@@ -415,8 +415,12 @@
         ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
         if ([model.status isEqualToString:@"success"]) {
             success(model.data);
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"网络错误"];
+            return;
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        faild("")
     }];
 }
 

@@ -47,8 +47,23 @@ class ETMyShopController: UIViewController {
         let orderManager = ETOrderManagerController()
         navigationController?.pushViewController(orderManager, animated: true)
     }
+    // 评价管理
+    @IBAction func AppraiseManager(sender: AnyObject) {
+        let vc = AppraiseViewController()
+        vc.title = "评价管理"
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    // 问题求助
+    @IBAction func ClickHelperBtn(sender: AnyObject) {
+        var phone = String()
+        phone = "telprompt:\(String(model!.contactphone))"
+        UIApplication.sharedApplication().openURL(NSURL.init(string: phone)!)
+    }
     // 售后管理
     @IBAction func AfterSaleManager(sender: AnyObject) {
-        
+       let vc = AfterSaleViewController()
+        vc.title = "售后管理"
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

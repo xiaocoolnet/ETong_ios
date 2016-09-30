@@ -80,7 +80,7 @@
             for (int j = 0; j < arr.count; j++) {
                 JSCartModel *model = arr[j];
                 NSString *moeny = [NSString stringWithFormat:@"%.2f",model.p_price*model.p_quantity];
-                NSString *goodid = model.p_id;
+                NSString *goodid = model.s_id;
                 NSString *num = [NSString stringWithFormat:@"%.2ld",(long)model.p_quantity];
                 [self.helper PayInfoWithUserid:[ETUserInfo sharedETUserInfo].id peoplename:self.userName address:self.address goodsid:goodid goodnum:num mobile:self.phone remark:self.textView.text money:moeny success:^(NSDictionary *response) {
                     st_dispatch_async_main(^{
