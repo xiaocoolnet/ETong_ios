@@ -19,25 +19,37 @@
 #import "ALLViewController.h"
 #import "KTVViewController.h"
 #import "TakeOutViewController.h"
+#import "ETLocationLikeCell.h"
+#import "EveryDayHelper.h"
 
-
-@interface LocationViewController ()<SDCycleScrollViewDelegate, CLLocationManagerDelegate>
+@interface LocationViewController ()<SDCycleScrollViewDelegate, CLLocationManagerDelegate,UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UIView *headView;
 @property (strong, nonatomic) UIButton *leftBtn;
 @property (strong, nonatomic) NSString *str;
 @property (weak, nonatomic) IBOutlet UIImageView *foodBtn;
 @property (strong, nonatomic)  CLLocationManager *locationManager;
+@property (weak, nonatomic) IBOutlet UITableView *likeTableView;
+@property (strong, nonatomic) NSMutableArray *likeArray;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentHeightLayout;
+@property (strong, nonatomic) EveryDayHelper *helper;
 
 @end
 
 @implementation LocationViewController
-
+-(NSMutableArray *)likeArray{
+    if (_likeArray == nil) {
+        return [NSMutableArray array];
+    }
+    return _likeArray;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.hidesBottomBarWhenPushed = false;
     self.str = @"北京";
     [self configureUI];
+    [_likeTableView registerNib:[UINib nibWithNibName:@"ETLocationLikeCell" bundle:nil] forCellReuseIdentifier:@"cell"];
+    _likeTableView.scrollEnabled = false;
     _locationManager = [[CLLocationManager alloc] init];
     //期望的经度
     _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -52,6 +64,19 @@
     }
     _locationManager.delegate = self;
     [_locationManager startUpdatingLocation];
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [self getData];
+}
+- (void)viewDidAppear:(BOOL)animated{
+    
+}
+
+-(EveryDayHelper *)helper{
+    if (!_helper) {
+        _helper = [EveryDayHelper helper];
+    }
+    return _helper;
 }
 
 #pragma mark - CoreLocation 代理
@@ -76,11 +101,33 @@
             [_locationManager stopUpdatingLocation];
         }
     }];
-    
 }
 
 -(void)locationManager:(CLLocationManager *)manager didFinishDeferredUpdatesWithError:(NSError *)error{
     NSLog(@"hahahahahh = %@",error);
+}
+
+#pragma mark - 获取猜你喜欢
+-(void)getData{
+    WEAKSELF
+    [self.helper getGoodShopInfoWithIsLike:nil success:^(NSArray *response) {
+        if ([response isKindOfClass:[NSString class]]) {
+            return ;
+        }
+        st_dispatch_async_main(^{
+            weakSelf.likeArray = [[NSMutableArray alloc] init];
+            for (int i=0; i<response.count; i++) {
+                
+                ETGoodsDataModel *model = [ETGoodsDataModel mj_objectWithKeyValues:response[i]];
+                [weakSelf.likeArray addObject:model];
+            }
+            [weakSelf.likeTableView reloadData];
+            _contentHeightLayout.constant = 486 + _likeTableView.contentSize.height;
+        });
+        return ;
+    } faild:^(NSString *response, NSError *error) {
+        
+    }];
 }
 
 - (void)configureUI{
@@ -136,6 +183,34 @@
     NSLog(@"%@", city);
 }
 
+#pragma mark - UITableViewDelegate/DataSource
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;{
+    return 80;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;{
+    return self.likeArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;{
+    ETLocationLikeCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    ETGoodsDataModel *model = self.likeArray[indexPath.row];
+    cell.goodsNameLabel.text = model.goodsname;
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",kIMAGE_URL_HEAD,[[model.picture componentsSeparatedByString:@","] firstObject]]];
+    [cell.avatarImage sd_setImageWithURL:url];
+    cell.priceLabel.text = [NSString stringWithFormat:@"¥%@",model.price];
+    cell.descript.text = model.description;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    ETGoodsDetailController *controller = [[ETGoodsDetailController alloc]init];
+    ETGoodsDataModel *model = self.likeArray[indexPath.row];
+    controller.goodModel = model;
+    [self.navigationController pushViewController:controller animated:true];
+}
+
 #pragma mark - SDCycleScrollViewDelegate
 
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
@@ -143,12 +218,14 @@
     NSLog(@"---点击了第%ld张图片", (long)index);
     [self.navigationController pushViewController:[NSClassFromString(@"DemoVCWithXib") new] animated:YES];
 }
+
 #pragma mark - 美食
 - (IBAction)ClickFoodBtn:(id)sender {
     FoodViewController *vc = [[FoodViewController alloc] init];
     vc.hidesBottomBarWhenPushed = true;
     [self.navigationController pushViewController:vc animated:YES];
 }
+
 #pragma mark - 电影
 - (IBAction)ClickMovieBtn:(id)sender {
     MovieViewController *vc = [[MovieViewController alloc] init];
@@ -156,6 +233,7 @@
     vc.title = @"电影";
     [self.navigationController pushViewController:vc animated:YES];
 }
+
 #pragma mark - 周边游
 - (IBAction)ClickTravelBtn:(id)sender {
     AroundTravelViewController *vc = [[AroundTravelViewController alloc] init];
@@ -163,6 +241,7 @@
     vc.title = @"周边游";
     [self.navigationController pushViewController:vc animated:YES];
 }
+
 #pragma mark - 酒店
 - (IBAction)ClickHotelBtn:(id)sender {
     HotelViewController *vc = [[HotelViewController alloc] init];
@@ -170,6 +249,7 @@
     vc.title = @"酒店";
     [self.navigationController pushViewController:vc animated:YES];
 }
+
 #pragma mark - 生活服务
 - (IBAction)ClickLifeBtn:(id)sender {
     LifeViewController *vc = [[LifeViewController alloc] init];
@@ -177,6 +257,7 @@
     vc.title = @"生活服务";
     [self.navigationController pushViewController:vc animated:true];
 }
+
 #pragma mark - 手机充值
 - (IBAction)ClickRechargeBtn:(id)sender {
     RechargeViewController *vc = [[RechargeViewController alloc] init];
@@ -184,6 +265,7 @@
     vc.hidesBottomBarWhenPushed = true;
     [self.navigationController pushViewController:vc animated:true];
 }
+
 #pragma mark - 全部
 - (IBAction)ClickAllBtn:(id)sender {
     ALLViewController *vc = [[ALLViewController alloc] init];
@@ -191,6 +273,7 @@
     vc.hidesBottomBarWhenPushed = true;
     [self.navigationController pushViewController:vc animated:true];
 }
+
 #pragma mark - 外卖
 - (IBAction)ClickTakeOutBtn:(id)sender {
     TakeOutViewController *vc = [[TakeOutViewController alloc] init];
@@ -198,6 +281,7 @@
     vc.hidesBottomBarWhenPushed = true;
     [self.navigationController pushViewController:vc animated:YES];
 }
+
 #pragma mark - KTV
 - (IBAction)ClickKTVBtn:(id)sender {
     KTVViewController *vc = [[KTVViewController alloc] init];

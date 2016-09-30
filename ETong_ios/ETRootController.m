@@ -76,6 +76,7 @@
     [controller.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor lightGrayColor]} forState:UIControlStateNormal];
     
     [controller.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:ETColor} forState:UIControlStateSelected];
+    
     return aNav;
 }
 

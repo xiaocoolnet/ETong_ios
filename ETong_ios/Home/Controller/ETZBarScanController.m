@@ -19,6 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationController.navigationBar.hidden = true;
+    self.view.backgroundColor = [UIColor blackColor];
     _readerView = [ZBarReaderView new];
     _readerView.readerDelegate = self;
     //二维码/条形码识别设置

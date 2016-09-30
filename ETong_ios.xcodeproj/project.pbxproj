@@ -83,6 +83,8 @@
 		64BAA7F31D94CD16001B5B24 /* HttpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BAA7F21D94CD16001B5B24 /* HttpModel.m */; };
 		F6032EFC1D654A7000A8407F /* ETGoodsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6032EFA1D654A7000A8407F /* ETGoodsDetailController.swift */; };
 		F6032EFD1D654A7000A8407F /* ETGoodsDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6032EFB1D654A7000A8407F /* ETGoodsDetailController.xib */; };
+		F6155FD21D9E0D4100297429 /* ETLocationLikeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F6155FD01D9E0D4100297429 /* ETLocationLikeCell.m */; };
+		F6155FD31D9E0D4100297429 /* ETLocationLikeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6155FD11D9E0D4100297429 /* ETLocationLikeCell.xib */; };
 		F6177C5F1D46054700A2CB67 /* ETWelcomeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F6177C5E1D46054700A2CB67 /* ETWelcomeHelper.m */; };
 		F6177C621D460BCF00A2CB67 /* ETBaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F6177C611D460BCF00A2CB67 /* ETBaseHelper.m */; };
 		F61E821E1D470525001E16B5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61E821D1D470525001E16B5 /* SystemConfiguration.framework */; };
@@ -343,6 +345,9 @@
 		BC727555E648AF38DE5BD102 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F6032EFA1D654A7000A8407F /* ETGoodsDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETGoodsDetailController.swift; sourceTree = "<group>"; };
 		F6032EFB1D654A7000A8407F /* ETGoodsDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETGoodsDetailController.xib; sourceTree = "<group>"; };
+		F6155FCF1D9E0D4100297429 /* ETLocationLikeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETLocationLikeCell.h; sourceTree = "<group>"; };
+		F6155FD01D9E0D4100297429 /* ETLocationLikeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETLocationLikeCell.m; sourceTree = "<group>"; };
+		F6155FD11D9E0D4100297429 /* ETLocationLikeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETLocationLikeCell.xib; sourceTree = "<group>"; };
 		F6177C5D1D46054700A2CB67 /* ETWelcomeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETWelcomeHelper.h; sourceTree = "<group>"; };
 		F6177C5E1D46054700A2CB67 /* ETWelcomeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETWelcomeHelper.m; sourceTree = "<group>"; };
 		F6177C601D460BCF00A2CB67 /* ETBaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETBaseHelper.h; sourceTree = "<group>"; };
@@ -969,6 +974,9 @@
 				647A3DE71D9A0B3C000B6802 /* TakeOutTableViewCell.h */,
 				647A3DE81D9A0B3C000B6802 /* TakeOutTableViewCell.m */,
 				647A3DE91D9A0B3C000B6802 /* TakeOutTableViewCell.xib */,
+				F6155FCF1D9E0D4100297429 /* ETLocationLikeCell.h */,
+				F6155FD01D9E0D4100297429 /* ETLocationLikeCell.m */,
+				F6155FD11D9E0D4100297429 /* ETLocationLikeCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1388,6 +1396,7 @@
 				F6286FEE1D4A19130052ADC3 /* ETShopAuthController.xib in Resources */,
 				F6C0EA091D913C4D002654DE /* ETDailySpecialController.xib in Resources */,
 				F6C94C4E1D58AC1E00280E86 /* ETGoodsLoopCell.xib in Resources */,
+				F6155FD31D9E0D4100297429 /* ETLocationLikeCell.xib in Resources */,
 				F6508EF91D66FD440019BFFB /* ETGoodsSelectView.xib in Resources */,
 				6493B8011D9CE68C008EE7C8 /* SettleTableViewCell.xib in Resources */,
 				F6C36AE51D93CCD3008737D5 /* ETSpecialSaleCell.xib in Resources */,
@@ -1568,6 +1577,7 @@
 				F64308931D61A3640037FD9F /* ETEditInfoController.swift in Sources */,
 				647A3E0A1D9A4E8E000B6802 /* AllOrderTableViewCell.swift in Sources */,
 				6493B7CD1D9B6C18008EE7C8 /* BabyCollectViewController.m in Sources */,
+				F6155FD21D9E0D4100297429 /* ETLocationLikeCell.m in Sources */,
 				F6EAB5311D84FCA2008FF8FA /* JSCartBar.m in Sources */,
 				6493B7E51D9BABB0008EE7C8 /* EvaluateModel.m in Sources */,
 				647A3DF41D9A0BBB000B6802 /* DisTanceTakeOutViewController.m in Sources */,
