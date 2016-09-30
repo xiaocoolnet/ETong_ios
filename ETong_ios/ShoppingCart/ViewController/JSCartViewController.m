@@ -36,7 +36,13 @@
     
     [super viewWillAppear:animated];
     
+    WEAK
+    [RACObserve(self.viewModel, allPrices) subscribeNext:^(NSNumber *x) {
+        STRONG
+        self.cartBar.money = 00.00;
+    }];
     [self getNewData];
+
 }
 
 - (void)viewDidLoad {

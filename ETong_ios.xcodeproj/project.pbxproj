@@ -50,6 +50,8 @@
 		6493B8011D9CE68C008EE7C8 /* SettleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6493B7FF1D9CE68C008EE7C8 /* SettleTableViewCell.xib */; };
 		6493B8091D9D016A008EE7C8 /* AdditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6493B8081D9D016A008EE7C8 /* AdditionViewController.swift */; };
 		6493B80F1D9D0734008EE7C8 /* AddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6493B80E1D9D0734008EE7C8 /* AddressView.m */; };
+		6493B8141D9E4F7E008EE7C8 /* AfterSaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6493B8121D9E4F7E008EE7C8 /* AfterSaleViewController.swift */; };
+		6493B8151D9E4F7E008EE7C8 /* AfterSaleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6493B8131D9E4F7E008EE7C8 /* AfterSaleViewController.xib */; };
 		649AF2E41D94FF2E00D8B840 /* LikeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF2E31D94FF2E00D8B840 /* LikeModel.m */; };
 		649AF2E91D95121E00D8B840 /* GoodShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF2E81D95121E00D8B840 /* GoodShopViewController.m */; };
 		649AF2EC1D95142000D8B840 /* GoodShopCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF2EB1D95142000D8B840 /* GoodShopCollectionViewCell.m */; };
@@ -279,6 +281,8 @@
 		6493B8081D9D016A008EE7C8 /* AdditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionViewController.swift; sourceTree = "<group>"; };
 		6493B80D1D9D0734008EE7C8 /* AddressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressView.h; sourceTree = "<group>"; };
 		6493B80E1D9D0734008EE7C8 /* AddressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressView.m; sourceTree = "<group>"; };
+		6493B8121D9E4F7E008EE7C8 /* AfterSaleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AfterSaleViewController.swift; sourceTree = "<group>"; };
+		6493B8131D9E4F7E008EE7C8 /* AfterSaleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AfterSaleViewController.xib; sourceTree = "<group>"; };
 		649AF2E21D94FF2E00D8B840 /* LikeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LikeModel.h; path = ETong_ios/Tools/LikeModel.h; sourceTree = SOURCE_ROOT; };
 		649AF2E31D94FF2E00D8B840 /* LikeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LikeModel.m; path = ETong_ios/Tools/LikeModel.m; sourceTree = SOURCE_ROOT; };
 		649AF2E71D95121E00D8B840 /* GoodShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodShopViewController.h; sourceTree = "<group>"; };
@@ -1232,6 +1236,8 @@
 				F65149E81D4F4F7D00ECFFFD /* ETOrderManagerController.swift */,
 				F6C94C471D58AA4B00280E86 /* ETGoodsLoopController.swift */,
 				F6C94C481D58AA4B00280E86 /* ETGoodsLoopController.xib */,
+				6493B8121D9E4F7E008EE7C8 /* AfterSaleViewController.swift */,
+				6493B8131D9E4F7E008EE7C8 /* AfterSaleViewController.xib */,
 			);
 			name = MyShop;
 			sourceTree = "<group>";
@@ -1347,7 +1353,7 @@
 				TargetAttributes = {
 					F65BF2F41D3F1CA80003DB35 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = G5639ZVPC9;
+						DevelopmentTeam = H58LYH4V4T;
 					};
 				};
 			};
@@ -1412,6 +1418,7 @@
 				647A3E0B1D9A4E8E000B6802 /* AllOrderTableViewCell.xib in Resources */,
 				F63272201D4DE90100A3C0FF /* ETShopManagerController.xib in Resources */,
 				F67B3DA81D4D9F8C00F2B544 /* ETMyShopController.xib in Resources */,
+				6493B8151D9E4F7E008EE7C8 /* AfterSaleViewController.xib in Resources */,
 				649AF3091D976A5C00D8B840 /* Address.plist in Resources */,
 				F6545D7E1D533F480007C42C /* ETGMOffShelfCell.xib in Resources */,
 				F6CF10AF1D4B3A2900555C4A /* ETShopInfoController.xib in Resources */,
@@ -1564,6 +1571,7 @@
 				F6EAB5311D84FCA2008FF8FA /* JSCartBar.m in Sources */,
 				6493B7E51D9BABB0008EE7C8 /* EvaluateModel.m in Sources */,
 				647A3DF41D9A0BBB000B6802 /* DisTanceTakeOutViewController.m in Sources */,
+				6493B8141D9E4F7E008EE7C8 /* AfterSaleViewController.swift in Sources */,
 				F6EAB5371D84FCA2008FF8FA /* JSCartViewController.m in Sources */,
 				640F61DC1D93B8E000614657 /* NewProductCollectionViewCell.m in Sources */,
 				6493B8001D9CE68C008EE7C8 /* SettleTableViewCell.m in Sources */,
@@ -1655,7 +1663,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Chongqian Zhu (43SWZUC27M)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chongqian Zhu (43SWZUC27M)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1677,7 +1685,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "47a02154-88a8-4947-bde5-95f8c96f32f2";
+				PROVISIONING_PROFILE = "77134964-e138-482e-8cdb-8c125ab4cfda";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1701,7 +1709,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Chongqian Zhu (43SWZUC27M)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chongqian Zhu (43SWZUC27M)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1716,7 +1724,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "47a02154-88a8-4947-bde5-95f8c96f32f2";
+				PROVISIONING_PROFILE = "77134964-e138-482e-8cdb-8c125ab4cfda";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1738,7 +1746,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ETong.xiaocool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "47a02154-88a8-4947-bde5-95f8c96f32f2";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ETong_ios/PersonalCenter/Controller/ETong_ios-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
@@ -1761,7 +1769,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ETong.xiaocool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "47a02154-88a8-4947-bde5-95f8c96f32f2";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ETong_ios/PersonalCenter/Controller/ETong_ios-Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};

@@ -357,6 +357,9 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YmZ-cu-arT">
                                                     <rect key="frame" x="0.0" y="0.0" width="80" height="116"/>
+                                                    <connections>
+                                                        <action selector="AfterSaleManager:" destination="-1" eventType="touchUpInside" id="RN0-Fl-n9o"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="售后管理" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcJ-7Q-n43">
                                                     <rect key="frame" x="0.0" y="68" width="80" height="48"/>

@@ -7,6 +7,10 @@
 //
 
 import UIKit
+@objc(choosenameidArray)
+protocol choosenameidArray:NSObjectProtocol {
+    func choosenameid(name:NSString,phone:NSString,address:NSString)
+}
 
 class AdditionViewController: UIViewController, AddressPickerDelegate {
     
@@ -14,7 +18,7 @@ class AdditionViewController: UIViewController, AddressPickerDelegate {
     let nameTextField = UITextField()
     let selectBtn = UIButton()
     let addressText = UITextField()
-    
+    var delegate : choosenameidArray?
     var pickerView : AddressView?
 
     override func viewDidLoad() {
@@ -31,7 +35,16 @@ class AdditionViewController: UIViewController, AddressPickerDelegate {
     }
     
     func sure(){
-        self.navigationController?.popViewControllerAnimated(true)
+        let str = (self.selectBtn.titleLabel?.text)! + self.addressText.text!
+        print(str)
+        self.delegate?.choosenameid(self.nameTextField.text!, phone: self.phoneNum.text!, address: str)
+        if self.nameTextField.text == "" || phoneNum.text == "" || self.selectBtn.titleLabel?.text == "" || addressText.text == "" {
+            SVProgressHUD.showErrorWithStatus("请完善信息")
+            return
+        }else{
+            
+            self.navigationController?.popViewControllerAnimated(true)
+        }
     }
 
     func addView(){
@@ -79,6 +92,8 @@ class AdditionViewController: UIViewController, AddressPickerDelegate {
     }
     
     func ClickselectBtn(){
+        self.addressText.resignFirstResponder()
+        self.view.endEditing(true)
         self.pickerView = AddressView.init(frame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height))
         pickerView!.delegate = self
         pickerView!.font = UIFont.systemFontOfSize(16)
@@ -91,6 +106,11 @@ class AdditionViewController: UIViewController, AddressPickerDelegate {
     func JSAddressPickerRerurnBlockWithProvince(province: String!, city: String!, town: String!) {
         selectBtn.setTitle(province+city+town, forState: .Normal)
         self.pickerView!.removeFromSuperview()
+    }
+    
+    //    收键盘
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
     }
 
 }

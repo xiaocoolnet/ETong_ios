@@ -407,5 +407,18 @@
     }];
 }
 
+// 购物车购买商品
+-(void)PayInfoWithUserid:(NSString *)userid peoplename:(NSString *)peoplename address:(NSString *)address goodsid:(NSString *)goodsid goodnum:(NSString *)goodnum mobile:(NSString *)mobile remark:(NSString *)remark money:(NSString *)money success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild{
+    NSDictionary *para = @{@"a":@"bookingshopping",@"userid":userid,@"peoplename":peoplename,@"address":address,@"goodsid":goodsid,@"goodnum":goodnum,@"mobile":mobile,@"remark":remark,@"money":money};
+    
+    [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
+        if ([model.status isEqualToString:@"success"]) {
+            success(model.data);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    }];
+}
+
 
 @end

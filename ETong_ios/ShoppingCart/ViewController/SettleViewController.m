@@ -9,15 +9,28 @@
 #import "SettleViewController.h"
 #import "SettleTableViewCell.h"
 #import "JSCartModel.h"
+#import "ETShopHelper.h"
 
-@interface SettleViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface SettleViewController ()<UITableViewDelegate, UITableViewDataSource, choosenameidArray>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UITextField *textView;
+@property (nonatomic, strong) NSString *userName;
+@property (nonatomic, strong) NSString *phone;
+@property (nonatomic, strong) NSString *address;
+@property (strong, nonatomic) ETShopHelper *helper;
 
 @end
 
 @implementation SettleViewController
+
+-(ETShopHelper *)helper{
+    if (!_helper) {
+        _helper = [ETShopHelper helper];
+    }
+    return _helper;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,18 +43,57 @@
 
 #pragma mark - 添加底部视图
 -(void) addButton{
+    
+    NSMutableArray *arr = [[NSMutableArray alloc] init];
+    float allPrice = 0;
+    for (int i = 0; i < self.dataArray.count; i++) {
+        arr = self.dataArray[i];
+        for (int j = 0; j < arr.count; j++) {
+            JSCartModel *model = arr[j];
+            allPrice += model.p_price * model.p_quantity;
+        }
+    }
+    
     UILabel *allPriceLab = [[UILabel alloc] initWithFrame:CGRectMake(0, Screen_frame.size.height - 64 - 50, Screen_frame.size.width / 2.0, 50)];
     allPriceLab.backgroundColor = [UIColor whiteColor];
-    allPriceLab.text = @" 合计: 7.0";
+    allPriceLab.text = [@"合计:￥" stringByAppendingString: [NSString stringWithFormat:@"%.2f",allPrice]];
+    allPriceLab.textColor = [UIColor redColor];
     [self.view addSubview:allPriceLab];
     
     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(Screen_frame.size.width/2.0, Screen_frame.size.height - 64 - 50, Screen_frame.size.width/2.0, 50)];
     btn.backgroundColor = [UIColor redColor];
     [btn setTitle:@"提交订单" forState:UIControlStateNormal];
-    btn.titleLabel.font = [UIFont systemFontOfSize:15];
+    [btn addTarget:self action:@selector(clickBtn) forControlEvents:UIControlEventTouchUpInside];
+    btn.titleLabel.font = [UIFont systemFontOfSize:18];
     [self.view addSubview:btn];
 }
 
+#pragma mark - 提交订单
+-(void)clickBtn{
+    if ([self.phone isEqualToString:@""]) {
+        [SVProgressHUD showSuccessWithStatus:@"请添加地址"];
+    }else{
+        
+        NSMutableArray *arr = [[NSMutableArray alloc] init];
+        for (int i = 0; i < self.dataArray.count; i++) {
+            arr = self.dataArray[i];
+            for (int j = 0; j < arr.count; j++) {
+                JSCartModel *model = arr[j];
+                NSString *moeny = [NSString stringWithFormat:@"%.2f",model.p_price*model.p_quantity];
+                NSString *goodid = model.p_id;
+                NSString *num = [NSString stringWithFormat:@"%.2ld",(long)model.p_quantity];
+                [self.helper PayInfoWithUserid:[ETUserInfo sharedETUserInfo].id peoplename:self.userName address:self.address goodsid:goodid goodnum:num mobile:self.phone remark:self.textView.text money:moeny success:^(NSDictionary *response) {
+                    st_dispatch_async_main(^{
+                        [SVProgressHUD showSuccessWithStatus:@"结算成功"];
+                    });
+                    
+                } faild:^(NSString *response, NSError *error) {
+                    [SVProgressHUD showSuccessWithStatus:@"结算失败"];
+                }];
+            }
+        }
+    }
+}
 
 #pragma mark - 添加TableView
 -(void)addTableView
@@ -72,16 +124,22 @@
     lable.font = [UIFont systemFontOfSize:15];
     [backBtn addSubview:lable];
     
-    for (int i = 1; i<self.dataArray.count; i++) {
-        
-    }
+    
 }
 
 -(void) addAddressBtn{
     NSLog(@"223444");
     AdditionViewController *vc = [[AdditionViewController alloc] init];
     vc.title = @"收货地址";
+    vc.delegate = self;
     [self.navigationController pushViewController:vc animated:true];
+}
+
+//#pragma mark - 代理传值
+- (void)choosenameid:(NSString * _Nonnull)name phone:(NSString * _Nonnull)phone address:(NSString * _Nonnull)address;{
+    self.userName = name;
+    self.phone = phone;
+    self.address = address;
 }
 
 /// 视图(tableView)
@@ -109,7 +167,7 @@
 #pragma mark - 分区头设置
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     
-//    JSCartModel *model = self.dataArray[section];
+    JSCartModel *model = [self.dataArray[section] firstObject];
     
     UIView *view = [[UIView alloc] init];
     view.frame = CGRectMake(0, 0, self.view.frame.size.width, 40);
@@ -120,17 +178,19 @@
     [view addSubview:img];
     UILabel *name = [[UILabel alloc] init];
     name.frame = CGRectMake(50, 0, self.view.frame.size.width - 60, 40);
-    name.text = @"小E";
+    name.text = model.s_name;
+    
     [view addSubview:name];
     return view;
 }
 #pragma mark - 分区尾视图设置
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     
-//    for (int i = 0; i < [self.dataArray[section] count]; i++) {
-//        JSCartModel *model = self.dataArray[section][i];
-//        float price = model.p_price;
-//    }
+    float price = 0;
+    for (int i = 0; i < [self.dataArray[section] count]; i++) {
+        JSCartModel *model = self.dataArray[section][i];
+        price += model.p_price*model.p_quantity;
+    }
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
     view.backgroundColor = [UIColor whiteColor];
@@ -169,7 +229,7 @@
     UILabel *priceLab = [[UILabel alloc] initWithFrame:CGRectMake(Screen_frame.size.width - 160, 170, 150, 20)];
     priceLab.textColor = [UIColor redColor];
     priceLab.textAlignment = NSTextAlignmentRight;
-    priceLab.text = @"￥7";
+    priceLab.text = [@"￥" stringByAppendingString: [NSString stringWithFormat:@"%.2f",price]] ;
     [view addSubview:priceLab];
     
     UIView *aview = [[UIView alloc] initWithFrame:CGRectMake(0, 200, Screen_frame.size.width, 10)];
@@ -186,11 +246,16 @@
     cell.nameLab.text = model.p_name;
     cell.priceLab.text = [@"￥" stringByAppendingString: [NSString stringWithFormat:@"%.2f",model.p_price]];
     cell.numLab.text = [NSString stringWithFormat:@"%ld",(long)model.p_quantity];
+    [cell.imgView sd_setImageWithURL:[NSURL URLWithString:model.p_imageUrl]];
     return cell;
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    [self.textView resignFirstResponder];
+    [self.view endEditing:YES];
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
 }
 
 

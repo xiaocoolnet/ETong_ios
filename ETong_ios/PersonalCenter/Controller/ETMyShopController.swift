@@ -47,4 +47,8 @@ class ETMyShopController: UIViewController {
         let orderManager = ETOrderManagerController()
         navigationController?.pushViewController(orderManager, animated: true)
     }
+    // 售后管理
+    @IBAction func AfterSaleManager(sender: AnyObject) {
+        
+    }
 }

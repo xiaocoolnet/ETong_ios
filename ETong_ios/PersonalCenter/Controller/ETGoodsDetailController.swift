@@ -137,6 +137,10 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
         if goodModel == nil {
             return;
         }
+        if (!ETUserInfo.sharedETUserInfo().isLogin) {
+            SVProgressHUD.showErrorWithStatus("请先登录")
+            return
+        }
         ETShopHelper().addShoppingCartWithShopid(goodModel?.shopid, goodsid: goodModel?.id, goodsnum: "1", success: { (_: [NSObject : AnyObject]!) in
             
             }) { (String, NSError) in
