@@ -7,8 +7,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LocationViewController">
             <connections>
+                <outlet property="contentHeightLayout" destination="rKY-du-QQE" id="SVu-Xz-YOG"/>
                 <outlet property="foodBtn" destination="4xS-Wb-wJP" id="0zC-K5-05F"/>
                 <outlet property="headView" destination="wMr-wB-8T5" id="ibQ-xP-aPi"/>
+                <outlet property="likeTableView" destination="YaS-D1-Od4" id="CQ5-Nz-ka7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -487,6 +489,10 @@
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YaS-D1-Od4">
                                     <rect key="frame" x="0.0" y="484" width="320" height="84"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="-1" id="24F-3z-EUV"/>
+                                        <outlet property="delegate" destination="-1" id="q5Z-5B-DuW"/>
+                                    </connections>
                                 </tableView>
                             </subviews>
                             <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
