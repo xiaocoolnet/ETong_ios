@@ -117,5 +117,9 @@
  *  购物车购买商品付款
  */
 -(void)changeShoppingCartWithUserid:(NSString *)userid goodsid:(NSString *)goodsid goodsnum:(NSString *)goodsnum success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
+/**
+ *  取消订单
+ */
+-(void)cancleOrderWithid:(NSString *)goodsid reason:(NSString *)reason success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
 
 @end

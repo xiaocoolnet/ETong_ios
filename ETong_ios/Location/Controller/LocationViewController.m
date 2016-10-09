@@ -22,6 +22,8 @@
 #import "ETLocationLikeCell.h"
 #import "EveryDayHelper.h"
 #import "RecreationViewController.h"
+#import "EBuyingViewController.h"
+#import "NowDayViewController.h"
 
 @interface LocationViewController ()<SDCycleScrollViewDelegate, CLLocationManagerDelegate,UITableViewDelegate,UITableViewDataSource>
 
@@ -209,6 +211,7 @@
     ETGoodsDetailController *controller = [[ETGoodsDetailController alloc]init];
     ETGoodsDataModel *model = self.likeArray[indexPath.row];
     controller.goodModel = model;
+    controller.hidesBottomBarWhenPushed = true;
     [self.navigationController pushViewController:controller animated:true];
 }
 
@@ -296,6 +299,23 @@
     vc.title = @"KTV";
     vc.hidesBottomBarWhenPushed = true;
     [self.navigationController pushViewController:vc animated:YES];
+}
+#pragma mark - e抢购
+- (IBAction)EBuyingBtn:(id)sender {
+    EBuyingViewController *vc = [[EBuyingViewController alloc] init];
+    vc.title = @"e抢购";
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+#pragma mark - 今日特价
+- (IBAction)NowDayBtn:(id)sender {
+    NowDayViewController *vc = [[NowDayViewController alloc] init];
+    vc.title = @"今日特价";
+    vc.hidesBottomBarWhenPushed = true;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+#pragma mark - 今日专享
+- (IBAction)OneMoneyBtn:(id)sender {
 }
 
 @end

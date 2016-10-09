@@ -360,6 +360,7 @@
         ETGoodsDetailController *controller = [[ETGoodsDetailController alloc]init];
         ETGoodsDataModel *model = self.likeArray[indexPath.row];
         controller.goodModel = model;
+        controller.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:controller animated:true];
     }
 }

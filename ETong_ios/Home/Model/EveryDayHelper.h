@@ -36,6 +36,17 @@
 - (void)getGoodShopInfoWithShopid:(NSString *)shopid Userid:(NSString *)userid
                         success:(ResponseBlock)success
                           faild:(ETResponseErrorBlock)faild;
+/**
+ *  本地e抢购（全城）
+ */
+- (void)success:(ResponseBlock)success
+                            faild:(ETResponseErrorBlock)faild;
+/**
+ *  本地今日特价
+ */
+- (void)NowDaysuccess:(ResponseBlock)success
+          faild:(ETResponseErrorBlock)faild;
+
 
 
 

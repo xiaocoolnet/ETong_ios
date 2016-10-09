@@ -91,7 +91,7 @@
     if([kind isEqualToString:UICollectionElementKindSectionHeader])
     {
         UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"header" forIndexPath:indexPath];
-        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 5, kScreenWidth - 10, 60)];
+        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 5, kScreenWidth, 60)];
         
         if (indexPath.section ==0) {
             [imageView setImage:[UIImage imageNamed:@"ic_lunbotu-1"]];

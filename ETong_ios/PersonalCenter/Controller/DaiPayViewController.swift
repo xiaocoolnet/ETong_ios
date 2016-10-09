@@ -66,7 +66,11 @@ class DaiPayViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.btn.layer.borderColor = UIColor.redColor().CGColor
         cell.btn.setTitle("马上付款", forState: .Normal)
         cell.btn.layer.cornerRadius = 10
-        cell.cancelBtn.removeFromSuperview()
+        cell.cancelBtn.layer.borderWidth = 1
+        cell.cancelBtn.layer.borderColor = UIColor.lightGrayColor().CGColor
+        cell.cancelBtn.layer.cornerRadius = 10
+        cell.cancelBtn.tag = indexPath.row
+        cell.cancelBtn.addTarget(self, action: #selector(self.clickCancle), forControlEvents: .TouchUpInside)
         let strArray = model.picture.componentsSeparatedByString(",")
         let str = kIMAGE_URL_HEAD + strArray.first!
         let photourl = NSURL(string: str)
@@ -76,5 +80,11 @@ class DaiPayViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
-    
+    func clickCancle(sender:UIButton){
+        let vc = CancleOrderViewController()
+        vc.hidesBottomBarWhenPushed = true
+        let model = arr[sender.tag] as! OrderListModel
+        vc.strid = model.id
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

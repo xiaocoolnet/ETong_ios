@@ -50,18 +50,31 @@ class AllOrderViewController: UIViewController, UITableViewDelegate, UITableView
         cell.btn.layer.borderWidth = 1
         cell.btn.layer.borderColor = UIColor.redColor().CGColor
         cell.btn.layer.cornerRadius = 10
-        cell.cancelBtn.layer.borderWidth = 1
-        cell.cancelBtn.layer.borderColor = UIColor.lightGrayColor().CGColor
-        cell.cancelBtn.layer.cornerRadius = 10
+        if cell.stateLab.text == "未付款"{
+            cell.cancelBtn.hidden = false
+            cell.cancelBtn.layer.borderWidth = 1
+            cell.cancelBtn.layer.borderColor = UIColor.lightGrayColor().CGColor
+            cell.cancelBtn.layer.cornerRadius = 10
+            cell.cancelBtn.tag = indexPath.row
+            cell.cancelBtn.addTarget(self, action: #selector(self.clickCancle), forControlEvents: .TouchUpInside)
+        }else{
+            cell.cancelBtn.hidden = true
+        }
         
         let strArray = model.picture.componentsSeparatedByString(",")
         let str = kIMAGE_URL_HEAD + strArray.first!
         let photourl = NSURL(string: str)
         cell.imgView.sd_setImageWithURL(photourl, placeholderImage: UIImage(named: "ic_xihuan"))
-        
-     
         return cell
     }
 
-
+    func clickCancle(sender:UIButton){
+        let vc = CancleOrderViewController()
+        vc.hidesBottomBarWhenPushed = true
+        let model = dataSource[sender.tag] as! OrderListModel
+        vc.strid = model.id
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
 }

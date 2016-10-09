@@ -442,16 +442,25 @@
                                             <rect key="frame" x="0.0" y="0.0" width="89" height="120"/>
                                             <color key="backgroundColor" red="0.82501972489999997" green="0.79243730489999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <state key="normal" backgroundImage="ic_Eqg"/>
+                                            <connections>
+                                                <action selector="EBuyingBtn:" destination="-1" eventType="touchUpInside" id="xWF-bw-Rtp"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPD-WR-fr8">
                                             <rect key="frame" x="116" y="0.0" width="89" height="120"/>
                                             <color key="backgroundColor" red="0.82501972489999997" green="0.79243730489999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <state key="normal" backgroundImage="ic_jrta"/>
+                                            <connections>
+                                                <action selector="NowDayBtn:" destination="-1" eventType="touchUpInside" id="SN6-cr-b4l"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7G-gZ-Fbm">
                                             <rect key="frame" x="231" y="0.0" width="89" height="120"/>
                                             <color key="backgroundColor" red="0.82501972489999997" green="0.79243730489999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <state key="normal" backgroundImage="ic_xkzx"/>
+                                            <connections>
+                                                <action selector="OneMoneyBtn:" destination="-1" eventType="touchUpInside" id="ghl-Gg-Jlv"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
