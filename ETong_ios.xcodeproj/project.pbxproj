@@ -58,6 +58,8 @@
 		6493B8261D9E5606008EE7C8 /* AppraiseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6493B8241D9E5606008EE7C8 /* AppraiseTableViewCell.xib */; };
 		6493B82A1D9E6DA9008EE7C8 /* YiAppraiseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6493B8281D9E6DA9008EE7C8 /* YiAppraiseTableViewCell.m */; };
 		6493B82B1D9E6DA9008EE7C8 /* YiAppraiseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6493B8291D9E6DA9008EE7C8 /* YiAppraiseTableViewCell.xib */; };
+		6493B82F1DA88F61008EE7C8 /* RecreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6493B82E1DA88F60008EE7C8 /* RecreationViewController.m */; };
+		6493B8321DA898B9008EE7C8 /* RecreationCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6493B8311DA898B9008EE7C8 /* RecreationCollectionViewCell.m */; };
 		649AF2E41D94FF2E00D8B840 /* LikeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF2E31D94FF2E00D8B840 /* LikeModel.m */; };
 		649AF2E91D95121E00D8B840 /* GoodShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF2E81D95121E00D8B840 /* GoodShopViewController.m */; };
 		649AF2EC1D95142000D8B840 /* GoodShopCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF2EB1D95142000D8B840 /* GoodShopCollectionViewCell.m */; };
@@ -302,6 +304,10 @@
 		6493B8271D9E6DA9008EE7C8 /* YiAppraiseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YiAppraiseTableViewCell.h; sourceTree = "<group>"; };
 		6493B8281D9E6DA9008EE7C8 /* YiAppraiseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YiAppraiseTableViewCell.m; sourceTree = "<group>"; };
 		6493B8291D9E6DA9008EE7C8 /* YiAppraiseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YiAppraiseTableViewCell.xib; sourceTree = "<group>"; };
+		6493B82D1DA88F60008EE7C8 /* RecreationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecreationViewController.h; sourceTree = "<group>"; };
+		6493B82E1DA88F60008EE7C8 /* RecreationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecreationViewController.m; sourceTree = "<group>"; };
+		6493B8301DA898B9008EE7C8 /* RecreationCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecreationCollectionViewCell.h; sourceTree = "<group>"; };
+		6493B8311DA898B9008EE7C8 /* RecreationCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecreationCollectionViewCell.m; sourceTree = "<group>"; };
 		649AF2E21D94FF2E00D8B840 /* LikeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LikeModel.h; path = ETong_ios/Tools/LikeModel.h; sourceTree = SOURCE_ROOT; };
 		649AF2E31D94FF2E00D8B840 /* LikeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LikeModel.m; path = ETong_ios/Tools/LikeModel.m; sourceTree = SOURCE_ROOT; };
 		649AF2E71D95121E00D8B840 /* GoodShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodShopViewController.h; sourceTree = "<group>"; };
@@ -656,6 +662,15 @@
 			name = "评价管理";
 			sourceTree = "<group>";
 		};
+		6493B82C1DA88F2A008EE7C8 /* 休闲娱乐 */ = {
+			isa = PBXGroup;
+			children = (
+				6493B82D1DA88F60008EE7C8 /* RecreationViewController.h */,
+				6493B82E1DA88F60008EE7C8 /* RecreationViewController.m */,
+			);
+			name = "休闲娱乐";
+			sourceTree = "<group>";
+		};
 		649AF2E51D95117B00D8B840 /* 每日好店 */ = {
 			isa = PBXGroup;
 			children = (
@@ -970,6 +985,7 @@
 				F65BF32E1D3F4FD70003DB35 /* LocationViewController.xib */,
 				649AF2FF1D9769B700D8B840 /* SelectCityViewController.h */,
 				649AF3001D9769B700D8B840 /* SelectCityViewController.m */,
+				6493B82C1DA88F2A008EE7C8 /* 休闲娱乐 */,
 				647A3DE61D9A0AB4000B6802 /* 外卖 */,
 				649AF3591D99108B00D8B840 /* 全部 */,
 				649AF3551D98F9D200D8B840 /* 手机充值 */,
@@ -1001,6 +1017,8 @@
 				649AF3281D97BAF100D8B840 /* HotelTableViewCell.m */,
 				649AF35D1D99116B00D8B840 /* AllTableViewCell.h */,
 				649AF35E1D99116B00D8B840 /* AllTableViewCell.m */,
+				6493B8301DA898B9008EE7C8 /* RecreationCollectionViewCell.h */,
+				6493B8311DA898B9008EE7C8 /* RecreationCollectionViewCell.m */,
 				647A3DE71D9A0B3C000B6802 /* TakeOutTableViewCell.h */,
 				647A3DE81D9A0B3C000B6802 /* TakeOutTableViewCell.m */,
 				647A3DE91D9A0B3C000B6802 /* TakeOutTableViewCell.xib */,
@@ -1544,6 +1562,7 @@
 				F6C0EA081D913C4D002654DE /* ETDailySpecialController.m in Sources */,
 				649AF2F41D9612E500D8B840 /* EveryDayHelper.m in Sources */,
 				649AF3511D98F87600D8B840 /* AllKTVViewController.m in Sources */,
+				6493B82F1DA88F61008EE7C8 /* RecreationViewController.m in Sources */,
 				649AF3011D9769B700D8B840 /* SelectCityViewController.m in Sources */,
 				F65149FF1D4F5C7200ECFFFD /* ETCompleteController.swift in Sources */,
 				F6B65F891D48BEBE0069312B /* ETZBarScanController.m in Sources */,
@@ -1564,6 +1583,7 @@
 				6493B80F1D9D0734008EE7C8 /* AddressView.m in Sources */,
 				6493B7EF1D9BB311008EE7C8 /* NewsViewController.m in Sources */,
 				F65E002A1D86854C005FDD83 /* UIBarButtonItem+Extension.m in Sources */,
+				6493B8321DA898B9008EE7C8 /* RecreationCollectionViewCell.m in Sources */,
 				649AF30C1D976AA400D8B840 /* JSAddressPickerView.m in Sources */,
 				F6508EF71D66FD020019BFFB /* ETGoodsSelectView.swift in Sources */,
 				F65149FB1D4F5C4000ECFFFD /* ETWaitSignController.swift in Sources */,

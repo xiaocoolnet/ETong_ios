@@ -165,13 +165,29 @@
     NSInteger row      = indexPath.row;
 
     JSCartModel *model = self.cartData[section][row];
-
     [model setValue:@(quantity) forKey:@"p_quantity"];
-    
+    NSString *num = [NSString stringWithFormat: @"%@", @(quantity)];
+    NSString *goodsid = model.p_id;
+    ETShopHelper *helper = [[ETShopHelper alloc]init];
+    [helper changeShoppingCartWithUserid:[ETUserInfo sharedETUserInfo].id goodsid:goodsid goodsnum:num success:^(NSDictionary *response) {
+        [SVProgressHUD showSuccessWithStatus:@"结算成功"];
+    } faild:^(NSString *response, NSError *error) {
+        [SVProgressHUD showSuccessWithStatus:@"结算失败"];
+    }];
     [self.cartTableView reloadSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationNone];
-    
     /*重新计算价格*/
     self.allPrices = [self getAllPrices];
+}
+
+-(void)changeGoodsnum{
+    ETShopHelper *helper = [[ETShopHelper alloc]init];
+    
+    [helper changeShoppingCartWithUserid:[ETUserInfo sharedETUserInfo].id goodsid:@"" goodsnum:@"" success:^(NSDictionary *response) {
+        
+    } faild:^(NSString *response, NSError *error) {
+        
+    }];
+
 }
 
 //左滑删除商品

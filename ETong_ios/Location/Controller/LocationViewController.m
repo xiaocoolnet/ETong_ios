@@ -21,6 +21,7 @@
 #import "TakeOutViewController.h"
 #import "ETLocationLikeCell.h"
 #import "EveryDayHelper.h"
+#import "RecreationViewController.h"
 
 @interface LocationViewController ()<SDCycleScrollViewDelegate, CLLocationManagerDelegate,UITableViewDelegate,UITableViewDataSource>
 
@@ -278,6 +279,13 @@
 - (IBAction)ClickTakeOutBtn:(id)sender {
     TakeOutViewController *vc = [[TakeOutViewController alloc] init];
     vc.title = @"外卖";
+    vc.hidesBottomBarWhenPushed = true;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+#pragma mark - 休闲娱乐
+- (IBAction)RecreationBtn:(id)sender {
+    RecreationViewController *vc = [[RecreationViewController alloc] init];
+    vc.title = @"休闲娱乐";
     vc.hidesBottomBarWhenPushed = true;
     [self.navigationController pushViewController:vc animated:YES];
 }

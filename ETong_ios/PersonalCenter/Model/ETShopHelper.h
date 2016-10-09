@@ -113,5 +113,9 @@
  *  购物车购买商品付款
  */
 - (void)PayInfoWithUserid:(NSString *)userid peoplename:(NSString *)peoplename address:(NSString *)address goodsid:(NSString *)goodsid goodnum:(NSString *)goodnum mobile:(NSString *)mobile remark:(NSString *)remark money:(NSString *)money success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
+/**
+ *  购物车购买商品付款
+ */
+-(void)changeShoppingCartWithUserid:(NSString *)userid goodsid:(NSString *)goodsid goodsnum:(NSString *)goodsnum success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
 
 @end

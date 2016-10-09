@@ -23,5 +23,6 @@ typedef void(^JSNumberChangeBlock)(NSInteger count);
  *  数量改变回调
  */
 @property (nonatomic, copy  ) JSNumberChangeBlock NumberChangeBlock;
+@property (nonatomic, copy) NSString           *shopid;
 
 @end

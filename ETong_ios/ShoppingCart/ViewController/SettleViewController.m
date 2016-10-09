@@ -10,6 +10,7 @@
 #import "SettleTableViewCell.h"
 #import "JSCartModel.h"
 #import "ETShopHelper.h"
+#import "JSCartViewController.h"
 
 @interface SettleViewController ()<UITableViewDelegate, UITableViewDataSource, choosenameidArray>
 
@@ -80,17 +81,36 @@
             for (int j = 0; j < arr.count; j++) {
                 JSCartModel *model = arr[j];
                 NSString *moeny = [NSString stringWithFormat:@"%.2f",model.p_price*model.p_quantity];
-                NSString *goodid = model.s_id;
+                NSString *goodid = model.p_id;
+                NSLog(@"%@",goodid);
                 NSString *num = [NSString stringWithFormat:@"%.2ld",(long)model.p_quantity];
                 [self.helper PayInfoWithUserid:[ETUserInfo sharedETUserInfo].id peoplename:self.userName address:self.address goodsid:goodid goodnum:num mobile:self.phone remark:self.textView.text money:moeny success:^(NSDictionary *response) {
                     st_dispatch_async_main(^{
                         [SVProgressHUD showSuccessWithStatus:@"结算成功"];
+                        [self deleteShopCar];
+                        [self.navigationController popViewControllerAnimated:YES];
                     });
                     
                 } faild:^(NSString *response, NSError *error) {
                     [SVProgressHUD showSuccessWithStatus:@"结算失败"];
                 }];
             }
+        }
+    }
+}
+
+-(void)deleteShopCar{
+    NSMutableArray *arr = [[NSMutableArray alloc] init];
+    for (int i = 0; i < self.dataArray.count; i++) {
+        arr = self.dataArray[i];
+        for (int j = 0; j < arr.count; j++) {
+            JSCartModel *model = arr[j];
+            NSString *goodid = model.p_id;
+            [self.helper deleteShoppingCartWithGoodsid:goodid success:^(NSDictionary *response) {
+                
+            } faild:^(NSString *response, NSError *error) {
+                
+            }];
         }
     }
 }

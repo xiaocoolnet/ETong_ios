@@ -34,6 +34,7 @@
     self.nummberCount.totalNum           = model.p_stock;
     self.nummberCount.currentCountNumber = model.p_quantity;
     self.selectShopGoodsButton.selected  = model.isSelect;
+    self.nummberCount.shopid = model.p_id;
     [self.goodsImageView sd_setImageWithURL:[NSURL URLWithString:model.p_imageUrl]];
 }
 

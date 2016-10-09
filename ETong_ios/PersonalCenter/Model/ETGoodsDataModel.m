@@ -27,7 +27,6 @@
     model.latitude = latitude;
     model.freight = freight;
     model.brand = band;
-    
     return model;
 }
 - (void)setDescription:(NSString *)description{
@@ -39,6 +38,7 @@
     model.p_name = self.goodsname;
     model.p_price = self.price.floatValue;
     model.p_quantity = self.number.integerValue;
+    model.p_id = self.gid;
     NSString * imageName = [[self.picture componentsSeparatedByString:@","] firstObject];
     NSString * urlStr = [NSString stringWithFormat:@"%@%@",kIMAGE_URL_HEAD,imageName];
     model.p_imageUrl = urlStr;
