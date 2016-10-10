@@ -44,4 +44,16 @@
     model.p_imageUrl = urlStr;
     return  model;
 }
+
++ (NSDictionary *)objectClassInArray{
+    return @{
+             @"shop_list" : @"shop_list"
+            
+             };
+}
+
+@end
+
+@implementation ShopName
+
 @end

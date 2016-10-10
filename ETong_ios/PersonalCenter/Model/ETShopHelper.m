@@ -454,4 +454,37 @@
     }];
 }
 
+// 取消收藏
+-(void)cancleCollectionWithUserid:(NSString *)userid goodsid:(NSString *)goodsid type:(NSString *)type success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild{
+    NSDictionary *para = @{@"a":@"cancelfavorite",@"userid":userid,@"goodsid":goodsid,@"type":type};
+    [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
+        if ([model.status isEqualToString:@"success"]) {
+            success(model.data);
+        }else{
+            faild(@"",nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        faild(nil,nil);
+    }];
+}
+
+// 收藏商品
+-(void)collectionGoodsWithUserid:(NSString *)userid goodsid:(NSString *)goodsid type:(NSString *)type title:(NSString *)title description:(NSString *)description success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild{
+    NSDictionary *para = @{@"a":@"addfavorite",@"userid":userid,@"goodsid":goodsid,@"type":type,@"title":title,@"description":description};
+    [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
+        if ([model.status isEqualToString:@"success"]) {
+            success(model.data);
+            NSLog(@"%@",task.currentRequest.URL);
+        }else{
+            faild(@"",nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        faild(nil,nil);
+    }];
+
+}
+
+
 @end

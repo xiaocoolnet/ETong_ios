@@ -32,6 +32,10 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
         createData()
         // Do any additional setup after loading the view.
         title = "宝贝详情"
+        collectBtn.setImage(UIImage(named: "ic_weishoucang"), forState: .Normal)
+        collectBtn.setImage(UIImage(named: "ic_cainixihuan-1"), forState: .Highlighted)
+        collectBtn.setImage(UIImage(named: "ic_cainixihuan-1"), forState: .Selected)
+        collectBtn.selected = false
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -42,20 +46,13 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
         cycleScrollView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated
         imageBackView.addSubview(cycleScrollView)
         cycleScrollView.scrollDirection = .Horizontal
-//        if str == 1 {
-            goodsName.text = goodModel!.goodsname
-            price.text = "¥" +  goodModel!.price
-            express.text = "快递: " + (goodModel?.price)!
-            shenma.text = goodModel!.address
-            descript.text = goodModel!.description
-//        }else{
-//            
-//            goodsName.text = model.goodsname
-//            price.text = "¥" +  model.price
-//            express.text = "快递: " + model.pays
-//            shenma.text = model.address
-//            descript.text = model.descriptio
-//        }
+        
+        goodsName.text = goodModel!.goodsname
+        price.text = "¥" +  goodModel!.price
+        express.text = "快递: " + (goodModel?.price)!
+        shenma.text = goodModel!.address
+        descript.text = goodModel!.description
+        
     }
     
     func createData(){
@@ -149,6 +146,43 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
     }
     
     @IBAction func ClickCollectBtn(sender: AnyObject) {
+        
+        print(111)
+        if goodModel == nil {
+            return;
+        }
+        if (!ETUserInfo.sharedETUserInfo().isLogin) {
+            SVProgressHUD.showErrorWithStatus("请先登录")
+            return
+        }
+        if collectBtn.selected {
+            ETShopHelper().cancleCollectionWithUserid(ETUserInfo.sharedETUserInfo().id, goodsid: goodModel?.id, type: "1", success: {[unowned self] (dic) in
+                st_dispatch_async_main({
+                    self.collectBtn.selected = false
+                    SVProgressHUD.showSuccessWithStatus("取消收藏成功")
+                })
+            }) { (str, err) in
+                st_dispatch_async_main({
+                    SVProgressHUD.showSuccessWithStatus("取消收藏失败")
+                })
+            }
+        }else{
+            ETShopHelper().collectionGoodsWithUserid(ETUserInfo.sharedETUserInfo().id, goodsid: goodModel?.id, type: "1", title: goodModel?.goodsname, description: goodModel?.description, success: {[unowned self] (dic) in
+                st_dispatch_async_main({
+                    print(self.goodModel?.id)
+                    print(self.goodModel?.goodsname)
+                    print(ETUserInfo.sharedETUserInfo().id)
+                    print(self.goodModel?.description)
+                    
+                    self.collectBtn.selected = true
+                    SVProgressHUD.showSuccessWithStatus("收藏成功")
+                })
+            }) { (str, err) in
+                st_dispatch_async_main({
+                    SVProgressHUD.showSuccessWithStatus("收藏失败")
+                })
+            }
+        }
         
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{

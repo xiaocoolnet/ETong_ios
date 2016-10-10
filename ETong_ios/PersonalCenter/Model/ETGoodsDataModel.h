@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 @class JSCartModel;
 
+@class ShopName;
 @interface ETGoodsDataModel : NSObject
 
 @property (nonatomic, copy) NSString *status;
@@ -60,11 +61,20 @@
 @property (nonatomic, copy) NSString *number;
 
 @property (nonatomic, copy) NSString *gid;
+@property (nonatomic ,strong) NSString *level;
 
 @property (nonatomic, copy) NSDictionary *property;
+@property (nonatomic, strong) NSArray *shop_list;
 
 -(JSCartModel *)converToJSCartModel;
 
 + (instancetype) modelWithShowid:(NSString *)showid piclist:(NSString *)piclist goodsname:(NSString *)goodsname type:(NSString *)type oprice:(NSString *)oprice price:(NSString *)price description:(NSString *)description unit:(NSString *)unit address:(NSString *)address longitude:(NSString *)longitude latitude:(NSString *)latitude freight:(NSString *)freight band:(NSString *)band;
 
 @end
+@interface ShopName : NSObject
+
+@property (nonatomic, copy) NSString *shopname;
+@property (nonatomic, copy) NSString *level;
+
+@end
+

@@ -46,6 +46,7 @@
             self.dataArray = [[NSMutableArray alloc] init];
             for (int i=0; i<response.count; i++) {
                 ETGoodsDataModel *model = [ETGoodsDataModel mj_objectWithKeyValues:response[i]];
+                NSLog(@"%@",model.shop_list.firstObject[@"level"]);
                 [self.dataArray addObject:model];
                 
             }

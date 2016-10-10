@@ -97,6 +97,7 @@
 		649AF3581D98FA1A00D8B840 /* RechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF3571D98FA1A00D8B840 /* RechargeViewController.m */; };
 		649AF35C1D9910A200D8B840 /* ALLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF35B1D9910A200D8B840 /* ALLViewController.m */; };
 		649AF35F1D99116B00D8B840 /* AllTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF35E1D99116B00D8B840 /* AllTableViewCell.m */; };
+		64ABB15C1DAB806A00768D45 /* NewPeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ABB15B1DAB806A00768D45 /* NewPeopleViewController.m */; };
 		64BAA7F31D94CD16001B5B24 /* HttpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BAA7F21D94CD16001B5B24 /* HttpModel.m */; };
 		F6032EFC1D654A7000A8407F /* ETGoodsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6032EFA1D654A7000A8407F /* ETGoodsDetailController.swift */; };
 		F6032EFD1D654A7000A8407F /* ETGoodsDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6032EFB1D654A7000A8407F /* ETGoodsDetailController.xib */; };
@@ -386,6 +387,8 @@
 		649AF35B1D9910A200D8B840 /* ALLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALLViewController.m; sourceTree = "<group>"; };
 		649AF35D1D99116B00D8B840 /* AllTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllTableViewCell.h; sourceTree = "<group>"; };
 		649AF35E1D99116B00D8B840 /* AllTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllTableViewCell.m; sourceTree = "<group>"; };
+		64ABB15A1DAB806A00768D45 /* NewPeopleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPeopleViewController.h; sourceTree = "<group>"; };
+		64ABB15B1DAB806A00768D45 /* NewPeopleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPeopleViewController.m; sourceTree = "<group>"; };
 		64BAA7F11D94CD16001B5B24 /* HttpModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpModel.h; sourceTree = "<group>"; };
 		64BAA7F21D94CD16001B5B24 /* HttpModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpModel.m; sourceTree = "<group>"; };
 		66936F17ED3F666A6A6B37F5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -824,6 +827,15 @@
 			name = "全部";
 			sourceTree = "<group>";
 		};
+		64ABB1591DAB804D00768D45 /* 新客专享 */ = {
+			isa = PBXGroup;
+			children = (
+				64ABB15A1DAB806A00768D45 /* NewPeopleViewController.h */,
+				64ABB15B1DAB806A00768D45 /* NewPeopleViewController.m */,
+			);
+			name = "新客专享";
+			sourceTree = "<group>";
+		};
 		9530494A522D2346866C5A0C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1032,6 +1044,7 @@
 				F65BF32E1D3F4FD70003DB35 /* LocationViewController.xib */,
 				649AF2FF1D9769B700D8B840 /* SelectCityViewController.h */,
 				649AF3001D9769B700D8B840 /* SelectCityViewController.m */,
+				64ABB1591DAB804D00768D45 /* 新客专享 */,
 				6493B8461DAA2B25008EE7C8 /* 今日特价 */,
 				6493B8351DAA1A8D008EE7C8 /* e抢购 */,
 				6493B82C1DA88F2A008EE7C8 /* 休闲娱乐 */,
@@ -1706,6 +1719,7 @@
 				647A3DF41D9A0BBB000B6802 /* DisTanceTakeOutViewController.m in Sources */,
 				F6EAB5371D84FCA2008FF8FA /* JSCartViewController.m in Sources */,
 				640F61DC1D93B8E000614657 /* NewProductCollectionViewCell.m in Sources */,
+				64ABB15C1DAB806A00768D45 /* NewPeopleViewController.m in Sources */,
 				6493B8001D9CE68C008EE7C8 /* SettleTableViewCell.m in Sources */,
 				647A3E001D9A1FC0000B6802 /* AllOrderViewController.swift in Sources */,
 				647A3DFA1D9A1F3D000B6802 /* DaiPayViewController.swift in Sources */,

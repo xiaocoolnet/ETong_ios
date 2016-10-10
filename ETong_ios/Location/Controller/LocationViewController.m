@@ -24,6 +24,7 @@
 #import "RecreationViewController.h"
 #import "EBuyingViewController.h"
 #import "NowDayViewController.h"
+#import "NewPeopleViewController.h"
 
 @interface LocationViewController ()<SDCycleScrollViewDelegate, CLLocationManagerDelegate,UITableViewDelegate,UITableViewDataSource>
 
@@ -316,6 +317,10 @@
 }
 #pragma mark - 今日专享
 - (IBAction)OneMoneyBtn:(id)sender {
+    NewPeopleViewController *vc = [[NewPeopleViewController alloc] init];
+    vc.title = @"新客专享";
+    vc.hidesBottomBarWhenPushed = true;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

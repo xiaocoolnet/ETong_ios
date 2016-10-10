@@ -47,7 +47,11 @@
 - (void)NowDaysuccess:(ResponseBlock)success
           faild:(ETResponseErrorBlock)faild;
 
-
+/**
+ *  本地新客专享
+ */
+- (void)NewPeoplesuccess:(ResponseBlock)success
+                   faild:(ETResponseErrorBlock)faild;
 
 
 @end

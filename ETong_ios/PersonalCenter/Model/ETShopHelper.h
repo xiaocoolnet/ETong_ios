@@ -121,5 +121,13 @@
  *  取消订单
  */
 -(void)cancleOrderWithid:(NSString *)goodsid reason:(NSString *)reason success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
+/**
+ *  取消收藏
+ */
+-(void)cancleCollectionWithUserid:(NSString *)userid goodsid:(NSString *)goodsid type:(NSString *)type success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
+/**
+ *  收藏商品
+ */
+-(void)collectionGoodsWithUserid:(NSString *)userid goodsid:(NSString *)goodsid type:(NSString *)type title:(NSString *)title description:(NSString *)description success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
 
 @end
