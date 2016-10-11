@@ -37,6 +37,7 @@
 @property (strong, nonatomic) NSMutableArray *likeArray;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentHeightLayout;
 @property (strong, nonatomic) EveryDayHelper *helper;
+@property (nonatomic, strong) NSString *cityStr;
 
 @end
 
@@ -50,7 +51,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.hidesBottomBarWhenPushed = false;
-    self.str = @"北京";
+    self.cityStr = @"烟台市";
     [self configureUI];
     [_likeTableView registerNib:[UINib nibWithNibName:@"ETLocationLikeCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     _likeTableView.scrollEnabled = false;
@@ -144,7 +145,7 @@
     
     self.leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.leftBtn.frame = CGRectMake(0, 0, 100, 30);
-    [self.leftBtn setTitle:@"选择城市" forState:UIControlStateNormal];
+    [self.leftBtn setTitle:self.cityStr forState:UIControlStateNormal];
     [self.leftBtn addTarget:self action:@selector(leftNavBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:self.leftBtn];
     self.navigationItem.leftBarButtonItem = item;
@@ -184,7 +185,8 @@
 
 -(void)passTrendValues:(NSString *)city{
     [self.leftBtn setTitle:city forState:UIControlStateNormal];
-    NSLog(@"%@", city);
+    self.cityStr = city;
+    NSLog(@"%@", self.cityStr);
 }
 
 #pragma mark - UITableViewDelegate/DataSource
@@ -228,6 +230,7 @@
 - (IBAction)ClickFoodBtn:(id)sender {
     FoodViewController *vc = [[FoodViewController alloc] init];
     vc.hidesBottomBarWhenPushed = true;
+    vc.city = self.cityStr;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -275,6 +278,7 @@
 - (IBAction)ClickAllBtn:(id)sender {
     ALLViewController *vc = [[ALLViewController alloc] init];
     vc.title = @"全部";
+    vc.cityStr = self.cityStr;
     vc.hidesBottomBarWhenPushed = true;
     [self.navigationController pushViewController:vc animated:true];
 }
@@ -284,6 +288,7 @@
     TakeOutViewController *vc = [[TakeOutViewController alloc] init];
     vc.title = @"外卖";
     vc.hidesBottomBarWhenPushed = true;
+    vc.city = self.cityStr;
     [self.navigationController pushViewController:vc animated:YES];
 }
 #pragma mark - 休闲娱乐

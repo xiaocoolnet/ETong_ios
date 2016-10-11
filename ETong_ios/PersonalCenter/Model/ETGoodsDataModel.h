@@ -66,6 +66,8 @@
 @property (nonatomic, copy) NSDictionary *property;
 @property (nonatomic, strong) NSArray *shop_list;
 
+@property (nonatomic, copy) NSString *pays;
+
 -(JSCartModel *)converToJSCartModel;
 
 + (instancetype) modelWithShowid:(NSString *)showid piclist:(NSString *)piclist goodsname:(NSString *)goodsname type:(NSString *)type oprice:(NSString *)oprice price:(NSString *)price description:(NSString *)description unit:(NSString *)unit address:(NSString *)address longitude:(NSString *)longitude latitude:(NSString *)latitude freight:(NSString *)freight band:(NSString *)band;

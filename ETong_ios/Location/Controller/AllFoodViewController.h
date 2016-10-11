@@ -10,4 +10,6 @@
 
 @interface AllFoodViewController : UIViewController
 
+@property (nonatomic, strong) NSString *cityStr;
+
 @end

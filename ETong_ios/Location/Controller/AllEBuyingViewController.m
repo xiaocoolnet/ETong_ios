@@ -11,6 +11,7 @@
 #import "EveryDayHelper.h"
 #import "ETGoodsDataModel.h"
 
+
 @interface AllEBuyingViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;

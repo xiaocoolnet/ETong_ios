@@ -14,5 +14,6 @@
 @property (nonatomic, strong) UIImageView *imgView;
 @property (nonatomic, strong) UILabel *addressLab;
 @property (nonatomic, strong) UILabel *line;
+@property (nonatomic, strong) UIImageView *starImg;
 
 @end

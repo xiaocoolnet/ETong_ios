@@ -48,7 +48,7 @@
 - (void)initViewControllers {
     AllFoodViewController *controller1 = [[AllFoodViewController alloc] init];
     controller1.yp_tabItemTitle = @"全部";
-    
+    controller1.cityStr = self.city;
     AroundFoodViewController *controller2 = [[AroundFoodViewController alloc] init];
     controller2.yp_tabItemTitle = @"附近";
     

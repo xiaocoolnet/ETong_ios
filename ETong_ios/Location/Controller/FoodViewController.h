@@ -11,4 +11,6 @@
 
 @interface FoodViewController : YPTabBarController
 
+@property (nonatomic, strong) NSString *city;
+
 @end

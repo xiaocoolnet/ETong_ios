@@ -59,7 +59,8 @@
         self.aview.backgroundColor = [UIColor colorWithRed:241/255.0 green:241/255.0 blue:241/255.0 alpha:1.0];
         [self.contentView addSubview:self.aview];
         
-        
+        self.starImg = [[UIImageView alloc] init];
+        [self.contentView addSubview:self.starImg];
         
         
     }
@@ -74,7 +75,7 @@
     self.imgView.frame = CGRectMake(10, 80, 100, 75);
     self.titleLab.frame = CGRectMake(120, 80, self.contentView.frame.size.width - 130, 40);
 //    self.priceLab.frame = CGRectMake(120, 130, 60, 20);
-//    self.opriceLab.frame = CGRectMake(190, 130, 40, 20);
+    self.starImg.frame = CGRectMake(10, 40, 130, 20);
     self.yishouLab.frame = CGRectMake(self.contentView.frame.size.width - 160, 135, 150, 20);
     self.aview.frame = CGRectMake(0, 165, self.contentView.frame.size.width, 10);
 }

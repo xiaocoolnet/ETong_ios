@@ -47,10 +47,11 @@
 
 + (NSDictionary *)objectClassInArray{
     return @{
-             @"shop_list" : @"shop_list"
-            
+             @"shop_list" : @"qqq",
+             @"goodslist" : @"goodslist"
              };
 }
+
 
 @end
 

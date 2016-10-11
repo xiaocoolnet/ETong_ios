@@ -98,6 +98,9 @@
 		649AF35C1D9910A200D8B840 /* ALLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF35B1D9910A200D8B840 /* ALLViewController.m */; };
 		649AF35F1D99116B00D8B840 /* AllTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF35E1D99116B00D8B840 /* AllTableViewCell.m */; };
 		64ABB15C1DAB806A00768D45 /* NewPeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ABB15B1DAB806A00768D45 /* NewPeopleViewController.m */; };
+		64ABB15F1DACC52000768D45 /* qqq.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ABB15E1DACC52000768D45 /* qqq.m */; };
+		64ABB1621DACD0F600768D45 /* LocationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ABB1611DACD0F600768D45 /* LocationModel.m */; };
+		64ABB1651DACDE1B00768D45 /* AllShopDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ABB1641DACDE1B00768D45 /* AllShopDetailViewController.m */; };
 		64BAA7F31D94CD16001B5B24 /* HttpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BAA7F21D94CD16001B5B24 /* HttpModel.m */; };
 		F6032EFC1D654A7000A8407F /* ETGoodsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6032EFA1D654A7000A8407F /* ETGoodsDetailController.swift */; };
 		F6032EFD1D654A7000A8407F /* ETGoodsDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6032EFB1D654A7000A8407F /* ETGoodsDetailController.xib */; };
@@ -389,6 +392,12 @@
 		649AF35E1D99116B00D8B840 /* AllTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllTableViewCell.m; sourceTree = "<group>"; };
 		64ABB15A1DAB806A00768D45 /* NewPeopleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPeopleViewController.h; sourceTree = "<group>"; };
 		64ABB15B1DAB806A00768D45 /* NewPeopleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPeopleViewController.m; sourceTree = "<group>"; };
+		64ABB15D1DACC52000768D45 /* qqq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qqq.h; sourceTree = "<group>"; };
+		64ABB15E1DACC52000768D45 /* qqq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = qqq.m; sourceTree = "<group>"; };
+		64ABB1601DACD0F600768D45 /* LocationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationModel.h; path = ETong_ios/Home/Model/LocationModel.h; sourceTree = SOURCE_ROOT; };
+		64ABB1611DACD0F600768D45 /* LocationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationModel.m; path = ETong_ios/Home/Model/LocationModel.m; sourceTree = SOURCE_ROOT; };
+		64ABB1631DACDE1B00768D45 /* AllShopDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllShopDetailViewController.h; sourceTree = "<group>"; };
+		64ABB1641DACDE1B00768D45 /* AllShopDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllShopDetailViewController.m; sourceTree = "<group>"; };
 		64BAA7F11D94CD16001B5B24 /* HttpModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpModel.h; sourceTree = "<group>"; };
 		64BAA7F21D94CD16001B5B24 /* HttpModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpModel.m; sourceTree = "<group>"; };
 		66936F17ED3F666A6A6B37F5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -823,6 +832,8 @@
 			children = (
 				649AF35A1D9910A200D8B840 /* ALLViewController.h */,
 				649AF35B1D9910A200D8B840 /* ALLViewController.m */,
+				64ABB1631DACDE1B00768D45 /* AllShopDetailViewController.h */,
+				64ABB1641DACDE1B00768D45 /* AllShopDetailViewController.m */,
 			);
 			name = "全部";
 			sourceTree = "<group>";
@@ -993,6 +1004,8 @@
 				649AF2F11D9612E500D8B840 /* EveryDayHelper.m */,
 				649AF2F21D9612E500D8B840 /* NewProductModel.h */,
 				649AF2F31D9612E500D8B840 /* NewProductModel.m */,
+				64ABB15D1DACC52000768D45 /* qqq.h */,
+				64ABB15E1DACC52000768D45 /* qqq.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1064,6 +1077,8 @@
 		F65BF3191D3F4F0F0003DB35 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				64ABB1601DACD0F600768D45 /* LocationModel.h */,
+				64ABB1611DACD0F600768D45 /* LocationModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1637,6 +1652,7 @@
 				649AF3011D9769B700D8B840 /* SelectCityViewController.m in Sources */,
 				F65149FF1D4F5C7200ECFFFD /* ETCompleteController.swift in Sources */,
 				F6B65F891D48BEBE0069312B /* ETZBarScanController.m in Sources */,
+				64ABB15F1DACC52000768D45 /* qqq.m in Sources */,
 				647A3E071D9A469C000B6802 /* OrderListModel.m in Sources */,
 				6493B8491DAA2B8D008EE7C8 /* NowDayViewController.m in Sources */,
 				647A3DF81D9A1746000B6802 /* OrderViewController.m in Sources */,
@@ -1678,6 +1694,7 @@
 				F6545D811D5360E20007C42C /* ETShopModel.m in Sources */,
 				F65149F71D4F5BD700ECFFFD /* ETWaitDeliverController.swift in Sources */,
 				F6F840961D8FB8D2007163A2 /* ETLimitTimeController.m in Sources */,
+				64ABB1651DACDE1B00768D45 /* AllShopDetailViewController.m in Sources */,
 				647A3DEA1D9A0B3C000B6802 /* TakeOutTableViewCell.m in Sources */,
 				F6FED1D71D44BE4400C5C776 /* ETRigestController.m in Sources */,
 				647A3DF11D9A0B90000B6802 /* AllTakeOutViewController.m in Sources */,
@@ -1773,6 +1790,7 @@
 				6493B8201D9E546C008EE7C8 /* YesAppraiseViewController.m in Sources */,
 				F65BF33E1D3F50390003DB35 /* PersonViewController.m in Sources */,
 				647A3DFE1D9A1FA5000B6802 /* DaiSippingViewController.swift in Sources */,
+				64ABB1621DACD0F600768D45 /* LocationModel.m in Sources */,
 				F6545D7D1D533F480007C42C /* ETGMOffShelfCell.swift in Sources */,
 				F65149EF1D4F56A000ECFFFD /* ETAllOrderController.swift in Sources */,
 				6493B8171D9E5119008EE7C8 /* AfterSaleViewController.swift in Sources */,

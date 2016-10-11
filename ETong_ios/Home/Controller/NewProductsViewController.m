@@ -9,7 +9,7 @@
 #import "NewProductsViewController.h"
 #import "NewProductCollectionViewCell.h"
 #import "EveryDayHelper.h"
-#import "NewProductModel.h"
+#import "ETGoodsDataModel.h"
 
 @interface NewProductsViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
@@ -52,7 +52,7 @@
             self.dataArray = [[NSMutableArray alloc] init];
             for (int i=0; i<response.count; i++) {
                 
-                NewProductModel *model = [NewProductModel mj_objectWithKeyValues:response[i]];
+                ETGoodsDataModel *model = [ETGoodsDataModel mj_objectWithKeyValues:response[i]];
                 [self.dataArray addObject:model];
                 NSLog(@"%@",model);
                 NSLog(@"lalalalala");
@@ -105,7 +105,7 @@
 {
     NewProductCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
 
-    NewProductModel *model = self.dataArray[indexPath.item];
+    ETGoodsDataModel *model = self.dataArray[indexPath.item];
     cell.nameLab.text = model.goodsname;
     cell.priceLab.text = [@"¥" stringByAppendingString:model.price];
     cell.costLab.text = [@"¥" stringByAppendingString:model.oprice];
@@ -121,7 +121,8 @@
 // 跳转详情页
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     ETGoodsDetailController *vc = [[ETGoodsDetailController alloc] initWithNibName:@"ETGoodsDetailController" bundle:nil];
-    vc.model = self.dataArray[indexPath.item];
+    vc.goodModel = self.dataArray[indexPath.item];
+    vc.hidesBottomBarWhenPushed = true;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

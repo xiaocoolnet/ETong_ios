@@ -10,14 +10,18 @@
 #import "GoodShopCollectionViewCell.h"
 #import "EveryDayHelper.h"
 #import "ETGoodsDataModel.h"
+#import "ETShopHelper.h"
 
 @interface GoodShopViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property(nonatomic, strong) UICollectionView *collection;
 @property(nonatomic, strong) UIImageView *headerImage;
 @property(nonatomic, strong) UIButton *btn;
+@property (nonatomic, strong) UIButton *shoucang;
+@property (nonatomic, strong) NSString *strid;
 
 @property (strong, nonatomic) EveryDayHelper *helper;
+@property (nonatomic, strong) ETShopHelper *help;
 
 @property (strong, nonatomic) NSMutableArray *dataArray;
 
@@ -31,6 +35,13 @@
         _helper = [EveryDayHelper helper];
     }
     return _helper;
+}
+
+-(ETShopHelper *)help{
+    if (!_help) {
+        _help = [ETShopHelper helper];
+    }
+    return _help;
 }
 
 
@@ -174,6 +185,7 @@
     headerImage.clipsToBounds=YES;
     headerImage.frame=CGRectMake(0, 0, self.view.frame.size.width, 150);
     headerImage.image=[UIImage imageNamed:@"ic_tejiakuang"];
+    headerImage.userInteractionEnabled = YES;
     self.headerImage=headerImage;
     
     UIImageView *headImage=[[UIImageView alloc]init];
@@ -190,11 +202,13 @@
     name.textColor = [UIColor whiteColor];
     [headerImage addSubview:name];
     
-    UIButton *shoucang = [[UIButton alloc] init];
-    shoucang.frame = CGRectMake(self.view.frame.size.width - 80, 40, 70, 30);
-    shoucang.backgroundColor = [UIColor redColor];
-    [shoucang setTitle:@"收藏" forState:UIControlStateNormal];
-    [headerImage addSubview:shoucang];
+    self.shoucang = [[UIButton alloc] init];
+    self.shoucang.frame = CGRectMake(self.view.frame.size.width - 80, 40, 70, 30);
+    self.shoucang.backgroundColor = [UIColor redColor];
+    [self.shoucang setTitle:@"收藏" forState:UIControlStateNormal];
+    self.shoucang.selected = NO;
+    [headerImage addSubview:self.shoucang];
+    [self.shoucang addTarget:self action:@selector(clickShoucangBtn) forControlEvents:UIControlEventTouchUpInside];
     
     UILabel *collect = [[UILabel alloc] init];
     collect.frame = CGRectMake(self.view.frame.size.width - 120, 80, 110, 30);
@@ -209,6 +223,7 @@
     btn.backgroundColor = [UIColor whiteColor];
     self.btn = btn;
     
+    
     UILabel *lable = [[UILabel alloc] init];
     lable.frame = CGRectMake(15, 0, 150, 40);
     lable.text = @"全部宝贝";
@@ -219,6 +234,38 @@
     img.frame = CGRectMake(self.view.frame.size.width - 35, 5, 20, 30);
     img.image = [UIImage imageNamed:@"ic_next-1"];
     [btn addSubview:img];
+}
+
+
+-(void)clickShoucangBtn{
+    if (![ETUserInfo sharedETUserInfo].id) {
+        [SVProgressHUD showWithStatus:@"请先登录"];
+        return;
+    }
+    if (self.shoucang.selected) {
+        [self.help cancleCollectionWithUserid:[ETUserInfo sharedETUserInfo].id goodsid:self.shopModel.id type:@"2" success:^(NSDictionary *response) {
+            st_dispatch_async_main(^{
+                self.shoucang.selected = NO;
+                [SVProgressHUD showSuccessWithStatus:@"取消收藏商铺成功"];
+               
+            });
+            
+        } faild:^(NSString *response, NSError *error) {
+            [SVProgressHUD showSuccessWithStatus:@"取消收藏商铺失败"];
+        }];
+    }else{
+        
+        [self.help collectionGoodsWithUserid:[ETUserInfo sharedETUserInfo].id goodsid:self.shopModel.id type:@"2" title:self.shopModel.shopname description:self.shopModel.description success:^(NSDictionary *response) {
+            st_dispatch_async_main(^{
+                self.shoucang.selected = YES;
+                [SVProgressHUD showSuccessWithStatus:@"收藏商铺成功"];
+                
+            });
+            
+        } faild:^(NSString *response, NSError *error) {
+            [SVProgressHUD showSuccessWithStatus:@"收藏商铺失败"];
+        }];
+    }
 }
 
 -(void)viewWillDisappear:(BOOL)animated{

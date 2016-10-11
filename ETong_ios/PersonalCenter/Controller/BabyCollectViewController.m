@@ -84,6 +84,7 @@
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     CollectTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     CollectModel *model = self.dataArray[indexPath.row];
     cell.nameLab.text = model.goodsname;
     cell.priceLab.text = [@"¥" stringByAppendingString:model.price];

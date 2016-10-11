@@ -53,5 +53,12 @@
 - (void)NewPeoplesuccess:(ResponseBlock)success
                    faild:(ETResponseErrorBlock)faild;
 
+/**
+ *  本地美食
+ */
+- (void)getfoodsInfoWithCity:(NSString *)city Type:(NSString *)type
+                          success:(ResponseBlock)success
+                            faild:(ETResponseErrorBlock)faild;
+
 
 @end

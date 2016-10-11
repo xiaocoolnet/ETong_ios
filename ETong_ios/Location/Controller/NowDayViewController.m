@@ -11,6 +11,7 @@
 #import "EveryDayHelper.h"
 #import "ETGoodsDataModel.h"
 #import "NowDayTableViewCell.h"
+#import "qqq.h"
 
 @interface NowDayViewController ()<SDCycleScrollViewDelegate, UITableViewDataSource, UITableViewDelegate>
 
@@ -119,6 +120,9 @@
     ETGoodsDetailController *vc = [[ETGoodsDetailController alloc] initWithNibName:@"ETGoodsDetailController" bundle:nil];
     vc.goodModel = self.dataArray[sender.tag];
     vc.hidesBottomBarWhenPushed = YES;
+    ETGoodsDataModel *model = self.dataArray[sender.tag];
+    qqq *mo = model.shop_list.firstObject;
+    NSLog(@"%@",mo.level);
     [self.navigationController pushViewController:vc animated:YES];
 }
 

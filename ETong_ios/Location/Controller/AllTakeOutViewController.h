@@ -10,4 +10,6 @@
 
 @interface AllTakeOutViewController : UIViewController
 
+@property (nonatomic, strong) NSString *cityStr;
+
 @end

@@ -84,6 +84,7 @@
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     EvaluateTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     EvaluateModel *model = self.dataArray[indexPath.row];
     cell.nameLab.text = model.goods_info.firstObject.goodsname;
     // 将string字符串转换为array数组

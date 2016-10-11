@@ -12,6 +12,7 @@
 @property (copy, nonatomic) NSString *id;
 @property (copy, nonatomic) NSString *shopid;
 @property (copy, nonatomic) NSString *shopname;
+@property (nonatomic, copy) NSString *address;
 @property (copy, nonatomic) NSArray  *goodslist;
 
 @end

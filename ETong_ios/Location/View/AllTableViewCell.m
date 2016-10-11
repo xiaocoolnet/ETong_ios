@@ -26,6 +26,9 @@
         self.addressLab.textColor = [UIColor lightGrayColor];
         self.addressLab.font = [UIFont systemFontOfSize:15];
         
+        self.starImg = [[UIImageView alloc] init];
+        [self.contentView addSubview:self.starImg];
+        
         self.line = [[UILabel alloc] init];
         self.line.backgroundColor = [UIColor colorWithRed:241/255.0 green:241/255.0 blue:241/255.0 alpha:1.0];
         [self.contentView addSubview:self.line];
@@ -40,6 +43,7 @@
     self.addressLab.frame = CGRectMake(100, 50, self.contentView.frame.size.width - 110, 20);
     self.line.frame = CGRectMake(0, 119.5, self.contentView.frame.size.width, 0.5);
     self.imgView.frame = CGRectMake(10, 20, 80, 80);
+    self.starImg.frame = CGRectMake(100, 80, 130, 20);
 }
 
 

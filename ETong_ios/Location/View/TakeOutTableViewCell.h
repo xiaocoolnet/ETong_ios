@@ -11,5 +11,13 @@
 @interface TakeOutTableViewCell : UITableViewCell
 
 @property(nonatomic, strong) UILabel *line;
+@property (weak, nonatomic) IBOutlet UILabel *titleLab;
+@property (weak, nonatomic) IBOutlet UIImageView *imgView;
+@property (weak, nonatomic) IBOutlet UILabel *addressLab;
+@property (weak, nonatomic) IBOutlet UIImageView *img;
+@property (weak, nonatomic) IBOutlet UILabel *nameLab;
+@property (weak, nonatomic) IBOutlet UILabel *priceLab;
+@property (weak, nonatomic) IBOutlet UILabel *opriceLab;
+@property (weak, nonatomic) IBOutlet UILabel *yishouLab;
 
 @end

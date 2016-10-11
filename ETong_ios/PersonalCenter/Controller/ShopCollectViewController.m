@@ -82,7 +82,7 @@
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     CollectTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     CollectModel *model = self.dataArray[indexPath.row];
     cell.nameLab.text = model.title;
     // 将string字符串转换为array数组

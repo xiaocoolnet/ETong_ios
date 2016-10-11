@@ -173,7 +173,7 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
                     print(self.goodModel?.goodsname)
                     print(ETUserInfo.sharedETUserInfo().id)
                     print(self.goodModel?.description)
-                    
+                   
                     self.collectBtn.selected = true
                     SVProgressHUD.showSuccessWithStatus("收藏成功")
                 })
