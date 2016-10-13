@@ -15,6 +15,7 @@
 #import "CollectViewController.h"
 #import "EvaluateViewController.h"
 #import "NewsViewController.h"
+#import "FootprintsViewController.h"
 
 @interface PersonViewController ()
 
@@ -173,12 +174,24 @@
 //    [self.navigationController pushViewController:vc animated:true];
 }
 - (IBAction)zujiClicked:(id)sender {
+    if (![ETUserInfo sharedETUserInfo].isLogin) {
+        [SVProgressHUD showErrorWithStatus:@"请先登录"];
+        return;
+    }
+    FootprintsViewController *vc = [[FootprintsViewController alloc] init];
+    vc.title = @"我的足迹";
+    vc.hidesBottomBarWhenPushed = true;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 - (IBAction)vipCenterClicked:(id)sender {
 }
 - (IBAction)qianbaoClicked:(id)sender {
 }
 - (IBAction)daiPJClicked:(id)sender {
+    if (![ETUserInfo sharedETUserInfo].isLogin) {
+        [SVProgressHUD showErrorWithStatus:@"请先登录"];
+        return;
+    }
     self.vc = [[OrderViewController alloc] init];
     self.vc.str = @"5";
     [self getData];
@@ -189,16 +202,28 @@
     [self getData];
 }
 - (IBAction)darFHClicked:(id)sender {
+    if (![ETUserInfo sharedETUserInfo].isLogin) {
+        [SVProgressHUD showErrorWithStatus:@"请先登录"];
+        return;
+    }
     self.vc = [[OrderViewController alloc] init];
     self.vc.str = @"3";
     [self getData];
 }
 - (IBAction)daiSYCilcked:(id)sender {
+    if (![ETUserInfo sharedETUserInfo].isLogin) {
+        [SVProgressHUD showErrorWithStatus:@"请先登录"];
+        return;
+    }
     self.vc = [[OrderViewController alloc] init];
     self.vc.str = @"2";
     [self getData];
 }
 - (IBAction)daiFKClicked:(id)sender {
+    if (![ETUserInfo sharedETUserInfo].isLogin) {
+        [SVProgressHUD showErrorWithStatus:@"请先登录"];
+        return;
+    }
     self.vc = [[OrderViewController alloc] init];
     self.vc.str = @"1";
     [self getData];

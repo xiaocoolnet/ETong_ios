@@ -29,7 +29,7 @@ class ETGMSellCell: UITableViewCell {
         goodsImage.sd_setImageWithURL(NSURL(string:kIMAGE_URL_HEAD + model.picture.componentsSeparatedByString(",").first!) , placeholderImage: UIImage(named: "ic_xihuan"))
         goodsName.text = model.goodsname
         hasSaleNum.text = "已售:"+"库存:"
-        goodsPrice.text = model.price
+        goodsPrice.text = model.price + "￥"
     }
     
     func setViewsTag(viewTag:Int){

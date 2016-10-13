@@ -10,4 +10,6 @@
 
 @interface AroundHotelViewController : UIViewController
 
+@property (nonatomic, strong) NSString *cityStr;
+
 @end

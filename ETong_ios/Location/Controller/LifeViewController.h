@@ -10,4 +10,6 @@
 
 @interface LifeViewController : YPTabBarController
 
+@property (nonatomic, strong) NSString *city;
+
 @end

@@ -11,4 +11,6 @@
 
 @interface HotelViewController : YPTabBarController
 
+@property (nonatomic, strong) NSString *city;
+
 @end

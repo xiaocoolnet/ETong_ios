@@ -9,7 +9,7 @@
 #import "BabyCollectViewController.h"
 #import "CollectTableViewCell.h"
 #import "ETShopHelper.h"
-#import "CollectModel.h"
+#import "ETGoodsDataModel.h"
 
 @interface BabyCollectViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -47,7 +47,7 @@
             
             for (int i=0; i<response.count; i++) {
                 
-                CollectModel *model = [CollectModel mj_objectWithKeyValues:response[i]];
+                ETGoodsDataModel *model = [ETGoodsDataModel mj_objectWithKeyValues:response[i]];
                 [self.dataArray addObject:model];
             }
             NSLog(@"%lu",(unsigned long)self.dataArray.count);
@@ -85,21 +85,28 @@
     CollectTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    CollectModel *model = self.dataArray[indexPath.row];
+    ETGoodsDataModel *model = self.dataArray[indexPath.row];
     cell.nameLab.text = model.goodsname;
     cell.priceLab.text = [@"¥" stringByAppendingString:model.price];
     // 将string字符串转换为array数组
+    
     NSArray  *array = [model.photo componentsSeparatedByString:@","]; //--分隔符
     NSString *avatarUrlStr = [NSString stringWithFormat:@"%@/%@",kIMAGE_URL_HEAD,array.firstObject];
     [cell.imgView sd_setImageWithURL:[NSURL URLWithString:avatarUrlStr] placeholderImage:[UIImage imageNamed:@"ic_xihuan"]];
-    
-    [cell.btn addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
+    cell.btn.tag = indexPath.row;
+    [cell.btn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
 }
 
--(void)click{
+-(void)click:(UIButton *)sender{
     NSLog(@"11223333");
+    ETGoodsDetailController *vc = [[ETGoodsDetailController alloc] initWithNibName:@"ETGoodsDetailController" bundle:nil];
+    ETGoodsDataModel *model = self.dataArray[sender.tag];
+    vc.goodModel = model;
+    vc.goodModel.picture = model.photo;
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

@@ -23,8 +23,11 @@
         self.imgView.image = [UIImage imageNamed:@"ic_xihuan"];
         [self.contentView addSubview:self.imgView];
         
+        self.img = [[UIImageView alloc] init];
+        [self.contentView addSubview:self.img];
+        
         self.priceLab = [[UILabel alloc] init];
-        self.priceLab.text = @"¥500起";
+        self.priceLab.text = @"¥50起";
         self.priceLab.textAlignment = NSTextAlignmentLeft;
         self.priceLab.font = [UIFont systemFontOfSize:16];
         self.priceLab.textColor = [UIColor redColor];
@@ -52,6 +55,7 @@
     self.distanceLab.frame = CGRectMake(self.contentView.frame.size.width - 130, 10, 120, 20);
     self.priceLab.frame = CGRectMake(120, 80, 200, 30);
     self.aview.frame = CGRectMake(0, 120, self.contentView.frame.size.width, 10);
+    self.img.frame = CGRectMake(120, 50, 130, 20);
 }
 
 

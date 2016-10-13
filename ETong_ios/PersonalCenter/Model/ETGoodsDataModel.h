@@ -67,6 +67,8 @@
 @property (nonatomic, strong) NSArray *shop_list;
 
 @property (nonatomic, copy) NSString *pays;
+@property (nonatomic, copy) NSString *photo;
+@property (nonatomic, copy) NSString *uid;
 
 -(JSCartModel *)converToJSCartModel;
 

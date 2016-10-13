@@ -37,7 +37,7 @@
 @property (strong, nonatomic) NSMutableArray *likeArray;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentHeightLayout;
 @property (strong, nonatomic) EveryDayHelper *helper;
-@property (nonatomic, strong) NSString *cityStr;
+@property (nonatomic, copy) NSString *cityStr;
 
 @end
 
@@ -152,7 +152,7 @@
     
     // button标题居左显示
     self.leftBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    self.leftBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
+    self.leftBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
     
     NSArray *imageNames = @[@"ic_lunbotu",
                             @"ic_lunbotu",
@@ -180,11 +180,13 @@
 -(void)leftNavBtnAction:(UIButton *)btn{
     SelectCityViewController *vc = [[SelectCityViewController alloc] init];
     vc.hidesBottomBarWhenPushed = true;
+    vc.delegate = self;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(void)passTrendValues:(NSString *)city{
     [self.leftBtn setTitle:city forState:UIControlStateNormal];
+//    self.cityStr = [[NSString alloc] init];
     self.cityStr = city;
     NSLog(@"%@", self.cityStr);
 }
@@ -231,6 +233,7 @@
     FoodViewController *vc = [[FoodViewController alloc] init];
     vc.hidesBottomBarWhenPushed = true;
     vc.city = self.cityStr;
+    NSLog(@"dddd = %@",self.cityStr);
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -255,6 +258,7 @@
     HotelViewController *vc = [[HotelViewController alloc] init];
     vc.hidesBottomBarWhenPushed = true;
     vc.title = @"酒店";
+    vc.city = self.cityStr;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -263,6 +267,7 @@
     LifeViewController *vc = [[LifeViewController alloc] init];
     vc.hidesBottomBarWhenPushed = true;
     vc.title = @"生活服务";
+    vc.city = self.cityStr;
     [self.navigationController pushViewController:vc animated:true];
 }
 

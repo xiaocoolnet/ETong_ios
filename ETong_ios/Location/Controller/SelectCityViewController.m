@@ -47,8 +47,6 @@
 - (void)JSAddressPickerRerurnBlockWithProvince:(NSString *)province city:(NSString *)city {
     self.pickerView.hidden = NO;
     NSLog(@"%@  %@",province,city);
-    LocationViewController *vc = [[LocationViewController alloc] init];
-    self.delegate = vc;
     [self.delegate passTrendValues:city];
     [self.navigationController popViewControllerAnimated:YES];
     

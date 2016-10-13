@@ -40,7 +40,7 @@
 - (void)initViewControllers {
     AroundHotelViewController *controller1 = [[AroundHotelViewController alloc] init];
     controller1.yp_tabItemTitle = @"附近";
-    
+    controller1.cityStr = self.city;
     DistanceHotelViewController *controller2 = [[DistanceHotelViewController alloc] init];
     controller2.yp_tabItemTitle = @"距离";
     

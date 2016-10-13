@@ -129,5 +129,33 @@
  *  收藏商品
  */
 -(void)collectionGoodsWithUserid:(NSString *)userid goodsid:(NSString *)goodsid type:(NSString *)type title:(NSString *)title description:(NSString *)description success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
+/**
+ *  下架店铺商品
+ */
+-(void)SoldOutGoodsWithGoodsid:(NSString *)goodsid success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
+/**
+ *  上架店铺商品
+ */
+-(void)AddedGoodsWithGoodsid:(NSString *)goodsid success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
+/**
+ *  删除店铺商品
+ */
+-(void)DeleteGoodsWithGoodsid:(NSString *)goodsid success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
+/**
+ *  获取我的足迹列表
+ */
+-(void)GetFootprintsWithUserid:(NSString *)userid Type:(NSString *)type success:(ResponseBlock)success faild:(ETResponseErrorBlock)faild;
+/**
+ *  获取聊天信息
+ */
+-(void)GetTalkNewsWithUserid:(NSString *)send_uid Receive_uid:(NSString *)receive_uid success:(ResponseBlock)success faild:(ETResponseErrorBlock)faild;
+/**
+ *  发送聊天信息
+ */
+-(void)SendTalkNewsWithUserid:(NSString *)send_uid Receive_uid:(NSString *)receive_uid Content:(NSString *)content success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
+/**
+ *  获取店铺信息
+ */
+-(void)GetShopDetailsWithShopid:(NSString *)shopid success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
 
 @end

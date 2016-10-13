@@ -355,12 +355,16 @@
         GoodShopViewController *vc = [[GoodShopViewController alloc] init];
         ETShopModel *model = self.dataArray[indexPath.item];
         vc.shopModel = model;
+        vc.shopModel.uid = model.uid;
+        NSLog(@"%@",vc.shopModel.uid);
+        NSLog(@"%@",model.uid);
         [self.navigationController pushViewController:vc animated:YES];
     }else{
         ETGoodsDetailController *controller = [[ETGoodsDetailController alloc]init];
         ETGoodsDataModel *model = self.likeArray[indexPath.row];
         controller.goodModel = model;
         controller.hidesBottomBarWhenPushed = YES;
+        controller.navgationType = @"1";
         [self.navigationController pushViewController:controller animated:true];
     }
 }

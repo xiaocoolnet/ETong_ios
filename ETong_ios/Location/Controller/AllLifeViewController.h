@@ -10,4 +10,6 @@
 
 @interface AllLifeViewController : UIViewController
 
+@property (nonatomic, strong) NSString *cityStr;
+
 @end

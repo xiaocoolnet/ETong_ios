@@ -102,6 +102,14 @@
 		64ABB1621DACD0F600768D45 /* LocationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ABB1611DACD0F600768D45 /* LocationModel.m */; };
 		64ABB1651DACDE1B00768D45 /* AllShopDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ABB1641DACDE1B00768D45 /* AllShopDetailViewController.m */; };
 		64BAA7F31D94CD16001B5B24 /* HttpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BAA7F21D94CD16001B5B24 /* HttpModel.m */; };
+		64C2D2201DAE1E27002C8272 /* FootprintsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C2D21F1DAE1E27002C8272 /* FootprintsViewController.m */; };
+		64C2D2241DAE1EC5002C8272 /* FootprintsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C2D2221DAE1EC5002C8272 /* FootprintsTableViewCell.m */; };
+		64C2D2251DAE1EC5002C8272 /* FootprintsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64C2D2231DAE1EC5002C8272 /* FootprintsTableViewCell.xib */; };
+		64C2D2281DAF2362002C8272 /* ChetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C2D2271DAF2362002C8272 /* ChetViewController.m */; };
+		64C2D2301DAF23A9002C8272 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C2D22A1DAF23A9002C8272 /* CustomTableViewCell.m */; };
+		64C2D2311DAF23A9002C8272 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C2D22B1DAF23A9002C8272 /* Foundation+Log.m */; };
+		64C2D2321DAF23A9002C8272 /* messModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C2D22D1DAF23A9002C8272 /* messModel.m */; };
+		64C2D2331DAF23A9002C8272 /* modelFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C2D22F1DAF23A9002C8272 /* modelFrame.m */; };
 		F6032EFC1D654A7000A8407F /* ETGoodsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6032EFA1D654A7000A8407F /* ETGoodsDetailController.swift */; };
 		F6032EFD1D654A7000A8407F /* ETGoodsDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6032EFB1D654A7000A8407F /* ETGoodsDetailController.xib */; };
 		F6155FD21D9E0D4100297429 /* ETLocationLikeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F6155FD01D9E0D4100297429 /* ETLocationLikeCell.m */; };
@@ -400,6 +408,20 @@
 		64ABB1641DACDE1B00768D45 /* AllShopDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllShopDetailViewController.m; sourceTree = "<group>"; };
 		64BAA7F11D94CD16001B5B24 /* HttpModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpModel.h; sourceTree = "<group>"; };
 		64BAA7F21D94CD16001B5B24 /* HttpModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpModel.m; sourceTree = "<group>"; };
+		64C2D21E1DAE1E27002C8272 /* FootprintsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FootprintsViewController.h; sourceTree = "<group>"; };
+		64C2D21F1DAE1E27002C8272 /* FootprintsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FootprintsViewController.m; sourceTree = "<group>"; };
+		64C2D2211DAE1EC5002C8272 /* FootprintsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FootprintsTableViewCell.h; sourceTree = "<group>"; };
+		64C2D2221DAE1EC5002C8272 /* FootprintsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FootprintsTableViewCell.m; sourceTree = "<group>"; };
+		64C2D2231DAE1EC5002C8272 /* FootprintsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FootprintsTableViewCell.xib; sourceTree = "<group>"; };
+		64C2D2261DAF2355002C8272 /* ChetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChetViewController.h; sourceTree = "<group>"; };
+		64C2D2271DAF2362002C8272 /* ChetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChetViewController.m; sourceTree = "<group>"; };
+		64C2D2291DAF23A9002C8272 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
+		64C2D22A1DAF23A9002C8272 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
+		64C2D22B1DAF23A9002C8272 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		64C2D22C1DAF23A9002C8272 /* messModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = messModel.h; sourceTree = "<group>"; };
+		64C2D22D1DAF23A9002C8272 /* messModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = messModel.m; sourceTree = "<group>"; };
+		64C2D22E1DAF23A9002C8272 /* modelFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = modelFrame.h; sourceTree = "<group>"; };
+		64C2D22F1DAF23A9002C8272 /* modelFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = modelFrame.m; sourceTree = "<group>"; };
 		66936F17ED3F666A6A6B37F5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC727555E648AF38DE5BD102 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F6032EFA1D654A7000A8407F /* ETGoodsDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETGoodsDetailController.swift; sourceTree = "<group>"; };
@@ -682,6 +704,7 @@
 			children = (
 				6493B7ED1D9BB311008EE7C8 /* NewsViewController.h */,
 				6493B7EE1D9BB311008EE7C8 /* NewsViewController.m */,
+				64C2D2341DAF23B3002C8272 /* 聊天页面 */,
 			);
 			name = "消息";
 			sourceTree = "<group>";
@@ -845,6 +868,31 @@
 				64ABB15B1DAB806A00768D45 /* NewPeopleViewController.m */,
 			);
 			name = "新客专享";
+			sourceTree = "<group>";
+		};
+		64C2D21D1DAE1B09002C8272 /* 我的足迹 */ = {
+			isa = PBXGroup;
+			children = (
+				64C2D21E1DAE1E27002C8272 /* FootprintsViewController.h */,
+				64C2D21F1DAE1E27002C8272 /* FootprintsViewController.m */,
+			);
+			name = "我的足迹";
+			sourceTree = "<group>";
+		};
+		64C2D2341DAF23B3002C8272 /* 聊天页面 */ = {
+			isa = PBXGroup;
+			children = (
+				64C2D2261DAF2355002C8272 /* ChetViewController.h */,
+				64C2D2271DAF2362002C8272 /* ChetViewController.m */,
+				64C2D2291DAF23A9002C8272 /* CustomTableViewCell.h */,
+				64C2D22A1DAF23A9002C8272 /* CustomTableViewCell.m */,
+				64C2D22B1DAF23A9002C8272 /* Foundation+Log.m */,
+				64C2D22C1DAF23A9002C8272 /* messModel.h */,
+				64C2D22D1DAF23A9002C8272 /* messModel.m */,
+				64C2D22E1DAF23A9002C8272 /* modelFrame.h */,
+				64C2D22F1DAF23A9002C8272 /* modelFrame.m */,
+			);
+			name = "聊天页面";
 			sourceTree = "<group>";
 		};
 		9530494A522D2346866C5A0C /* Frameworks */ = {
@@ -1178,6 +1226,7 @@
 		F65BF3241D3F4F250003DB35 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				64C2D21D1DAE1B09002C8272 /* 我的足迹 */,
 				6493B7EC1D9BB2FB008EE7C8 /* 消息 */,
 				6493B7D91D9BA8F7008EE7C8 /* 评价 */,
 				6493B7C71D9B6B16008EE7C8 /* 收藏 */,
@@ -1251,6 +1300,9 @@
 				6493B8271D9E6DA9008EE7C8 /* YiAppraiseTableViewCell.h */,
 				6493B8281D9E6DA9008EE7C8 /* YiAppraiseTableViewCell.m */,
 				6493B8291D9E6DA9008EE7C8 /* YiAppraiseTableViewCell.xib */,
+				64C2D2211DAE1EC5002C8272 /* FootprintsTableViewCell.h */,
+				64C2D2221DAE1EC5002C8272 /* FootprintsTableViewCell.m */,
+				64C2D2231DAE1EC5002C8272 /* FootprintsTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1552,6 +1604,7 @@
 				F65149F81D4F5BD700ECFFFD /* ETWaitDeliverController.xib in Resources */,
 				F6C09BED1D5081D4001C2987 /* ETCUserInfoController.xib in Resources */,
 				F62CF47B1D4320720070BA2E /* ETGuessYLikeCell.xib in Resources */,
+				64C2D2251DAE1EC5002C8272 /* FootprintsTableViewCell.xib in Resources */,
 				F65149E71D4F383D00ECFFFD /* ETGMSellCell.xib in Resources */,
 				6493B82B1D9E6DA9008EE7C8 /* YiAppraiseTableViewCell.xib in Resources */,
 				F6C36AD61D937A71008737D5 /* ETDailySpacialCell.xib in Resources */,
@@ -1641,6 +1694,7 @@
 				649AF3401D98BEB800D8B840 /* AroundTravelViewController.m in Sources */,
 				F65BF3451D3F58C70003DB35 /* macro.m in Sources */,
 				647A3E041D9A2000000B6802 /* DaiValuationViewController.swift in Sources */,
+				64C2D2281DAF2362002C8272 /* ChetViewController.m in Sources */,
 				F65BF2FD1D3F1CA80003DB35 /* AppDelegate.m in Sources */,
 				649AF35C1D9910A200D8B840 /* ALLViewController.m in Sources */,
 				F6C36AD51D937A71008737D5 /* ETDailySpacialCell.m in Sources */,
@@ -1655,6 +1709,8 @@
 				64ABB15F1DACC52000768D45 /* qqq.m in Sources */,
 				647A3E071D9A469C000B6802 /* OrderListModel.m in Sources */,
 				6493B8491DAA2B8D008EE7C8 /* NowDayViewController.m in Sources */,
+				64C2D2311DAF23A9002C8272 /* Foundation+Log.m in Sources */,
+				64C2D2201DAE1E27002C8272 /* FootprintsViewController.m in Sources */,
 				647A3DF81D9A1746000B6802 /* OrderViewController.m in Sources */,
 				6493B8401DAA1AE5008EE7C8 /* DistanceAllBuyingViewController.m in Sources */,
 				F6CF10B71D4B83C400555C4A /* ETShopHelper.m in Sources */,
@@ -1664,11 +1720,13 @@
 				F6EAB5361D84FCA2008FF8FA /* JSNummberCount.m in Sources */,
 				F64788A51D41BC3000294225 /* ETMyZoneController.m in Sources */,
 				647A3E021D9A1FD2000B6802 /* DaiSureViewController.swift in Sources */,
+				64C2D2331DAF23A9002C8272 /* modelFrame.m in Sources */,
 				F6FED1D21D44BDEB00C5C776 /* ETFgetPwdController.m in Sources */,
 				6493B7E21D9BA995008EE7C8 /* SellerEvaluateViewController.m in Sources */,
 				649AF3231D97B8F800D8B840 /* AroundHotelViewController.m in Sources */,
 				6493B8441DAA1EF4008EE7C8 /* AllEBuyingTableViewCell.m in Sources */,
 				F64788AF1D41C7C900294225 /* ETMZoneCell.m in Sources */,
+				64C2D2321DAF23A9002C8272 /* messModel.m in Sources */,
 				F6C94C491D58AA4B00280E86 /* ETGoodsLoopController.swift in Sources */,
 				64BAA7F31D94CD16001B5B24 /* HttpModel.m in Sources */,
 				6493B80F1D9D0734008EE7C8 /* AddressView.m in Sources */,
@@ -1683,6 +1741,7 @@
 				F61E82311D474463001E16B5 /* ETTimeManager.m in Sources */,
 				F65E00331D868688005FDD83 /* GoodAttributesView.m in Sources */,
 				F643088F1D618FA90037FD9F /* ETEditGoodsController.swift in Sources */,
+				64C2D2241DAE1EC5002C8272 /* FootprintsTableViewCell.m in Sources */,
 				649AF2E91D95121E00D8B840 /* GoodShopViewController.m in Sources */,
 				6493B7EB1D9BB2B4008EE7C8 /* NewsModel.m in Sources */,
 				F6EAB5381D84FCA2008FF8FA /* JSCartUIService.m in Sources */,
@@ -1792,6 +1851,7 @@
 				647A3DFE1D9A1FA5000B6802 /* DaiSippingViewController.swift in Sources */,
 				64ABB1621DACD0F600768D45 /* LocationModel.m in Sources */,
 				F6545D7D1D533F480007C42C /* ETGMOffShelfCell.swift in Sources */,
+				64C2D2301DAF23A9002C8272 /* CustomTableViewCell.m in Sources */,
 				F65149EF1D4F56A000ECFFFD /* ETAllOrderController.swift in Sources */,
 				6493B8171D9E5119008EE7C8 /* AfterSaleViewController.swift in Sources */,
 				F65E00301D86857E005FDD83 /* GoodAttrModel.m in Sources */,

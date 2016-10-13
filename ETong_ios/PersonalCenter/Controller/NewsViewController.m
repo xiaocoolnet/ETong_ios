@@ -10,6 +10,7 @@
 #import "NewsTableViewCell.h"
 #import "ETShopHelper.h"
 #import "NewsModel.h"
+#import "ChetViewController.h"
 
 @interface NewsViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -91,12 +92,16 @@
     [cell.imgView sd_setImageWithURL:[NSURL URLWithString:avatarUrlStr] placeholderImage:[UIImage imageNamed:@"ic_xihuan"]];
     cell.contentLab.text = model.last_content;
     
-    
-    
     return cell;
 }
 
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    ChetViewController *vc = [[ChetViewController alloc] init];
+    NewsModel *model = self.dataArray[indexPath.row];
+    vc.receive_uid = model.chat_uid;
+    vc.title = model.other_nickname;
+    [self.navigationController pushViewController:vc animated:true];
+}
 
 
 @end

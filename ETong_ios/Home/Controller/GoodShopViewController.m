@@ -155,7 +155,9 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     ETGoodsDetailController *vc = [[ETGoodsDetailController alloc] initWithNibName:@"ETGoodsDetailController" bundle:nil];
     vc.goodModel = self.dataArray[indexPath.item];
+    vc.goodModel.uid = self.shopModel.uid;
     vc.hidesBottomBarWhenPushed = YES;
+    vc.navgationType = @"1";
     [self.navigationController pushViewController:vc animated:YES];
 }
 

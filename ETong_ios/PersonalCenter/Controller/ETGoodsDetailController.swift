@@ -17,6 +17,11 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
     @IBOutlet weak var collectBtn:UIButton!
     @IBOutlet weak var descript:UILabel!
     @IBOutlet weak var judgeList:UITableView!
+    var strId = NSString()
+    var shopname = NSString()
+    var navgationType = String()
+    
+    
     var imageNames = Array<String>()
     var goodModel:ETGoodsDataModel?
     var valueArr = NSArray()
@@ -26,6 +31,7 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.tabBar.hidden = true
         self.edgesForExtendedLayout = UIRectEdge.None
         self.automaticallyAdjustsScrollViewInsets = false
         judgeList.registerNib(UINib(nibName: "ETGoodsJudgeCell",bundle: nil), forCellReuseIdentifier: "cell")
@@ -36,10 +42,10 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
         collectBtn.setImage(UIImage(named: "ic_cainixihuan-1"), forState: .Highlighted)
         collectBtn.setImage(UIImage(named: "ic_cainixihuan-1"), forState: .Selected)
         collectBtn.selected = false
+        getShopDetail()
     }
     
     override func viewDidAppear(animated: Bool) {
-        
         let cycleScrollView = SDCycleScrollView(frame: CGRectMake(0, 0, imageBackView.frame.width, imageBackView.frame.height), delegate: self, placeholderImage: UIImage(named: "ic_lunbotu"))
         cycleScrollView.delegate = self
         cycleScrollView.imageURLStringsGroup = imageNames
@@ -192,10 +198,51 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 111
     }
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCellWithIdentifier("cell")
         
         return cell!
     }
+    @IBAction func ClickTalkBtn(sender: AnyObject) {
+        let vc = ChetViewController()
+        vc.receive_uid = self.strId as String
+        vc.title = self.shopname as String
+//        print(vc.receive_uid)
+        if ETUserInfo.sharedETUserInfo().id == self.strId {
+            SVProgressHUD.showErrorWithStatus("这是您自己的店铺，不能和自己聊天")
+            return
+        }
+        if (!ETUserInfo.sharedETUserInfo().isLogin) {
+            SVProgressHUD.showErrorWithStatus("请先登录")
+            return
+        }
+        vc.navgationType = self.navgationType
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    
+    
+    func getShopDetail(){
+        ETShopHelper().GetShopDetailsWithShopid(goodModel?.shopid, success: {[unowned self] (dic) in
+            st_dispatch_async_main({
+                self.strId = dic["uid"] as! String
+                print(dic["shopname"])
+                if ((dic["shopname"]?.isMemberOfClass(NSNull)) != nil){
+                    self.shopname = "无"
+                }else{
+                    
+                    self.shopname = dic["shopname"] as! String
+                }
+                print(dic["uid"])
+            })
+        }) { (str, err) in
+            st_dispatch_async_main({
+                SVProgressHUD.showSuccessWithStatus("网络错误")
+            })
+        }
+    }
+    
+    
+    
 }

@@ -40,7 +40,7 @@
 - (void)initViewControllers {
     AllLifeViewController *controller1 = [[AllLifeViewController alloc] init];
     controller1.yp_tabItemTitle = @"全部";
-    
+    controller1.cityStr = self.city;
     AroundViewController *controller2 = [[AroundViewController alloc] init];
     controller2.yp_tabItemTitle = @"距离";
     
