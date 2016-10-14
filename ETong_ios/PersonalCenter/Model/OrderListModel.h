@@ -14,7 +14,7 @@
 
 @property (nonatomic, copy) NSString *id;
 
-@property (nonatomic, copy) NSString *state;
+@property (nonatomic, copy) NSString *states;
 
 @property (nonatomic, copy) NSString *money;
 

@@ -122,6 +122,10 @@
  */
 -(void)cancleOrderWithid:(NSString *)goodsid reason:(NSString *)reason success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
 /**
+ *  评价商品订单
+ */
+-(void)evaluateOrderWithUserid:(NSString *)userid Orderid:(NSString *)orderid Type:(NSString *)type Content:(NSString *)content Attitudescore:(NSString *)attitudescore Finishscore:(NSString *)finishscore Effectscore:(NSString *)effectscore success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
+/**
  *  取消收藏
  */
 -(void)cancleCollectionWithUserid:(NSString *)userid goodsid:(NSString *)goodsid type:(NSString *)type success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
@@ -157,5 +161,17 @@
  *  获取店铺信息
  */
 -(void)GetShopDetailsWithShopid:(NSString *)shopid success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
+/**
+ *  获取订单列表（swift）
+ */
+- (void)GetOrderListInfoWithUserid:(NSString *)userid state:(NSString *)state
+                           success:(ETResponseBlock)success
+                             faild:(ETResponseErrorBlock)faild;
+/**
+ *  获取订单列表全部（swift）
+ */
+- (void)GetOrderListInfoWithUserid:(NSString *)userid
+                           success:(ETResponseBlock)success
+                             faild:(ETResponseErrorBlock)faild;
 
 @end

@@ -7,8 +7,16 @@
 //
 
 #import "OrderListModel.h"
+#import "MJExtension.h"
 
 @implementation OrderListModel
+
++ (NSDictionary *)replacedKeyFromPropertyName
+{
+    return @{
+             @"states" : @"state",
+             };
+}
 
 @end
 @implementation Evaluate

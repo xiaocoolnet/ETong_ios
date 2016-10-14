@@ -12,7 +12,5 @@
 @interface OrderViewController : YPTabBarController
 
 @property(nonatomic, strong) NSString *str;
-@property (strong, nonatomic) NSMutableArray *dataArray;
-
 
 @end

@@ -277,30 +277,10 @@
         if ([response isKindOfClass:[NSString class]]) {
             return ;
         }
-        st_dispatch_async_main(^{
-            [self.helper getOrderListInfoWithUserid:[ETUserInfo sharedETUserInfo].id success:^(NSArray *response) {
-                if ([response isKindOfClass:[NSString class]]) {
-                    return ;
-                }
-                st_dispatch_async_main(^{
-                    self.dataArray = [[NSMutableArray alloc] init];
-                    for (int i=0; i<response.count; i++) {
-                        
-                        OrderListModel *model = [OrderListModel mj_objectWithKeyValues:response[i]];
-                        [self.dataArray addObject:model];
-                        NSLog(@"%lu",(unsigned long)self.dataArray.count);
-                    }
-                    self.vc.dataArray = self.dataArray;
-                    [weakSelf.navigationController pushViewController:self.vc animated:true];
-                });
-                
-                return ;
-            } faild:^(NSString *response, NSError *error) {
-                
-            }];
-            
+        st_dispatch_async_main(^{            
             self.vc.title = @"订单管理";
             self.vc.hidesBottomBarWhenPushed = true;
+            [weakSelf.navigationController pushViewController:self.vc animated:true];
         });
         return ;
     } faild:^(NSString *response, NSError *error) {

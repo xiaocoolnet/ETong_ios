@@ -60,30 +60,22 @@
 
 - (void)initViewControllers {
     AllOrderViewController *controller1 = [[AllOrderViewController alloc] init];
-    controller1.dataSource = self.dataArray;
     controller1.yp_tabItemTitle = @"全部";
-    NSLog(@"heheh = %lu",(unsigned long)controller1.dataSource.count);
     
     DaiPayViewController *controller2 = [[DaiPayViewController alloc] init];
     controller2.yp_tabItemTitle = @"待付款";
-    controller2.dataSource = self.dataArray;
     
     DaiUserViewController *controller3 = [[DaiUserViewController alloc] init];
     controller3.yp_tabItemTitle = @"待使用";
-    controller3.dataSource = self.dataArray;
     
     DaiSippingViewController *controller4 = [[DaiSippingViewController alloc] init];
     controller4.yp_tabItemTitle = @"待发货";
-    controller4.dataSource = self.dataArray;
     
     DaiSureViewController *controller5 = [[DaiSureViewController alloc] init];
     controller5.yp_tabItemTitle = @"待确认";
-    controller5.dataSource = self.dataArray;
     
     DaiValuationViewController *controller6 = [[DaiValuationViewController alloc] init];
-    controller6.yp_tabItemTitle = @"待评价";
-    controller6.dataSource = self.dataArray;
-    
+    controller6.yp_tabItemTitle = @"待评价";    
     
     self.viewControllers = [NSMutableArray arrayWithObjects:controller1, controller2, controller3, controller4, controller5, controller6, nil];
     

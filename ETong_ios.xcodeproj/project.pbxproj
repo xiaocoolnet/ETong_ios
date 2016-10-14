@@ -110,6 +110,10 @@
 		64C2D2311DAF23A9002C8272 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C2D22B1DAF23A9002C8272 /* Foundation+Log.m */; };
 		64C2D2321DAF23A9002C8272 /* messModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C2D22D1DAF23A9002C8272 /* messModel.m */; };
 		64C2D2331DAF23A9002C8272 /* modelFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C2D22F1DAF23A9002C8272 /* modelFrame.m */; };
+		64D5DE0F1DB06C3200F0D3D9 /* EvaluateOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D5DE0E1DB06C3200F0D3D9 /* EvaluateOrderViewController.swift */; };
+		64D5DE111DB0B3B500F0D3D9 /* OrderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D5DE101DB0B3B500F0D3D9 /* OrderDetailsViewController.swift */; };
+		64D5DE141DB0BAE300F0D3D9 /* OrderDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D5DE121DB0BAE300F0D3D9 /* OrderDetailsTableViewCell.swift */; };
+		64D5DE151DB0BAE300F0D3D9 /* OrderDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64D5DE131DB0BAE300F0D3D9 /* OrderDetailsTableViewCell.xib */; };
 		F6032EFC1D654A7000A8407F /* ETGoodsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6032EFA1D654A7000A8407F /* ETGoodsDetailController.swift */; };
 		F6032EFD1D654A7000A8407F /* ETGoodsDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6032EFB1D654A7000A8407F /* ETGoodsDetailController.xib */; };
 		F6155FD21D9E0D4100297429 /* ETLocationLikeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F6155FD01D9E0D4100297429 /* ETLocationLikeCell.m */; };
@@ -422,6 +426,10 @@
 		64C2D22D1DAF23A9002C8272 /* messModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = messModel.m; sourceTree = "<group>"; };
 		64C2D22E1DAF23A9002C8272 /* modelFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = modelFrame.h; sourceTree = "<group>"; };
 		64C2D22F1DAF23A9002C8272 /* modelFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = modelFrame.m; sourceTree = "<group>"; };
+		64D5DE0E1DB06C3200F0D3D9 /* EvaluateOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvaluateOrderViewController.swift; sourceTree = "<group>"; };
+		64D5DE101DB0B3B500F0D3D9 /* OrderDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewController.swift; sourceTree = "<group>"; };
+		64D5DE121DB0BAE300F0D3D9 /* OrderDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		64D5DE131DB0BAE300F0D3D9 /* OrderDetailsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		66936F17ED3F666A6A6B37F5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC727555E648AF38DE5BD102 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F6032EFA1D654A7000A8407F /* ETGoodsDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETGoodsDetailController.swift; sourceTree = "<group>"; };
@@ -669,6 +677,8 @@
 				647A3E011D9A1FD2000B6802 /* DaiSureViewController.swift */,
 				647A3E031D9A2000000B6802 /* DaiValuationViewController.swift */,
 				6493B8331DA9E61A008EE7C8 /* CancleOrderViewController.swift */,
+				64D5DE0E1DB06C3200F0D3D9 /* EvaluateOrderViewController.swift */,
+				64D5DE101DB0B3B500F0D3D9 /* OrderDetailsViewController.swift */,
 			);
 			name = "我的订单";
 			sourceTree = "<group>";
@@ -1287,6 +1297,8 @@
 				F6508EF81D66FD440019BFFB /* ETGoodsSelectView.xib */,
 				647A3E081D9A4E8E000B6802 /* AllOrderTableViewCell.swift */,
 				647A3E091D9A4E8E000B6802 /* AllOrderTableViewCell.xib */,
+				64D5DE121DB0BAE300F0D3D9 /* OrderDetailsTableViewCell.swift */,
+				64D5DE131DB0BAE300F0D3D9 /* OrderDetailsTableViewCell.xib */,
 				6493B7D11D9B6D6E008EE7C8 /* CollectTableViewCell.h */,
 				6493B7D21D9B6D6E008EE7C8 /* CollectTableViewCell.m */,
 				6493B7D31D9B6D6E008EE7C8 /* CollectTableViewCell.xib */,
@@ -1588,6 +1600,7 @@
 				F6155FD31D9E0D4100297429 /* ETLocationLikeCell.xib in Resources */,
 				6493B8451DAA1EF4008EE7C8 /* AllEBuyingTableViewCell.xib in Resources */,
 				F6508EF91D66FD440019BFFB /* ETGoodsSelectView.xib in Resources */,
+				64D5DE151DB0BAE300F0D3D9 /* OrderDetailsTableViewCell.xib in Resources */,
 				6493B84E1DAA31D8008EE7C8 /* NowDayTableViewCell.xib in Resources */,
 				6493B8011D9CE68C008EE7C8 /* SettleTableViewCell.xib in Resources */,
 				F6C36AE51D93CCD3008737D5 /* ETSpecialSaleCell.xib in Resources */,
@@ -1704,6 +1717,7 @@
 				649AF3511D98F87600D8B840 /* AllKTVViewController.m in Sources */,
 				6493B82F1DA88F61008EE7C8 /* RecreationViewController.m in Sources */,
 				649AF3011D9769B700D8B840 /* SelectCityViewController.m in Sources */,
+				64D5DE0F1DB06C3200F0D3D9 /* EvaluateOrderViewController.swift in Sources */,
 				F65149FF1D4F5C7200ECFFFD /* ETCompleteController.swift in Sources */,
 				F6B65F891D48BEBE0069312B /* ETZBarScanController.m in Sources */,
 				64ABB15F1DACC52000768D45 /* qqq.m in Sources */,
@@ -1760,6 +1774,7 @@
 				F64788AA1D41BCDD00294225 /* ETSidelineZoneController.m in Sources */,
 				6493B81D1D9E5429008EE7C8 /* NOAppraiseViewController.m in Sources */,
 				F635C5E81D51C3B300CBBAD1 /* ETAllOrderCell.swift in Sources */,
+				64D5DE141DB0BAE300F0D3D9 /* OrderDetailsTableViewCell.swift in Sources */,
 				F6286FE81D4A18210052ADC3 /* ETShopBeginAuthVC.m in Sources */,
 				649AF35F1D99116B00D8B840 /* AllTableViewCell.m in Sources */,
 				6493B83D1DAA1AD0008EE7C8 /* AllEBuyingViewController.m in Sources */,
@@ -1805,6 +1820,7 @@
 				649AF3201D97B7FA00D8B840 /* HotelViewController.m in Sources */,
 				F6508EF41D66EFA20019BFFB /* ETGoodsJudgeCell.swift in Sources */,
 				F6286FE01D49E8940052ADC3 /* ETHttpModel.m in Sources */,
+				64D5DE111DB0B3B500F0D3D9 /* OrderDetailsViewController.swift in Sources */,
 				649AF31C1D97A88E00D8B840 /* FoodTableViewCell.m in Sources */,
 				6493B7DC1D9BA96B008EE7C8 /* EvaluateViewController.m in Sources */,
 				649AF34E1D98F81000D8B840 /* KTVViewController.m in Sources */,

@@ -10,27 +10,35 @@ import UIKit
 class DaiUserViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let tableView = UITableView()
-    var dataSource = NSMutableArray()
-    var arr = NSMutableArray()
+    var shopModel:OrderListModel?
+    var helper:ETShopHelper = ETShopHelper()
+    var dataArray = NSMutableArray()
     
+    override func viewWillAppear(animated: Bool) {
+//        getDate()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 242/255, alpha: 1)
         self.AddTableView()
-        for i in 0...dataSource.count - 1 {
-            let str = String(self.dataSource[i].statusname)
-            print(str)
-            if str != "nil"{
-                
-                if str == "待使用" {
-                    self.arr.addObject(self.dataSource[i])
-                }
-            }
-            print(self.arr.count)
-        }
-
-        
+        //        getDate()
+    }
+    
+    func getDate(){
+        helper.GetOrderListInfoWithUserid(ETUserInfo.sharedETUserInfo().id, state:"1", success: { [unowned self](dic) in
+            let models = (dic as NSDictionary).objectForKey("goods")
+            self.dataArray.removeAllObjects()
+            self.dataArray.addObjectsFromArray(models as! [OrderListModel])
+            st_dispatch_async_main({
+                self.tableView.reloadData()
+            })
+            }, faild: {(str, err) in
+                st_dispatch_async_main({
+                    self.dataArray.removeAllObjects()
+                    self.tableView.reloadData()
+                })
+        })
     }
     
     func AddTableView(){
@@ -43,7 +51,7 @@ class DaiUserViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.arr.count
+        return self.dataArray.count
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -54,7 +62,7 @@ class DaiUserViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCellWithIdentifier("cell1") as! AllOrderTableViewCell
         cell.selectionStyle = .None
         tableView.separatorStyle = .None
-        let model = arr[indexPath.row] as! OrderListModel
+        let model = dataArray[indexPath.row] as! OrderListModel
         //        cell.nameLab.text = model.peoplename
         cell.sizeNumLab.text = model.number
         cell.moneyLab.text = "¥" + (model.money)

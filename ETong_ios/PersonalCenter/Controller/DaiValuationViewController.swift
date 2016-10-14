@@ -11,25 +11,35 @@ import UIKit
 class DaiValuationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let tableView = UITableView()
-    var dataSource = NSMutableArray()
-    var arr = NSMutableArray()
+    var shopModel:OrderListModel?
+    var helper:ETShopHelper = ETShopHelper()
+    var dataArray = NSMutableArray()
+    
+    override func viewWillAppear(animated: Bool) {
+        getDate()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 242/255, alpha: 1)
         self.AddTableView()
-        for i in 0...dataSource.count - 1 {
-            let str = String(self.dataSource[i].statusname)
-            print(str)
-            if str != "nil"{
-                
-                if str == "待评价" {
-                    self.arr.addObject(self.dataSource[i])
-                }
-            }
-            print(self.arr.count)
-        }
-
+        //        getDate()
+    }
+    
+    func getDate(){
+        helper.GetOrderListInfoWithUserid(ETUserInfo.sharedETUserInfo().id, state:"4", success: { [unowned self](dic) in
+            let models = (dic as NSDictionary).objectForKey("goods")
+            self.dataArray.removeAllObjects()
+            self.dataArray.addObjectsFromArray(models as! [OrderListModel])
+            st_dispatch_async_main({
+                self.tableView.reloadData()
+            })
+            }, faild: {(str, err) in
+                st_dispatch_async_main({
+                    self.dataArray.removeAllObjects()
+                    self.tableView.reloadData()
+                })
+        })
     }
     
     func AddTableView(){
@@ -42,7 +52,7 @@ class DaiValuationViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.arr.count
+        return self.dataArray.count
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -53,26 +63,44 @@ class DaiValuationViewController: UIViewController, UITableViewDelegate, UITable
         let cell = tableView.dequeueReusableCellWithIdentifier("cell1") as! AllOrderTableViewCell
         cell.selectionStyle = .None
         tableView.separatorStyle = .None
-        let model = arr[indexPath.row] as! OrderListModel
+        let model = dataArray[indexPath.row] as! OrderListModel
         //        cell.nameLab.text = model.peoplename
         cell.sizeNumLab.text = model.number
         cell.moneyLab.text = "¥" + (model.money)
-        cell.stateLab.text = model.statusname
+        cell.stateLab.text = "待评价"
         cell.titleLab.text = model.goodsname
         cell.btn.layer.borderWidth = 1
         cell.btn.layer.borderColor = UIColor.redColor().CGColor
         cell.btn.layer.cornerRadius = 10
-        cell.cancelBtn.layer.borderWidth = 1
-        cell.cancelBtn.layer.borderColor = UIColor.lightGrayColor().CGColor
-        cell.cancelBtn.layer.cornerRadius = 10
+        cell.btn.setTitle("去评价", forState: .Normal)
+        cell.btn.addTarget(self, action: #selector(clcikBtn), forControlEvents: .TouchUpInside)
+        cell.cancelBtn.hidden = true
+        
         let strArray = model.picture.componentsSeparatedByString(",")
         let str = kIMAGE_URL_HEAD + strArray.first!
         let photourl = NSURL(string: str)
         cell.imgView.sd_setImageWithURL(photourl, placeholderImage: UIImage(named: "ic_xihuan"))
         
-        
         return cell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let vc = OrderDetailsViewController()
+        vc.hidesBottomBarWhenPushed = true
+        let model = dataArray[indexPath.row] as! OrderListModel
+        vc.dataSource = model
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
+    func clcikBtn(sender:UIButton){
+        let vc = EvaluateOrderViewController()
+        vc.hidesBottomBarWhenPushed = true
+        let model = dataArray[sender.tag] as! OrderListModel
+        let strArray = model.picture.componentsSeparatedByString(",")
+        let str = kIMAGE_URL_HEAD + strArray.first!
+        vc.img = str
+        vc.goodname = model.goodsname
+        vc.strid = model.id
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
