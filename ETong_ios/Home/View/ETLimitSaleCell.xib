@@ -56,6 +56,12 @@
                 <constraint firstItem="EHL-LQ-UdT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qvw-QD-jpK"/>
             </constraints>
             <size key="customSize" width="170" height="219"/>
+            <connections>
+                <outlet property="goodname" destination="ual-Fm-n1J" id="vao-2L-dbG"/>
+                <outlet property="imgView" destination="EHL-LQ-UdT" id="FGw-lS-IFO"/>
+                <outlet property="priceLab" destination="8Pg-rB-kYV" id="kej-qd-La2"/>
+                <outlet property="sureBtn" destination="XFx-zc-lZ7" id="HMl-0f-VwB"/>
+            </connections>
             <point key="canvasLocation" x="342" y="373"/>
         </collectionViewCell>
     </objects>

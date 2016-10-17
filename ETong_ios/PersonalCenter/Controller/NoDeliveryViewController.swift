@@ -75,6 +75,8 @@ class NoDeliveryViewController: UIViewController,UITableViewDelegate, UITableVie
         cell.imgView.sd_setImageWithURL(photourl, placeholderImage: UIImage(named: "ic_xihuan"))
         cell.stateLab.setTitle("待发货", forState: .Normal)
         cell.bottomBtn.setTitle("马上发货", forState: .Normal)
+        cell.bottomBtn.tag = indexPath.row
+        cell.bottomBtn.addTarget(self, action: #selector(self.ClcikBottomBtn), forControlEvents: .TouchUpInside)
         return cell
     }
     
@@ -83,6 +85,14 @@ class NoDeliveryViewController: UIViewController,UITableViewDelegate, UITableVie
         vc.hidesBottomBarWhenPushed = true
         let model = dataArray[indexPath.row] as! OrderListModel
         vc.dataSource = model
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func ClcikBottomBtn(btn:UIButton){
+        let vc = SendGoodsViewController()
+        vc.hidesBottomBarWhenPushed = true
+        let model = dataArray[btn.tag] as! OrderListModel
+        vc.dataArray = model
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

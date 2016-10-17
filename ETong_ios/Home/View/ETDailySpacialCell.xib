@@ -43,7 +43,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcC-ed-TwT">
                         <rect key="frame" x="102" y="70" width="28" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15C-F2-Wu3">
@@ -89,6 +89,14 @@
                     </mask>
                 </variation>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="goodnameLab" destination="a7q-ti-GNe" id="Osq-nr-MV6"/>
+                <outlet property="imgView" destination="8pQ-oJ-MAZ" id="JGC-md-fze"/>
+                <outlet property="nameLab" destination="raQ-Y0-M65" id="g5i-W5-WGV"/>
+                <outlet property="opriceLab" destination="BMM-sh-86J" id="nfN-8b-yt5"/>
+                <outlet property="priceLab" destination="fcC-ed-TwT" id="d64-Rp-qJ8"/>
+                <outlet property="sureBtn" destination="15C-F2-Wu3" id="gvt-tl-tXF"/>
+            </connections>
             <point key="canvasLocation" x="344" y="360"/>
         </tableViewCell>
     </objects>

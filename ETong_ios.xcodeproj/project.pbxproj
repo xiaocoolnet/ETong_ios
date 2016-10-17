@@ -19,6 +19,7 @@
 		64690E701DB20B2200D41D49 /* NOSignedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64690E6F1DB20B2200D41D49 /* NOSignedViewController.swift */; };
 		64690E721DB20B4D00D41D49 /* HaveDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64690E711DB20B4D00D41D49 /* HaveDoneViewController.swift */; };
 		64690E741DB2220300D41D49 /* SendGoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64690E731DB2220300D41D49 /* SendGoodsViewController.swift */; };
+		64690E771DB4741400D41D49 /* YLDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 64690E761DB4741300D41D49 /* YLDropDownMenu.m */; };
 		647A3DEA1D9A0B3C000B6802 /* TakeOutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A3DE81D9A0B3C000B6802 /* TakeOutTableViewCell.m */; };
 		647A3DEB1D9A0B3C000B6802 /* TakeOutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 647A3DE91D9A0B3C000B6802 /* TakeOutTableViewCell.xib */; };
 		647A3DEE1D9A0B7C000B6802 /* TakeOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A3DED1D9A0B7C000B6802 /* TakeOutViewController.m */; };
@@ -267,6 +268,8 @@
 		64690E6F1DB20B2200D41D49 /* NOSignedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NOSignedViewController.swift; sourceTree = "<group>"; };
 		64690E711DB20B4D00D41D49 /* HaveDoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HaveDoneViewController.swift; sourceTree = "<group>"; };
 		64690E731DB2220300D41D49 /* SendGoodsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendGoodsViewController.swift; sourceTree = "<group>"; };
+		64690E751DB4741300D41D49 /* YLDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLDropDownMenu.h; sourceTree = "<group>"; };
+		64690E761DB4741300D41D49 /* YLDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLDropDownMenu.m; sourceTree = "<group>"; };
 		647A3DE71D9A0B3C000B6802 /* TakeOutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeOutTableViewCell.h; sourceTree = "<group>"; };
 		647A3DE81D9A0B3C000B6802 /* TakeOutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeOutTableViewCell.m; sourceTree = "<group>"; };
 		647A3DE91D9A0B3C000B6802 /* TakeOutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TakeOutTableViewCell.xib; sourceTree = "<group>"; };
@@ -671,6 +674,8 @@
 				64690E6F1DB20B2200D41D49 /* NOSignedViewController.swift */,
 				64690E711DB20B4D00D41D49 /* HaveDoneViewController.swift */,
 				64690E731DB2220300D41D49 /* SendGoodsViewController.swift */,
+				64690E751DB4741300D41D49 /* YLDropDownMenu.h */,
+				64690E761DB4741300D41D49 /* YLDropDownMenu.m */,
 			);
 			name = "订单管理";
 			sourceTree = "<group>";
@@ -1752,6 +1757,7 @@
 				647A3DF81D9A1746000B6802 /* OrderViewController.m in Sources */,
 				6493B8401DAA1AE5008EE7C8 /* DistanceAllBuyingViewController.m in Sources */,
 				F6CF10B71D4B83C400555C4A /* ETShopHelper.m in Sources */,
+				64690E771DB4741400D41D49 /* YLDropDownMenu.m in Sources */,
 				F6C36ADA1D9388A3008737D5 /* ETSpacialSaleController.m in Sources */,
 				6493B83A1DAA1ABE008EE7C8 /* EBuyingViewController.m in Sources */,
 				649AF3261D97BA1E00D8B840 /* DistanceHotelViewController.m in Sources */,

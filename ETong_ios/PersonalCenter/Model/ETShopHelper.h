@@ -190,5 +190,9 @@
 - (void)GetMyShopOrderListInfoWithShopid:(NSString *)shopid state:(NSString *)state
                            success:(ETResponseBlock)success
                              faild:(ETResponseErrorBlock)faild;
+/**
+ *  订单发货
+ */
+-(void)sendGoodsWithUserid:(NSString *)goodsid success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
 
 @end

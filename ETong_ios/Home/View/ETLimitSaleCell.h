@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ETLimitSaleCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *imgView;
+@property (weak, nonatomic) IBOutlet UILabel *goodname;
+@property (weak, nonatomic) IBOutlet UILabel *priceLab;
+@property (weak, nonatomic) IBOutlet UIButton *sureBtn;
 
 @end
