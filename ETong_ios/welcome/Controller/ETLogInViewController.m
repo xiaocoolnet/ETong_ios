@@ -44,6 +44,7 @@
     _pwdNumber.layer.borderColor = [[UIColor whiteColor] CGColor];
     _pwdNumber.layer.borderWidth = 2;
     _loginBtn.layer.cornerRadius = 6;
+    
 }
 
 - (void)autoLogin{

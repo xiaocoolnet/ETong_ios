@@ -155,6 +155,8 @@
                 <outlet property="goodsName" destination="zSc-OV-5rY" id="t3N-gI-ABG"/>
                 <outlet property="goodsNumber" destination="iln-ec-VdT" id="eWt-Bf-MPY"/>
                 <outlet property="goodsPrice" destination="HQn-ws-20x" id="WKw-Nv-JAD"/>
+                <outlet property="imgView" destination="TQu-Ga-CQv" id="fui-wv-i3d"/>
+                <outlet property="stateLab" destination="F06-Vy-4VQ" id="dsm-Gs-prv"/>
                 <outlet property="userBtn" destination="4rY-od-Ivd" id="Vge-rG-syA"/>
             </connections>
             <point key="canvasLocation" x="274" y="448"/>

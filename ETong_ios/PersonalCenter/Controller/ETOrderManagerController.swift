@@ -34,13 +34,13 @@ class ETOrderManagerController: YPTabBarController {
         let vc1 = ETAllOrderController(nibName: "ETAllOrderController", bundle: nil)
         vc1.yp_tabItemTitle = "全部"
         
-        let vc2 = ETAllOrderController(nibName: "ETAllOrderController", bundle: nil)
+        let vc2 = NoDeliveryViewController()
         vc2.yp_tabItemTitle = "待发货"
         
-        let vc3 = ETAllOrderController(nibName: "ETAllOrderController", bundle: nil)
+        let vc3 = NOSignedViewController()
         vc3.yp_tabItemTitle = "待签收"
         
-        let vc4 = ETAllOrderController(nibName: "ETAllOrderController", bundle: nil)
+        let vc4 = HaveDoneViewController()
         vc4.yp_tabItemTitle = "已完成"
         
         self.viewControllers = [vc1,vc2,vc3,vc4]

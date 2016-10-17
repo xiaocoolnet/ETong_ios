@@ -69,9 +69,9 @@ class OrderDetailsViewController: UIViewController, UITableViewDelegate, UITable
         
         return cell
     }
-    
+    // 添加透视图
     func addHeaderView(){
-        
+
         let aview = UIView()
         aview.frame = CGRectMake(0, 0, self.view.frame.size.width, 100);
         aview.backgroundColor = UIColor(red: 253/255, green: 74/255, blue: 75/255, alpha: 1)
@@ -121,7 +121,7 @@ class OrderDetailsViewController: UIViewController, UITableViewDelegate, UITable
         addressLab.text = dataSource.address
         headView.addSubview(addressLab)
     }
-    
+    // 添加尾视图
     func addFooterView(){
         let dataArray = NSMutableArray()
         for i in 0...5 {

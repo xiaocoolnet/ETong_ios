@@ -16,6 +16,8 @@ class ETAllOrderCell: UITableViewCell {
     @IBOutlet weak var goodsDescrpt:UILabel!
     @IBOutlet weak var goodsNumber:UILabel!
     @IBOutlet weak var goodsPrice:UILabel!
+    @IBOutlet weak var stateLab: UIButton!
+    @IBOutlet weak var imgView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

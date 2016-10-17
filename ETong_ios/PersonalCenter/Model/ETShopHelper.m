@@ -454,6 +454,21 @@
     }];
 }
 
+// 支付订单
+-(void)payOrderWithid:(NSString *)goodsid success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild{
+    NSDictionary *para = @{@"a":@"DeleteOrder",@"id":goodsid};
+    [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
+        if ([model.status isEqualToString:@"success"]) {
+            success(model.data);
+        }else{
+            faild(@"",nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        faild(nil,nil);
+    }];
+}
+
 // 评价商品订单
 -(void)evaluateOrderWithUserid:(NSString *)userid Orderid:(NSString *)orderid Type:(NSString *)type Content:(NSString *)content Attitudescore:(NSString *)attitudescore Finishscore:(NSString *)finishscore Effectscore:(NSString *)effectscore success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild{
     NSDictionary *para = @{@"a":@"BuyerSetEvaluate",@"userid":userid,@"orderid":orderid,@"type":type,@"content":content,@"attitudescore":attitudescore,@"finishscore":finishscore,@"effectscore":effectscore};
@@ -630,6 +645,38 @@
 //获取订单列表全部(swift)
 -(void)GetOrderListInfoWithUserid:(NSString *)userid success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild{
     NSDictionary *para = @{@"a":@"getshoppingorderlist",@"userid":userid};
+    [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
+        if ([model.status isEqualToString:@"success"]) {
+            NSArray *models = [OrderListModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+            success(@{@"goods":models});
+        }else{
+            faild(@"", nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        faild(nil,nil);
+    }];
+}
+
+// 获取我的店铺订单列表全部(swift)
+-(void)GetMyShopOrderListInfoWithShopid:(NSString *)shopid success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild{
+    NSDictionary *para = @{@"a":@"Shopgetorderlist",@"shopid":shopid};
+    [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
+        if ([model.status isEqualToString:@"success"]) {
+            NSArray *models = [OrderListModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+            success(@{@"goods":models});
+        }else{
+            faild(@"", nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        faild(nil,nil);
+    }];
+}
+
+// 获取我的店铺订单列表(swift)
+-(void)GetMyShopOrderListInfoWithShopid:(NSString *)shopid state:(NSString *)state success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild{
+    NSDictionary *para = @{@"a":@"Shopgetorderlist",@"shopid":shopid,@"state":state};
     [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
         if ([model.status isEqualToString:@"success"]) {

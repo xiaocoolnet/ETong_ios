@@ -14,6 +14,11 @@
 		640F61DC1D93B8E000614657 /* NewProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 640F61DB1D93B8E000614657 /* NewProductCollectionViewCell.m */; };
 		640F61DF1D93CB5100614657 /* QualityLifeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 640F61DE1D93CB5100614657 /* QualityLifeCollectionViewCell.m */; };
 		640F61E51D93D79C00614657 /* FreeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 640F61E41D93D79C00614657 /* FreeTableViewCell.m */; };
+		64690E6B1DB1C4E900D41D49 /* PayOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64690E6A1DB1C4E900D41D49 /* PayOrderViewController.swift */; };
+		64690E6E1DB20AFB00D41D49 /* NoDeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64690E6D1DB20AFB00D41D49 /* NoDeliveryViewController.swift */; };
+		64690E701DB20B2200D41D49 /* NOSignedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64690E6F1DB20B2200D41D49 /* NOSignedViewController.swift */; };
+		64690E721DB20B4D00D41D49 /* HaveDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64690E711DB20B4D00D41D49 /* HaveDoneViewController.swift */; };
+		64690E741DB2220300D41D49 /* SendGoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64690E731DB2220300D41D49 /* SendGoodsViewController.swift */; };
 		647A3DEA1D9A0B3C000B6802 /* TakeOutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A3DE81D9A0B3C000B6802 /* TakeOutTableViewCell.m */; };
 		647A3DEB1D9A0B3C000B6802 /* TakeOutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 647A3DE91D9A0B3C000B6802 /* TakeOutTableViewCell.xib */; };
 		647A3DEE1D9A0B7C000B6802 /* TakeOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A3DED1D9A0B7C000B6802 /* TakeOutViewController.m */; };
@@ -257,6 +262,11 @@
 		640F61DE1D93CB5100614657 /* QualityLifeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QualityLifeCollectionViewCell.m; sourceTree = "<group>"; };
 		640F61E31D93D79C00614657 /* FreeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreeTableViewCell.h; sourceTree = "<group>"; };
 		640F61E41D93D79C00614657 /* FreeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreeTableViewCell.m; sourceTree = "<group>"; };
+		64690E6A1DB1C4E900D41D49 /* PayOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayOrderViewController.swift; sourceTree = "<group>"; };
+		64690E6D1DB20AFB00D41D49 /* NoDeliveryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoDeliveryViewController.swift; sourceTree = "<group>"; };
+		64690E6F1DB20B2200D41D49 /* NOSignedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NOSignedViewController.swift; sourceTree = "<group>"; };
+		64690E711DB20B4D00D41D49 /* HaveDoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HaveDoneViewController.swift; sourceTree = "<group>"; };
+		64690E731DB2220300D41D49 /* SendGoodsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendGoodsViewController.swift; sourceTree = "<group>"; };
 		647A3DE71D9A0B3C000B6802 /* TakeOutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeOutTableViewCell.h; sourceTree = "<group>"; };
 		647A3DE81D9A0B3C000B6802 /* TakeOutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeOutTableViewCell.m; sourceTree = "<group>"; };
 		647A3DE91D9A0B3C000B6802 /* TakeOutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TakeOutTableViewCell.xib; sourceTree = "<group>"; };
@@ -652,6 +662,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		64690E6C1DB20A6300D41D49 /* 订单管理 */ = {
+			isa = PBXGroup;
+			children = (
+				F65149ED1D4F56A000ECFFFD /* ETAllOrderController.swift */,
+				F65149EE1D4F56A000ECFFFD /* ETAllOrderController.xib */,
+				64690E6D1DB20AFB00D41D49 /* NoDeliveryViewController.swift */,
+				64690E6F1DB20B2200D41D49 /* NOSignedViewController.swift */,
+				64690E711DB20B4D00D41D49 /* HaveDoneViewController.swift */,
+				64690E731DB2220300D41D49 /* SendGoodsViewController.swift */,
+			);
+			name = "订单管理";
+			sourceTree = "<group>";
+		};
 		647A3DE61D9A0AB4000B6802 /* 外卖 */ = {
 			isa = PBXGroup;
 			children = (
@@ -679,6 +702,7 @@
 				6493B8331DA9E61A008EE7C8 /* CancleOrderViewController.swift */,
 				64D5DE0E1DB06C3200F0D3D9 /* EvaluateOrderViewController.swift */,
 				64D5DE101DB0B3B500F0D3D9 /* OrderDetailsViewController.swift */,
+				64690E6A1DB1C4E900D41D49 /* PayOrderViewController.swift */,
 			);
 			name = "我的订单";
 			sourceTree = "<group>";
@@ -969,8 +993,7 @@
 		F65149EC1D4F566A00ECFFFD /* OrderManager */ = {
 			isa = PBXGroup;
 			children = (
-				F65149ED1D4F56A000ECFFFD /* ETAllOrderController.swift */,
-				F65149EE1D4F56A000ECFFFD /* ETAllOrderController.xib */,
+				64690E6C1DB20A6300D41D49 /* 订单管理 */,
 				F65149F51D4F5BD700ECFFFD /* ETWaitDeliverController.swift */,
 				F65149F61D4F5BD700ECFFFD /* ETWaitDeliverController.xib */,
 				F65149F91D4F5C4000ECFFFD /* ETWaitSignController.swift */,
@@ -1724,6 +1747,7 @@
 				647A3E071D9A469C000B6802 /* OrderListModel.m in Sources */,
 				6493B8491DAA2B8D008EE7C8 /* NowDayViewController.m in Sources */,
 				64C2D2311DAF23A9002C8272 /* Foundation+Log.m in Sources */,
+				64690E6E1DB20AFB00D41D49 /* NoDeliveryViewController.swift in Sources */,
 				64C2D2201DAE1E27002C8272 /* FootprintsViewController.m in Sources */,
 				647A3DF81D9A1746000B6802 /* OrderViewController.m in Sources */,
 				6493B8401DAA1AE5008EE7C8 /* DistanceAllBuyingViewController.m in Sources */,
@@ -1743,6 +1767,7 @@
 				64C2D2321DAF23A9002C8272 /* messModel.m in Sources */,
 				F6C94C491D58AA4B00280E86 /* ETGoodsLoopController.swift in Sources */,
 				64BAA7F31D94CD16001B5B24 /* HttpModel.m in Sources */,
+				64690E741DB2220300D41D49 /* SendGoodsViewController.swift in Sources */,
 				6493B80F1D9D0734008EE7C8 /* AddressView.m in Sources */,
 				6493B7EF1D9BB311008EE7C8 /* NewsViewController.m in Sources */,
 				F65E002A1D86854C005FDD83 /* UIBarButtonItem+Extension.m in Sources */,
@@ -1772,6 +1797,7 @@
 				F6FED1D71D44BE4400C5C776 /* ETRigestController.m in Sources */,
 				647A3DF11D9A0B90000B6802 /* AllTakeOutViewController.m in Sources */,
 				F64788AA1D41BCDD00294225 /* ETSidelineZoneController.m in Sources */,
+				64690E701DB20B2200D41D49 /* NOSignedViewController.swift in Sources */,
 				6493B81D1D9E5429008EE7C8 /* NOAppraiseViewController.m in Sources */,
 				F635C5E81D51C3B300CBBAD1 /* ETAllOrderCell.swift in Sources */,
 				64D5DE141DB0BAE300F0D3D9 /* OrderDetailsTableViewCell.swift in Sources */,
@@ -1797,6 +1823,7 @@
 				649AF2EC1D95142000D8B840 /* GoodShopCollectionViewCell.m in Sources */,
 				6493B7D81D9B992B008EE7C8 /* CollectModel.m in Sources */,
 				640F61E51D93D79C00614657 /* FreeTableViewCell.m in Sources */,
+				64690E721DB20B4D00D41D49 /* HaveDoneViewController.swift in Sources */,
 				F6CF10AE1D4B3A2900555C4A /* ETShopInfoController.m in Sources */,
 				649AF34A1D98F62500D8B840 /* AroundViewController.m in Sources */,
 				6493B7F91D9BC413008EE7C8 /* SortView.m in Sources */,
@@ -1856,6 +1883,7 @@
 				649AF3161D97A32800D8B840 /* AllFoodViewController.m in Sources */,
 				F6F6E07E1D99168D00C02257 /* ETHttpArrayModel.m in Sources */,
 				F6177C5F1D46054700A2CB67 /* ETWelcomeHelper.m in Sources */,
+				64690E6B1DB1C4E900D41D49 /* PayOrderViewController.swift in Sources */,
 				6493B8091D9D016A008EE7C8 /* AdditionViewController.swift in Sources */,
 				F6EAB5341D84FCA2008FF8FA /* JSCartFooterView.m in Sources */,
 				640F61D61D93B15A00614657 /* QualityLifeViewController.m in Sources */,

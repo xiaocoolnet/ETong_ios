@@ -74,7 +74,8 @@ class DaiPayViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.btn.layer.borderWidth = 1
         cell.btn.layer.borderColor = UIColor.redColor().CGColor
         cell.btn.setTitle("马上付款", forState: .Normal)
-//        cell.btn.addTarget(self, action: #selector(clcikBtn), forControlEvents: .TouchUpInside)
+        cell.btn.tag = indexPath.row
+        cell.btn.addTarget(self, action: #selector(clcikBtn), forControlEvents: .TouchUpInside)
         cell.btn.layer.cornerRadius = 10
         cell.cancelBtn.layer.borderWidth = 1
         cell.cancelBtn.layer.borderColor = UIColor.lightGrayColor().CGColor
@@ -102,6 +103,14 @@ class DaiPayViewController: UIViewController, UITableViewDelegate, UITableViewDa
         vc.hidesBottomBarWhenPushed = true
         let model = dataArray[sender.tag] as! OrderListModel
         vc.strid = model.id
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func clcikBtn(btn:UIButton){
+        let vc = PayOrderViewController()
+        vc.hidesBottomBarWhenPushed = true
+        let model = dataArray[btn.tag] as! OrderListModel
+        vc.dataSource = model
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
