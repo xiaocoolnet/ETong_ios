@@ -705,5 +705,37 @@
     }];
 }
 
+// 获取商品评价信息
+-(void)GetGoodscommentWithGoodid:(NSString *)goodsid success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild{
+    NSDictionary *para = @{@"a":@"GetGoodsComments",@"goodsid":goodsid};
+    [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
+        if ([model.status isEqualToString:@"success"]) {
+            NSArray *models = [GoodsCommentmodel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+            success(@{@"goods":models});
+        }else{
+            faild(@"", nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        faild(nil,nil);
+    }];
+}
+
+// 搜索宝贝首页
+-(void)SearchGoodsListInfoWithName:(NSString *)goods success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild{
+    NSDictionary *para = @{@"a":@"SearchGoods",@"goods":goods};
+    [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
+        if ([model.status isEqualToString:@"success"]) {
+            NSArray *models = [OrderListModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+            success(@{@"goods":models});
+        }else{
+            faild(@"", nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        faild(nil,nil);
+    }];
+}
+
 
 @end

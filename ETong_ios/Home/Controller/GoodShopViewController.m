@@ -208,6 +208,7 @@
     self.shoucang.frame = CGRectMake(self.view.frame.size.width - 80, 40, 70, 30);
     self.shoucang.backgroundColor = [UIColor redColor];
     [self.shoucang setTitle:@"收藏" forState:UIControlStateNormal];
+    [self.shoucang setTitle:@"已收藏" forState:UIControlStateSelected];
     self.shoucang.selected = NO;
     [headerImage addSubview:self.shoucang];
     [self.shoucang addTarget:self action:@selector(clickShoucangBtn) forControlEvents:UIControlEventTouchUpInside];

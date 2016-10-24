@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ETSpecialSaleCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *imgView;
+@property (weak, nonatomic) IBOutlet UILabel *goodsname;
+@property (weak, nonatomic) IBOutlet UILabel *priceLab;
+@property (weak, nonatomic) IBOutlet UILabel *opriceLab;
+@property (weak, nonatomic) IBOutlet UILabel *buyNumLab;
 
 @end

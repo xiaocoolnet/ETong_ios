@@ -20,6 +20,14 @@
 		64690E721DB20B4D00D41D49 /* HaveDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64690E711DB20B4D00D41D49 /* HaveDoneViewController.swift */; };
 		64690E741DB2220300D41D49 /* SendGoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64690E731DB2220300D41D49 /* SendGoodsViewController.swift */; };
 		64690E771DB4741400D41D49 /* YLDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 64690E761DB4741300D41D49 /* YLDropDownMenu.m */; };
+		64690E7B1DB5F21800D41D49 /* WalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64690E7A1DB5F21800D41D49 /* WalletViewController.m */; };
+		64690E7E1DB6264000D41D49 /* GoodsCommentmodel.m in Sources */ = {isa = PBXBuildFile; fileRef = 64690E7D1DB6264000D41D49 /* GoodsCommentmodel.m */; };
+		64690E831DB74E1400D41D49 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64690E821DB74E1400D41D49 /* SearchViewController.m */; };
+		64690E8F1DB7688800D41D49 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64690E8E1DB7688800D41D49 /* SearchResultViewController.swift */; };
+		64690E921DB776D400D41D49 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64690E901DB776D400D41D49 /* SearchTableViewCell.swift */; };
+		64690E931DB776D400D41D49 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64690E911DB776D400D41D49 /* SearchTableViewCell.xib */; };
+		64690E9A1DBDF5B100D41D49 /* ClassificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64690E991DBDF5B100D41D49 /* ClassificationView.m */; };
+		64690E9D1DBE088700D41D49 /* ClassificationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 64690E9C1DBE088700D41D49 /* ClassificationModel.m */; };
 		647A3DEA1D9A0B3C000B6802 /* TakeOutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A3DE81D9A0B3C000B6802 /* TakeOutTableViewCell.m */; };
 		647A3DEB1D9A0B3C000B6802 /* TakeOutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 647A3DE91D9A0B3C000B6802 /* TakeOutTableViewCell.xib */; };
 		647A3DEE1D9A0B7C000B6802 /* TakeOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A3DED1D9A0B7C000B6802 /* TakeOutViewController.m */; };
@@ -270,6 +278,19 @@
 		64690E731DB2220300D41D49 /* SendGoodsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendGoodsViewController.swift; sourceTree = "<group>"; };
 		64690E751DB4741300D41D49 /* YLDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLDropDownMenu.h; sourceTree = "<group>"; };
 		64690E761DB4741300D41D49 /* YLDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLDropDownMenu.m; sourceTree = "<group>"; };
+		64690E791DB5F21800D41D49 /* WalletViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalletViewController.h; sourceTree = "<group>"; };
+		64690E7A1DB5F21800D41D49 /* WalletViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalletViewController.m; sourceTree = "<group>"; };
+		64690E7C1DB6264000D41D49 /* GoodsCommentmodel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsCommentmodel.h; sourceTree = "<group>"; };
+		64690E7D1DB6264000D41D49 /* GoodsCommentmodel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsCommentmodel.m; sourceTree = "<group>"; };
+		64690E811DB74E1400D41D49 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		64690E821DB74E1400D41D49 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		64690E8E1DB7688800D41D49 /* SearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		64690E901DB776D400D41D49 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		64690E911DB776D400D41D49 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
+		64690E981DBDF5B100D41D49 /* ClassificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassificationView.h; sourceTree = "<group>"; };
+		64690E991DBDF5B100D41D49 /* ClassificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassificationView.m; sourceTree = "<group>"; };
+		64690E9B1DBE088700D41D49 /* ClassificationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassificationModel.h; sourceTree = "<group>"; };
+		64690E9C1DBE088700D41D49 /* ClassificationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassificationModel.m; sourceTree = "<group>"; };
 		647A3DE71D9A0B3C000B6802 /* TakeOutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeOutTableViewCell.h; sourceTree = "<group>"; };
 		647A3DE81D9A0B3C000B6802 /* TakeOutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeOutTableViewCell.m; sourceTree = "<group>"; };
 		647A3DE91D9A0B3C000B6802 /* TakeOutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TakeOutTableViewCell.xib; sourceTree = "<group>"; };
@@ -680,6 +701,23 @@
 			name = "订单管理";
 			sourceTree = "<group>";
 		};
+		64690E781DB5F1D900D41D49 /* 钱包 */ = {
+			isa = PBXGroup;
+			children = (
+				64690E791DB5F21800D41D49 /* WalletViewController.h */,
+				64690E7A1DB5F21800D41D49 /* WalletViewController.m */,
+			);
+			name = "钱包";
+			sourceTree = "<group>";
+		};
+		64690E841DB7646A00D41D49 /* 搜索结果 */ = {
+			isa = PBXGroup;
+			children = (
+				64690E8E1DB7688800D41D49 /* SearchResultViewController.swift */,
+			);
+			name = "搜索结果";
+			sourceTree = "<group>";
+		};
 		647A3DE61D9A0AB4000B6802 /* 外卖 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1074,6 +1112,11 @@
 				F65BF3271D3F4FAB0003DB35 /* HomePageController.h */,
 				F65BF3281D3F4FAB0003DB35 /* HomePageController.m */,
 				F65BF3291D3F4FAB0003DB35 /* HomePageController.xib */,
+				64690E981DBDF5B100D41D49 /* ClassificationView.h */,
+				64690E991DBDF5B100D41D49 /* ClassificationView.m */,
+				64690E811DB74E1400D41D49 /* SearchViewController.h */,
+				64690E821DB74E1400D41D49 /* SearchViewController.m */,
+				64690E841DB7646A00D41D49 /* 搜索结果 */,
 				649AF2E61D9511EB00D8B840 /* 每日好店 */,
 				F6B65F861D48BEBE0069312B /* ETZBarScanController.h */,
 				F6B65F871D48BEBE0069312B /* ETZBarScanController.m */,
@@ -1090,6 +1133,8 @@
 				649AF2F11D9612E500D8B840 /* EveryDayHelper.m */,
 				649AF2F21D9612E500D8B840 /* NewProductModel.h */,
 				649AF2F31D9612E500D8B840 /* NewProductModel.m */,
+				64690E9B1DBE088700D41D49 /* ClassificationModel.h */,
+				64690E9C1DBE088700D41D49 /* ClassificationModel.m */,
 				64ABB15D1DACC52000768D45 /* qqq.h */,
 				64ABB15E1DACC52000768D45 /* qqq.m */,
 			);
@@ -1121,6 +1166,8 @@
 				640F61DE1D93CB5100614657 /* QualityLifeCollectionViewCell.m */,
 				640F61E31D93D79C00614657 /* FreeTableViewCell.h */,
 				640F61E41D93D79C00614657 /* FreeTableViewCell.m */,
+				64690E901DB776D400D41D49 /* SearchTableViewCell.swift */,
+				64690E911DB776D400D41D49 /* SearchTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1264,6 +1311,7 @@
 		F65BF3241D3F4F250003DB35 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				64690E781DB5F1D900D41D49 /* 钱包 */,
 				64C2D21D1DAE1B09002C8272 /* 我的足迹 */,
 				6493B7EC1D9BB2FB008EE7C8 /* 消息 */,
 				6493B7D91D9BA8F7008EE7C8 /* 评价 */,
@@ -1453,6 +1501,8 @@
 			children = (
 				F65E002E1D86857E005FDD83 /* GoodAttrModel.h */,
 				F65E002F1D86857E005FDD83 /* GoodAttrModel.m */,
+				64690E7C1DB6264000D41D49 /* GoodsCommentmodel.h */,
+				64690E7D1DB6264000D41D49 /* GoodsCommentmodel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1625,6 +1675,7 @@
 				F6286FEE1D4A19130052ADC3 /* ETShopAuthController.xib in Resources */,
 				F6C0EA091D913C4D002654DE /* ETDailySpecialController.xib in Resources */,
 				F6C94C4E1D58AC1E00280E86 /* ETGoodsLoopCell.xib in Resources */,
+				64690E931DB776D400D41D49 /* SearchTableViewCell.xib in Resources */,
 				F6155FD31D9E0D4100297429 /* ETLocationLikeCell.xib in Resources */,
 				6493B8451DAA1EF4008EE7C8 /* AllEBuyingTableViewCell.xib in Resources */,
 				F6508EF91D66FD440019BFFB /* ETGoodsSelectView.xib in Resources */,
@@ -1753,6 +1804,7 @@
 				6493B8491DAA2B8D008EE7C8 /* NowDayViewController.m in Sources */,
 				64C2D2311DAF23A9002C8272 /* Foundation+Log.m in Sources */,
 				64690E6E1DB20AFB00D41D49 /* NoDeliveryViewController.swift in Sources */,
+				64690E9D1DBE088700D41D49 /* ClassificationModel.m in Sources */,
 				64C2D2201DAE1E27002C8272 /* FootprintsViewController.m in Sources */,
 				647A3DF81D9A1746000B6802 /* OrderViewController.m in Sources */,
 				6493B8401DAA1AE5008EE7C8 /* DistanceAllBuyingViewController.m in Sources */,
@@ -1767,6 +1819,7 @@
 				64C2D2331DAF23A9002C8272 /* modelFrame.m in Sources */,
 				F6FED1D21D44BDEB00C5C776 /* ETFgetPwdController.m in Sources */,
 				6493B7E21D9BA995008EE7C8 /* SellerEvaluateViewController.m in Sources */,
+				64690E831DB74E1400D41D49 /* SearchViewController.m in Sources */,
 				649AF3231D97B8F800D8B840 /* AroundHotelViewController.m in Sources */,
 				6493B8441DAA1EF4008EE7C8 /* AllEBuyingTableViewCell.m in Sources */,
 				F64788AF1D41C7C900294225 /* ETMZoneCell.m in Sources */,
@@ -1800,11 +1853,13 @@
 				F6F840961D8FB8D2007163A2 /* ETLimitTimeController.m in Sources */,
 				64ABB1651DACDE1B00768D45 /* AllShopDetailViewController.m in Sources */,
 				647A3DEA1D9A0B3C000B6802 /* TakeOutTableViewCell.m in Sources */,
+				64690E8F1DB7688800D41D49 /* SearchResultViewController.swift in Sources */,
 				F6FED1D71D44BE4400C5C776 /* ETRigestController.m in Sources */,
 				647A3DF11D9A0B90000B6802 /* AllTakeOutViewController.m in Sources */,
 				F64788AA1D41BCDD00294225 /* ETSidelineZoneController.m in Sources */,
 				64690E701DB20B2200D41D49 /* NOSignedViewController.swift in Sources */,
 				6493B81D1D9E5429008EE7C8 /* NOAppraiseViewController.m in Sources */,
+				64690E921DB776D400D41D49 /* SearchTableViewCell.swift in Sources */,
 				F635C5E81D51C3B300CBBAD1 /* ETAllOrderCell.swift in Sources */,
 				64D5DE141DB0BAE300F0D3D9 /* OrderDetailsTableViewCell.swift in Sources */,
 				F6286FE81D4A18210052ADC3 /* ETShopBeginAuthVC.m in Sources */,
@@ -1815,6 +1870,7 @@
 				F6286FED1D4A19130052ADC3 /* ETShopAuthController.m in Sources */,
 				649AF3581D98FA1A00D8B840 /* RechargeViewController.m in Sources */,
 				640F61D91D93B1DE00614657 /* FreeViewController.m in Sources */,
+				64690E7B1DB5F21800D41D49 /* WalletViewController.m in Sources */,
 				F6EAB5351D84FCA2008FF8FA /* JSCartHeaderView.m in Sources */,
 				F6F840A01D8FC6E4007163A2 /* ETLimitSaleCell.m in Sources */,
 				F6EAB5391D84FCA2008FF8FA /* JSCartViewModel.m in Sources */,
@@ -1824,6 +1880,7 @@
 				649AF3121D97A27E00D8B840 /* FoodViewController.m in Sources */,
 				649AF3541D98F89100D8B840 /* AroundKTVViewController.m in Sources */,
 				F67B3DA71D4D9F8C00F2B544 /* ETMyShopController.swift in Sources */,
+				64690E7E1DB6264000D41D49 /* GoodsCommentmodel.m in Sources */,
 				F6177C621D460BCF00A2CB67 /* ETBaseHelper.m in Sources */,
 				6493B82A1D9E6DA9008EE7C8 /* YiAppraiseTableViewCell.m in Sources */,
 				649AF2EC1D95142000D8B840 /* GoodShopCollectionViewCell.m in Sources */,
@@ -1836,6 +1893,7 @@
 				649AF2E41D94FF2E00D8B840 /* LikeModel.m in Sources */,
 				F64308931D61A3640037FD9F /* ETEditInfoController.swift in Sources */,
 				647A3E0A1D9A4E8E000B6802 /* AllOrderTableViewCell.swift in Sources */,
+				64690E9A1DBDF5B100D41D49 /* ClassificationView.m in Sources */,
 				6493B7CD1D9B6C18008EE7C8 /* BabyCollectViewController.m in Sources */,
 				F6155FD21D9E0D4100297429 /* ETLocationLikeCell.m in Sources */,
 				F6EAB5311D84FCA2008FF8FA /* JSCartBar.m in Sources */,

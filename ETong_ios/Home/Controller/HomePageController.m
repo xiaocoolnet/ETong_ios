@@ -20,8 +20,11 @@
 #import "ETGuessYLikeCell.h"
 #import "NewProductModel.h"
 #import "GoodShopViewController.h"
+#import "SearchViewController.h"
+#import "ClassificationView.h"
+#import "ClassificationModel.h"
 
-@interface HomePageController ()<SDCycleScrollViewDelegate,UIScrollViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface HomePageController ()<SDCycleScrollViewDelegate,UIScrollViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *headView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewHeightLayout;
@@ -33,6 +36,9 @@
 @property (strong, nonatomic) NSMutableArray *likeArray;
 @property (strong, nonatomic) UIImageView *imageView;
 @property (strong, nonatomic) UIImageView *imageVie;
+
+@property (nonatomic, strong)ClassificationView *menuView;
+@property (nonatomic, strong) NSMutableArray *dataSource;
 
 @end
 
@@ -120,9 +126,26 @@
 }
 
 - (void)leftNavBtnAction:(UIButton*)btn{
-    ETZBarScanController *vc =[[ETZBarScanController alloc]init];
-    vc.hidesBottomBarWhenPushed = YES;
-    [self presentViewController:vc animated:true completion:nil];
+//    ETZBarScanController *vc =[[ETZBarScanController alloc]init];
+//    vc.hidesBottomBarWhenPushed = YES;
+//    [self presentViewController:vc animated:true completion:nil];
+    CGFloat num = 0;
+    if (self.dataSource.count%4 == 0) {
+        num = self.dataSource.count / 4;
+    }else{
+        num = self.dataSource.count / 4 + 1;
+    }
+    self.menuView = [[ClassificationView alloc] initWithFrame:CGRectMake(0, 70, Screen_frame.size.width, 40*num + 50)];
+    self.menuView.dataSource = self.dataSource;
+    self.menuView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:self.menuView];
+    __weak typeof(self)weakSelf = self;
+    [self.menuView setFinishBlock:^(NSString *title){
+        NSLog(@"%@",title);
+        NSString *str = title;
+        NSLog(@"%@",str);
+        [weakSelf.menuView removeFromSuperview];
+    }];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -141,6 +164,7 @@
 //        
 //    }
     [self reloadate];
+    [self getFenLeiList];
 }
 
 - (void) reloadate{
@@ -184,7 +208,9 @@
     self.navigationItem.rightBarButtonItems = @[item1,item2];
     self.navigationItem.leftBarButtonItem = item3;
     UISearchBar *view = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, 160, 30)];
-    view.userInteractionEnabled = false;
+    view.userInteractionEnabled = YES;
+    view.delegate=self;
+    [view resignFirstResponder];
     self.navigationItem.titleView = view;
     
     NSArray *imageNames = @[@"ic_lunbotu-1",
@@ -369,6 +395,15 @@
     }
 }
 
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
+    SearchViewController *vc = [[SearchViewController alloc] init];
+    [self.view endEditing:YES];
+    [searchBar resignFirstResponder];
+    vc.hidesBottomBarWhenPushed = true;
+    [self.navigationController pushViewController:vc animated:YES];
+    return true;
+}
+
 #pragma mark - ScrollViewDelegate -
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     CGFloat scrollY = scrollView.contentOffset.y;
@@ -382,4 +417,25 @@
         [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:0];
     }
 }
+
+#pragma mark - 获取首页分类列表一级
+- (void)getFenLeiList{
+    [self.helper getGoodsListsuccess:^(NSArray *response) {
+        if ([response isKindOfClass:[NSString class]]) {
+            return ;
+        }
+        st_dispatch_async_main(^{
+            self.dataSource = [[NSMutableArray alloc] init];
+            for (int i=0; i<response.count; i++) {
+                ClassificationModel *model = [ClassificationModel mj_objectWithKeyValues:response[i]];
+                [self.dataSource addObject:model];
+            }
+            
+        });
+        return ;
+    } faild:^(NSString *response, NSError *error) {
+        
+    }];
+}
+
 @end

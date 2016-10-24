@@ -67,12 +67,12 @@ class DaiSureViewController: UIViewController, UITableViewDelegate, UITableViewD
         //        cell.nameLab.text = model.peoplename
         cell.sizeNumLab.text = model.number
         cell.moneyLab.text = "¥" + (model.money)
-        cell.stateLab.text = "待发货"
+        cell.stateLab.text = "待收货"
         cell.titleLab.text = model.goodsname
         cell.btn.layer.borderWidth = 1
         cell.btn.layer.borderColor = UIColor.redColor().CGColor
         cell.btn.layer.cornerRadius = 10
-        cell.btn.setTitle("提醒发货", forState: .Normal)
+        cell.btn.setTitle("确认收货", forState: .Normal)
         cell.cancelBtn.hidden = true
         let strArray = model.picture.componentsSeparatedByString(",")
         let str = kIMAGE_URL_HEAD + strArray.first!

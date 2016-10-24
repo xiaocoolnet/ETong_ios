@@ -38,7 +38,7 @@
     [self getDate];
 }
 
-#pragma mark - 获取新品上市数据
+#pragma mark - 获取每日精选数据
 -(void)getDate{
     
     [self.helper getNewProductInfoWithRecommend:@"5" success:^(NSArray *response) {

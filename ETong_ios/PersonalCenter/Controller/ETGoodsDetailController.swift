@@ -27,7 +27,7 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
     var valueArr = NSArray()
     var str = 0
     var model = NewProductModel()
-    
+    var dataArray = NSMutableArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +43,7 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
         collectBtn.setImage(UIImage(named: "ic_cainixihuan-1"), forState: .Selected)
         collectBtn.selected = false
         getShopDetail()
+        GetGoodsComments()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -192,16 +193,33 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
         
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 2
+        return self.dataArray.count
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 111
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell")
         
-        return cell!
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! ETGoodsJudgeCell
+        cell.selectionStyle = .None
+        let model = dataArray[indexPath.row] as! GoodsCommentmodel
+        print(model.user_info.first!["name"])
+        cell.userName.text = (model.user_info.first!["name"]) as? String
+        cell.descript.text = model.content
+        let dateformat = NSDateFormatter()
+        dateformat.dateFormat = "yyyy-MM-dd"
+        let date = NSDate(timeIntervalSince1970: NSTimeInterval(model.add_time)!)
+        let st:String = dateformat.stringFromDate(date)
+        cell.infoLabel.text = st + "  颜色: 图片色 尺码: 5"
+        let pict = (model.user_info.first!["photo"]) as? String
+        let imgUrl = kIMAGE_URL_HEAD + pict!
+        let photourl = NSURL(string: imgUrl)
+        cell.avatarBtn.layer.cornerRadius = 19
+        cell.avatarBtn.layer.masksToBounds = true
+        cell.avatarBtn.sd_setImageWithURL(photourl, forState: .Normal, placeholderImage: UIImage(named: "ic_xihuan"))
+        return cell
+        
     }
     @IBAction func ClickTalkBtn(sender: AnyObject) {
         let vc = ChetViewController()
@@ -220,8 +238,6 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
-    
-    
     
     func getShopDetail(){
         ETShopHelper().GetShopDetailsWithShopid(goodModel?.shopid, success: {[unowned self] (dic) in
@@ -244,5 +260,21 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
     }
     
     
+    // 获取商品评论信息数据
+    func GetGoodsComments(){
+        ETShopHelper().GetGoodscommentWithGoodid(goodModel?.id, success: { [unowned self](dic) in
+            let models = (dic as NSDictionary).objectForKey("goods")
+            self.dataArray.removeAllObjects()
+            self.dataArray.addObjectsFromArray(models as! [GoodsCommentmodel])
+            st_dispatch_async_main({
+                self.judgeList.reloadData()
+            })
+            }, faild: {(str, err) in
+                st_dispatch_async_main({
+                    self.dataArray.removeAllObjects()
+                    self.judgeList.reloadData()
+                })
+        })
+    }
     
 }

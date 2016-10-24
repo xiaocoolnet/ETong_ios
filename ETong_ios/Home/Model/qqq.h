@@ -11,5 +11,8 @@
 @interface qqq : NSObject
 
 @property (nonatomic, copy) NSString *level;
+@property (nonatomic, copy) NSString *name;
+
+@property (nonatomic, copy) NSString *photo;
 
 @end

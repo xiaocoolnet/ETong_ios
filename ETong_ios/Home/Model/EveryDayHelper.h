@@ -59,6 +59,25 @@
 - (void)getfoodsInfoWithCity:(NSString *)city Type:(NSString *)type
                           success:(ResponseBlock)success
                             faild:(ETResponseErrorBlock)faild;
+/**
+ *  搜索商品列表(首页)
+ */
+- (void)GetSearchGoodsInfoWithGoods:(NSString *)goods
+                           success:(ETResponseBlock)success
+                             faild:(ETResponseErrorBlock)faild;
+
+/**
+ *  搜搜商品列表排序(首页)
+ */
+- (void)GetSearchGoodsInfoWithGoods:(NSString *)goods sort:(NSString *)sort
+                            success:(ETResponseBlock)success
+                              faild:(ETResponseErrorBlock)faild;
+
+/**
+ *  首页分类一级列表
+ */
+- (void)getGoodsListsuccess:(ResponseBlock)success
+                          faild:(ETResponseErrorBlock)faild;
 
 
 @end

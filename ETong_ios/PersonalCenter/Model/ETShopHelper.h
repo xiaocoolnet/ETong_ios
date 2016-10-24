@@ -194,5 +194,15 @@
  *  订单发货
  */
 -(void)sendGoodsWithUserid:(NSString *)goodsid success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
+/**
+ *  获取商品评论信息列表
+ */
+-(void)GetGoodscommentWithGoodid:(NSString *)goodsid success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
+/**
+ *  搜索宝贝首页（swift）
+ */
+- (void)SearchGoodsListInfoWithName:(NSString *)goods
+                           success:(ETResponseBlock)success
+                             faild:(ETResponseErrorBlock)faild;
 
 @end

@@ -16,6 +16,8 @@
 #import "EvaluateViewController.h"
 #import "NewsViewController.h"
 #import "FootprintsViewController.h"
+#import "WalletViewController.h"
+#import "ETZBarScanController.h"
 
 @interface PersonViewController ()
 
@@ -97,7 +99,15 @@
 
 - (void)rightNavBtnAction:(UIButton*)btn{
 }
+#pragma mark - 导航栏左侧扫一扫按钮
 - (void)leftNavBtnAction:(UIButton*)btn{
+    if (![ETUserInfo sharedETUserInfo].isLogin) {
+        [SVProgressHUD showErrorWithStatus:@"请先登录"];
+        return;
+    }
+    ETZBarScanController *vc =[[ETZBarScanController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self presentViewController:vc animated:true completion:nil];
 }
 - (IBAction)footerClicked:(id)sender {
 }
@@ -111,20 +121,11 @@
         return;
     }
     WEAKSELF
-    [self.helper getMyShopInfoWithUserid:[ETUserInfo sharedETUserInfo].id success:^(NSDictionary *response) {
-        if ([response isKindOfClass:[NSString class]]) {
-            return ;
-        }
-        st_dispatch_async_main(^{
-            EvaluateViewController *vc = [[EvaluateViewController alloc] init];
-            vc.title = @"评价";
-            vc.hidesBottomBarWhenPushed = true;
-            [weakSelf.navigationController pushViewController:vc animated:true];
-        });
-        return ;
-    } faild:^(NSString *response, NSError *error) {
-        
-    }];
+    EvaluateViewController *vc = [[EvaluateViewController alloc] init];
+    vc.title = @"评价";
+    vc.hidesBottomBarWhenPushed = true;
+    [weakSelf.navigationController pushViewController:vc animated:true];
+    
 }
 - (IBAction)fenxiangClicked:(id)sender {
     if (![ETUserInfo sharedETUserInfo].isLogin) {
@@ -132,20 +133,11 @@
         return;
     }
     WEAKSELF
-    [self.helper getMyShopInfoWithUserid:[ETUserInfo sharedETUserInfo].id success:^(NSDictionary *response) {
-        if ([response isKindOfClass:[NSString class]]) {
-            return ;
-        }
-        st_dispatch_async_main(^{
-            NewsViewController *vc = [[NewsViewController alloc] init];
-            vc.title = @"消息列表";
-            vc.hidesBottomBarWhenPushed = true;
-            [weakSelf.navigationController pushViewController:vc animated:true];
-        });
-        return ;
-    } faild:^(NSString *response, NSError *error) {
-        
-    }];
+    NewsViewController *vc = [[NewsViewController alloc] init];
+    vc.title = @"消息列表";
+    vc.hidesBottomBarWhenPushed = true;
+    [weakSelf.navigationController pushViewController:vc animated:true];
+    
 }
 
 //我要开店
@@ -186,6 +178,14 @@
 - (IBAction)vipCenterClicked:(id)sender {
 }
 - (IBAction)qianbaoClicked:(id)sender {
+    WalletViewController *vc = [[WalletViewController alloc] init];
+    if (![ETUserInfo sharedETUserInfo].isLogin) {
+        [SVProgressHUD showErrorWithStatus:@"请先登录"];
+        return;
+    }
+    vc.hidesBottomBarWhenPushed = true;
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 - (IBAction)daiPJClicked:(id)sender {
     if (![ETUserInfo sharedETUserInfo].isLogin) {
@@ -241,22 +241,11 @@
         return;
     }
     WEAKSELF
-    [self.helper getMyShopInfoWithUserid:[ETUserInfo sharedETUserInfo].id success:^(NSDictionary *response) {
-        NSLog(@"%@",[ETUserInfo sharedETUserInfo].id);
-        if ([response isKindOfClass:[NSString class]]) {
-            return ;
-        }
-        st_dispatch_async_main(^{
-           
-            CollectViewController *vc = [[CollectViewController alloc] init];
-            vc.title = @"收藏";
-            vc.hidesBottomBarWhenPushed = true;
-            [weakSelf.navigationController pushViewController:vc animated:true];
-        });
-        return ;
-    } faild:^(NSString *response, NSError *error) {
-        
-    }];
+    
+    CollectViewController *vc = [[CollectViewController alloc] init];
+    vc.title = @"收藏";
+    vc.hidesBottomBarWhenPushed = true;
+    [weakSelf.navigationController pushViewController:vc animated:true];
     
 }
 - (IBAction)egouBtnClicked:(id)sender {
@@ -267,25 +256,15 @@
 }
 
 -(void)getData{
-//    OrderViewController *vc = [[OrderViewController alloc] init];
+    //    OrderViewController *vc = [[OrderViewController alloc] init];
     if (![ETUserInfo sharedETUserInfo].isLogin) {
         [SVProgressHUD showErrorWithStatus:@"请先登录"];
         return;
     }
     WEAKSELF
-    [self.helper getMyShopInfoWithUserid:[ETUserInfo sharedETUserInfo].id success:^(NSDictionary *response) {
-        if ([response isKindOfClass:[NSString class]]) {
-            return ;
-        }
-        st_dispatch_async_main(^{            
-            self.vc.title = @"订单管理";
-            self.vc.hidesBottomBarWhenPushed = true;
-            [weakSelf.navigationController pushViewController:self.vc animated:true];
-        });
-        return ;
-    } faild:^(NSString *response, NSError *error) {
-        
-    }];
+    self.vc.title = @"订单管理";
+    self.vc.hidesBottomBarWhenPushed = true;
+    [weakSelf.navigationController pushViewController:self.vc animated:true];
 
 }
 

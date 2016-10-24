@@ -72,6 +72,13 @@
                 <constraint firstItem="d52-bx-3cD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xMd-my-kUP"/>
             </constraints>
             <size key="customSize" width="162" height="221"/>
+            <connections>
+                <outlet property="buyNumLab" destination="bcP-o4-OfL" id="gaW-Aa-RoI"/>
+                <outlet property="goodsname" destination="R5o-7Q-XVL" id="7cd-se-61d"/>
+                <outlet property="imgView" destination="ZtD-jx-A06" id="63o-EI-kwC"/>
+                <outlet property="opriceLab" destination="ZgY-A1-yLc" id="ERn-B5-l8K"/>
+                <outlet property="priceLab" destination="hCe-k5-TWd" id="WyH-ad-Nmv"/>
+            </connections>
             <point key="canvasLocation" x="389" y="307.5"/>
         </collectionViewCell>
     </objects>
