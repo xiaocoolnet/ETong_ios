@@ -200,4 +200,36 @@
     }];
 }
 
+#pragma mark - 首页二级分类列表
+-(void)getSecondGoodsListInfoWithName:(NSString *)levelone_name success:(ResponseBlock)success faild:(ETResponseErrorBlock)faild{
+    NSDictionary *para = @{@"a":@"GetMenu",@"levelone_name":levelone_name};
+    
+    [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        HttpModel *model = [HttpModel mj_objectWithKeyValues:responseObject];
+        if ([model.status isEqualToString:@"success"]) {
+            success(model.data);
+        }else{
+            faild(@"",nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        faild(nil,nil);
+    }];
+}
+
+#pragma mark -首页三级列表数据
+-(void)getSecondGoodsListInfoWithname:(NSString *)leveltwo_name success:(ResponseBlock)success faild:(ETResponseErrorBlock)faild{
+    NSDictionary *para = @{@"a":@"GetMenu",@"leveltwo_name":leveltwo_name};
+    
+    [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        HttpModel *model = [HttpModel mj_objectWithKeyValues:responseObject];
+        if ([model.status isEqualToString:@"success"]) {
+            success(model.data);
+        }else{
+            faild(@"",nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        faild(nil,nil);
+    }];
+}
+
 @end

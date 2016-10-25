@@ -11,5 +11,9 @@
 @interface ClassificationModel : UIView
 
 @property(nonatomic, strong) NSString *levelone_name;
+@property(nonatomic, strong) NSString *leveltwo_name;
+@property (nonatomic, strong) NSString *levelthree_name;
+@property (nonatomic, strong) NSString *pic;
+
 
 @end

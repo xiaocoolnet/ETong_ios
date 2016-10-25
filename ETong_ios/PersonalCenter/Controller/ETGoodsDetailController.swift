@@ -127,6 +127,7 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
     func showPropertyView(){
         let editView = GoodAttributesView(frame: CGRectMake(0, 0, self.navigationController!.view.frame.width, self.navigationController!.view.frame.height))
         editView.goodAttrsArr = valueArr as [AnyObject]
+        
         editView.sureBtnsClick = {(str:String!,str2:String!,str3:String!,str4:String!) in
             
         }

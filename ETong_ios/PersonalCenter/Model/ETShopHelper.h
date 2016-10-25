@@ -121,6 +121,11 @@
  *  取消订单
  */
 -(void)cancleOrderWithid:(NSString *)goodsid reason:(NSString *)reason success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
+
+/**
+ *  确认收货
+ */
+-(void)SureOrderWithid:(NSString *)goodsid success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
 /**
  *  评价商品订单
  */
@@ -171,6 +176,11 @@
  */
 - (void)GetOrderListInfoWithUserid:(NSString *)userid state:(NSString *)state
                            success:(ETResponseBlock)success
+                             faild:(ETResponseErrorBlock)faild;
+/**
+ *  待使用（swift）
+ */
+- (void)GetUserOrderListInfoWithUserid:(NSString *)userid state:(NSString *)state deliverytype:(NSString *)deliverytype success:(ETResponseBlock)success
                              faild:(ETResponseErrorBlock)faild;
 /**
  *  获取商城订单列表全部（swift）

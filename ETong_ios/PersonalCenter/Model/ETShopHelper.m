@@ -454,6 +454,21 @@
     }];
 }
 
+// 确认收货
+-(void)SureOrderWithid:(NSString *)goodsid success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild{
+    NSDictionary *para = @{@"a":@"DeleteOrder",@"id":goodsid,};
+    [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
+        if ([model.status isEqualToString:@"success"]) {
+            success(model.data);
+        }else{
+            faild(@"",nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        faild(nil,nil);
+    }];
+}
+
 // 支付订单
 -(void)payOrderWithid:(NSString *)goodsid success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild{
     NSDictionary *para = @{@"a":@"DeleteOrder",@"id":goodsid};
@@ -629,6 +644,22 @@
 //获取订单列表(swift)
 -(void)GetOrderListInfoWithUserid:(NSString *)userid state:(NSString *)state success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild{
     NSDictionary *para = @{@"a":@"getshoppingorderlist",@"userid":userid,@"state":state};
+    [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
+        if ([model.status isEqualToString:@"success"]) {
+            NSArray *models = [OrderListModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+            success(@{@"goods":models});
+        }else{
+            faild(@"", nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        faild(nil,nil);
+    }];
+}
+
+//待使用（订单）
+-(void)GetUserOrderListInfoWithUserid:(NSString *)userid state:(NSString *)state deliverytype:(NSString *)deliverytype success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild{
+    NSDictionary *para = @{@"a":@"getshoppingorderlist",@"userid":userid,@"state":state,@"deliverytype":deliverytype};
     [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
         if ([model.status isEqualToString:@"success"]) {

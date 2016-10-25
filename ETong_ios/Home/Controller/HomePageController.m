@@ -23,6 +23,7 @@
 #import "SearchViewController.h"
 #import "ClassificationView.h"
 #import "ClassificationModel.h"
+#import "ClassificationViewController.h"
 
 @interface HomePageController ()<SDCycleScrollViewDelegate,UIScrollViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, UISearchBarDelegate>
 
@@ -39,6 +40,7 @@
 
 @property (nonatomic, strong)ClassificationView *menuView;
 @property (nonatomic, strong) NSMutableArray *dataSource;
+@property (nonatomic, strong)UIView *darkView;
 
 @end
 
@@ -63,6 +65,24 @@
 //    [self reloadate];
     [self getDate];
     [self getData];
+    [self getFenLeiList];
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture)];
+    singleTap.numberOfTapsRequired = 1;
+    [self.darkView addGestureRecognizer:singleTap];
+}
+
+- (void)handleSingleTapGesture{
+    [self.darkView removeFromSuperview];
+    [self.menuView removeFromSuperview];
+}
+
+- (UIView *)darkView{
+    if (!_darkView) {
+        _darkView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+        _darkView.backgroundColor = [UIColor colorWithWhite:0 alpha:.5];
+        _darkView.userInteractionEnabled = YES;
+    }
+    return _darkView;
 }
 
 #pragma mark - 获取每日好店数据
@@ -129,6 +149,7 @@
 //    ETZBarScanController *vc =[[ETZBarScanController alloc]init];
 //    vc.hidesBottomBarWhenPushed = YES;
 //    [self presentViewController:vc animated:true completion:nil];
+    [self.view addSubview:self.darkView];
     CGFloat num = 0;
     if (self.dataSource.count%4 == 0) {
         num = self.dataSource.count / 4;
@@ -142,9 +163,11 @@
     __weak typeof(self)weakSelf = self;
     [self.menuView setFinishBlock:^(NSString *title){
         NSLog(@"%@",title);
-        NSString *str = title;
-        NSLog(@"%@",str);
-        [weakSelf.menuView removeFromSuperview];
+        [weakSelf handleSingleTapGesture];
+        ClassificationViewController *vc = [[ClassificationViewController alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
+        vc.nameStr = title;
+        [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
 }
 
@@ -164,7 +187,6 @@
 //        
 //    }
     [self reloadate];
-    [self getFenLeiList];
 }
 
 - (void) reloadate{

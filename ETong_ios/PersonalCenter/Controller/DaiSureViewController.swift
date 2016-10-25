@@ -73,6 +73,8 @@ class DaiSureViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.btn.layer.borderColor = UIColor.redColor().CGColor
         cell.btn.layer.cornerRadius = 10
         cell.btn.setTitle("确认收货", forState: .Normal)
+        cell.btn.tag = indexPath.row
+        cell.btn.addTarget(self, action: #selector(self.clickSureBtn), forControlEvents: .TouchUpInside)
         cell.cancelBtn.hidden = true
         let strArray = model.picture.componentsSeparatedByString(",")
         let str = kIMAGE_URL_HEAD + strArray.first!
@@ -90,6 +92,31 @@ class DaiSureViewController: UIViewController, UITableViewDelegate, UITableViewD
         vc.dataSource = model
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func clickSureBtn(sender:UIButton){
+        let model = dataArray[sender.tag] as! OrderListModel
 
+        let alert = UIAlertController(title: "确认收货", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let alertConfirm = UIAlertAction(title: "确定", style: UIAlertActionStyle.Default) { (alertConfirm) -> Void in
+            self.helper.SureOrderWithid(model.id, success: {[unowned self] (dic) in
+                st_dispatch_async_main({
+                    SVProgressHUD.showSuccessWithStatus("收货成功")
+                    self.getDate()
+                })
+            }) { (str, err) in
+                st_dispatch_async_main({
+                    SVProgressHUD.showSuccessWithStatus("确认收货失败")
+                })
+            }
+        }
+        alert.addAction(alertConfirm)
+        let cancle = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel) { (cancle) -> Void in
+        }
+        alert.addAction(cancle)
+        // 提示框弹出
+        presentViewController(alert, animated: true) { () -> Void in
+        }
+    }
     
 }

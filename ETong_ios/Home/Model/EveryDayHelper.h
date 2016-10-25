@@ -79,5 +79,15 @@
 - (void)getGoodsListsuccess:(ResponseBlock)success
                           faild:(ETResponseErrorBlock)faild;
 
+/**
+ *  首页二级分类数据
+ */
+- (void)getSecondGoodsListInfoWithName:(NSString *)levelone_name success:(ResponseBlock)success faild:(ETResponseErrorBlock)faild;
+
+/**
+ *  首页三级分类数据
+ */
+- (void)getSecondGoodsListInfoWithname:(NSString *)leveltwo_name success:(ResponseBlock)success faild:(ETResponseErrorBlock)faild;
+
 
 @end

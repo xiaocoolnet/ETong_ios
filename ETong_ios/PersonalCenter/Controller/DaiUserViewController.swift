@@ -22,11 +22,11 @@ class DaiUserViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 242/255, alpha: 1)
         self.AddTableView()
-        //        getDate()
+        getDate()
     }
     
     func getDate(){
-        helper.GetOrderListInfoWithUserid(ETUserInfo.sharedETUserInfo().id, state:"1", success: { [unowned self](dic) in
+        helper.GetUserOrderListInfoWithUserid(ETUserInfo.sharedETUserInfo().id, state:"2", deliverytype:"1", success: { [unowned self](dic) in
             let models = (dic as NSDictionary).objectForKey("goods")
             self.dataArray.removeAllObjects()
             self.dataArray.addObjectsFromArray(models as! [OrderListModel])
@@ -47,7 +47,7 @@ class DaiUserViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.delegate = self
         tableView.dataSource = self
         self.view.addSubview(tableView)
-        tableView.registerNib(UINib(nibName: "AllOrderTableViewCell",bundle: nil), forCellReuseIdentifier: "cell1")
+        tableView.registerNib(UINib(nibName: "DaiUserTableViewCell",bundle: nil), forCellReuseIdentifier: "cell1")
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,29 +55,21 @@ class DaiUserViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 230
+        return 210
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell1") as! AllOrderTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell1") as! DaiUserTableViewCell
         cell.selectionStyle = .None
         tableView.separatorStyle = .None
         let model = dataArray[indexPath.row] as! OrderListModel
         //        cell.nameLab.text = model.peoplename
-        cell.sizeNumLab.text = model.number
-        cell.moneyLab.text = "¥" + (model.money)
-        cell.stateLab.text = model.statusname
-        cell.titleLab.text = model.goodsname
-        cell.btn.layer.borderWidth = 1
-        cell.btn.layer.borderColor = UIColor.redColor().CGColor
-        cell.btn.layer.cornerRadius = 10
-        cell.cancelBtn.layer.borderWidth = 1
-        cell.cancelBtn.layer.borderColor = UIColor.lightGrayColor().CGColor
-        cell.cancelBtn.layer.cornerRadius = 10
-        let strArray = model.picture.componentsSeparatedByString(",")
-        let str = kIMAGE_URL_HEAD + strArray.first!
-        let photourl = NSURL(string: str)
-        cell.imgView.sd_setImageWithURL(photourl, placeholderImage: UIImage(named: "ic_xihuan"))
+        let dateformate = NSDateFormatter()
+        dateformate.dateFormat = "yyyy-MM-dd HH:mm"
+        let date = NSDate(timeIntervalSince1970: NSTimeInterval(model.time)!)
+        let str:String = dateformate.stringFromDate(date)
+        cell.timeLab.text = str
+        cell.goodname.text = model.goodsname
         
         
         return cell

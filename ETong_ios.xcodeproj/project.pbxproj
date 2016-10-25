@@ -23,11 +23,18 @@
 		64690E7B1DB5F21800D41D49 /* WalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64690E7A1DB5F21800D41D49 /* WalletViewController.m */; };
 		64690E7E1DB6264000D41D49 /* GoodsCommentmodel.m in Sources */ = {isa = PBXBuildFile; fileRef = 64690E7D1DB6264000D41D49 /* GoodsCommentmodel.m */; };
 		64690E831DB74E1400D41D49 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64690E821DB74E1400D41D49 /* SearchViewController.m */; };
-		64690E8F1DB7688800D41D49 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64690E8E1DB7688800D41D49 /* SearchResultViewController.swift */; };
 		64690E921DB776D400D41D49 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64690E901DB776D400D41D49 /* SearchTableViewCell.swift */; };
 		64690E931DB776D400D41D49 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64690E911DB776D400D41D49 /* SearchTableViewCell.xib */; };
 		64690E9A1DBDF5B100D41D49 /* ClassificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64690E991DBDF5B100D41D49 /* ClassificationView.m */; };
 		64690E9D1DBE088700D41D49 /* ClassificationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 64690E9C1DBE088700D41D49 /* ClassificationModel.m */; };
+		64690EA11DBF00E900D41D49 /* ClassificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64690EA01DBF00E900D41D49 /* ClassificationViewController.m */; };
+		64690EA41DBF0AFA00D41D49 /* SortCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64690EA31DBF0AFA00D41D49 /* SortCollectionViewCell.m */; };
+		64690EAB1DBF45B200D41D49 /* DaiUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64690EA91DBF45B200D41D49 /* DaiUserTableViewCell.swift */; };
+		64690EAC1DBF45B200D41D49 /* DaiUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64690EAA1DBF45B200D41D49 /* DaiUserTableViewCell.xib */; };
+		64690EB11DBF522200D41D49 /* SortGoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64690EB01DBF522200D41D49 /* SortGoodViewController.swift */; };
+		64690EB41DBF544800D41D49 /* TwoSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64690EB31DBF544800D41D49 /* TwoSearchViewController.m */; };
+		64690EBA1DBF567600D41D49 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64690EB91DBF567600D41D49 /* SearchResultViewController.swift */; };
+		64690EBC1DBF575900D41D49 /* ThreeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64690EBB1DBF575900D41D49 /* ThreeSearchViewController.swift */; };
 		647A3DEA1D9A0B3C000B6802 /* TakeOutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A3DE81D9A0B3C000B6802 /* TakeOutTableViewCell.m */; };
 		647A3DEB1D9A0B3C000B6802 /* TakeOutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 647A3DE91D9A0B3C000B6802 /* TakeOutTableViewCell.xib */; };
 		647A3DEE1D9A0B7C000B6802 /* TakeOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A3DED1D9A0B7C000B6802 /* TakeOutViewController.m */; };
@@ -284,13 +291,23 @@
 		64690E7D1DB6264000D41D49 /* GoodsCommentmodel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsCommentmodel.m; sourceTree = "<group>"; };
 		64690E811DB74E1400D41D49 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		64690E821DB74E1400D41D49 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
-		64690E8E1DB7688800D41D49 /* SearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		64690E901DB776D400D41D49 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		64690E911DB776D400D41D49 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		64690E981DBDF5B100D41D49 /* ClassificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassificationView.h; sourceTree = "<group>"; };
 		64690E991DBDF5B100D41D49 /* ClassificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassificationView.m; sourceTree = "<group>"; };
 		64690E9B1DBE088700D41D49 /* ClassificationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassificationModel.h; sourceTree = "<group>"; };
 		64690E9C1DBE088700D41D49 /* ClassificationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassificationModel.m; sourceTree = "<group>"; };
+		64690E9F1DBF00E900D41D49 /* ClassificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassificationViewController.h; sourceTree = "<group>"; };
+		64690EA01DBF00E900D41D49 /* ClassificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassificationViewController.m; sourceTree = "<group>"; };
+		64690EA21DBF0AFA00D41D49 /* SortCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortCollectionViewCell.h; sourceTree = "<group>"; };
+		64690EA31DBF0AFA00D41D49 /* SortCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortCollectionViewCell.m; sourceTree = "<group>"; };
+		64690EA91DBF45B200D41D49 /* DaiUserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaiUserTableViewCell.swift; sourceTree = "<group>"; };
+		64690EAA1DBF45B200D41D49 /* DaiUserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DaiUserTableViewCell.xib; sourceTree = "<group>"; };
+		64690EB01DBF522200D41D49 /* SortGoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortGoodViewController.swift; sourceTree = "<group>"; };
+		64690EB21DBF544800D41D49 /* TwoSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoSearchViewController.h; sourceTree = "<group>"; };
+		64690EB31DBF544800D41D49 /* TwoSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoSearchViewController.m; sourceTree = "<group>"; };
+		64690EB91DBF567600D41D49 /* SearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		64690EBB1DBF575900D41D49 /* ThreeSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeSearchViewController.swift; sourceTree = "<group>"; };
 		647A3DE71D9A0B3C000B6802 /* TakeOutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeOutTableViewCell.h; sourceTree = "<group>"; };
 		647A3DE81D9A0B3C000B6802 /* TakeOutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeOutTableViewCell.m; sourceTree = "<group>"; };
 		647A3DE91D9A0B3C000B6802 /* TakeOutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TakeOutTableViewCell.xib; sourceTree = "<group>"; };
@@ -713,9 +730,24 @@
 		64690E841DB7646A00D41D49 /* 搜索结果 */ = {
 			isa = PBXGroup;
 			children = (
-				64690E8E1DB7688800D41D49 /* SearchResultViewController.swift */,
+				64690E811DB74E1400D41D49 /* SearchViewController.h */,
+				64690E821DB74E1400D41D49 /* SearchViewController.m */,
+				64690EB91DBF567600D41D49 /* SearchResultViewController.swift */,
 			);
 			name = "搜索结果";
+			sourceTree = "<group>";
+		};
+		64690E9E1DBF008300D41D49 /* 分类 */ = {
+			isa = PBXGroup;
+			children = (
+				64690E9F1DBF00E900D41D49 /* ClassificationViewController.h */,
+				64690EA01DBF00E900D41D49 /* ClassificationViewController.m */,
+				64690EB01DBF522200D41D49 /* SortGoodViewController.swift */,
+				64690EB21DBF544800D41D49 /* TwoSearchViewController.h */,
+				64690EB31DBF544800D41D49 /* TwoSearchViewController.m */,
+				64690EBB1DBF575900D41D49 /* ThreeSearchViewController.swift */,
+			);
+			name = "分类";
 			sourceTree = "<group>";
 		};
 		647A3DE61D9A0AB4000B6802 /* 外卖 */ = {
@@ -1114,8 +1146,7 @@
 				F65BF3291D3F4FAB0003DB35 /* HomePageController.xib */,
 				64690E981DBDF5B100D41D49 /* ClassificationView.h */,
 				64690E991DBDF5B100D41D49 /* ClassificationView.m */,
-				64690E811DB74E1400D41D49 /* SearchViewController.h */,
-				64690E821DB74E1400D41D49 /* SearchViewController.m */,
+				64690E9E1DBF008300D41D49 /* 分类 */,
 				64690E841DB7646A00D41D49 /* 搜索结果 */,
 				649AF2E61D9511EB00D8B840 /* 每日好店 */,
 				F6B65F861D48BEBE0069312B /* ETZBarScanController.h */,
@@ -1168,6 +1199,8 @@
 				640F61E41D93D79C00614657 /* FreeTableViewCell.m */,
 				64690E901DB776D400D41D49 /* SearchTableViewCell.swift */,
 				64690E911DB776D400D41D49 /* SearchTableViewCell.xib */,
+				64690EA21DBF0AFA00D41D49 /* SortCollectionViewCell.h */,
+				64690EA31DBF0AFA00D41D49 /* SortCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1375,6 +1408,8 @@
 				647A3E091D9A4E8E000B6802 /* AllOrderTableViewCell.xib */,
 				64D5DE121DB0BAE300F0D3D9 /* OrderDetailsTableViewCell.swift */,
 				64D5DE131DB0BAE300F0D3D9 /* OrderDetailsTableViewCell.xib */,
+				64690EA91DBF45B200D41D49 /* DaiUserTableViewCell.swift */,
+				64690EAA1DBF45B200D41D49 /* DaiUserTableViewCell.xib */,
 				6493B7D11D9B6D6E008EE7C8 /* CollectTableViewCell.h */,
 				6493B7D21D9B6D6E008EE7C8 /* CollectTableViewCell.m */,
 				6493B7D31D9B6D6E008EE7C8 /* CollectTableViewCell.xib */,
@@ -1670,6 +1705,7 @@
 				F6FED1CE1D44A0F700C5C776 /* ETLogInViewController.xib in Resources */,
 				F635C5E91D51C3B300CBBAD1 /* ETAllOrderCell.xib in Resources */,
 				F65BF3081D3F1CA80003DB35 /* LaunchScreen.storyboard in Resources */,
+				64690EAC1DBF45B200D41D49 /* DaiUserTableViewCell.xib in Resources */,
 				F65149DF1D4F356100ECFFFD /* ETUploadGoodsController.xib in Resources */,
 				F65BF3051D3F1CA80003DB35 /* Assets.xcassets in Resources */,
 				F6286FEE1D4A19130052ADC3 /* ETShopAuthController.xib in Resources */,
@@ -1811,9 +1847,11 @@
 				F6CF10B71D4B83C400555C4A /* ETShopHelper.m in Sources */,
 				64690E771DB4741400D41D49 /* YLDropDownMenu.m in Sources */,
 				F6C36ADA1D9388A3008737D5 /* ETSpacialSaleController.m in Sources */,
+				64690EBA1DBF567600D41D49 /* SearchResultViewController.swift in Sources */,
 				6493B83A1DAA1ABE008EE7C8 /* EBuyingViewController.m in Sources */,
 				649AF3261D97BA1E00D8B840 /* DistanceHotelViewController.m in Sources */,
 				F6EAB5361D84FCA2008FF8FA /* JSNummberCount.m in Sources */,
+				64690EBC1DBF575900D41D49 /* ThreeSearchViewController.swift in Sources */,
 				F64788A51D41BC3000294225 /* ETMyZoneController.m in Sources */,
 				647A3E021D9A1FD2000B6802 /* DaiSureViewController.swift in Sources */,
 				64C2D2331DAF23A9002C8272 /* modelFrame.m in Sources */,
@@ -1840,6 +1878,7 @@
 				F65E00331D868688005FDD83 /* GoodAttributesView.m in Sources */,
 				F643088F1D618FA90037FD9F /* ETEditGoodsController.swift in Sources */,
 				64C2D2241DAE1EC5002C8272 /* FootprintsTableViewCell.m in Sources */,
+				64690EA41DBF0AFA00D41D49 /* SortCollectionViewCell.m in Sources */,
 				649AF2E91D95121E00D8B840 /* GoodShopViewController.m in Sources */,
 				6493B7EB1D9BB2B4008EE7C8 /* NewsModel.m in Sources */,
 				F6EAB5381D84FCA2008FF8FA /* JSCartUIService.m in Sources */,
@@ -1852,8 +1891,8 @@
 				F65149F71D4F5BD700ECFFFD /* ETWaitDeliverController.swift in Sources */,
 				F6F840961D8FB8D2007163A2 /* ETLimitTimeController.m in Sources */,
 				64ABB1651DACDE1B00768D45 /* AllShopDetailViewController.m in Sources */,
+				64690EA11DBF00E900D41D49 /* ClassificationViewController.m in Sources */,
 				647A3DEA1D9A0B3C000B6802 /* TakeOutTableViewCell.m in Sources */,
-				64690E8F1DB7688800D41D49 /* SearchResultViewController.swift in Sources */,
 				F6FED1D71D44BE4400C5C776 /* ETRigestController.m in Sources */,
 				647A3DF11D9A0B90000B6802 /* AllTakeOutViewController.m in Sources */,
 				F64788AA1D41BCDD00294225 /* ETSidelineZoneController.m in Sources */,
@@ -1929,6 +1968,7 @@
 				F6C94C4D1D58AC1E00280E86 /* ETGoodsLoopCell.swift in Sources */,
 				649AF3191D97A36900D8B840 /* AroundFoodViewController.m in Sources */,
 				6493B7CA1D9B6B67008EE7C8 /* CollectViewController.m in Sources */,
+				64690EB41DBF544800D41D49 /* TwoSearchViewController.m in Sources */,
 				6493B7FC1D9CE5F3008EE7C8 /* SettleViewController.m in Sources */,
 				649AF2F51D9612E500D8B840 /* NewProductModel.m in Sources */,
 				649AF3471D98F61600D8B840 /* AllLifeViewController.m in Sources */,
@@ -1945,6 +1985,8 @@
 				F65E002B1D86854C005FDD83 /* UIButton+Bootstrap.m in Sources */,
 				F6EAB5321D84FCA2008FF8FA /* JSCartCell.m in Sources */,
 				649AF3161D97A32800D8B840 /* AllFoodViewController.m in Sources */,
+				64690EAB1DBF45B200D41D49 /* DaiUserTableViewCell.swift in Sources */,
+				64690EB11DBF522200D41D49 /* SortGoodViewController.swift in Sources */,
 				F6F6E07E1D99168D00C02257 /* ETHttpArrayModel.m in Sources */,
 				F6177C5F1D46054700A2CB67 /* ETWelcomeHelper.m in Sources */,
 				64690E6B1DB1C4E900D41D49 /* PayOrderViewController.swift in Sources */,

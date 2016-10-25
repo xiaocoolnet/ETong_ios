@@ -28,3 +28,5 @@
 #import "HomePageController.h"
 #import "EveryDayHelper.h"
 #import "SearchViewController.h"
+#import "TwoSearchViewController.h"
+#import "ClassificationViewController.h"
