@@ -70,7 +70,7 @@ class DaiUserViewController: UIViewController, UITableViewDelegate, UITableViewD
         let str:String = dateformate.stringFromDate(date)
         cell.timeLab.text = str
         cell.goodname.text = model.goodsname
-        
+        cell.imgView.image = QRCodeGenerator.qrImageForString(model.order_num, imageSize: cell.imgView.bounds.size.width)
         
         return cell
     }

@@ -30,3 +30,6 @@
 #import "SearchViewController.h"
 #import "TwoSearchViewController.h"
 #import "ClassificationViewController.h"
+#import "QRCodeGenerator.h"
+#import "AttributesModel.h"
+#import "propertyList.h"

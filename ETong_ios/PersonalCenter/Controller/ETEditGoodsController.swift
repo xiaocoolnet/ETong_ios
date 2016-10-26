@@ -10,7 +10,7 @@ import UIKit
 
 class ETEditGoodsController: UITableViewController {
     
-    var titleDataSource = [["商品轮播图","商品标题","分类"],["品牌","货号"],["商品规格","现价","原价","运费","库存"],["宝贝详情","发货地"]]
+    var titleDataSource = [["商品轮播图","商品描述","商品标题","分类"],["品牌","货号"],["商品规格","现价","原价","运费","库存"],["宝贝详情","发货地"]]
     var goodModel:ETGoodsDataModel?
     
     override func viewDidLoad() {
@@ -49,12 +49,20 @@ class ETEditGoodsController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        let vc = ETEditInfoController(nibName: "ETEditInfoController", bundle: nil)
-        vc.showForTitle(titleDataSource[indexPath.section][indexPath.row]) { (dic) in
-            print(dic)
+        if indexPath.section*10+indexPath.row == 20 {
+            print(goodModel?.id)
+            let vc = SpecificationViewController()
+            vc.goodsModel = goodModel
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else{
+            
+            let vc = ETEditInfoController(nibName: "ETEditInfoController", bundle: nil)
+            vc.showForTitle(titleDataSource[indexPath.section][indexPath.row]) { (dic) in
+                print(dic)
+            }
+            vc.infoType = indexPath.section*10+indexPath.row
+            vc.goodsModel = goodModel
+            navigationController?.pushViewController(vc, animated: true)
         }
-        vc.infoType = indexPath.section*10+indexPath.row
-        vc.goodsModel = goodModel
-        navigationController?.pushViewController(vc, animated: true)
     }
 }

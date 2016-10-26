@@ -40,7 +40,7 @@ class ETEditInfoController: UIViewController {
             saveHandle!(["info":infoView.text!])
         }
         //名称
-        if infoType == 11 {
+        if infoType == 2 {
             helper.updateGoodsNameWithGoodsId(goodsModel?.id, goodsName: infoView.text, success: { (dic) in
                 print(dic)
                 }, faild: { (string, error) in
@@ -55,6 +55,29 @@ class ETEditInfoController: UIViewController {
                 
             })
         }
+        // 原价
+        if infoType == 22 {
+            helper.updateGoodsOPriceWithGoodsId(goodsModel?.id, OPrice: infoView.text, success: { (dic) in
+                print(dic)
+                }, faild: { (str, error) in
+                    
+            })
+        }
+        // 描述
+        if infoType == 1 {
+            helper.updateGoodsDescriptionWithGoodsid(goodsModel?.id, description: infoView.text, success: { (dic) in
+                print(dic)
+                }, faild: { (str, error) in
+                    
+            })
+        }
+        // 品牌
+        helper.updateGoodsBrandWithGoodsid(goodsModel?.id, band: infoView.text, success: { (dic) in
+            print(dic)
+            }, faild: { (str, error) in
+                
+        })
+        // 
         navigationController?.popViewControllerAnimated(true)
     }
 

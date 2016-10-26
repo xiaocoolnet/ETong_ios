@@ -215,4 +215,17 @@
                            success:(ETResponseBlock)success
                              faild:(ETResponseErrorBlock)faild;
 
+/**
+ *  获取商品的附加属性
+ */
+- (void)GetGoodsAttributesInfoWithGoodsid:(NSString *)goodsid
+                                 success:(ETResponseBlock)success
+                                   faild:(ETResponseErrorBlock)faild;
+/**
+ *  获取附加属性
+ */
+- (void)GetGoodsAttributesInfoWithType:(NSString *)goodstype
+                                  success:(ETResponseBlock)success
+                                    faild:(ETResponseErrorBlock)faild;
+
 @end

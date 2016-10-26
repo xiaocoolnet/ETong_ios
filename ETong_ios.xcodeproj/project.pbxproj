@@ -14,6 +14,19 @@
 		640F61DC1D93B8E000614657 /* NewProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 640F61DB1D93B8E000614657 /* NewProductCollectionViewCell.m */; };
 		640F61DF1D93CB5100614657 /* QualityLifeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 640F61DE1D93CB5100614657 /* QualityLifeCollectionViewCell.m */; };
 		640F61E51D93D79C00614657 /* FreeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 640F61E41D93D79C00614657 /* FreeTableViewCell.m */; };
+		645C92771DC0806100D2ED3D /* bitstream.c in Sources */ = {isa = PBXBuildFile; fileRef = 645C92671DC0806100D2ED3D /* bitstream.c */; };
+		645C92781DC0806100D2ED3D /* mask.c in Sources */ = {isa = PBXBuildFile; fileRef = 645C92691DC0806100D2ED3D /* mask.c */; };
+		645C92791DC0806100D2ED3D /* QRCodeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 645C926C1DC0806100D2ED3D /* QRCodeGenerator.m */; };
+		645C927A1DC0806100D2ED3D /* qrencode.c in Sources */ = {isa = PBXBuildFile; fileRef = 645C926D1DC0806100D2ED3D /* qrencode.c */; };
+		645C927B1DC0806100D2ED3D /* qrinput.c in Sources */ = {isa = PBXBuildFile; fileRef = 645C926F1DC0806100D2ED3D /* qrinput.c */; };
+		645C927C1DC0806100D2ED3D /* qrspec.c in Sources */ = {isa = PBXBuildFile; fileRef = 645C92711DC0806100D2ED3D /* qrspec.c */; };
+		645C927D1DC0806100D2ED3D /* rscode.c in Sources */ = {isa = PBXBuildFile; fileRef = 645C92731DC0806100D2ED3D /* rscode.c */; };
+		645C927E1DC0806100D2ED3D /* split.c in Sources */ = {isa = PBXBuildFile; fileRef = 645C92751DC0806100D2ED3D /* split.c */; };
+		645C92801DC09F7700D2ED3D /* SpecificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C927F1DC09F7700D2ED3D /* SpecificationViewController.swift */; };
+		645C92831DC0A27A00D2ED3D /* AttributesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 645C92821DC0A27A00D2ED3D /* AttributesModel.m */; };
+		645C92851DC0AA3100D2ED3D /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C92841DC0AA3100D2ED3D /* SelectViewController.swift */; };
+		645C92871DC0AED100D2ED3D /* SelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C92861DC0AED100D2ED3D /* SelectCollectionViewCell.swift */; };
+		645C928A1DC0B92600D2ED3D /* propertyList.m in Sources */ = {isa = PBXBuildFile; fileRef = 645C92891DC0B92600D2ED3D /* propertyList.m */; };
 		64690E6B1DB1C4E900D41D49 /* PayOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64690E6A1DB1C4E900D41D49 /* PayOrderViewController.swift */; };
 		64690E6E1DB20AFB00D41D49 /* NoDeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64690E6D1DB20AFB00D41D49 /* NoDeliveryViewController.swift */; };
 		64690E701DB20B2200D41D49 /* NOSignedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64690E6F1DB20B2200D41D49 /* NOSignedViewController.swift */; };
@@ -278,6 +291,29 @@
 		640F61DE1D93CB5100614657 /* QualityLifeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QualityLifeCollectionViewCell.m; sourceTree = "<group>"; };
 		640F61E31D93D79C00614657 /* FreeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreeTableViewCell.h; sourceTree = "<group>"; };
 		640F61E41D93D79C00614657 /* FreeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreeTableViewCell.m; sourceTree = "<group>"; };
+		645C92671DC0806100D2ED3D /* bitstream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bitstream.c; sourceTree = "<group>"; };
+		645C92681DC0806100D2ED3D /* bitstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bitstream.h; sourceTree = "<group>"; };
+		645C92691DC0806100D2ED3D /* mask.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mask.c; sourceTree = "<group>"; };
+		645C926A1DC0806100D2ED3D /* mask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mask.h; sourceTree = "<group>"; };
+		645C926B1DC0806100D2ED3D /* QRCodeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeGenerator.h; sourceTree = "<group>"; };
+		645C926C1DC0806100D2ED3D /* QRCodeGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeGenerator.m; sourceTree = "<group>"; };
+		645C926D1DC0806100D2ED3D /* qrencode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrencode.c; sourceTree = "<group>"; };
+		645C926E1DC0806100D2ED3D /* qrencode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrencode.h; sourceTree = "<group>"; };
+		645C926F1DC0806100D2ED3D /* qrinput.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrinput.c; sourceTree = "<group>"; };
+		645C92701DC0806100D2ED3D /* qrinput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrinput.h; sourceTree = "<group>"; };
+		645C92711DC0806100D2ED3D /* qrspec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrspec.c; sourceTree = "<group>"; };
+		645C92721DC0806100D2ED3D /* qrspec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrspec.h; sourceTree = "<group>"; };
+		645C92731DC0806100D2ED3D /* rscode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rscode.c; sourceTree = "<group>"; };
+		645C92741DC0806100D2ED3D /* rscode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rscode.h; sourceTree = "<group>"; };
+		645C92751DC0806100D2ED3D /* split.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = split.c; sourceTree = "<group>"; };
+		645C92761DC0806100D2ED3D /* split.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = split.h; sourceTree = "<group>"; };
+		645C927F1DC09F7700D2ED3D /* SpecificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificationViewController.swift; sourceTree = "<group>"; };
+		645C92811DC0A27A00D2ED3D /* AttributesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributesModel.h; sourceTree = "<group>"; };
+		645C92821DC0A27A00D2ED3D /* AttributesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributesModel.m; sourceTree = "<group>"; };
+		645C92841DC0AA3100D2ED3D /* SelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
+		645C92861DC0AED100D2ED3D /* SelectCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCollectionViewCell.swift; sourceTree = "<group>"; };
+		645C92881DC0B92600D2ED3D /* propertyList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = propertyList.h; sourceTree = "<group>"; };
+		645C92891DC0B92600D2ED3D /* propertyList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = propertyList.m; sourceTree = "<group>"; };
 		64690E6A1DB1C4E900D41D49 /* PayOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayOrderViewController.swift; sourceTree = "<group>"; };
 		64690E6D1DB20AFB00D41D49 /* NoDeliveryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoDeliveryViewController.swift; sourceTree = "<group>"; };
 		64690E6F1DB20B2200D41D49 /* NOSignedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NOSignedViewController.swift; sourceTree = "<group>"; };
@@ -703,6 +739,29 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		645C92661DC0806100D2ED3D /* libqrencode */ = {
+			isa = PBXGroup;
+			children = (
+				645C92671DC0806100D2ED3D /* bitstream.c */,
+				645C92681DC0806100D2ED3D /* bitstream.h */,
+				645C92691DC0806100D2ED3D /* mask.c */,
+				645C926A1DC0806100D2ED3D /* mask.h */,
+				645C926B1DC0806100D2ED3D /* QRCodeGenerator.h */,
+				645C926C1DC0806100D2ED3D /* QRCodeGenerator.m */,
+				645C926D1DC0806100D2ED3D /* qrencode.c */,
+				645C926E1DC0806100D2ED3D /* qrencode.h */,
+				645C926F1DC0806100D2ED3D /* qrinput.c */,
+				645C92701DC0806100D2ED3D /* qrinput.h */,
+				645C92711DC0806100D2ED3D /* qrspec.c */,
+				645C92721DC0806100D2ED3D /* qrspec.h */,
+				645C92731DC0806100D2ED3D /* rscode.c */,
+				645C92741DC0806100D2ED3D /* rscode.h */,
+				645C92751DC0806100D2ED3D /* split.c */,
+				645C92761DC0806100D2ED3D /* split.h */,
+			);
+			path = libqrencode;
+			sourceTree = "<group>";
+		};
 		64690E6C1DB20A6300D41D49 /* 订单管理 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1049,6 +1108,8 @@
 				F643088D1D618FA90037FD9F /* ETEditGoodsController.swift */,
 				F64308911D61A3640037FD9F /* ETEditInfoController.swift */,
 				F64308921D61A3640037FD9F /* ETEditInfoController.xib */,
+				645C927F1DC09F7700D2ED3D /* SpecificationViewController.swift */,
+				645C92841DC0AA3100D2ED3D /* SelectViewController.swift */,
 			);
 			name = GoodsManager;
 			sourceTree = "<group>";
@@ -1385,6 +1446,10 @@
 				6493B7E41D9BABB0008EE7C8 /* EvaluateModel.m */,
 				6493B7E91D9BB2B4008EE7C8 /* NewsModel.h */,
 				6493B7EA1D9BB2B4008EE7C8 /* NewsModel.m */,
+				645C92811DC0A27A00D2ED3D /* AttributesModel.h */,
+				645C92821DC0A27A00D2ED3D /* AttributesModel.m */,
+				645C92881DC0B92600D2ED3D /* propertyList.h */,
+				645C92891DC0B92600D2ED3D /* propertyList.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1426,6 +1491,7 @@
 				64C2D2211DAE1EC5002C8272 /* FootprintsTableViewCell.h */,
 				64C2D2221DAE1EC5002C8272 /* FootprintsTableViewCell.m */,
 				64C2D2231DAE1EC5002C8272 /* FootprintsTableViewCell.xib */,
+				645C92861DC0AED100D2ED3D /* SelectCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1446,6 +1512,7 @@
 		F65BF3411D3F585B0003DB35 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				645C92661DC0806100D2ED3D /* libqrencode */,
 				F65E00231D86854C005FDD83 /* Category */,
 				F6286FE11D4A096C0052ADC3 /* ConnectModel.h */,
 				F6286FE21D4A096C0052ADC3 /* ConnectModel.m */,
@@ -1828,7 +1895,9 @@
 				F6C36AD51D937A71008737D5 /* ETDailySpacialCell.m in Sources */,
 				F6C0EA081D913C4D002654DE /* ETDailySpecialController.m in Sources */,
 				649AF2F41D9612E500D8B840 /* EveryDayHelper.m in Sources */,
+				645C928A1DC0B92600D2ED3D /* propertyList.m in Sources */,
 				6493B84D1DAA31D8008EE7C8 /* NowDayTableViewCell.m in Sources */,
+				645C927D1DC0806100D2ED3D /* rscode.c in Sources */,
 				649AF3511D98F87600D8B840 /* AllKTVViewController.m in Sources */,
 				6493B82F1DA88F61008EE7C8 /* RecreationViewController.m in Sources */,
 				649AF3011D9769B700D8B840 /* SelectCityViewController.m in Sources */,
@@ -1839,8 +1908,10 @@
 				647A3E071D9A469C000B6802 /* OrderListModel.m in Sources */,
 				6493B8491DAA2B8D008EE7C8 /* NowDayViewController.m in Sources */,
 				64C2D2311DAF23A9002C8272 /* Foundation+Log.m in Sources */,
+				645C92871DC0AED100D2ED3D /* SelectCollectionViewCell.swift in Sources */,
 				64690E6E1DB20AFB00D41D49 /* NoDeliveryViewController.swift in Sources */,
 				64690E9D1DBE088700D41D49 /* ClassificationModel.m in Sources */,
+				645C92801DC09F7700D2ED3D /* SpecificationViewController.swift in Sources */,
 				64C2D2201DAE1E27002C8272 /* FootprintsViewController.m in Sources */,
 				647A3DF81D9A1746000B6802 /* OrderViewController.m in Sources */,
 				6493B8401DAA1AE5008EE7C8 /* DistanceAllBuyingViewController.m in Sources */,
@@ -1872,12 +1943,15 @@
 				649AF30C1D976AA400D8B840 /* JSAddressPickerView.m in Sources */,
 				F6508EF71D66FD020019BFFB /* ETGoodsSelectView.swift in Sources */,
 				F65149FB1D4F5C4000ECFFFD /* ETWaitSignController.swift in Sources */,
+				645C92831DC0A27A00D2ED3D /* AttributesModel.m in Sources */,
+				645C927A1DC0806100D2ED3D /* qrencode.c in Sources */,
 				6493B8341DA9E61A008EE7C8 /* CancleOrderViewController.swift in Sources */,
 				640F61D31D93AAF600614657 /* NewProductsViewController.m in Sources */,
 				F61E82311D474463001E16B5 /* ETTimeManager.m in Sources */,
 				F65E00331D868688005FDD83 /* GoodAttributesView.m in Sources */,
 				F643088F1D618FA90037FD9F /* ETEditGoodsController.swift in Sources */,
 				64C2D2241DAE1EC5002C8272 /* FootprintsTableViewCell.m in Sources */,
+				645C92781DC0806100D2ED3D /* mask.c in Sources */,
 				64690EA41DBF0AFA00D41D49 /* SortCollectionViewCell.m in Sources */,
 				649AF2E91D95121E00D8B840 /* GoodShopViewController.m in Sources */,
 				6493B7EB1D9BB2B4008EE7C8 /* NewsModel.m in Sources */,
@@ -1892,6 +1966,8 @@
 				F6F840961D8FB8D2007163A2 /* ETLimitTimeController.m in Sources */,
 				64ABB1651DACDE1B00768D45 /* AllShopDetailViewController.m in Sources */,
 				64690EA11DBF00E900D41D49 /* ClassificationViewController.m in Sources */,
+				645C927C1DC0806100D2ED3D /* qrspec.c in Sources */,
+				645C92791DC0806100D2ED3D /* QRCodeGenerator.m in Sources */,
 				647A3DEA1D9A0B3C000B6802 /* TakeOutTableViewCell.m in Sources */,
 				F6FED1D71D44BE4400C5C776 /* ETRigestController.m in Sources */,
 				647A3DF11D9A0B90000B6802 /* AllTakeOutViewController.m in Sources */,
@@ -1921,6 +1997,7 @@
 				F67B3DA71D4D9F8C00F2B544 /* ETMyShopController.swift in Sources */,
 				64690E7E1DB6264000D41D49 /* GoodsCommentmodel.m in Sources */,
 				F6177C621D460BCF00A2CB67 /* ETBaseHelper.m in Sources */,
+				645C927E1DC0806100D2ED3D /* split.c in Sources */,
 				6493B82A1D9E6DA9008EE7C8 /* YiAppraiseTableViewCell.m in Sources */,
 				649AF2EC1D95142000D8B840 /* GoodShopCollectionViewCell.m in Sources */,
 				6493B7D81D9B992B008EE7C8 /* CollectModel.m in Sources */,
@@ -1988,7 +2065,9 @@
 				64690EAB1DBF45B200D41D49 /* DaiUserTableViewCell.swift in Sources */,
 				64690EB11DBF522200D41D49 /* SortGoodViewController.swift in Sources */,
 				F6F6E07E1D99168D00C02257 /* ETHttpArrayModel.m in Sources */,
+				645C927B1DC0806100D2ED3D /* qrinput.c in Sources */,
 				F6177C5F1D46054700A2CB67 /* ETWelcomeHelper.m in Sources */,
+				645C92771DC0806100D2ED3D /* bitstream.c in Sources */,
 				64690E6B1DB1C4E900D41D49 /* PayOrderViewController.swift in Sources */,
 				6493B8091D9D016A008EE7C8 /* AdditionViewController.swift in Sources */,
 				F6EAB5341D84FCA2008FF8FA /* JSCartFooterView.m in Sources */,
@@ -2004,6 +2083,7 @@
 				64C2D2301DAF23A9002C8272 /* CustomTableViewCell.m in Sources */,
 				F65149EF1D4F56A000ECFFFD /* ETAllOrderController.swift in Sources */,
 				6493B8171D9E5119008EE7C8 /* AfterSaleViewController.swift in Sources */,
+				645C92851DC0AA3100D2ED3D /* SelectViewController.swift in Sources */,
 				F65E00301D86857E005FDD83 /* GoodAttrModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2128,6 +2208,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "ETong_ios/PersonalCenter/Controller/ETong_ios-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
+				WARNING_CFLAGS = "-Wno-shorten-64-to-32";
 			};
 			name = Debug;
 		};
@@ -2150,6 +2231,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ETong_ios/PersonalCenter/Controller/ETong_ios-Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
+				WARNING_CFLAGS = "-Wno-shorten-64-to-32";
 			};
 			name = Release;
 		};
