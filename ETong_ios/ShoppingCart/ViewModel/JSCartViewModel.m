@@ -64,7 +64,7 @@
     __block NSMutableArray *storeArray = [NSMutableArray array];
     __block NSMutableArray *shopSelectAarry = [NSMutableArray array];
     WEAKSELF
-    [helper getShoppingCartWithUserid:[ETUserInfo sharedETUserInfo].id success:^(NSDictionary *response) {
+    [helper getShoppingCartWithUserid:[ETUserInfo sharedETUserInfo].Id success:^(NSDictionary *response) {
         NSArray *cartModels = response[@"cartGoods"];
         //把ETShopCartModel转成JSCartModel
         [cartModels enumerateObjectsUsingBlock:^(ETShopCartModel *obj, NSUInteger idx, BOOL * stop) {
@@ -169,7 +169,7 @@
     NSString *num = [NSString stringWithFormat: @"%@", @(quantity)];
     NSString *goodsid = model.p_id;
     ETShopHelper *helper = [[ETShopHelper alloc]init];
-    [helper changeShoppingCartWithUserid:[ETUserInfo sharedETUserInfo].id goodsid:goodsid goodsnum:num success:^(NSDictionary *response) {
+    [helper changeShoppingCartWithUserid:[ETUserInfo sharedETUserInfo].Id goodsid:goodsid goodsnum:num success:^(NSDictionary *response) {
         [SVProgressHUD showSuccessWithStatus:@"结算成功"];
     } faild:^(NSString *response, NSError *error) {
         [SVProgressHUD showSuccessWithStatus:@"结算失败"];
@@ -182,7 +182,7 @@
 -(void)changeGoodsnum{
     ETShopHelper *helper = [[ETShopHelper alloc]init];
     
-    [helper changeShoppingCartWithUserid:[ETUserInfo sharedETUserInfo].id goodsid:@"" goodsnum:@"" success:^(NSDictionary *response) {
+    [helper changeShoppingCartWithUserid:[ETUserInfo sharedETUserInfo].Id goodsid:@"" goodsnum:@"" success:^(NSDictionary *response) {
         
     } faild:^(NSString *response, NSError *error) {
         

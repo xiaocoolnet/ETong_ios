@@ -53,7 +53,7 @@ class ETGoodsManagerController: UIViewController,UITableViewDelegate,UITableView
     
     
     func getNetData(){
-        helper.getShopGoodsListWithShopid(shopModel?.id, userid: ETUserInfo.sharedETUserInfo().id, xiajia: listType == 0 ? nil : "1", success: { [unowned self](dic) in
+        helper.getShopGoodsListWithShopid(shopModel?.id, userid: ETUserInfo.sharedETUserInfo().Id, xiajia: listType == 0 ? nil : "1", success: { [unowned self](dic) in
             let models = (dic as NSDictionary).objectForKey("goods")
             self.dataSource.removeAllObjects()
             self.dataSource.addObjectsFromArray(models as! [ETGoodsDataModel])
@@ -70,7 +70,7 @@ class ETGoodsManagerController: UIViewController,UITableViewDelegate,UITableView
     }
     
     func GetNetData(){
-        helper.getShopGoodsListWithShopid(shopModel?.id, userid: ETUserInfo.sharedETUserInfo().id, xiajia: "1", success: { [unowned self](dic) in
+        helper.getShopGoodsListWithShopid(shopModel?.id, userid: ETUserInfo.sharedETUserInfo().Id, xiajia: "1", success: { [unowned self](dic) in
             let models = (dic as NSDictionary).objectForKey("goods")
             self.dataSource.removeAllObjects()
             self.dataSource.addObjectsFromArray(models as! [ETGoodsDataModel])

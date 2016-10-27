@@ -10,7 +10,7 @@
 #import "MJExtension.h"
 @interface ETUserInfo : NSObject
 singleton_interface(ETUserInfo)
-@property (copy, nonatomic) NSString *id;
+@property (copy, nonatomic) NSString *Id;
 @property (copy, nonatomic) NSString *name;
 @property (copy, nonatomic) NSString *phone;
 @property (copy, nonatomic) NSString *sex;

@@ -20,6 +20,12 @@
         if ([model.status isEqualToString:@"success"]) {
             [ETUserInfo mj_objectWithKeyValues:model.data];
             [ETUserInfo sharedETUserInfo].isLogin = true;
+//            [[NSUserDefaults standardUserDefaults] setValue:[ETUserInfo sharedETUserInfo].id forKey:USER_ID];
+//            [[NSUserDefaults standardUserDefaults] setValue:[ETUserInfo sharedETUserInfo].name forKey:USERNAME];
+//            [[NSUserDefaults standardUserDefaults] setValue:[ETUserInfo sharedETUserInfo].photo forKey:USER_PHOTO];
+//            [[NSUserDefaults standardUserDefaults] setBool:true forKey:@"login"];
+//             NSLog(@"ssaaa=%@",[ETUserInfo sharedETUserInfo].id);
+//            NSLog(@"sss=%@",[[NSUserDefaults standardUserDefaults] stringForKey:USER_ID]);
             success(responseObject);
         }else{
             faild(@"登录失败",nil);

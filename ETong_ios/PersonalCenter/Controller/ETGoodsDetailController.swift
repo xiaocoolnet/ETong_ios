@@ -18,9 +18,10 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
     @IBOutlet weak var descript:UILabel!
     @IBOutlet weak var judgeList:UITableView!
     var strId = NSString()
+    var shopid = NSString()
     var shopname = NSString()
     var navgationType = String()
-    
+    var dic = NSDictionary()
     
     var imageNames = Array<String>()
     var goodModel:ETGoodsDataModel?
@@ -54,12 +55,30 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
         imageBackView.addSubview(cycleScrollView)
         cycleScrollView.scrollDirection = .Horizontal
         
+        let imgBtn = UIButton()
+        imgBtn.frame = CGRectMake(imageBackView.frame.size.width - 60, 5, 50, 50)
+        imgBtn.backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 242/255, alpha: 1)
+        imgBtn.setTitle("图文", forState: .Normal)
+        imgBtn.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        imgBtn.addTarget(self, action: #selector(self.clickImgBtn), forControlEvents: .TouchUpInside)
+        imgBtn.layer.cornerRadius = 25
+        imgBtn.layer.masksToBounds = true
+        imageBackView.addSubview(imgBtn)
+        
         goodsName.text = goodModel!.goodsname
         price.text = "¥" +  goodModel!.price
         express.text = "快递: " + (goodModel?.price)!
         shenma.text = goodModel!.address
         descript.text = goodModel!.description
         
+    }
+    
+    func clickImgBtn(){
+        print(1111)
+        let vc = TextPicViewController()
+        vc.hidesBottomBarWhenPushed = true
+        vc.goodModel = goodModel
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func createData(){
@@ -138,6 +157,14 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
        showPropertyView()
     }
     
+    // 店铺
+    @IBAction func ClickShopButton(sender: AnyObject) {
+        let vc = GoShopViewController()
+        vc.hidesBottomBarWhenPushed = true
+        vc.dictionary = self.dic as [NSObject : AnyObject]
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBAction func addToShopCart(sender: AnyObject) {
         if goodModel == nil {
             return;
@@ -164,7 +191,7 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
             return
         }
         if collectBtn.selected {
-            ETShopHelper().cancleCollectionWithUserid(ETUserInfo.sharedETUserInfo().id, goodsid: goodModel?.id, type: "1", success: {[unowned self] (dic) in
+            ETShopHelper().cancleCollectionWithUserid(ETUserInfo.sharedETUserInfo().Id, goodsid: goodModel?.id, type: "1", success: {[unowned self] (dic) in
                 st_dispatch_async_main({
                     self.collectBtn.selected = false
                     SVProgressHUD.showSuccessWithStatus("取消收藏成功")
@@ -175,11 +202,11 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
                 })
             }
         }else{
-            ETShopHelper().collectionGoodsWithUserid(ETUserInfo.sharedETUserInfo().id, goodsid: goodModel?.id, type: "1", title: goodModel?.goodsname, description: goodModel?.description, success: {[unowned self] (dic) in
+            ETShopHelper().collectionGoodsWithUserid(ETUserInfo.sharedETUserInfo().Id, goodsid: goodModel?.id, type: "1", title: goodModel?.goodsname, description: goodModel?.description, success: {[unowned self] (dic) in
                 st_dispatch_async_main({
                     print(self.goodModel?.id)
                     print(self.goodModel?.goodsname)
-                    print(ETUserInfo.sharedETUserInfo().id)
+                    print(ETUserInfo.sharedETUserInfo().Id)
                     print(self.goodModel?.description)
                    
                     self.collectBtn.selected = true
@@ -227,7 +254,7 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
         vc.receive_uid = self.strId as String
         vc.title = self.shopname as String
 //        print(vc.receive_uid)
-        if ETUserInfo.sharedETUserInfo().id == self.strId {
+        if ETUserInfo.sharedETUserInfo().Id == self.strId {
             SVProgressHUD.showErrorWithStatus("这是您自己的店铺，不能和自己聊天")
             return
         }
@@ -244,6 +271,7 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
         ETShopHelper().GetShopDetailsWithShopid(goodModel?.shopid, success: {[unowned self] (dic) in
             st_dispatch_async_main({
                 self.strId = dic["uid"] as! String
+                self.shopid = dic["id"] as! String
                 print(dic["shopname"])
                 if ((dic["shopname"]?.isMemberOfClass(NSNull)) != nil){
                     self.shopname = "无"
@@ -252,6 +280,7 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
                     self.shopname = dic["shopname"] as! String
                 }
                 print(dic["uid"])
+                self.dic = dic
             })
         }) { (str, err) in
             st_dispatch_async_main({

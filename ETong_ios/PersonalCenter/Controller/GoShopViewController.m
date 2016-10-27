@@ -1,18 +1,18 @@
 //
-//  AllShopDetailViewController.m
+//  GoShopViewController.m
 //  ETong_ios
 //
-//  Created by 沈晓龙 on 16/10/11.
+//  Created by 沈晓龙 on 16/10/27.
 //  Copyright © 2016年 北京校酷网络科技有限公司. All rights reserved.
 //
 
-#import "AllShopDetailViewController.h"
+#import "GoShopViewController.h"
 #import "GoodShopCollectionViewCell.h"
 #import "EveryDayHelper.h"
 #import "ETGoodsDataModel.h"
 #import "ETShopHelper.h"
 
-@interface AllShopDetailViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface GoShopViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property(nonatomic, strong) UICollectionView *collection;
 @property(nonatomic, strong) UIImageView *headerImage;
@@ -28,7 +28,7 @@
 
 @end
 
-@implementation AllShopDetailViewController
+@implementation GoShopViewController
 
 -(EveryDayHelper *)helper{
     if (!_helper) {
@@ -82,7 +82,7 @@
 #pragma mark - 获取商铺商品数据
 -(void) getDate{
     
-    [self.helper getGoodShopInfoWithShopid:self.shopModel.id Userid:self.shopModel.uid success:^(NSArray *response) {
+    [self.helper getGoodShopInfoWithShopid:self.dictionary[@"id"] Userid:self.dictionary[@"uid"] success:^(NSArray *response) {
         if ([response isKindOfClass:[NSString class]]) {
             return ;
         }
@@ -155,7 +155,9 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     ETGoodsDetailController *vc = [[ETGoodsDetailController alloc] initWithNibName:@"ETGoodsDetailController" bundle:nil];
     vc.goodModel = self.dataArray[indexPath.item];
+    vc.goodModel.uid = self.dictionary[@"uid"];
     vc.hidesBottomBarWhenPushed = YES;
+    vc.navgationType = @"1";
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -192,13 +194,13 @@
     headImage.contentMode=UIViewContentModeScaleAspectFill;
     headImage.clipsToBounds=YES;
     headImage.frame=CGRectMake(0, 35, 80, 80);
-    NSString *avatarUrlStr = [NSString stringWithFormat:@"%@/%@",kIMAGE_URL_HEAD,_shopModel.photo];
+    NSString *avatarUrlStr = [NSString stringWithFormat:@"%@/%@",kIMAGE_URL_HEAD,self.dictionary[@"photo"]];
     [headImage sd_setImageWithURL:[NSURL URLWithString:avatarUrlStr] placeholderImage:[UIImage imageNamed:@"ic_xihuan"]];
     [headerImage addSubview:headImage];
     
     UILabel *name = [[UILabel alloc] init];
     name.frame = CGRectMake(100, 50, 150, 20);
-    name.text = self.shopModel.shopname;
+    name.text = self.dictionary[@"shopname"];
     name.textColor = [UIColor whiteColor];
     [headerImage addSubview:name];
     
@@ -206,6 +208,7 @@
     self.shoucang.frame = CGRectMake(self.view.frame.size.width - 80, 40, 70, 30);
     self.shoucang.backgroundColor = [UIColor redColor];
     [self.shoucang setTitle:@"收藏" forState:UIControlStateNormal];
+    [self.shoucang setTitle:@"已收藏" forState:UIControlStateSelected];
     self.shoucang.selected = NO;
     [headerImage addSubview:self.shoucang];
     [self.shoucang addTarget:self action:@selector(clickShoucangBtn) forControlEvents:UIControlEventTouchUpInside];
@@ -213,7 +216,7 @@
     UILabel *collect = [[UILabel alloc] init];
     collect.frame = CGRectMake(self.view.frame.size.width - 120, 80, 110, 30);
     collect.textAlignment = NSTextAlignmentRight;
-    collect.text = [NSString stringWithFormat:@"收藏:%@人",self.shopModel.businesslicense];
+    collect.text = [NSString stringWithFormat:@"收藏:%@人",self.dictionary[@"businesslicense"]];
     collect.textColor = [UIColor whiteColor];
     collect.font = [UIFont systemFontOfSize:15];
     [headerImage addSubview:collect];
@@ -239,11 +242,11 @@
 
 -(void)clickShoucangBtn{
     if (![ETUserInfo sharedETUserInfo].isLogin) {
-        [SVProgressHUD showSuccessWithStatus:@"请先登录账号"];
+        [SVProgressHUD showErrorWithStatus:@"请先登录"];
         return;
     }
     if (self.shoucang.selected) {
-        [self.help cancleCollectionWithUserid:[ETUserInfo sharedETUserInfo].Id goodsid:self.shopModel.id type:@"2" success:^(NSDictionary *response) {
+        [self.help cancleCollectionWithUserid:[ETUserInfo sharedETUserInfo].Id goodsid:self.dictionary[@"id"] type:@"2" success:^(NSDictionary *response) {
             st_dispatch_async_main(^{
                 self.shoucang.selected = NO;
                 [SVProgressHUD showSuccessWithStatus:@"取消收藏商铺成功"];
@@ -255,7 +258,7 @@
         }];
     }else{
         
-        [self.help collectionGoodsWithUserid:[ETUserInfo sharedETUserInfo].Id goodsid:self.shopModel.id type:@"2" title:self.shopModel.shopname description:self.shopModel.description success:^(NSDictionary *response) {
+        [self.help collectionGoodsWithUserid:[ETUserInfo sharedETUserInfo].Id goodsid:self.dictionary[@"id"] type:@"2" title:self.dictionary[@"shopname"] description:self.dictionary[@"description"] success:^(NSDictionary *response) {
             st_dispatch_async_main(^{
                 self.shoucang.selected = YES;
                 [SVProgressHUD showSuccessWithStatus:@"收藏商铺成功"];
@@ -266,6 +269,18 @@
             [SVProgressHUD showSuccessWithStatus:@"收藏商铺失败"];
         }];
     }
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.tabBarController.tabBar.hidden = NO;
+}
+
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 @end

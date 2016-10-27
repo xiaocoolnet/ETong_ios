@@ -39,7 +39,7 @@
 
 
 -(void)Getdata{
-    [self.helper getNewsListInfoWithUserid:[ETUserInfo sharedETUserInfo].id success:^(NSArray *response) {
+    [self.helper getNewsListInfoWithUserid:[ETUserInfo sharedETUserInfo].Id success:^(NSArray *response) {
         if ([response isKindOfClass:[NSString class]]) {
             return ;
         }
@@ -52,7 +52,7 @@
                 [self.dataArray addObject:model];
             }
             NSLog(@"%lu",(unsigned long)self.dataArray.count);
-            NSLog(@"%@",[ETUserInfo sharedETUserInfo].id);
+            NSLog(@"%@",[ETUserInfo sharedETUserInfo].Id);
             [self.tableView reloadData];
         });
         

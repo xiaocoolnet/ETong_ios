@@ -33,3 +33,4 @@
 #import "QRCodeGenerator.h"
 #import "AttributesModel.h"
 #import "propertyList.h"
+#import "GoShopViewController.h"

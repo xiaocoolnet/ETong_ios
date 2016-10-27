@@ -122,7 +122,7 @@
         return;
     }
     
-    [_helper upDataCreatShopInfoWithUserid:[ETUserInfo sharedETUserInfo].id city:@"" shopName:@"" legalperson:_legalPersonName.text phone:_phoneNumber.text type:@"" businesslicense:_registerNumber.text address:_businessAddress.text idcard:_idcardNumber.text positive_pic:_firstPhotoName opposite_pic:_secondPhotoName license_pic:_thirdPhotoName success:^(NSDictionary *response) {
+    [_helper upDataCreatShopInfoWithUserid:[ETUserInfo sharedETUserInfo].Id city:@"" shopName:@"" legalperson:_legalPersonName.text phone:_phoneNumber.text type:@"" businesslicense:_registerNumber.text address:_businessAddress.text idcard:_idcardNumber.text positive_pic:_firstPhotoName opposite_pic:_secondPhotoName license_pic:_thirdPhotoName success:^(NSDictionary *response) {
         st_dispatch_async_main(^{
             [SVProgressHUD showSuccessWithStatus:@"提交信息成功"];
         });

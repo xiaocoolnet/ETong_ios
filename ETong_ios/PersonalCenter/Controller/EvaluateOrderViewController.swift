@@ -173,7 +173,7 @@ class EvaluateOrderViewController: UIViewController, UITextViewDelegate {
     }
     
     func clickSureBtn(){
-        helper.evaluateOrderWithUserid(ETUserInfo.sharedETUserInfo().id, orderid: strid, type: "5", content: textView.text, attitudescore: "5", finishscore: "5", effectscore: "5", success: {[unowned self] (dic) in
+        helper.evaluateOrderWithUserid(ETUserInfo.sharedETUserInfo().Id, orderid: strid, type: "5", content: textView.text, attitudescore: "5", finishscore: "5", effectscore: "5", success: {[unowned self] (dic) in
             st_dispatch_async_main({
                 SVProgressHUD.showSuccessWithStatus("评价成功")
                 self.navigationController?.popViewControllerAnimated(true)

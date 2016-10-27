@@ -22,7 +22,7 @@
     return self;
 }
 - (void)updataUserInfo:(ETResponseBlock)handle;{
-    NSDictionary *para = @{@"a":@"getuserinfo",@"userid":[ETUserInfo sharedETUserInfo].id};
+    NSDictionary *para = @{@"a":@"getuserinfo",@"userid":[ETUserInfo sharedETUserInfo].Id};
     [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
         if ([model.status isEqualToString:@"success"]) {

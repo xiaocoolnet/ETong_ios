@@ -25,6 +25,9 @@ extern "C" {
 #define USER_NAME @"username"
 #define USER_PWD @"userpassword"
 #define LOGINFO_KEY @"logInfoKey"
+#define USERNAME @"userName"
+#define USER_PHOTO @"userPhone"
+#define USER_ID @"userId"
     
 #define Screen_frame [UIScreen mainScreen].bounds
 //self

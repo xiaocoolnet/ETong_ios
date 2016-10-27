@@ -33,7 +33,7 @@ class ETSingleInfoController: UIViewController {
     func rightBarButtonClicked(){
         let str = changeInfo.text
         if changeType == 0 {
-            helper.updataUserNameWithUserid(ETUserInfo.sharedETUserInfo().id, nicename:str , success: { [unowned self] (dic) in
+            helper.updataUserNameWithUserid(ETUserInfo.sharedETUserInfo().Id, nicename:str , success: { [unowned self] (dic) in
                 ETUserInfo.sharedETUserInfo().name = str
                 if self.myHandle != nil {
                     self.myHandle!(str: self.changeInfo.text!)

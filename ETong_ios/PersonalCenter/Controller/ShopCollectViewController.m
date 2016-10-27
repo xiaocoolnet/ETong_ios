@@ -37,7 +37,7 @@
 }
 
 -(void)Getdata{
-    [self.helper getCollectListInfoWithUserid:[ETUserInfo sharedETUserInfo].id Type:@"2" success:^(NSArray *response) {
+    [self.helper getCollectListInfoWithUserid:[ETUserInfo sharedETUserInfo].Id Type:@"2" success:^(NSArray *response) {
         if ([response isKindOfClass:[NSString class]]) {
             return ;
         }

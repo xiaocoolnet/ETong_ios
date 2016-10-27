@@ -50,6 +50,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configureUI];
+    NSLog(@"ssssss = %@",[ETUserInfo sharedETUserInfo].phone);
+    NSLog(@"wwww = %@",[[NSUserDefaults standardUserDefaults] stringForKey:USER_NAME]);
+    NSLog(@"dddddd = %@",[[NSUserDefaults standardUserDefaults] stringForKey:USER_NAME]);
 }
 
 - (void)configureUI{
@@ -147,7 +150,7 @@
         return;
     }
     WEAKSELF
-    [self.helper getMyShopInfoWithUserid:[ETUserInfo sharedETUserInfo].id success:^(NSDictionary *response) {
+    [self.helper getMyShopInfoWithUserid:[ETUserInfo sharedETUserInfo].Id success:^(NSDictionary *response) {
         if ([response isKindOfClass:[NSString class]]) {
             return ;
         }

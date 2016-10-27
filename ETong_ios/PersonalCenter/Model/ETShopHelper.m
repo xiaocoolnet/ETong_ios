@@ -121,7 +121,7 @@
 }
 - (void)uploadGoodsWithGoodsModel:(ETGoodsDataModel *)model success:(ETResponseBlock) success faild:(ETResponseErrorBlock) faild;{
     
-    NSDictionary *para = @{@"a":@"PublishGoods",@"userid":[ETUserInfo sharedETUserInfo].id,@"shopid":model.shopid,@"piclist":model.piclist,@"goodsname":model.goodsname,@"type":model.type,@"oprice":model.oprice,@"price":model.price,@"description":model.description,@"unit":model.unit,@"address":model.address,@"longitude":model.longitude,@"latitude":model.latitude,@"freight":model.freight,@"band":model.brand};
+    NSDictionary *para = @{@"a":@"PublishGoods",@"userid":[ETUserInfo sharedETUserInfo].Id,@"shopid":model.shopid,@"piclist":model.piclist,@"goodsname":model.goodsname,@"type":model.type,@"oprice":model.oprice,@"price":model.price,@"description":model.description,@"unit":model.unit,@"address":model.address,@"longitude":model.longitude,@"latitude":model.latitude,@"freight":model.freight,@"band":model.brand};
     
     [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
@@ -283,7 +283,7 @@
 }
 //添加购物车
 - (void)addShoppingCartWithShopid:(NSString *)shopid goodsid:(NSString *)goodsid goodsnum:(NSString *)goodsnum success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;{
-    NSDictionary *para = @{@"a":@"AddShoppingCart",@"userid":[ETUserInfo sharedETUserInfo].id,@"goodsid":goodsid,@"goodsnum":goodsnum,@"shopid":shopid};
+    NSDictionary *para = @{@"a":@"AddShoppingCart",@"userid":[ETUserInfo sharedETUserInfo].Id,@"goodsid":goodsid,@"goodsnum":goodsnum,@"shopid":shopid};
     
     [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
@@ -298,7 +298,7 @@
 }
 //删除购物车
 - (void)deleteShoppingCartWithGoodsid:(NSString *)goodsid success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;{
-    NSDictionary *para = @{@"a":@"DeleteShoppingCart",@"userid":[ETUserInfo sharedETUserInfo].id,@"goodsid":goodsid};
+    NSDictionary *para = @{@"a":@"DeleteShoppingCart",@"userid":[ETUserInfo sharedETUserInfo].Id,@"goodsid":goodsid};
     
     [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
@@ -314,7 +314,7 @@
 }
 //获取我的购物车
 - (void)getShoppingCartWithUserid:(NSString *)userid success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;{
-    NSDictionary *para = @{@"a":@"GetShoppingCart",@"userid":[ETUserInfo sharedETUserInfo].id};
+    NSDictionary *para = @{@"a":@"GetShoppingCart",@"userid":[ETUserInfo sharedETUserInfo].Id};
     [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         ETHttpArrayModel *model = [ETHttpArrayModel mj_objectWithKeyValues:responseObject];

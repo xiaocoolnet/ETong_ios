@@ -77,7 +77,13 @@
                 return;
             }
             [SVProgressHUD showSuccessWithStatus:@"登录成功"];
-            [[NSUserDefaults standardUserDefaults] setObject:@{USER_NAME:_phoneNumber.text,USER_PWD:_pwdNumber.text} forKey:LOGINFO_KEY];
+//            [[NSUserDefaults standardUserDefaults] setObject:@{USER_NAME:_phoneNumber.text,USER_PWD:_pwdNumber.text} forKey:LOGINFO_KEY];
+            [[NSUserDefaults standardUserDefaults] setValue:_phoneNumber.text forKey:USER_NAME];
+            [[NSUserDefaults standardUserDefaults] setValue:_pwdNumber.text forKey:USER_PWD];
+//            [[NSUserDefaults standardUserDefaults] setValue:[ETUserInfo sharedETUserInfo].photo forKey:USER_PHOTO];
+//            NSLog(@"ssaaa=%@",[ETUserInfo sharedETUserInfo].Id);
+//            NSLog(@"sss=%@",[[NSUserDefaults standardUserDefaults] stringForKey:USER_ID]);
+//            NSLog(@"sss=%@",[[NSUserDefaults standardUserDefaults] stringForKey:USERNAME]);
             [self.navigationController popViewControllerAnimated:true];
         });
     } faild:^(NSString *response, NSError *error) {

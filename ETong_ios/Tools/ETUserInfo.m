@@ -9,10 +9,40 @@
 #import "ETUserInfo.h"
 
 @implementation ETUserInfo
+
 singleton_implementation(ETUserInfo)
--(void)setId:(NSString *)id{
-    if(id&&id.length > 0)
+-(void)setId:(NSString *)Id{
+    if(Id&&Id.length > 0)
     _isLogin = true;
-    _id = id;
+    _Id = Id;
 }
+
++ (NSDictionary *)replacedKeyFromPropertyName
+{
+    return @{
+             @"Id" : @"id",
+             };
+}
+
+//- (void)setName:(NSString *)name{
+//    
+//    
+//}
+//
+//- (void)setPhoto:(NSString *)photo{
+//    
+//}
+
+//- (BOOL)isLogin{
+//    return [[NSUserDefaults standardUserDefaults] boolForKey:@"login"];
+//}
+//- (NSString *)name{
+//    return [[NSUserDefaults standardUserDefaults] stringForKey:USERNAME];
+//}
+
+
+//- (NSString *)photo{
+//    return [[NSUserDefaults standardUserDefaults]stringForKey:USER_PHOTO];
+//}
+
 @end

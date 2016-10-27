@@ -77,7 +77,7 @@ class ETGoodsLoopController: UIViewController,UITableViewDelegate,UITableViewDat
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyyMMddHHmmss"
         let dateStr = dateFormatter.stringFromDate(NSDate())
-        let imageName = "avatar" + dateStr + ETUserInfo.sharedETUserInfo().id
+        let imageName = "avatar" + dateStr + ETUserInfo.sharedETUserInfo().Id
         ConnectModel.uploadWithImageName(imageName, imageData: data, URL: kUPLOAD_URL_HEAD) { [unowned self] (data) in
                 st_dispatch_async_main({
                     self.currentBtn?.setImage(image, forState: .Normal)

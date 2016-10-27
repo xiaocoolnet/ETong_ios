@@ -27,7 +27,7 @@ class AllOrderViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func getDate(){
-        helper.GetOrderListInfoWithUserid(ETUserInfo.sharedETUserInfo().id, success: { [unowned self](dic) in
+        helper.GetOrderListInfoWithUserid(ETUserInfo.sharedETUserInfo().Id, success: { [unowned self](dic) in
             let models = (dic as NSDictionary).objectForKey("goods")
             self.dataArray.removeAllObjects()
             self.dataArray.addObjectsFromArray(models as! [OrderListModel])

@@ -84,7 +84,7 @@
                 NSString *goodid = model.p_id;
                 NSLog(@"%@",goodid);
                 NSString *num = [NSString stringWithFormat:@"%.2ld",(long)model.p_quantity];
-                [self.helper PayInfoWithUserid:[ETUserInfo sharedETUserInfo].id peoplename:self.userName address:self.address goodsid:goodid goodnum:num mobile:self.phone remark:self.textView.text money:moeny success:^(NSDictionary *response) {
+                [self.helper PayInfoWithUserid:[ETUserInfo sharedETUserInfo].Id peoplename:self.userName address:self.address goodsid:goodid goodnum:num mobile:self.phone remark:self.textView.text money:moeny success:^(NSDictionary *response) {
                     st_dispatch_async_main(^{
                         [SVProgressHUD showSuccessWithStatus:@"结算成功"];
                         [self deleteShopCar];

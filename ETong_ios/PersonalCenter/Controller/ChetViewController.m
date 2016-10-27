@@ -68,7 +68,7 @@
     forMatter.dateFormat=@"HH:mm"; //小时和分钟
     NSString *nowTime=[forMatter stringFromDate:nowdate];
     NSLog(@"slsls = %@",self.receive_uid);
-    [self.helper GetTalkNewsWithUserid:[ETUserInfo sharedETUserInfo].id Receive_uid:self.receive_uid success:^(NSArray *response) {
+    [self.helper GetTalkNewsWithUserid:[ETUserInfo sharedETUserInfo].Id Receive_uid:self.receive_uid success:^(NSArray *response) {
         if ([response isKindOfClass:[NSString class]]) {
             return ;
         }
@@ -83,7 +83,7 @@
                 dicValues[@"desc"]=[NSString stringWithFormat:@"%@",[response[i] objectForKey:@"content"]];
                 dicValues[@"time"]=[response[i] objectForKey:@"time"];
                 
-                if ([[NSString stringWithFormat:@"%@",[response[i] objectForKey:@"send_uid"]] isEqualToString:[ETUserInfo sharedETUserInfo].id]){
+                if ([[NSString stringWithFormat:@"%@",[response[i] objectForKey:@"send_uid"]] isEqualToString:[ETUserInfo sharedETUserInfo].Id]){
                     dicValues[@"imageName"]=@"girl";
                     dicValues[@"person"]=[NSNumber numberWithBool:1];
                     //                mess.person = YES;
@@ -192,7 +192,7 @@
 
 - (void)sendAction:(UIButton *)sender {
  
-    [self.helper SendTalkNewsWithUserid:[ETUserInfo sharedETUserInfo].id Receive_uid:self.receive_uid Content:_inputMess.text success:^(NSDictionary *response) {
+    [self.helper SendTalkNewsWithUserid:[ETUserInfo sharedETUserInfo].Id Receive_uid:self.receive_uid Content:_inputMess.text success:^(NSDictionary *response) {
         st_dispatch_async_main(^{
 //            [SVProgressHUD showSuccessWithStatus:@"消息发送成功"];
             
@@ -306,7 +306,7 @@
 }
 #pragma mark TextField的Delegate send后的操作
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{  //
-    [self.helper SendTalkNewsWithUserid:[ETUserInfo sharedETUserInfo].id Receive_uid:self.receive_uid Content:_inputMess.text success:^(NSDictionary *response) {
+    [self.helper SendTalkNewsWithUserid:[ETUserInfo sharedETUserInfo].Id Receive_uid:self.receive_uid Content:_inputMess.text success:^(NSDictionary *response) {
         st_dispatch_async_main(^{
             [SVProgressHUD showSuccessWithStatus:@"消息发送成功"];
             

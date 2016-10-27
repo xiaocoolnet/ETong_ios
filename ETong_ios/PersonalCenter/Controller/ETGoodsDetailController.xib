@@ -178,6 +178,9 @@
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2A5-Xd-ANp">
                             <rect key="frame" x="74" y="15" width="46" height="30"/>
                             <state key="normal" title="店铺"/>
+                            <connections>
+                                <action selector="ClickShopButton:" destination="-1" eventType="touchUpInside" id="PJJ-ay-XTw"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.92870136329999997" green="0.92870136329999997" blue="0.92870136329999997" alpha="1" colorSpace="calibratedRGB"/>

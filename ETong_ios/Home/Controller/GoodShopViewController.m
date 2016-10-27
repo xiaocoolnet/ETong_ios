@@ -241,12 +241,12 @@
 
 
 -(void)clickShoucangBtn{
-    if (![ETUserInfo sharedETUserInfo].id) {
-        [SVProgressHUD showWithStatus:@"请先登录"];
+    if (![ETUserInfo sharedETUserInfo].isLogin) {
+        [SVProgressHUD showErrorWithStatus:@"请先登录"];
         return;
     }
     if (self.shoucang.selected) {
-        [self.help cancleCollectionWithUserid:[ETUserInfo sharedETUserInfo].id goodsid:self.shopModel.id type:@"2" success:^(NSDictionary *response) {
+        [self.help cancleCollectionWithUserid:[ETUserInfo sharedETUserInfo].Id goodsid:self.shopModel.id type:@"2" success:^(NSDictionary *response) {
             st_dispatch_async_main(^{
                 self.shoucang.selected = NO;
                 [SVProgressHUD showSuccessWithStatus:@"取消收藏商铺成功"];
@@ -258,7 +258,7 @@
         }];
     }else{
         
-        [self.help collectionGoodsWithUserid:[ETUserInfo sharedETUserInfo].id goodsid:self.shopModel.id type:@"2" title:self.shopModel.shopname description:self.shopModel.description success:^(NSDictionary *response) {
+        [self.help collectionGoodsWithUserid:[ETUserInfo sharedETUserInfo].Id goodsid:self.shopModel.id type:@"2" title:self.shopModel.shopname description:self.shopModel.description success:^(NSDictionary *response) {
             st_dispatch_async_main(^{
                 self.shoucang.selected = YES;
                 [SVProgressHUD showSuccessWithStatus:@"收藏商铺成功"];

@@ -27,7 +27,7 @@ class DaiSureViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func getDate(){
-        helper.GetOrderListInfoWithUserid(ETUserInfo.sharedETUserInfo().id, state:"3", success: { [unowned self](dic) in
+        helper.GetOrderListInfoWithUserid(ETUserInfo.sharedETUserInfo().Id, state:"3", success: { [unowned self](dic) in
             let models = (dic as NSDictionary).objectForKey("goods")
             self.dataArray.removeAllObjects()
             self.dataArray.addObjectsFromArray(models as! [OrderListModel])

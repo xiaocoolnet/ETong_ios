@@ -43,7 +43,7 @@
 
 
 -(void)Getdata{
-    [self.helper GetFootprintsWithUserid:[ETUserInfo sharedETUserInfo].id Type:@"1" success:^(NSArray *response) {
+    [self.helper GetFootprintsWithUserid:[ETUserInfo sharedETUserInfo].Id Type:@"1" success:^(NSArray *response) {
         if ([response isKindOfClass:[NSString class]]) {
             return ;
         }

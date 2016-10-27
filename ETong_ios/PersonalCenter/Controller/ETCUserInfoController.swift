@@ -84,9 +84,9 @@ class ETCUserInfoController: UIViewController,UIImagePickerControllerDelegate,UI
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyyMMddHHmmss"
         let dateStr = dateFormatter.stringFromDate(NSDate())
-        let imageName = "avatar" + dateStr + ETUserInfo.sharedETUserInfo().id
+        let imageName = "avatar" + dateStr + ETUserInfo.sharedETUserInfo().Id
         ConnectModel.uploadWithImageName(imageName, imageData: data, URL: kUPLOAD_URL_HEAD) {  (data) in
-                self.helper.updataUserAvatarWithUserid(ETUserInfo.sharedETUserInfo().id, avatar: imageName+".png", success: {[unowned self] (dic) in
+                self.helper.updataUserAvatarWithUserid(ETUserInfo.sharedETUserInfo().Id, avatar: imageName+".png", success: {[unowned self] (dic) in
                     st_dispatch_async_main({
                         SVProgressHUD.showSuccessWithStatus("修改头像成功")
                         self.avatarView.image = image
@@ -135,7 +135,7 @@ class ETCUserInfoController: UIViewController,UIImagePickerControllerDelegate,UI
         }
         
         let num = buttonIndex == 1 ? 1 : 0
-        helper.updataUserSexWithUserid(ETUserInfo.sharedETUserInfo().id, sex: num, success: {[unowned self] (dic) in
+        helper.updataUserSexWithUserid(ETUserInfo.sharedETUserInfo().Id, sex: num, success: {[unowned self] (dic) in
                 st_dispatch_async_main({
                     SVProgressHUD.showSuccessWithStatus("修改成功")
                     self.navigationController?.popViewControllerAnimated(true)

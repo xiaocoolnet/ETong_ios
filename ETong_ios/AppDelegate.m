@@ -9,12 +9,22 @@
 #import "AppDelegate.h"
 #import "ETRootController.h"
 #import "UMSocial.h"
+#import "ETWelcomeHelper.h"
 
 @interface AppDelegate ()
+
+@property (strong, nonatomic) ETWelcomeHelper *helper;
 
 @end
 
 @implementation AppDelegate
+
+-(ETWelcomeHelper *)helper{
+    if (!_helper) {
+        _helper = [ETWelcomeHelper helper];
+    }
+    return _helper;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -32,6 +42,16 @@
     [SVProgressHUD setBackgroundColor:[UIColor colorWithWhite:.01 alpha:.8]];
     [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
     [UMSocialData setAppKey:@"5796de9ce0f55a2ced001f92"];
+    
+    if ([[NSUserDefaults standardUserDefaults] stringForKey:USER_NAME].length > 0 || [[NSUserDefaults standardUserDefaults] stringForKey:USER_PWD].length > 0) {
+        [self.helper loginWithPhoneNumber:[[NSUserDefaults standardUserDefaults] stringForKey:USER_NAME] PassWord:[[NSUserDefaults standardUserDefaults] stringForKey:USER_PWD] success:^(NSObject *response) {
+            st_dispatch_async_main(^{
+               
+            });
+        } faild:^(NSString *response, NSError *error) {
+        }];
+    }
+    
     return YES;
 }
 
@@ -51,6 +71,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
