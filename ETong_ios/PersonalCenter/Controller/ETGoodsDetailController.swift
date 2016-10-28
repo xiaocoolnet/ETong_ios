@@ -47,6 +47,10 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
         GetGoodsComments()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.tabBarController?.tabBar.hidden = true
+    }
+    
     override func viewDidAppear(animated: Bool) {
         let cycleScrollView = SDCycleScrollView(frame: CGRectMake(0, 0, imageBackView.frame.width, imageBackView.frame.height), delegate: self, placeholderImage: UIImage(named: "ic_lunbotu"))
         cycleScrollView.delegate = self
@@ -162,6 +166,7 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
         let vc = GoShopViewController()
         vc.hidesBottomBarWhenPushed = true
         vc.dictionary = self.dic as [NSObject : AnyObject]
+        vc.navgationType = self.navgationType
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -263,6 +268,7 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
             return
         }
         vc.navgationType = self.navgationType
+        vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

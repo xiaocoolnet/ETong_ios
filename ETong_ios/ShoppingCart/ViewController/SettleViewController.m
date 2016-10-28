@@ -42,6 +42,12 @@
     [self addButton];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self addTableView];
+//    [self.tableView reloadData];
+}
+
 #pragma mark - 添加底部视图
 -(void) addButton{
     
@@ -71,7 +77,10 @@
 
 #pragma mark - 提交订单
 -(void)clickBtn{
-    if ([self.phone isEqualToString:@""]) {
+    NSString *nameStr = [[NSUserDefaults standardUserDefaults] stringForKey:@"name"];
+    NSString *phoneStr = [[NSUserDefaults standardUserDefaults] stringForKey:@"phone"];
+    NSString *addressStr = [[NSUserDefaults standardUserDefaults] stringForKey:@"address"];
+    if (nameStr.length == 0 || phoneStr.length == 0 || addressStr.length == 0) {
         [SVProgressHUD showSuccessWithStatus:@"请添加地址"];
     }else{
         
@@ -84,7 +93,7 @@
                 NSString *goodid = model.p_id;
                 NSLog(@"%@",goodid);
                 NSString *num = [NSString stringWithFormat:@"%.2ld",(long)model.p_quantity];
-                [self.helper PayInfoWithUserid:[ETUserInfo sharedETUserInfo].Id peoplename:self.userName address:self.address goodsid:goodid goodnum:num mobile:self.phone remark:self.textView.text money:moeny success:^(NSDictionary *response) {
+                [self.helper PayInfoWithUserid:[ETUserInfo sharedETUserInfo].Id peoplename:nameStr address:addressStr goodsid:goodid goodnum:num mobile:phoneStr remark:self.textView.text money:moeny success:^(NSDictionary *response) {
                     st_dispatch_async_main(^{
                         [SVProgressHUD showSuccessWithStatus:@"结算成功"];
                         [self deleteShopCar];
@@ -126,10 +135,14 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"SettleTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     
+    UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Screen_frame.size.width, 190)];
+    backView.backgroundColor = [UIColor clearColor];
+    self.tableView.tableFooterView = backView;
+    
     UIButton *backBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, Screen_frame.size.width, 60)];
     backBtn.backgroundColor = [UIColor whiteColor];
     [backBtn addTarget:self action:@selector(addAddressBtn) forControlEvents:UIControlEventTouchUpInside];
-    self.tableView.tableFooterView = backBtn;
+    [backView addSubview:backBtn];
     
     UIView *aview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Screen_frame.size.width, 10)];
     aview.backgroundColor = [UIColor colorWithRed:241/255.0 green:241/255.0 blue:241/255.0 alpha:1.0];
@@ -144,7 +157,29 @@
     lable.font = [UIFont systemFontOfSize:15];
     [backBtn addSubview:lable];
     
-    
+    if ([[NSUserDefaults standardUserDefaults] stringForKey:@"phone"].length > 0) {
+        
+        lable.text = @"更改收货地址";
+        
+        UILabel *phoneLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 70, Screen_frame.size.width, 40)];
+        phoneLab.backgroundColor = [UIColor whiteColor];
+        phoneLab.text = [@"  手机号：    " stringByAppendingString:[[NSUserDefaults standardUserDefaults] stringForKey:@"phone"]];
+        phoneLab.font = [UIFont systemFontOfSize:15];
+        [backView addSubview:phoneLab];
+        
+        UILabel *nameLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 110.5, Screen_frame.size.width, 39.5)];
+        nameLab.backgroundColor = [UIColor whiteColor];
+        nameLab.text = [@"  姓名：    " stringByAppendingString:[[NSUserDefaults standardUserDefaults] stringForKey:@"name"]];
+        nameLab.font = [UIFont systemFontOfSize:15];
+        [backView addSubview:nameLab];
+        
+        UILabel *addressLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 150.5, Screen_frame.size.width, 39.5)];
+        addressLab.backgroundColor = [UIColor whiteColor];
+        addressLab.text = [@"  " stringByAppendingString:[[NSUserDefaults standardUserDefaults] stringForKey:@"address"]];
+        addressLab.font = [UIFont systemFontOfSize:16];
+        addressLab.textColor = [UIColor lightGrayColor];
+        [backView addSubview:addressLab];
+    }
 }
 
 -(void) addAddressBtn{

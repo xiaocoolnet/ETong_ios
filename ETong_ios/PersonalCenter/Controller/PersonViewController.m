@@ -18,6 +18,7 @@
 #import "FootprintsViewController.h"
 #import "WalletViewController.h"
 #import "ETZBarScanController.h"
+#import "EAgentViewController.h"
 
 @interface PersonViewController ()
 
@@ -117,6 +118,10 @@
 - (IBAction)weiquanClicked:(id)sender {
 }
 - (IBAction)edailiClicked:(id)sender {
+    EAgentViewController *vc = [[EAgentViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = true;
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 - (IBAction)pingjiaClicked:(id)sender {
     if (![ETUserInfo sharedETUserInfo].isLogin) {

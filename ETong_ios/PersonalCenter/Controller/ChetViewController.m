@@ -61,7 +61,7 @@
    
     self.view.backgroundColor = [UIColor blueColor];
     self.navigationController.navigationBar.hidden = NO;
-//    self.tabBarController.tabBar.hidden = YES;
+    self.tabBarController.tabBar.hidden = YES;
     
     NSDate *nowdate=[NSDate date];
     NSDateFormatter *forMatter=[[NSDateFormatter alloc]init];

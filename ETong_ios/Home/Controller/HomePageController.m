@@ -406,6 +406,7 @@
         vc.shopModel.uid = model.uid;
         NSLog(@"%@",vc.shopModel.uid);
         NSLog(@"%@",model.uid);
+        vc.hidesBottomBarWhenPushed = true;
         [self.navigationController pushViewController:vc animated:YES];
     }else{
         ETGoodsDetailController *controller = [[ETGoodsDetailController alloc]init];
@@ -415,6 +416,22 @@
         controller.navgationType = @"1";
         [self.navigationController pushViewController:controller animated:true];
     }
+}
+
+-(void)clickLowButton{
+//    ChetViewController *vc = [[ChetViewController alloc] init];
+//    vc.hidesBottomBarWhenPushed = YES;
+//    vc.receive_uid = self.shopModel.uid;
+//    vc.title = self.shopModel.shopname;
+//    if ([[ETUserInfo sharedETUserInfo].Id isEqualToString:self.shopModel.uid]) {
+//        [SVProgressHUD showErrorWithStatus:@"这是您自己的店铺，不能和自己聊天"];
+//        return;
+//    }
+//    if (![ETUserInfo sharedETUserInfo].isLogin) {
+//        [SVProgressHUD showErrorWithStatus:@"请先去登录"];
+//        return;
+//    }
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{

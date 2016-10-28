@@ -75,10 +75,27 @@
         [lowBtn setTitle:arr[i] forState:UIControlStateNormal];
         lowBtn.titleLabel.font = [UIFont systemFontOfSize:19];
         [lowBtn setTitleColor:[UIColor blackColor]forState:UIControlStateNormal];
+        [lowBtn addTarget:self action:@selector(clickLowButton) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:lowBtn];
     }
 }
 
+-(void)clickLowButton{
+    ChetViewController *vc = [[ChetViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = true;
+    vc.receive_uid = self.dictionary[@"uid"];
+    vc.title = self.dictionary[@"shopname"];
+    if ([[ETUserInfo sharedETUserInfo].Id isEqualToString:self.dictionary[@"uid"]]) {
+        [SVProgressHUD showErrorWithStatus:@"这是您自己的店铺，不能和自己聊天"];
+        return;
+    }
+    if (![ETUserInfo sharedETUserInfo].isLogin) {
+        [SVProgressHUD showErrorWithStatus:@"请先去登录"];
+        return;
+    }
+    vc.navgationType = self.navgationType;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 #pragma mark - 获取商铺商品数据
 -(void) getDate{
     
@@ -156,7 +173,7 @@
     ETGoodsDetailController *vc = [[ETGoodsDetailController alloc] initWithNibName:@"ETGoodsDetailController" bundle:nil];
     vc.goodModel = self.dataArray[indexPath.item];
     vc.goodModel.uid = self.dictionary[@"uid"];
-    vc.hidesBottomBarWhenPushed = YES;
+    vc.hidesBottomBarWhenPushed = true;
     vc.navgationType = @"1";
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -273,7 +290,7 @@
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    self.tabBarController.tabBar.hidden = NO;
+//    self.tabBarController.tabBar.hidden = NO;
 }
 
 

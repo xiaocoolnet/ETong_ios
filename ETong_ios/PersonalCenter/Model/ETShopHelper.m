@@ -800,5 +800,20 @@
     }];
 }
 
+// 获取商品分类
+-(void)GetSortInfoWithType:(NSString *)type success:(ResponseBlock)success faild:(ETResponseErrorBlock)faild{
+    NSDictionary *para = @{@"a":@"getShopTypeList",@"type":type};
+    [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        HttpModel *model = [HttpModel mj_objectWithKeyValues:responseObject];
+        if ([model.status isEqualToString:@"success"]) {
+            success(model.data);
+        }else{
+            faild(@"",nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        faild(nil,nil);
+    }];
+}
+
 
 @end

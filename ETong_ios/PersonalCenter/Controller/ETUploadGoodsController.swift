@@ -27,6 +27,7 @@ class ETUploadGoodsController: UIViewController,UIScrollViewDelegate,ETGoodsLoop
     var helper:ETShopHelper = ETShopHelper()
     var piclist:String?
     var imageNamesArr:Array<String>?
+    var type:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,11 +62,12 @@ class ETUploadGoodsController: UIViewController,UIScrollViewDelegate,ETGoodsLoop
     }
     func JSAddressPickerRerurnBlockWithProvince(province: String!, city: String!, town: String!) {
         self.goodsClass.setTitle(province + "-" + city + "-" + town, forState: .Normal)
+        self.type = town
         self.pickerView!.removeFromSuperview()
     }
     //上传
     @IBAction func uploadAction(sender: AnyObject){
-        goodsModel = ETGoodsDataModel.init(showid: ETUserInfo.sharedETUserInfo().shopid, piclist: piclist, goodsname: goodsTitle.text, type: "1", oprice: originalPrice.text, price: price.text, description: goodsDetail.text, unit: goodsSpec.text, address: place.text, longitude: "1", latitude: "1", freight: freight.text, band: goodsBrand.text)
+        goodsModel = ETGoodsDataModel.init(showid: ETUserInfo.sharedETUserInfo().shopid, piclist: piclist, goodsname: goodsTitle.text, type: self.type, oprice: originalPrice.text, price: price.text, description: goodsDetail.text, unit: goodsSpec.text, address: place.text, longitude: "1", latitude: "1", freight: freight.text, band: goodsBrand.text)
         
         helper.uploadGoodsWithGoodsModel(goodsModel, success: {[unowned self] (dic) in
             st_dispatch_async_main({

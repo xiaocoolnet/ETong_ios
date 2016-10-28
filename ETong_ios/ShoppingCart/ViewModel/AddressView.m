@@ -11,7 +11,7 @@
 @interface AddressView () <UIPickerViewDelegate,UIPickerViewDataSource>
 
 @property (strong, nonatomic) NSDictionary *pickerDic;
-@property (strong, nonatomic) NSArray *selectedArray;
+@property (strong, nonatomic) NSMutableArray *selectedArray;
 @property (strong, nonatomic) NSArray *provinceArray;
 @property (strong, nonatomic) NSArray *cityArray;
 @property (strong, nonatomic) NSArray *townArray;

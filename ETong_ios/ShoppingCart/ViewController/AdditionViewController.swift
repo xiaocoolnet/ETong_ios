@@ -42,7 +42,9 @@ class AdditionViewController: UIViewController, AddressPickerDelegate {
             SVProgressHUD.showErrorWithStatus("请完善信息")
             return
         }else{
-            
+            NSUserDefaults.standardUserDefaults().setValue(nameTextField.text, forKey: "name")
+            NSUserDefaults.standardUserDefaults().setValue(phoneNum.text, forKey: "phone")
+            NSUserDefaults.standardUserDefaults().setValue(str, forKey: "address")
             self.navigationController?.popViewControllerAnimated(true)
         }
     }

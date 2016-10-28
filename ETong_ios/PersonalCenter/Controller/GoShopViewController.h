@@ -11,5 +11,6 @@
 @interface GoShopViewController : UIViewController
 
 @property(nonatomic, strong) NSDictionary *dictionary;
+@property (nonatomic, strong) NSString *navgationType;
 
 @end

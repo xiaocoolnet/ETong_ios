@@ -228,4 +228,9 @@
                                   success:(ETResponseBlock)success
                                     faild:(ETResponseErrorBlock)faild;
 
+/**
+ *  获取商品分类
+ */
+- (void)GetSortInfoWithType:(NSString *)type success:(ResponseBlock)success faild:(ETResponseErrorBlock)faild;
+
 @end

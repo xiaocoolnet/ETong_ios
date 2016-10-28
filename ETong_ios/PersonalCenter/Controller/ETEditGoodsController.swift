@@ -8,10 +8,11 @@
 
 import UIKit
 
-class ETEditGoodsController: UITableViewController {
+class ETEditGoodsController: UITableViewController,SortPickerDelegate {
     
     var titleDataSource = [["商品轮播图","商品描述","商品标题","分类"],["品牌","货号"],["商品规格","现价","原价","运费","库存"],["宝贝详情","发货地"]]
     var goodModel:ETGoodsDataModel?
+    var pickerView : SortView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +55,11 @@ class ETEditGoodsController: UITableViewController {
             let vc = SpecificationViewController()
             vc.goodsModel = goodModel
             self.navigationController?.pushViewController(vc, animated: true)
+        }else if indexPath.section*10+indexPath.row == 3{
+            self.pickerView = SortView.init(frame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height))
+            pickerView!.delegate = self
+            pickerView!.font = UIFont.systemFontOfSize(16)
+            self.view.addSubview(pickerView!)
         }else{
             
             let vc = ETEditInfoController(nibName: "ETEditInfoController", bundle: nil)
@@ -64,5 +70,13 @@ class ETEditGoodsController: UITableViewController {
             vc.goodsModel = goodModel
             navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    func JSAddressCancleAction(senter: AnyObject!) {
+        self.pickerView!.removeFromSuperview()
+    }
+    func JSAddressPickerRerurnBlockWithProvince(province: String!, city: String!, town: String!) {
+        
+        self.pickerView!.removeFromSuperview()
     }
 }

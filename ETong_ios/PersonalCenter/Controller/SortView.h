@@ -20,7 +20,7 @@
 @property (nonatomic, strong) NSString *city;
 @property (nonatomic, strong) NSString *town;
 
-- (void)updateAddressAtProvince:(NSString *)province city:(NSString *)city town:(NSString *)town;
+//- (void)updateAddressAtProvince:(NSString *)province city:(NSString *)city town:(NSString *)town;
 /** 内容字体 */
 @property (nonatomic, strong) UIFont *font;
 

@@ -7,27 +7,39 @@
 //
 
 #import "SortView.h"
-
+#import "FirstSortModel.h"
+#import "SecondSortModel.h"
+#import "ThirdSortModel.h"
+#import "ETShopHelper.h"
 
 @interface SortView () <UIPickerViewDelegate,UIPickerViewDataSource>
 
 @property (strong, nonatomic) NSDictionary *pickerDic;
-@property (strong, nonatomic) NSArray *selectedArray;
+@property (strong, nonatomic) NSMutableArray *selectedArray;
 @property (strong, nonatomic) NSArray *provinceArray;
 @property (strong, nonatomic) NSArray *cityArray;
 @property (strong, nonatomic) NSArray *townArray;
 @property (strong, nonatomic) UIPickerView *pickView;
+@property (nonatomic, strong) ETShopHelper *helper;
+@property (nonatomic, strong) NSArray *dataArray;
 @end
 
 @implementation SortView
+-(ETShopHelper *)helper{
+    if (!_helper) {
+        _helper = [ETShopHelper helper];
+    }
+    return _helper;
+}
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
-        [self getAddressInformation];
-        [self setBaseView];
+//        [self getAddressInformation];
+//        [self setBaseView];
+        [self getSortData];
     }
     return self;
 }
@@ -43,6 +55,50 @@
     if (self.cityArray.count > 0) {
         self.townArray = [[self.selectedArray objectAtIndex:0] objectForKey:[self.cityArray objectAtIndex:0]];
     }
+}
+
+- (void) getSortData{
+    [self.helper GetSortInfoWithType:@"0" success:^(NSArray *response) {
+        if ([response isKindOfClass:[NSString class]]) {
+            return ;
+        }
+        st_dispatch_async_main(^{
+            NSMutableArray* dataArray = [[NSMutableArray alloc] init];
+            self.dataArray = response;
+            for (int i=0; i<response.count; i++) {
+                
+                FirstSortModel *model = [FirstSortModel mj_objectWithKeyValues:response[i]];
+                [dataArray addObject:model.name];
+            }
+            self.provinceArray = dataArray;
+            
+            
+            NSMutableArray* dataArray_2 = [[NSMutableArray alloc] init];
+
+            FirstSortModel *model_2 = [FirstSortModel mj_objectWithKeyValues:response[0]];
+            for (int i=0; i<model_2.childlist.count; i++) {
+                
+                SecondSortModel *model_3 = [SecondSortModel mj_objectWithKeyValues:model_2.childlist[i]];
+                [dataArray_2 addObject:model_3.name];
+            }
+            self.cityArray = dataArray_2;
+            
+            NSMutableArray* dataArray_3 = [[NSMutableArray alloc] init];
+
+            SecondSortModel *model_4 = [SecondSortModel mj_objectWithKeyValues:model_2.childlist[0]];
+            for (int i=0; i<model_4.childlist.count; i++) {
+                
+                SecondSortModel *model_5 = [SecondSortModel mj_objectWithKeyValues:model_4.childlist[i]];
+                [dataArray_3 addObject:model_5.name];
+            }
+            self.townArray = dataArray_3;
+           [self setBaseView];
+        });
+        
+        return ;
+    } faild:^(NSString *response, NSError *error) {
+        
+    }];
 }
 
 - (void)setBaseView {
@@ -91,7 +147,7 @@
                 break;
             }
         }
-        self.cityArray = [self.pickerDic[self.province][0] allKeys];
+//        self.cityArray = [self.pickerDic[self.province][0] allKeys];
         for (NSInteger i = 0; i < self.cityArray.count; i++) {
             NSString *city = self.cityArray[i];
             if ([city isEqualToString:self.city]) {
@@ -99,7 +155,7 @@
                 break;
             }
         }
-        self.townArray = self.pickerDic[self.province][0][self.city];
+//        self.townArray = self.pickerDic[self.province][0][self.city];
         for (NSInteger i = 0; i < self.townArray.count; i++) {
             NSString *town = self.townArray[i];
             if ([town isEqualToString:self.town]) {
@@ -167,35 +223,82 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     if (component == 0) {
-        self.selectedArray = [self.pickerDic objectForKey:[self.provinceArray objectAtIndex:row]];
-        if (self.selectedArray.count > 0) {
-            self.cityArray = [[self.selectedArray objectAtIndex:0] allKeys];
-        } else {
-            self.cityArray = @[];
+        FirstSortModel *model = [FirstSortModel mj_objectWithKeyValues:self.dataArray[row]];
+        
+        NSMutableArray *arr = [[NSMutableArray alloc] init];
+        
+        for (int i = 0 ; i<model.childlist.count; i++) {
+            
+            SecondSortModel *secModel = model.childlist[i];
+            [arr addObject:secModel.name];
         }
-        if (self.cityArray.count > 0) {
-            self.townArray = [[self.selectedArray objectAtIndex:0] objectForKey:[self.cityArray objectAtIndex:0]];
-        } else {
-            self.townArray = @[];
+        self.cityArray = arr;
+        
+//        FirstSortModel *model = [FirstSortModel mj_objectWithKeyValues:self.dataArray[[pickerView selectedRowInComponent:0]]];
+        
+        SecondSortModel * secmodel = model.childlist[0];
+        
+        NSMutableArray *arr_2 = [[NSMutableArray alloc] init];
+        
+        for (int i = 0 ; i<secmodel.childlist.count; i++) {
+            
+            ThirdSortModel *thiModel = secmodel.childlist[i];
+            [arr_2 addObject:thiModel.name];
         }
+        self.townArray = arr_2;
+        
+        [self.selectedArray addObject:self.provinceArray[row]];
+        
+//        self.cityArray = model.childlist;
+//        self.selectedArray = [self.pickerDic objectForKey:[self.provinceArray objectAtIndex:row]];
+//        if (self.selectedArray.count > 0) {
+//            self.cityArray = [[self.selectedArray objectAtIndex:0] allKeys];
+//        } else {
+//            self.cityArray = @[];
+//        }
+//        if (self.cityArray.count > 0) {
+//            self.townArray = [[self.selectedArray objectAtIndex:0] objectForKey:[self.cityArray objectAtIndex:0]];
+//        } else {
+//            self.townArray = @[];
+//        }
         [pickerView reloadComponent:1];
         [pickerView selectedRowInComponent:1];
         [pickerView reloadComponent:2];
         [pickerView selectedRowInComponent:2];
     }
     if (component == 1) {
-        self.selectedArray = [self.pickerDic objectForKey:[self.provinceArray objectAtIndex:[self.pickView selectedRowInComponent:0]]];
-        NSDictionary *dic = self.selectedArray.firstObject;
-        NSString *stirng = self.cityArray[row];
-        for (NSString *string in dic.allKeys) {
-            if ([stirng isEqualToString:string]) {
-                self.townArray = dic[string];
-            }
+        
+        FirstSortModel *model = [FirstSortModel mj_objectWithKeyValues:self.dataArray[[pickerView selectedRowInComponent:0]]];
+        
+        SecondSortModel * secModel = model.childlist[row];
+        
+        NSMutableArray *arr = [[NSMutableArray alloc] init];
+        
+        for (int i = 0 ; i<secModel.childlist.count; i++) {
+            
+            ThirdSortModel *thiModel = secModel.childlist[i];
+            [arr addObject:thiModel.name];
         }
+        self.townArray = arr;
+        
+        [self.selectedArray addObject:self.cityArray[row]];
+        
+        
+//        self.selectedArray = [self.pickerDic objectForKey:[self.provinceArray objectAtIndex:[self.pickView selectedRowInComponent:0]]];
+//        NSDictionary *dic = self.selectedArray.firstObject;
+//        NSString *stirng = self.cityArray[row];
+//        for (NSString *string in dic.allKeys) {
+//            if ([stirng isEqualToString:string]) {
+//                self.townArray = dic[string];
+//            }
+//        }
         [pickerView reloadComponent:2];
         [pickerView selectedRowInComponent:2];
     }
     if (component == 2) {
+        
+        [self.selectedArray addObject:self.townArray[row]];
+
         [pickerView reloadComponent:2];
         [pickerView selectedRowInComponent:2];
     }

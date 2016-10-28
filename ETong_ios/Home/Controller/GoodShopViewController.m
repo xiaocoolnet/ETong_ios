@@ -47,7 +47,8 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.tabBarController.tabBar.hidden = YES;
+//    self.tabBarController.tabBar.hidden = YES;
+    
 }
 
 - (void)viewDidLoad {
@@ -75,8 +76,26 @@
         [lowBtn setTitle:arr[i] forState:UIControlStateNormal];
         lowBtn.titleLabel.font = [UIFont systemFontOfSize:19];
         [lowBtn setTitleColor:[UIColor blackColor]forState:UIControlStateNormal];
+        [lowBtn addTarget:self action:@selector(clickLowButton) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:lowBtn];
     }
+}
+
+-(void)clickLowButton{
+    ChetViewController *vc = [[ChetViewController alloc] init];
+    vc.receive_uid = self.shopModel.uid;
+    vc.title = self.shopModel.shopname;
+    if ([[ETUserInfo sharedETUserInfo].Id isEqualToString:self.shopModel.uid]) {
+        [SVProgressHUD showErrorWithStatus:@"这是您自己的店铺，不能和自己聊天"];
+        return;
+    }
+    if (![ETUserInfo sharedETUserInfo].isLogin) {
+        [SVProgressHUD showErrorWithStatus:@"请先去登录"];
+        return;
+    }
+    vc.hidesBottomBarWhenPushed = true;
+    vc.navgationType = @"1";
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - 获取商铺商品数据
