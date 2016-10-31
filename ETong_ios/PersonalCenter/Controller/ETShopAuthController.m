@@ -10,8 +10,10 @@
 #import "ETShopInfoController.h"
 #import "ConnectModel.h"
 #import "ETShopHelper.h"
+#import "PersonViewController.h"
+#import "YLDropDownMenu.h"
 
-@interface ETShopAuthController ()<UIScrollViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface ETShopAuthController ()<UIScrollViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *legalPersonName;
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
@@ -19,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *registerNumber;
 @property (weak, nonatomic) IBOutlet UITextField *businessAddress;
 @property (weak, nonatomic) IBOutlet UIButton *handleIDCard;
+@property (weak, nonatomic) IBOutlet UITextField *permitName;
 @property (weak, nonatomic) IBOutlet UIButton *idCardPhoto;
 @property (weak, nonatomic) IBOutlet UIButton *businessLicense;//营业执照
 @property (strong, nonatomic) UIButton *selectBtn;
@@ -27,6 +30,11 @@
 @property (strong, nonatomic) NSString *secondPhotoName;
 @property (strong, nonatomic) NSString *thirdPhotoName;
 @property (strong, nonatomic) ETShopHelper *helper;
+@property (weak, nonatomic) IBOutlet UIButton *cityBtn;
+@property (weak, nonatomic) IBOutlet UIButton *shopTypeBtn;
+
+@property (nonatomic, strong)YLDropDownMenu *menuView;
+@property (nonatomic, strong)UIView *darkView;
 
 @end
 
@@ -37,7 +45,12 @@
     [self configureUI];
     
     self.title = @"店铺认证";
+    
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture)];
+    singleTap.numberOfTapsRequired = 1;
+    [self.darkView addGestureRecognizer:singleTap];
 }
+
 
 - (void)configureUI{
     //
@@ -88,6 +101,42 @@
     [SVProgressHUD showErrorWithStatus:@"相册不可用"];
 }
 
+- (UIView *)darkView{
+    if (!_darkView) {
+        _darkView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+        _darkView.backgroundColor = [UIColor colorWithWhite:0 alpha:.5];
+        _darkView.userInteractionEnabled = YES;
+    }
+    return _darkView;
+}
+
+#pragma mark - 选择城市
+- (IBAction)clcikCityButton:(id)sender {
+}
+
+#pragma mark - 选择店铺类型
+- (IBAction)clickShopTypeButton:(id)sender {
+    
+    [self.view addSubview:self.darkView];
+    NSLog(@"%f",CGRectGetMaxY(self.cityBtn.frame));
+    self.menuView = [[YLDropDownMenu alloc] initWithFrame:CGRectMake(Screen_frame.size.width/2 - 50, 70, 100, 400)];
+    self.menuView.dataSource = @[@"美食",@"电影",@"酒店",@"外卖",@"休闲娱乐",@"周边游",@"生活服务",@"KTV",@"手机充值"];
+    self.menuView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:self.menuView];
+    __weak typeof(self)weakSelf = self;
+    [self.menuView setFinishBlock:^(NSString *title){
+        NSLog(@"%@",title);
+        [weakSelf handleSingleTapGesture];
+        [weakSelf.shopTypeBtn setTitle:title forState:UIControlStateNormal];
+    }];
+}
+
+- (void)handleSingleTapGesture{
+    [self.darkView removeFromSuperview];
+    [self.menuView removeFromSuperview];
+}
+
+
 - (IBAction)nextStep:(id)sender{
     if (_legalPersonName.text.length == 0) {
         [SVProgressHUD showErrorWithStatus:@"请输入法人姓名"];
@@ -125,13 +174,15 @@
     [_helper upDataCreatShopInfoWithUserid:[ETUserInfo sharedETUserInfo].Id city:@"" shopName:@"" legalperson:_legalPersonName.text phone:_phoneNumber.text type:@"" businesslicense:_registerNumber.text address:_businessAddress.text idcard:_idcardNumber.text positive_pic:_firstPhotoName opposite_pic:_secondPhotoName license_pic:_thirdPhotoName success:^(NSDictionary *response) {
         st_dispatch_async_main(^{
             [SVProgressHUD showSuccessWithStatus:@"提交信息成功"];
+             [self clickBack];
         });
     } faild:^(NSString *response, NSError *error) {
         
     }];
-    
-    ETShopInfoController *vc =[[ETShopInfoController alloc] initWithNibName:@"ETShopInfoController" bundle:nil];
-    [self.navigationController pushViewController:vc animated:true];
+//
+//    ETShopInfoController *vc =[[ETShopInfoController alloc] initWithNibName:@"ETShopInfoController" bundle:nil];
+//    [self.navigationController pushViewController:vc animated:true];
+   
 }
 
 #pragma mark ----UIImagePickerControllerDelegate-----
@@ -166,4 +217,35 @@
     
     [picker dismissViewControllerAnimated:true completion:nil];
 }
+
+
+// 返回按钮跳转首页
+//func clickBack(){
+//    let vc = ClassificationViewController()
+//    var target:UIViewController?
+//    
+//    for controller in (self.navigationController?.viewControllers)! {
+//        if controller.isKindOfClass(vc .classForCoder) {
+//            target = controller
+//        }
+//    }
+//    if (target != nil) {
+//        self.navigationController?.popToViewController(target!, animated: true)
+//    }
+//}
+
+-(void)clickBack{
+    UINavigationController *nav = self.navigationController;
+    NSMutableArray *mutarray = [[NSMutableArray alloc] init];
+    for (UIViewController *vc in nav.viewControllers) {
+        [mutarray addObject:vc];
+        if ([vc isKindOfClass:[PersonViewController class]]) {
+            break;
+        }
+    }
+    [nav setViewControllers:mutarray animated:YES];
+}
+
+
+
 @end

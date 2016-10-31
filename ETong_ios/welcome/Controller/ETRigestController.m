@@ -76,6 +76,14 @@ static NSString * Get_ID_Key = @"getregistid";
 
 - (void)configureTimeInterval{
     WEAKSELF
+    [weakSelf.helper sendMobileCodeWithPhone:weakSelf.phoneNumber.text success:^(NSDictionary *response) {
+        st_dispatch_async_main(^{
+            [SVProgressHUD showSuccessWithStatus:@"验证码已发送，请注意查收"];
+            
+        });
+    } faild:^(NSString *response, NSError *error) {
+        [SVProgressHUD showSuccessWithStatus:@"失败"];
+    }];
     self.processHanle = ^(NSInteger timeInterVal){
         st_dispatch_async_main(^{
             weakSelf.getCode.backgroundColor = [UIColor grayColor];
@@ -125,7 +133,14 @@ static NSString * Get_ID_Key = @"getregistid";
         [SVProgressHUD showErrorWithStatus:@"请输入手机号"];
         return;
     }
-    [_helper sendMobileCodeWithPhone:_phoneNumber.text];
+//    [_helper sendMobileCodeWithPhone:_phoneNumber.text success:^(NSDictionary *response) {
+//        st_dispatch_async_main(^{
+//            [SVProgressHUD showSuccessWithStatus:@"成功"];
+//            
+//        });
+//    } faild:^(NSString *response, NSError *error) {
+//        [SVProgressHUD showSuccessWithStatus:@"失败"];
+//    }];;
     [[ETTimeManager sharedETTimeManager] beginTimeTaskWithOwner:self Key:Get_ID_Key timeInterval:30 process:self.processHanle finish:self.finishHanle];
 }
 

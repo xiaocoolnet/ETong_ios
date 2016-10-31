@@ -35,6 +35,7 @@
 		645C92F21DC3415D00D2ED3D /* EAgentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645C92F11DC3415D00D2ED3D /* EAgentViewController.m */; };
 		645C92F51DC478D600D2ED3D /* GoodsAttributesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645C92F41DC478D600D2ED3D /* GoodsAttributesView.m */; };
 		645C92F81DC48C0500D2ED3D /* AttributesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 645C92F71DC48C0500D2ED3D /* AttributesCollectionViewCell.m */; };
+		645C92FB1DC7439D00D2ED3D /* ShopTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645C92FA1DC7439D00D2ED3D /* ShopTypeView.m */; };
 		64690E6B1DB1C4E900D41D49 /* PayOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64690E6A1DB1C4E900D41D49 /* PayOrderViewController.swift */; };
 		64690E6E1DB20AFB00D41D49 /* NoDeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64690E6D1DB20AFB00D41D49 /* NoDeliveryViewController.swift */; };
 		64690E701DB20B2200D41D49 /* NOSignedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64690E6F1DB20B2200D41D49 /* NOSignedViewController.swift */; };
@@ -337,6 +338,8 @@
 		645C92F41DC478D600D2ED3D /* GoodsAttributesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsAttributesView.m; sourceTree = "<group>"; };
 		645C92F61DC48C0500D2ED3D /* AttributesCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributesCollectionViewCell.h; sourceTree = "<group>"; };
 		645C92F71DC48C0500D2ED3D /* AttributesCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributesCollectionViewCell.m; sourceTree = "<group>"; };
+		645C92F91DC7439D00D2ED3D /* ShopTypeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopTypeView.h; sourceTree = "<group>"; };
+		645C92FA1DC7439D00D2ED3D /* ShopTypeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopTypeView.m; sourceTree = "<group>"; };
 		64690E6A1DB1C4E900D41D49 /* PayOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayOrderViewController.swift; sourceTree = "<group>"; };
 		64690E6D1DB20AFB00D41D49 /* NoDeliveryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoDeliveryViewController.swift; sourceTree = "<group>"; };
 		64690E6F1DB20B2200D41D49 /* NOSignedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NOSignedViewController.swift; sourceTree = "<group>"; };
@@ -1135,6 +1138,8 @@
 				F6286FEA1D4A19130052ADC3 /* ETShopAuthController.h */,
 				F6286FEB1D4A19130052ADC3 /* ETShopAuthController.m */,
 				F6286FEC1D4A19130052ADC3 /* ETShopAuthController.xib */,
+				645C92F91DC7439D00D2ED3D /* ShopTypeView.h */,
+				645C92FA1DC7439D00D2ED3D /* ShopTypeView.m */,
 				F6CF10AB1D4B3A2900555C4A /* ETShopInfoController.h */,
 				F6CF10AC1D4B3A2900555C4A /* ETShopInfoController.m */,
 				F6CF10AD1D4B3A2900555C4A /* ETShopInfoController.xib */,
@@ -1979,6 +1984,7 @@
 				64690EBC1DBF575900D41D49 /* ThreeSearchViewController.swift in Sources */,
 				F64788A51D41BC3000294225 /* ETMyZoneController.m in Sources */,
 				647A3E021D9A1FD2000B6802 /* DaiSureViewController.swift in Sources */,
+				645C92FB1DC7439D00D2ED3D /* ShopTypeView.m in Sources */,
 				64C2D2331DAF23A9002C8272 /* modelFrame.m in Sources */,
 				F6FED1D21D44BDEB00C5C776 /* ETFgetPwdController.m in Sources */,
 				645C92F21DC3415D00D2ED3D /* EAgentViewController.m in Sources */,

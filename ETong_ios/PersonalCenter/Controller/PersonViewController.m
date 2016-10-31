@@ -51,7 +51,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configureUI];
-    NSLog(@"ssssss = %@",[ETUserInfo sharedETUserInfo].phone);
+    NSLog(@"ssssss = %@",[ETUserInfo sharedETUserInfo].photo);
     NSLog(@"wwww = %@",[[NSUserDefaults standardUserDefaults] stringForKey:USER_NAME]);
     NSLog(@"dddddd = %@",[[NSUserDefaults standardUserDefaults] stringForKey:USER_NAME]);
 }
@@ -169,9 +169,9 @@
         return ;
     } faild:^(NSString *response, NSError *error) {
         
+        ETShopBeginAuthVC *vc = [[ETShopBeginAuthVC alloc]initWithNibName:@"ETShopBeginAuthVC" bundle:nil];
+        [self.navigationController pushViewController:vc animated:true];
     }];
-//    ETShopBeginAuthVC *vc = [[ETShopBeginAuthVC alloc]initWithNibName:@"ETShopBeginAuthVC" bundle:nil];
-//    [self.navigationController pushViewController:vc animated:true];
 }
 - (IBAction)zujiClicked:(id)sender {
     if (![ETUserInfo sharedETUserInfo].isLogin) {

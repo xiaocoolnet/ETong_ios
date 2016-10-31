@@ -28,15 +28,30 @@ static NSString * Get_ID_Key = @"getcodeid";
 
 @implementation ETFgetPwdController
 
+-(ETWelcomeHelper *)helper{
+    if (!_helper) {
+        _helper = [ETWelcomeHelper helper];
+    }
+    return _helper;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"修改密码";
     // Do any additional setup after loading the view from its nib.
-    [self configureTimeInterval];
+//    [self configureTimeInterval];
     [self configureUI];
 }
 - (void)configureTimeInterval{
     WEAKSELF
+    [weakSelf.helper sendMobileCodeWithPhone:weakSelf.phoneNumber.text success:^(NSDictionary *response) {
+        st_dispatch_async_main(^{
+            [SVProgressHUD showSuccessWithStatus:@"验证码已发送，请注意查收"];
+            
+        });
+    } faild:^(NSString *response, NSError *error) {
+        [SVProgressHUD showSuccessWithStatus:@"失败"];
+    }];
     self.processHanle = ^(NSInteger timeInterVal){
         st_dispatch_async_main(^{
             weakSelf.getCodeBtn.backgroundColor = [UIColor grayColor];
@@ -92,7 +107,15 @@ static NSString * Get_ID_Key = @"getcodeid";
         [SVProgressHUD showErrorWithStatus:@"请输入手机号"];
         return;
     }
-    [_helper sendMobileCodeWithPhone:_phoneNumber.text];
+//    [_helper sendMobileCodeWithPhone:_phoneNumber.text success:^(NSDictionary *response) {
+//        st_dispatch_async_main(^{
+//            [SVProgressHUD showSuccessWithStatus:@"成功"];
+//            
+//        });
+//    } faild:^(NSString *response, NSError *error) {
+//        [SVProgressHUD showSuccessWithStatus:@"失败"];
+//    }];
+    [self configureTimeInterval];
     [[ETTimeManager sharedETTimeManager] beginTimeTaskWithOwner:self Key:Get_ID_Key timeInterval:30 process:self.processHanle finish:self.finishHanle];
 }
 
@@ -117,13 +140,13 @@ static NSString * Get_ID_Key = @"getcodeid";
         [SVProgressHUD showErrorWithStatus:@"两次输入密码不一致"];
         return;
     }
-    WEAKSELF
     [_helper changePasswordWithPhone:_phoneNumber.text code:_inputCode.text password:_passwordField.text success:^(NSDictionary *response) {
         st_dispatch_async_main(^{
             [SVProgressHUD showSuccessWithStatus:@"修改成功"];
-            [weakSelf.navigationController popViewControllerAnimated:true];
+            [self.navigationController popViewControllerAnimated:true];
         });
     } faild:^(NSString *response, NSError *error) {
+        [SVProgressHUD showSuccessWithStatus:@"修改失败"];
     }];
 }
 #pragma mark ----scrollDelegate-----

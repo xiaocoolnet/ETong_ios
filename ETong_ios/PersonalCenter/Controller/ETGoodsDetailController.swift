@@ -157,11 +157,11 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
 //        editView.goodAttrsArr = valueArr as [AnyObject]
 //        
 //        editView.sureBtnsClick = {(str:String!,str2:String!,str3:String!,str4:String!) in
-//            ETShopHelper().addShoppingCartWithShopid(self.goodModel?.shopid, goodsid: self.goodModel?.id, goodsnum: "1", success: { (_: [NSObject : AnyObject]!) in
-//                
-//            }) { (String, NSError) in
-//                
-//            }
+            ETShopHelper().addShoppingCartWithShopid(self.goodModel?.shopid, goodsid: self.goodModel?.id, goodsnum: "1", success: { (_: [NSObject : AnyObject]!) in
+                
+            }) { (String, NSError) in
+                
+            }
 //        }
         print("dfghjkl")
         print(goodModel?.id)

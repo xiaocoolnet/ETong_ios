@@ -48,8 +48,22 @@
     }];
 }
 
-- (void)sendMobileCodeWithPhone:(NSString *)phoneNumber;{
-    [self.manager GET:kURL_HEAD parameters:@{@"a":@"SendMobileCode",@"phone":phoneNumber} progress:nil success:nil failure:nil];
+- (void)sendMobileCodeWithPhone:(NSString *)phoneNumber success:(ETResponseBlock)success
+                          faild:(ETResponseErrorBlock) faild;{
+    [self.manager GET:kURL_HEAD parameters:@{@"a":@"SendMobileCode",@"phone":phoneNumber} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
+        if ([model.status isEqualToString:@"success"]) {
+            success(responseObject);
+            
+        }else{
+            faild(@"",nil);
+            NSLog(@"23456765432");
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        faild(error.description,error);
+        NSLog(@"aaaaaaa");
+    }];
+    NSLog(@"%@",phoneNumber);
 }
 
 - (void)registerWithPhone:(NSString *)phoneNumber
@@ -70,7 +84,7 @@
                        password:(NSString *)pwd
                         success:(ETResponseBlock)success
                           faild:(ETResponseErrorBlock) faild;{
-    [self.manager GET:kURL_HEAD parameters:@{} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [self.manager GET:kURL_HEAD parameters:@{@"phone":phoneNumber,@"code":code,@"password":pwd} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
         if ([model.status isEqualToString:@"success"]) {
             success(responseObject);

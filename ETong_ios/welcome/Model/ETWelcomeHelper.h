@@ -33,7 +33,8 @@
  *  发送验证码
  *  @param phoneNumber 手机号
  */
-- (void)sendMobileCodeWithPhone:(NSString *)phoneNumber;
+- (void)sendMobileCodeWithPhone:(NSString *)phoneNumber success:(ETResponseBlock)success
+                          faild:(ETResponseErrorBlock) faild;
 /**
  *  注册
  *  @param phoneNumber 手机号
