@@ -16,7 +16,7 @@
 #import "ETBaseHelper.h"
 #import "ETGoodsDataModel.h"
 #import "GoodAttrModel.h"
-#import "GoodAttributesView.h"
+#import "GoodsAttributesView.h"
 #import "NewProductModel.h"
 #import "OrderListModel.h"
 #import "GoodsCommentmodel.h"

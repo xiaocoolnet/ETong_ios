@@ -233,4 +233,11 @@
  */
 - (void)GetSortInfoWithType:(NSString *)type success:(ResponseBlock)success faild:(ETResponseErrorBlock)faild;
 
+/**
+ *  获取每个商品的附加属性
+ */
+- (void)GetGoodsAttributesInfoWithgoodsid:(NSString *)goodsid
+                               success:(ResponseBlock)success
+                                 faild:(ETResponseErrorBlock)faild;
+
 @end

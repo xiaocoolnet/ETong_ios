@@ -195,7 +195,9 @@
     
     NSInteger section = path.section;
     NSInteger row     = path.row;
-    
+    ETShopHelper *helper = [[ETShopHelper alloc]init];
+    JSCartModel *model = self.cartData[path.section][path.row];
+    NSString *goodid = model.p_id;
     NSMutableArray *shopArray = self.cartData[section];
     [shopArray removeObjectAtIndex:row];
     if (shopArray.count == 0) {
@@ -210,6 +212,11 @@
     self.cartGoodsCount-=1;
     /*重新计算价格*/
     self.allPrices = [self getAllPrices];
+    [helper deleteShoppingCartWithGoodsid:goodid success:^(NSDictionary *response) {
+        
+    } faild:^(NSString *response, NSError *error) {
+        
+    }];
 }
 
 //选中删除
@@ -217,6 +224,7 @@
     /*1 删除数据*/
     NSInteger index1 = -1;
     NSMutableIndexSet *shopSelectIndex = [NSMutableIndexSet indexSet];
+    ETShopHelper *helper = [[ETShopHelper alloc]init];
     for (NSMutableArray *shopArray in self.cartData) {
         index1++;
         NSInteger index2 = -1;
@@ -225,6 +233,12 @@
             index2++;
             if (model.isSelect) {
                 [selectIndexSet addIndex:index2];
+                NSString *goodid = model.p_id;
+                [helper deleteShoppingCartWithGoodsid:goodid success:^(NSDictionary *response) {
+                    
+                } faild:^(NSString *response, NSError *error) {
+                    
+                }];
             }
         }
         NSInteger shopCount = shopArray.count;

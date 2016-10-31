@@ -148,13 +148,27 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
     }
     
     func showPropertyView(){
-        let editView = GoodAttributesView(frame: CGRectMake(0, 0, self.navigationController!.view.frame.width, self.navigationController!.view.frame.height))
-        editView.goodAttrsArr = valueArr as [AnyObject]
-        
-        editView.sureBtnsClick = {(str:String!,str2:String!,str3:String!,str4:String!) in
-            
-        }
+        let editView = GoodsAttributesView(frame: CGRectMake(0, 0, self.navigationController!.view.frame.width, self.navigationController!.view.frame.height))
+         editView.goodid = goodModel?.id
+         editView.nameStr = goodModel?.goodsname
+         editView.priceStr = goodModel?.price
+         let strArray = goodModel!.picture.componentsSeparatedByString(",")
+         editView.imgStr = kIMAGE_URL_HEAD + strArray.first!
+//        editView.goodAttrsArr = valueArr as [AnyObject]
+//        
+//        editView.sureBtnsClick = {(str:String!,str2:String!,str3:String!,str4:String!) in
+//            ETShopHelper().addShoppingCartWithShopid(self.goodModel?.shopid, goodsid: self.goodModel?.id, goodsnum: "1", success: { (_: [NSObject : AnyObject]!) in
+//                
+//            }) { (String, NSError) in
+//                
+//            }
+//        }
+        print("dfghjkl")
+        print(goodModel?.id)
+        print(editView.goodid)
         editView.showInView(self.navigationController?.view)
+        print(goodModel?.id)
+        print(editView.goodid)
     }
     
     @IBAction func immediatelyBuy(sender: AnyObject) {

@@ -33,6 +33,8 @@
 		645C92961DC2FA2300D2ED3D /* SecondSortModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 645C92951DC2FA2300D2ED3D /* SecondSortModel.m */; };
 		645C92991DC2FA9400D2ED3D /* ThirdSortModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 645C92981DC2FA9400D2ED3D /* ThirdSortModel.m */; };
 		645C92F21DC3415D00D2ED3D /* EAgentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645C92F11DC3415D00D2ED3D /* EAgentViewController.m */; };
+		645C92F51DC478D600D2ED3D /* GoodsAttributesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645C92F41DC478D600D2ED3D /* GoodsAttributesView.m */; };
+		645C92F81DC48C0500D2ED3D /* AttributesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 645C92F71DC48C0500D2ED3D /* AttributesCollectionViewCell.m */; };
 		64690E6B1DB1C4E900D41D49 /* PayOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64690E6A1DB1C4E900D41D49 /* PayOrderViewController.swift */; };
 		64690E6E1DB20AFB00D41D49 /* NoDeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64690E6D1DB20AFB00D41D49 /* NoDeliveryViewController.swift */; };
 		64690E701DB20B2200D41D49 /* NOSignedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64690E6F1DB20B2200D41D49 /* NOSignedViewController.swift */; };
@@ -331,6 +333,10 @@
 		645C92981DC2FA9400D2ED3D /* ThirdSortModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdSortModel.m; sourceTree = "<group>"; };
 		645C92F01DC3415D00D2ED3D /* EAgentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAgentViewController.h; sourceTree = "<group>"; };
 		645C92F11DC3415D00D2ED3D /* EAgentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAgentViewController.m; sourceTree = "<group>"; };
+		645C92F31DC478D600D2ED3D /* GoodsAttributesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsAttributesView.h; sourceTree = "<group>"; };
+		645C92F41DC478D600D2ED3D /* GoodsAttributesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsAttributesView.m; sourceTree = "<group>"; };
+		645C92F61DC48C0500D2ED3D /* AttributesCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributesCollectionViewCell.h; sourceTree = "<group>"; };
+		645C92F71DC48C0500D2ED3D /* AttributesCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributesCollectionViewCell.m; sourceTree = "<group>"; };
 		64690E6A1DB1C4E900D41D49 /* PayOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayOrderViewController.swift; sourceTree = "<group>"; };
 		64690E6D1DB20AFB00D41D49 /* NoDeliveryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoDeliveryViewController.swift; sourceTree = "<group>"; };
 		64690E6F1DB20B2200D41D49 /* NOSignedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NOSignedViewController.swift; sourceTree = "<group>"; };
@@ -1164,6 +1170,8 @@
 				645C928E1DC1D4B600D2ED3D /* GoShopViewController.m */,
 				F65E00311D868688005FDD83 /* GoodAttributesView.h */,
 				F65E00321D868688005FDD83 /* GoodAttributesView.m */,
+				645C92F31DC478D600D2ED3D /* GoodsAttributesView.h */,
+				645C92F41DC478D600D2ED3D /* GoodsAttributesView.m */,
 			);
 			name = GoodsDetail;
 			sourceTree = "<group>";
@@ -1536,6 +1544,8 @@
 				64C2D2221DAE1EC5002C8272 /* FootprintsTableViewCell.m */,
 				64C2D2231DAE1EC5002C8272 /* FootprintsTableViewCell.xib */,
 				645C92861DC0AED100D2ED3D /* SelectCollectionViewCell.swift */,
+				645C92F61DC48C0500D2ED3D /* AttributesCollectionViewCell.h */,
+				645C92F71DC48C0500D2ED3D /* AttributesCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2032,6 +2042,7 @@
 				649AF3581D98FA1A00D8B840 /* RechargeViewController.m in Sources */,
 				640F61D91D93B1DE00614657 /* FreeViewController.m in Sources */,
 				64690E7B1DB5F21800D41D49 /* WalletViewController.m in Sources */,
+				645C92F81DC48C0500D2ED3D /* AttributesCollectionViewCell.m in Sources */,
 				F6EAB5351D84FCA2008FF8FA /* JSCartHeaderView.m in Sources */,
 				F6F840A01D8FC6E4007163A2 /* ETLimitSaleCell.m in Sources */,
 				F6EAB5391D84FCA2008FF8FA /* JSCartViewModel.m in Sources */,
@@ -2085,6 +2096,7 @@
 				6493B7E81D9BAC95008EE7C8 /* EvaluateTableViewCell.m in Sources */,
 				640F61DF1D93CB5100614657 /* QualityLifeCollectionViewCell.m in Sources */,
 				F65E002C1D86854C005FDD83 /* UIView+Extension.m in Sources */,
+				645C92F51DC478D600D2ED3D /* GoodsAttributesView.m in Sources */,
 				F65BF2FA1D3F1CA80003DB35 /* main.m in Sources */,
 				F6286FE31D4A096C0052ADC3 /* ConnectModel.m in Sources */,
 				F6C09BF01D509A73001C2987 /* ETSingleInfoController.swift in Sources */,

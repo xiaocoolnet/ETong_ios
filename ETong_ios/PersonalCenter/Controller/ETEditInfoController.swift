@@ -10,7 +10,9 @@ import UIKit
 
 class ETEditInfoController: UIViewController {
     
+   
     @IBOutlet weak var itemName: UILabel!
+
     @IBOutlet weak var infoView: UITextField!
     var itemStr = ""
     var infoType:Int = 0
@@ -71,13 +73,18 @@ class ETEditInfoController: UIViewController {
                     
             })
         }
+        
+        
         // 品牌
-        helper.updateGoodsBrandWithGoodsid(goodsModel?.id, band: infoView.text, success: { (dic) in
-            print(dic)
-            }, faild: { (str, error) in
-                
-        })
-        // 
+        if infoType == 10 {
+            
+            helper.updateGoodsBrandWithGoodsid(goodsModel?.id, band: infoView.text, success: { (dic) in
+                print(dic)
+                }, faild: { (str, error) in
+                    
+            })
+        }
+        //
         navigationController?.popViewControllerAnimated(true)
     }
 

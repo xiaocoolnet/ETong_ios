@@ -8,7 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ETEditInfoController" customModule="ETong_ios" customModuleProvider="target">
             <connections>
                 <outlet property="infoView" destination="GJ6-vi-Rbr" id="mLz-IA-WGA"/>
-                <outlet property="itemName" destination="AGh-Tq-A4W" id="D84-Ig-bMS"/>
+                <outlet property="itemName" destination="AGh-Tq-A4W" id="pZg-Ji-NHh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

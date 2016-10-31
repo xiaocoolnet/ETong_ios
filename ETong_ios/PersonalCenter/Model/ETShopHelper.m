@@ -815,5 +815,20 @@
     }];
 }
 
+// 获取每个商品的附加属性
+-(void)GetGoodsAttributesInfoWithgoodsid:(NSString *)goodsid success:(ResponseBlock)success faild:(ETResponseErrorBlock)faild{
+    NSDictionary *para = @{@"a":@"GetGoodsPropertyList",@"goodsid":goodsid};
+    [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        HttpModel *model = [HttpModel mj_objectWithKeyValues:responseObject];
+        if ([model.status isEqualToString:@"success"]) {
+            success(model.data);
+        }else{
+            faild(@"",nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        faild(nil,nil);
+    }];
+
+}
 
 @end
