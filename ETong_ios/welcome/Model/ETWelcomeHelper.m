@@ -84,7 +84,7 @@
                        password:(NSString *)pwd
                         success:(ETResponseBlock)success
                           faild:(ETResponseErrorBlock) faild;{
-    [self.manager GET:kURL_HEAD parameters:@{@"phone":phoneNumber,@"code":code,@"password":pwd} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [self.manager GET:kURL_HEAD parameters:@{@"a":@"forgetpwd",@"phone":phoneNumber,@"code":code,@"password":pwd} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         ETHttpModel *model = [ETHttpModel mj_objectWithKeyValues:responseObject];
         if ([model.status isEqualToString:@"success"]) {
             success(responseObject);

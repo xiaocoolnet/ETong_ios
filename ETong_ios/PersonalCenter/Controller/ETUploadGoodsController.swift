@@ -67,7 +67,7 @@ class ETUploadGoodsController: UIViewController,UIScrollViewDelegate,ETGoodsLoop
     }
     //上传
     @IBAction func uploadAction(sender: AnyObject){
-        goodsModel = ETGoodsDataModel.init(showid: ETUserInfo.sharedETUserInfo().shopid, piclist: piclist, goodsname: goodsTitle.text, type: self.type, oprice: originalPrice.text, price: price.text, description: goodsDetail.text, unit: goodsSpec.text, address: place.text, longitude: "1", latitude: "1", freight: freight.text, band: goodsBrand.text)
+        goodsModel = ETGoodsDataModel.init(showid: ETUserInfo.sharedETUserInfo().shopid, piclist: piclist, goodsname: goodsTitle.text, type: self.type, oprice: originalPrice.text, price: price.text, description: goodsDetail.text, unit: goodsSpec.text, address: place.text, longitude: "1", latitude: "1", freight: freight.text, band: goodsBrand.text, deliverytype: "1")
         
         helper.uploadGoodsWithGoodsModel(goodsModel, success: {[unowned self] (dic) in
             st_dispatch_async_main({

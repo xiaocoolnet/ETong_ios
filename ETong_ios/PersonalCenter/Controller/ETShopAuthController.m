@@ -12,9 +12,11 @@
 #import "ETShopHelper.h"
 #import "PersonViewController.h"
 #import "YLDropDownMenu.h"
+#import "AddressView.h"
 
-@interface ETShopAuthController ()<UIScrollViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITextFieldDelegate>
+@interface ETShopAuthController ()<UIScrollViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITextFieldDelegate,AddressPickerDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *yingLab;
 @property (weak, nonatomic) IBOutlet UITextField *legalPersonName;
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
 @property (weak, nonatomic) IBOutlet UITextField *idcardNumber;
@@ -32,9 +34,19 @@
 @property (strong, nonatomic) ETShopHelper *helper;
 @property (weak, nonatomic) IBOutlet UIButton *cityBtn;
 @property (weak, nonatomic) IBOutlet UIButton *shopTypeBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *comImg;
+@property (weak, nonatomic) IBOutlet UIImageView *perImg;
+@property (weak, nonatomic) IBOutlet UIImageView *yesImg;
+@property (weak, nonatomic) IBOutlet UIImageView *noImg;
+@property (nonatomic,strong) NSString *islocal;
+@property (nonatomic, strong) NSString *provinceStr;
+@property (nonatomic, strong) NSString *cityStr;
+@property (nonatomic, strong) NSString *typeStr;
+
 
 @property (nonatomic, strong)YLDropDownMenu *menuView;
 @property (nonatomic, strong)UIView *darkView;
+@property (nonatomic, strong) AddressView *pickerView;
 
 @end
 
@@ -46,10 +58,38 @@
     
     self.title = @"店铺认证";
     
+    self.legalPersonName.delegate = self;
+    self.phoneNumber.delegate = self;
+    self.idcardNumber.delegate = self;
+    self.registerNumber.delegate = self;
+    self.businessAddress.delegate = self;
+    self.permitName.delegate = self;
+    
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture)];
     singleTap.numberOfTapsRequired = 1;
     [self.darkView addGestureRecognizer:singleTap];
+    
 }
+- (IBAction)clickComButton:(id)sender {
+    self.comImg.image = [UIImage imageNamed:@"ic_yuan_purple"];
+    self.perImg.image = [UIImage imageNamed:@"ic_yuan"];
+}
+- (IBAction)clickPerButton:(id)sender {
+    self.perImg.image = [UIImage imageNamed:@"ic_yuan_purple"];
+    self.comImg.image = [UIImage imageNamed:@"ic_yuan"];
+}
+- (IBAction)clickYesButton:(id)sender {
+    self.yesImg.image = [UIImage imageNamed:@"ic_yuan_purple"];
+    self.noImg.image = [UIImage imageNamed:@"ic_yuan"];
+    self.islocal = @"1";
+}
+
+- (IBAction)clickNoButton:(id)sender {
+    self.noImg.image = [UIImage imageNamed:@"ic_yuan_purple"];
+    self.yesImg.image = [UIImage imageNamed:@"ic_yuan"];
+    self.islocal = @"2";
+}
+
 
 
 - (void)configureUI{
@@ -112,7 +152,31 @@
 
 #pragma mark - 选择城市
 - (IBAction)clcikCityButton:(id)sender {
+//    if (self.pickerView) {
+//        self.pickerView.hidden = NO;
+//        return;
+//    }
+    self.pickerView = [[AddressView alloc] initWithFrame:CGRectMake(0, 0, Screen_frame.size.width, Screen_frame.size.height)];
+//    [self.pickerView updateAddressAtProvince:@"北京市" city:@"北京市"];
+    self.pickerView.delegate = self;
+    self.pickerView.font = [UIFont boldSystemFontOfSize:16];
+    [self.view addSubview:self.pickerView];
 }
+
+- (void)JSAddressCancleAction:(id)senter {
+    [self.pickerView removeFromSuperview];
+//    [self.cityBtn setTitle:@"北京市" forState:UIControlStateNormal];
+}
+
+-(void) JSAddressPickerRerurnBlockWithProvince:(NSString *)province city:(NSString *)city town:(NSString *)town{
+    [self.pickerView removeFromSuperview];
+    NSString *addressStr = [NSString stringWithFormat:@"%@-%@-%@",province,city,town];
+    [self.cityBtn setTitle:addressStr forState:UIControlStateNormal];
+    self.provinceStr = province;
+    self.cityStr = city;
+}
+
+
 
 #pragma mark - 选择店铺类型
 - (IBAction)clickShopTypeButton:(id)sender {
@@ -128,6 +192,11 @@
         NSLog(@"%@",title);
         [weakSelf handleSingleTapGesture];
         [weakSelf.shopTypeBtn setTitle:title forState:UIControlStateNormal];
+    }];
+    [self.menuView setFinishRow:^(NSString *row){
+        NSLog(@"%@",row);
+        weakSelf.typeStr = row;
+        [weakSelf handleSingleTapGesture];
     }];
 }
 
@@ -170,8 +239,8 @@
         [SVProgressHUD showErrorWithStatus:@"请上传营业执照"];
         return;
     }
-    
-    [_helper upDataCreatShopInfoWithUserid:[ETUserInfo sharedETUserInfo].Id city:@"" shopName:@"" legalperson:_legalPersonName.text phone:_phoneNumber.text type:@"" businesslicense:_registerNumber.text address:_businessAddress.text idcard:_idcardNumber.text positive_pic:_firstPhotoName opposite_pic:_secondPhotoName license_pic:_thirdPhotoName success:^(NSDictionary *response) {
+    NSString *addressStr = [NSString stringWithFormat:@"%@%@",self.provinceStr,self.cityStr];
+    [_helper upDataCreatShopInfoWithUserid:[ETUserInfo sharedETUserInfo].Id city:addressStr shopName:self.permitName.text legalperson:_legalPersonName.text phone:_phoneNumber.text type:self.typeStr businesslicense:_registerNumber.text address:_businessAddress.text idcard:_idcardNumber.text positive_pic:_firstPhotoName opposite_pic:_secondPhotoName license_pic:_thirdPhotoName islocal:self.islocal success:^(NSDictionary *response) {
         st_dispatch_async_main(^{
             [SVProgressHUD showSuccessWithStatus:@"提交信息成功"];
              [self clickBack];
@@ -244,6 +313,12 @@
         }
     }
     [nav setViewControllers:mutarray animated:YES];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    [self.view endEditing:YES];
+    return YES;
 }
 
 

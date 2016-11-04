@@ -157,7 +157,9 @@
 #pragma mark - 页面跳转
 -(void)clickPriceBtn:(UIButton *)sender{
     ETGoodsDetailController *vc = [[ETGoodsDetailController alloc] initWithNibName:@"ETGoodsDetailController" bundle:nil];
-    vc.goodModel = self.dataArray[sender.tag];
+    ETGoodsDataModel *model = self.dataArray[sender.tag];
+    vc.goodsid = model.id;
+    vc.shopid = model.shopid;
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }

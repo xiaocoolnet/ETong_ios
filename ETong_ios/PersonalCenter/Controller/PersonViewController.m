@@ -19,8 +19,9 @@
 #import "WalletViewController.h"
 #import "ETZBarScanController.h"
 #import "EAgentViewController.h"
+#import "ETLogInViewController.h"
 
-@interface PersonViewController ()
+@interface PersonViewController () <UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *avatarBtn;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -36,6 +37,7 @@
 @property (strong, nonatomic) ETShopHelper *helper;
 @property (strong, nonatomic) NSMutableArray *dataArray;
 @property (strong, nonatomic) OrderViewController *vc;
+//@property (strong, nonatomic) UIAlertController *alertController;
 
 @end
 
@@ -51,7 +53,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configureUI];
-    NSLog(@"ssssss = %@",[ETUserInfo sharedETUserInfo].photo);
+    NSLog(@"ssssss = %@",[ETUserInfo sharedETUserInfo].Id);
     NSLog(@"wwww = %@",[[NSUserDefaults standardUserDefaults] stringForKey:USER_NAME]);
     NSLog(@"dddddd = %@",[[NSUserDefaults standardUserDefaults] stringForKey:USER_NAME]);
 }
@@ -82,11 +84,16 @@
     self.navigationItem.leftBarButtonItem = item3;
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    //
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self configureUser];
 }
+
+//- (void)viewDidAppear:(BOOL)animated{
+//    [super viewDidAppear:animated];
+//    //
+//    [self configureUser];
+//}
 
 - (void)configureUser{
     if ([ETUserInfo sharedETUserInfo].isLogin) {
@@ -101,8 +108,29 @@
     }
 }
 
+#pragma mark - 退出登录
 - (void)rightNavBtnAction:(UIButton*)btn{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"是否确定退出登录" preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }]];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        ETLogInViewController * vc = [[ETLogInViewController alloc]initWithNibName:@"ETLogInViewController" bundle:nil];
+        vc.hidesBottomBarWhenPushed = true;
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:USER_NAME];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:USER_PWD];
+        [ETUserInfo sharedETUserInfo].isLogin = false;
+        vc.type = @"outLogin";
+        [self.navigationController pushViewController:vc animated:true];
+//        [self presentViewController:vc animated:YES completion:nil];
+        
+    }]];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
+
+
 #pragma mark - 导航栏左侧扫一扫按钮
 - (void)leftNavBtnAction:(UIButton*)btn{
     if (![ETUserInfo sharedETUserInfo].isLogin) {
@@ -159,15 +187,17 @@
         if ([response isKindOfClass:[NSString class]]) {
             return ;
         }
+        
         st_dispatch_async_main(^{
-            ETShopModel *model = [ETShopModel mj_objectWithKeyValues:response];
+//            ETShopModel *model = [ETShopModel mj_objectWithKeyValues:response];
             ETMyShopController *vc = [[ETMyShopController alloc] initWithNibName:@"ETMyShopController" bundle:nil];
-            vc.model = model;
+//            vc.model = model;
             vc.hidesBottomBarWhenPushed = true;
             [weakSelf.navigationController pushViewController:vc animated:true];
         });
         return ;
     } faild:^(NSString *response, NSError *error) {
+        NSLog(@"%@",response);
         
         ETShopBeginAuthVC *vc = [[ETShopBeginAuthVC alloc]initWithNibName:@"ETShopBeginAuthVC" bundle:nil];
         [self.navigationController pushViewController:vc animated:true];

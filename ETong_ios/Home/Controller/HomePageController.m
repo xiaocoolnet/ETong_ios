@@ -413,9 +413,11 @@
     }else{
         ETGoodsDetailController *controller = [[ETGoodsDetailController alloc]init];
         ETGoodsDataModel *model = self.likeArray[indexPath.row];
-        controller.goodModel = model;
+//        controller.goodModel = model;
         controller.hidesBottomBarWhenPushed = YES;
         controller.navgationType = @"1";
+        controller.goodsid = model.id;
+        controller.shopid = model.shopid;
         [self.navigationController pushViewController:controller animated:true];
     }
 }

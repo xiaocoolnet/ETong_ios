@@ -10,4 +10,6 @@
 
 @interface ETLogInViewController : UIViewController
 
+@property (nonatomic, strong) NSString *type;
+
 @end

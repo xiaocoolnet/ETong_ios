@@ -154,8 +154,10 @@
 // 跳转详情页
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     ETGoodsDetailController *vc = [[ETGoodsDetailController alloc] initWithNibName:@"ETGoodsDetailController" bundle:nil];
-    vc.goodModel = self.dataArray[indexPath.item];
-    vc.hidesBottomBarWhenPushed = YES;
+    ETGoodsDataModel *model = self.dataArray[indexPath.item];
+    vc.goodsid = model.id;
+    vc.shopid = model.shopid;
+    vc.hidesBottomBarWhenPushed = true;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

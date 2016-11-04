@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 typedef void(^selectBlock)(NSString *title);
+typedef void(^selectBlock) (NSString *row);
 
 @interface YLDropDownMenu : UIView
 
@@ -16,5 +17,6 @@ typedef void(^selectBlock)(NSString *title);
 @property (nonatomic, strong)NSArray *dataSource;
 @property (nonatomic, copy)NSString *textTitle;
 @property (nonatomic, copy)selectBlock finishBlock;
+@property (nonatomic, strong) selectBlock finishRow;
 
 @end

@@ -1,14 +1,14 @@
 //
-//  ShopTypeView.m
+//  CustomBtn.m
 //  ETong_ios
 //
-//  Created by 沈晓龙 on 16/10/31.
+//  Created by 沈晓龙 on 16/11/1.
 //  Copyright © 2016年 北京校酷网络科技有限公司. All rights reserved.
 //
 
-#import "ShopTypeView.h"
+#import "CustomBtn.h"
 
-@implementation ShopTypeView
+@implementation CustomBtn
 
 /*
 // Only override drawRect: if you perform custom drawing.

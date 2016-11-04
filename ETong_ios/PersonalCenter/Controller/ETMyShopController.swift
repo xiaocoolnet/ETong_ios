@@ -12,16 +12,21 @@ class ETMyShopController: UIViewController {
     @IBOutlet weak var shopTitle:UILabel!
     @IBOutlet weak var shopImage:UIButton!
     @IBOutlet weak var avatarBack:UIView!
+    var helper:ETShopHelper = ETShopHelper()
     
     var model:ETShopModel?
+    
+    override func viewWillAppear(animated: Bool) {
+        getShopS()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hidesBottomBarWhenPushed = true
         self.title = "我的店铺"
-        shopTitle.text = model?.shopname
-        ETUserInfo.sharedETUserInfo().shopid = model?.id
-        shopImage.sd_setImageWithURL(NSURL(string: kIMAGE_URL_HEAD + (model?.photo)!), forState: UIControlState.Normal, placeholderImage: UIImage(named: "ic_xihuan"))
+//        shopTitle.text = model?.shopname
+//        ETUserInfo.sharedETUserInfo().shopid = model?.id
+//        shopImage.sd_setImageWithURL(NSURL(string: kIMAGE_URL_HEAD + (model?.photo)!), forState: UIControlState.Normal, placeholderImage: UIImage(named: "ic_xihuan"))
         avatarBack.layer.borderColor = UIColor.whiteColor().CGColor
         avatarBack.layer.borderWidth = 1
     }
@@ -65,5 +70,21 @@ class ETMyShopController: UIViewController {
        let vc = AfterSaleViewController()
         vc.title = "售后管理"
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func getShopS(){
+        self.helper.getMyShopInfoWithuserid(ETUserInfo.sharedETUserInfo().Id, success: {[unowned self] (dic) in
+            st_dispatch_async_main({
+                self.model = (dic as NSDictionary).objectForKey("goods") as? ETShopModel
+                
+                self.shopTitle.text = self.model?.shopname
+                ETUserInfo.sharedETUserInfo().shopid = self.model?.id
+                self.shopImage.sd_setImageWithURL(NSURL(string: kIMAGE_URL_HEAD + (self.model?.photo)!), forState: UIControlState.Normal, placeholderImage: UIImage(named: "ic_xihuan"))
+            })
+        }) { (str, err) in
+            st_dispatch_async_main({
+                SVProgressHUD.showSuccessWithStatus("网络错误")
+            })
+        }
     }
 }

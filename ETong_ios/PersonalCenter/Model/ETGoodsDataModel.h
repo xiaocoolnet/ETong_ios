@@ -20,6 +20,10 @@
 
 @property (nonatomic, copy) NSString *picture;
 
+@property (nonatomic, copy) NSString *cpiclist;
+
+@property (nonatomic, copy) NSString *deliverytype;
+
 @property (nonatomic, copy) NSString *brand;
 
 @property (nonatomic, copy) NSString *stock;
@@ -63,7 +67,9 @@
 @property (nonatomic, copy) NSString *gid;
 @property (nonatomic ,strong) NSString *level;
 
-@property (nonatomic, copy) NSDictionary *property;
+@property (nonatomic, strong) NSArray *property;
+
+//@property (nonatomic, copy) NSDictionary *property;
 @property (nonatomic, strong) NSArray *shop_list;
 
 @property (nonatomic, copy) NSString *pays;
@@ -72,7 +78,7 @@
 
 -(JSCartModel *)converToJSCartModel;
 
-+ (instancetype) modelWithShowid:(NSString *)showid piclist:(NSString *)piclist goodsname:(NSString *)goodsname type:(NSString *)type oprice:(NSString *)oprice price:(NSString *)price description:(NSString *)description unit:(NSString *)unit address:(NSString *)address longitude:(NSString *)longitude latitude:(NSString *)latitude freight:(NSString *)freight band:(NSString *)band;
++ (instancetype) modelWithShowid:(NSString *)showid piclist:(NSString *)piclist goodsname:(NSString *)goodsname type:(NSString *)type oprice:(NSString *)oprice price:(NSString *)price description:(NSString *)description unit:(NSString *)unit address:(NSString *)address longitude:(NSString *)longitude latitude:(NSString *)latitude freight:(NSString *)freight band:(NSString *)band deliverytype:(NSString *)deliverytype;
 
 @end
 @interface ShopName : NSObject

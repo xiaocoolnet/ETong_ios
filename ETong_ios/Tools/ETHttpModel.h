@@ -11,4 +11,6 @@
 @interface ETHttpModel : NSObject
 @property (copy, nonatomic) NSString *status;
 @property (copy, nonatomic) NSDictionary *data;
+@property (copy,nonatomic) NSString *datas;
+
 @end

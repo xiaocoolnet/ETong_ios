@@ -39,7 +39,7 @@ static NSString * Get_ID_Key = @"getregistid";
     [super viewDidLoad];
     self.title = @"注册账号";
     // Do any additional setup after loading the view from its nib.
-    [self configureTimeInterval];
+//    [self configureTimeInterval];
     [self configureUI];
 }
 
@@ -141,6 +141,7 @@ static NSString * Get_ID_Key = @"getregistid";
 //    } faild:^(NSString *response, NSError *error) {
 //        [SVProgressHUD showSuccessWithStatus:@"失败"];
 //    }];;
+    [self configureTimeInterval];
     [[ETTimeManager sharedETTimeManager] beginTimeTaskWithOwner:self Key:Get_ID_Key timeInterval:30 process:self.processHanle finish:self.finishHanle];
 }
 

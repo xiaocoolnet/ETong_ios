@@ -29,6 +29,7 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
     var str = 0
     var model = NewProductModel()
     var dataArray = NSMutableArray()
+    var goodsid = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,7 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
         self.edgesForExtendedLayout = UIRectEdge.None
         self.automaticallyAdjustsScrollViewInsets = false
         judgeList.registerNib(UINib(nibName: "ETGoodsJudgeCell",bundle: nil), forCellReuseIdentifier: "cell")
-        createData()
+        
         // Do any additional setup after loading the view.
         title = "宝贝详情"
         collectBtn.setImage(UIImage(named: "ic_weishoucang"), forState: .Normal)
@@ -45,6 +46,7 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
         collectBtn.selected = false
         getShopDetail()
         GetGoodsComments()
+        getGoodsDetail()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -52,6 +54,9 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
     }
     
     override func viewDidAppear(animated: Bool) {
+        
+        createData()
+        
         let cycleScrollView = SDCycleScrollView(frame: CGRectMake(0, 0, imageBackView.frame.width, imageBackView.frame.height), delegate: self, placeholderImage: UIImage(named: "ic_lunbotu"))
         cycleScrollView.delegate = self
         cycleScrollView.imageURLStringsGroup = imageNames
@@ -71,9 +76,10 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
         
         goodsName.text = goodModel!.goodsname
         price.text = "¥" +  goodModel!.price
-        express.text = "快递: " + (goodModel?.price)!
+        express.text = "快递: " + (goodModel?.freight)!
         shenma.text = goodModel!.address
         descript.text = goodModel!.description
+        
         
     }
     
@@ -86,46 +92,6 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
     }
     
     func createData(){
-        let model0 = GoodAttrModel()
-        model0.attr_id = "10"
-        model0.attr_name = "尺寸"
-        let value1 = GoodAttrValueModel()
-        value1.attr_value = "165"
-        
-        let value2 = GoodAttrValueModel()
-        value2.attr_value = "170"
-        
-        let value3 = GoodAttrValueModel()
-        value3.attr_value = "175"
-        
-        let value4 = GoodAttrValueModel()
-        value4.attr_value = "180"
-        
-        let value5 = GoodAttrValueModel()
-        value5.attr_value = "185"
-        
-        let value6 = GoodAttrValueModel()
-        value6.attr_value = "190"
-        
-        model0.attr_value = [value1,value2,value3,value4,value5,value6]
-        
-        
-        let model1 = GoodAttrModel()
-        model1.attr_id = "11"
-        model1.attr_name = "颜色"
-        
-        let value10 = GoodAttrValueModel()
-        value10.attr_value = "红色"
-        let value20 = GoodAttrValueModel()
-        value20.attr_value = "蓝色"
-        let value30 = GoodAttrValueModel()
-        value30.attr_value = "橘红色"
-        let value40 = GoodAttrValueModel()
-        value40.attr_value = "藏青色"
-        
-        model1.attr_value = [value10,value20,value30,value40]
-        
-        valueArr = [model0,model1]
         
         if goodModel == nil {
             return
@@ -152,17 +118,28 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
          editView.goodid = goodModel?.id
          editView.nameStr = goodModel?.goodsname
          editView.priceStr = goodModel?.price
+         editView.shopid = goodModel?.shopid
          let strArray = goodModel!.picture.componentsSeparatedByString(",")
          editView.imgStr = kIMAGE_URL_HEAD + strArray.first!
 //        editView.goodAttrsArr = valueArr as [AnyObject]
 //        
-//        editView.sureBtnsClick = {(str:String!,str2:String!,str3:String!,str4:String!) in
-            ETShopHelper().addShoppingCartWithShopid(self.goodModel?.shopid, goodsid: self.goodModel?.id, goodsnum: "1", success: { (_: [NSObject : AnyObject]!) in
+//        editView.sureBtnsClick = {(str:String!,str2:String!) in
+//            ETShopHelper().addShoppingCartWithShopid(self.goodModel?.shopid, goodsid: self.goodModel?.id, goodsnum: "1", success: { (_: [NSObject : AnyObject]!) in
+//                
+//            }) { (String, NSError) in
+//                
+//            }
+//        }
+        
+        editView.sureBtnsClick = {(str:String!,str2:String!) in
+            ETShopHelper().addShoppingCartWithShopid(self.goodModel?.shopid, goodsid: self.goodModel?.id, goodsnum: str, proid: str2, deliverytype: self.goodModel?.deliverytype, freight:self.goodModel?.freight, success: { (_: [NSObject : AnyObject]!) in
+                
+                SVProgressHUD.showSuccessWithStatus("加入购物车成功")
                 
             }) { (String, NSError) in
-                
+                SVProgressHUD.showSuccessWithStatus("加入购物车失败")
             }
-//        }
+        }
         print("dfghjkl")
         print(goodModel?.id)
         print(editView.goodid)
@@ -192,11 +169,12 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
             SVProgressHUD.showErrorWithStatus("请先登录")
             return
         }
-        ETShopHelper().addShoppingCartWithShopid(goodModel?.shopid, goodsid: goodModel?.id, goodsnum: "1", success: { (_: [NSObject : AnyObject]!) in
-            
-            }) { (String, NSError) in
-                
-        }
+//        ETShopHelper().addShoppingCartWithShopid(goodModel?.shopid, goodsid: goodModel?.id, goodsnum: "1", success: { (_: [NSObject : AnyObject]!) in
+//            
+//            }) { (String, NSError) in
+//                
+//        }
+        showPropertyView()
     }
     
     @IBAction func ClickCollectBtn(sender: AnyObject) {
@@ -288,7 +266,7 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
     }
     
     func getShopDetail(){
-        ETShopHelper().GetShopDetailsWithShopid(goodModel?.shopid, success: {[unowned self] (dic) in
+        ETShopHelper().GetShopDetailsWithShopid(self.shopid as String, success: {[unowned self] (dic) in
             st_dispatch_async_main({
                 self.strId = dic["uid"] as! String
                 self.shopid = dic["id"] as! String
@@ -309,10 +287,26 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
         }
     }
     
+    // 获取商品单个资料
+    func getGoodsDetail(){
+        ETShopHelper().getGoodsInfoWithGoodsId(self.goodsid, success: {[unowned self] (dic) in
+            st_dispatch_async_main({
+                self.goodModel = (dic as NSDictionary).objectForKey("goods") as? ETGoodsDataModel
+                print(1111)
+                print(self.goodModel!.deliverytype)
+                print(self.goodModel!.goodsname)
+                
+            })
+        }) { (str, err) in
+            st_dispatch_async_main({
+                SVProgressHUD.showSuccessWithStatus("网络错误")
+            })
+        }
+    }
     
     // 获取商品评论信息数据
     func GetGoodsComments(){
-        ETShopHelper().GetGoodscommentWithGoodid(goodModel?.id, success: { [unowned self](dic) in
+        ETShopHelper().GetGoodscommentWithGoodid(self.goodsid, success: { [unowned self](dic) in
             let models = (dic as NSDictionary).objectForKey("goods")
             self.dataArray.removeAllObjects()
             self.dataArray.addObjectsFromArray(models as! [GoodsCommentmodel])

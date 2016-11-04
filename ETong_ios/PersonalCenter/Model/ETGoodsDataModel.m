@@ -11,7 +11,7 @@
 
 @implementation ETGoodsDataModel
 @synthesize description = _description;
-+ (instancetype) modelWithShowid:(NSString *)showid piclist:(NSString *)piclist goodsname:(NSString *)goodsname type:(NSString *)type oprice:(NSString *)oprice price:(NSString *)price description:(NSString *)description unit:(NSString *)unit address:(NSString *)address longitude:(NSString *)longitude latitude:(NSString *)latitude freight:(NSString *)freight band:(NSString *)band;{
++ (instancetype) modelWithShowid:(NSString *)showid piclist:(NSString *)piclist goodsname:(NSString *)goodsname type:(NSString *)type oprice:(NSString *)oprice price:(NSString *)price description:(NSString *)description unit:(NSString *)unit address:(NSString *)address longitude:(NSString *)longitude latitude:(NSString *)latitude freight:(NSString *)freight band:(NSString *)band deliverytype:(NSString *)deliverytype;{
     
     ETGoodsDataModel *model = [[self alloc]init];
     model.shopid = showid;
@@ -27,6 +27,7 @@
     model.latitude = latitude;
     model.freight = freight;
     model.brand = band;
+    model.deliverytype = deliverytype;
     return model;
 }
 - (void)setDescription:(NSString *)description{
@@ -42,6 +43,7 @@
     NSString * imageName = [[self.picture componentsSeparatedByString:@","] firstObject];
     NSString * urlStr = [NSString stringWithFormat:@"%@%@",kIMAGE_URL_HEAD,imageName];
     model.p_imageUrl = urlStr;
+    model.s_property = self.property;
     return  model;
 }
 
@@ -49,6 +51,7 @@
     return @{
              @"shop_list" : @"qqq",
              @"goodslist" : @"goodslist"
+             
              };
 }
 

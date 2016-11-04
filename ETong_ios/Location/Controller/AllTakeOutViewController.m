@@ -133,7 +133,8 @@
     ETGoodsDetailController *vc = [[ETGoodsDetailController alloc] initWithNibName:@"ETGoodsDetailController" bundle:nil];
     LocationModel *carmodel = self.dataArray[indexPath.section];
     ETGoodsDataModel *model = carmodel.goodslist[indexPath.row];
-    vc.goodModel = model;
+    vc.goodsid = model.id;
+    vc.shopid = model.shopid;
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }

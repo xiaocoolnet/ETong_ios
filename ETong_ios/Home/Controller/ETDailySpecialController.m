@@ -93,18 +93,23 @@
 
 -(void)clickSureBtn:(UIButton *)btn{
     ETGoodsDetailController *vc = [[ETGoodsDetailController alloc] initWithNibName:@"ETGoodsDetailController" bundle:nil];
-    vc.goodModel = self.dataArray[btn.tag];
+    ETGoodsDataModel *model = self.dataArray[btn.tag];
     vc.hidesBottomBarWhenPushed = true;
     vc.navgationType = @"1";
+    vc.goodsid = model.id;
+    vc.shopid = model.shopid;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 // 跳转详情页
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     ETGoodsDetailController *vc = [[ETGoodsDetailController alloc] initWithNibName:@"ETGoodsDetailController" bundle:nil];
-    vc.goodModel = self.dataArray[indexPath.row];
+    ETGoodsDataModel *model = self.dataArray[indexPath.item];
     vc.hidesBottomBarWhenPushed = true;
     vc.navgationType = @"1";
+    vc.goodsid = model.id;
+    vc.shopid = model.shopid;
+    NSLog(@"qqwedf=%@",vc.goodsid);
     [self.navigationController pushViewController:vc animated:YES];
 }
 

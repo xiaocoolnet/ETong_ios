@@ -19,5 +19,7 @@
 
 @property (nonatomic, copy) NSString *typeid;
 
+@property (nonatomic, copy) NSString *proid;
+
 
 @end

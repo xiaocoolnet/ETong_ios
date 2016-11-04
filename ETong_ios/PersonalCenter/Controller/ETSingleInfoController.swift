@@ -27,7 +27,7 @@ class ETSingleInfoController: UIViewController {
         rightButton.setTitle("保存", forState: .Normal)
         rightButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         rightButton.addTarget(self, action: #selector(rightBarButtonClicked), forControlEvents: .TouchUpInside)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: rightButton)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
     }
     
     func rightBarButtonClicked(){

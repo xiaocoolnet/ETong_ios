@@ -31,6 +31,8 @@
         [self setupBasicView];
         [self addBuyGoodNum];
 //        [self getGoodsData];
+        self.dataSource = [[NSMutableArray alloc] init];
+        
     }
     return self;
 }
@@ -95,7 +97,7 @@
     [_sureBtn setTitle:@"确定" forState:UIControlStateNormal];
     [_sureBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     _sureBtn.frame = CGRectMake(0, contentView.frame.size.height - 40, kScreenW, 40);
-//    [sureBtn addTarget:self action:@selector(sureBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    [_sureBtn addTarget:self action:@selector(sureBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [contentView addSubview:_sureBtn];
     
     [self addCollectionView];
@@ -126,7 +128,7 @@
 
 #pragma mark -- UICollectionViewDataSource
 //定义展示的UICollectionViewCell的个数
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     AttributesModel *model = self.dataArray[section];
     return model.propertylist.count;
@@ -151,19 +153,40 @@
     cell.btn.layer.borderWidth = 0.5;
     [cell.btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     cell.selected = NO;
-    cell.btn.tag = indexPath.section + indexPath.item + 1;
+    cell.btn.tag = indexPath.item;
+    cell.btn.flag = indexPath.section;
     [cell.btn addTarget:self action:@selector(clickbtn:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
 }
 
--(void) clickbtn:(UIButton *)sender{
+-(void) clickbtn:(CustomBtn *)sender{
     NSLog(@"11233455");
-    sender.selected = !sender.selected;
-    if (sender.selected) {
-        sender.backgroundColor = [UIColor redColor];
-    }else{
-        sender.backgroundColor = [UIColor whiteColor];
+//    sender.selected = !sender.selected;
+    AttributesModel *model = self.dataArray[sender.flag];
+    propertyList *modelList = model.propertylist[sender.tag];
+    
+    NSInteger nums = model.propertylist.count;
+    for (int i = 0; i < nums; i++) {
+        NSIndexPath * indexPath = [NSIndexPath indexPathForItem:i inSection:sender.flag];
+        AttributesCollectionViewCell * cell = (AttributesCollectionViewCell *)[self.collection cellForItemAtIndexPath:indexPath];
+        CustomBtn * btn = cell.btn;
+        if ([btn isKindOfClass:CustomBtn.class]) {
+            if (btn.tag != sender.tag) {
+                btn.backgroundColor = [UIColor whiteColor];
+//                [self.dataSource removeObject:self.proidStr];
+//                [self.dataSource removeObjectAtIndex:sender.flag];
+            }else{
+            }
+        }
     }
+    sender.backgroundColor = [UIColor redColor];
+    self.proidStr = modelList.proid;
+    NSLog(@"%@",self.proidStr);
+//    if (![self.dataSource containsObject:self.proidStr]) {
+//        [self.dataSource addObject:self.proidStr];
+//    }
+    self.dataSource[sender.flag] = self.proidStr;
+    NSLog(@"%@",self.dataSource);
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
@@ -220,6 +243,10 @@
     [self getGoodsData];
 }
 
+- (void)setShopid:(NSString *)shopid{
+    _shopid = shopid;
+}
+
 - (void)setImgStr:(NSString *)imgStr{
     _imgStr = imgStr;
     [self.iconImgView sd_setImageWithURL:[NSURL URLWithString:imgStr] placeholderImage:[UIImage imageNamed:@"ic_xihuan"]];
@@ -256,6 +283,7 @@
                 
                 AttributesModel *model = [AttributesModel mj_objectWithKeyValues:response[i]];
                 [self.dataArray addObject:model];
+                [self.dataSource addObject:@""];
             }
             NSLog(@"%lu",(unsigned long)self.dataArray.count);
             [self.collection reloadData];
@@ -323,5 +351,39 @@
 - (void)plusBtnClick {
     self.buyNumsLbl.text = [NSString stringWithFormat:@"%d", ++self.buyNum];
 }
+
+#pragma mark - 按钮点击事件
+- (void)sureBtnClick {
+    
+    NSLog(@"qqqweddf=%lu",[self.dataSource.firstObject length]);
+    
+    if (self.dataSource.count != 0) {
+        
+        for (int i = 0; i<self.dataSource.count; i++) {
+            if ([self.dataSource[i] length] == 0 ) {
+                [SVProgressHUD showErrorWithStatus:@"请选择属性"];
+                return;
+            }
+        }
+    }
+    
+    // 购买数量
+    NSString *num = self.buyNumsLbl.text;
+    NSString *attr_id=[self.dataSource componentsJoinedByString:@","];
+    if (self.sureBtnsClick) {
+        self.sureBtnsClick(num, attr_id);
+    }
+    __block GoodsAttributesView *blockSelf = self;
+//    [self.help addShoppingCartWithShopid:self.shopid goodsid:self.goodid goodsnum:self.buyNumsLbl.text proid:ns success:^(NSDictionary *response) {
+//        [SVProgressHUD showSuccessWithStatus:@"加入购物车成功"];
+//    
+//        
+        [blockSelf removeView];
+//    } faild:^(NSString *response, NSError *error) {
+//        [SVProgressHUD showSuccessWithStatus:@"加入购物车失败"];
+//    }];
+}
+
+
 
 @end

@@ -34,6 +34,9 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4b1-1p-gZQ">
                             <rect key="frame" x="86" y="8" width="226" height="54"/>
+                            <connections>
+                                <action selector="clickImgButton:" destination="-1" eventType="touchUpInside" id="il7-qn-7mh"/>
+                            </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_touxiang-1" translatesAutoresizingMaskIntoConstraints="NO" id="Pce-8a-SGt">
                             <rect key="frame" x="232" y="5" width="60" height="60"/>
@@ -86,6 +89,9 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k50-o0-Ge7">
                             <rect key="frame" x="86" y="8" width="226" height="39"/>
+                            <connections>
+                                <action selector="clickShopNameButton:" destination="-1" eventType="touchUpInside" id="dR9-1X-3kd"/>
+                            </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_next" translatesAutoresizingMaskIntoConstraints="NO" id="0uO-FU-9H9">
                             <rect key="frame" x="302" y="18" width="10" height="20"/>
@@ -101,7 +107,7 @@
                                 <constraint firstAttribute="height" constant="1" id="3Dj-2P-1y7"/>
                             </constraints>
                         </view>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="一个好名字，可以事半功倍哦" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1CV-Vg-na3">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="一个好名字，可以事半功倍哦" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1CV-Vg-na3">
                             <rect key="frame" x="89" y="13" width="203" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
@@ -187,6 +193,9 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Gd-mL-dlm">
                             <rect key="frame" x="86" y="8" width="226" height="39"/>
+                            <connections>
+                                <action selector="clickShopDescrptButton:" destination="-1" eventType="touchUpInside" id="hp8-O7-fUi"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="介绍一下吧！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KR4-kK-6CT">
                             <rect key="frame" x="208" y="19" width="84" height="17"/>
@@ -238,6 +247,9 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tj1-hm-Tdy">
                             <rect key="frame" x="86" y="8" width="226" height="39"/>
+                            <connections>
+                                <action selector="clickTypeButton:" destination="-1" eventType="touchUpInside" id="xEB-2e-Bzn"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="方便联系哦" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s11-Yf-bAY">
                             <rect key="frame" x="222" y="19" width="70" height="17"/>
@@ -289,6 +301,9 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wa-Ej-xNH">
                             <rect key="frame" x="86" y="8" width="226" height="39"/>
+                            <connections>
+                                <action selector="clickAddressButton:" destination="-1" eventType="touchUpInside" id="adk-qO-drK"/>
+                            </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_next" translatesAutoresizingMaskIntoConstraints="NO" id="hkF-yJ-mLI">
                             <rect key="frame" x="302" y="18" width="10" height="20"/>
@@ -340,6 +355,9 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wcg-qG-WwJ">
                             <rect key="frame" x="86" y="8" width="226" height="39"/>
+                            <connections>
+                                <action selector="clickSendButton:" destination="-1" eventType="touchUpInside" id="dlH-xi-M8m"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击输入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3X-Q6-dbM">
                             <rect key="frame" x="236" y="19" width="56" height="17"/>
@@ -391,6 +409,9 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkm-ge-lgh">
                             <rect key="frame" x="86" y="8" width="226" height="39"/>
+                            <connections>
+                                <action selector="clickReceiveButton:" destination="-1" eventType="touchUpInside" id="CGb-ql-s1D"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击输入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dm8-c0-dx7">
                             <rect key="frame" x="236" y="19" width="56" height="17"/>

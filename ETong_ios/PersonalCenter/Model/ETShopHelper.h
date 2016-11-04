@@ -11,16 +11,18 @@
 @class ETGoodsDataModel;
 
 @interface ETShopHelper : ETBaseHelper
+
 /**
  *  提交开店数据
  */
-- (void)upDataCreatShopInfoWithUserid:(NSString *)userid city:(NSString *)city shopName:(NSString *)shopName legalperson:(NSString *)legalPerson phone:(NSString *)phone type:(NSString *)type businesslicense:(NSString *)businesslicense address:(NSString *)address idcard:(NSString *)idcard positive_pic:(NSString *)positive_pic opposite_pic:(NSString *)opposite_pic license_pic:(NSString *)license_pic success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
+- (void)upDataCreatShopInfoWithUserid:(NSString *)userid city:(NSString *)city shopName:(NSString *)shopName legalperson:(NSString *)legalPerson phone:(NSString *)phone type:(NSString *)type businesslicense:(NSString *)businesslicense address:(NSString *)address idcard:(NSString *)idcard positive_pic:(NSString *)positive_pic opposite_pic:(NSString *)opposite_pic license_pic:(NSString *)license_pic islocal:(NSString *)islocal success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
 /**
  *  获取我的店铺
  */
 - (void)getMyShopInfoWithUserid:(NSString *)userid
                         success:(ETResponseBlock)success
                           faild:(ETResponseErrorBlock)faild;
+- (void)getMyShopInfoWithuserid:(NSString *)userid success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
 /**
  *  修改头像
  */
@@ -78,6 +80,8 @@
 - (void)getGoodsInfoWithGoodsId:(NSString *)goodsid success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
 //添加购物车
 - (void)addShoppingCartWithShopid:(NSString *)shopid goodsid:(NSString *)goodsid goodsnum:(NSString *)goodsnum success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
+
+- (void)addShoppingCartWithShopid:(NSString *)shopid goodsid:(NSString *)goodsid goodsnum:(NSString *)goodsnum proid:(NSString *)proid deliverytype:(NSString *)deliverytype freight:(NSString *)freight success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
 //删除购物车
 - (void)deleteShoppingCartWithGoodsid:(NSString *)goodsid success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
 //获取我的购物车
@@ -112,7 +116,7 @@
 /**
  *  购物车购买商品付款
  */
-- (void)PayInfoWithUserid:(NSString *)userid peoplename:(NSString *)peoplename address:(NSString *)address goodsid:(NSString *)goodsid goodnum:(NSString *)goodnum mobile:(NSString *)mobile remark:(NSString *)remark money:(NSString *)money success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
+- (void)PayInfoWithUserid:(NSString *)userid peoplename:(NSString *)peoplename address:(NSString *)address goodsid:(NSString *)goodsid goodnum:(NSString *)goodnum mobile:(NSString *)mobile remark:(NSString *)remark money:(NSString *)money deliverytype:(NSString *)deliverytype deliverymoney:(NSString *)deliverymoney success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
 /**
  *  购物车购买商品付款
  */
@@ -239,5 +243,22 @@
 - (void)GetGoodsAttributesInfoWithgoodsid:(NSString *)goodsid
                                success:(ResponseBlock)success
                                  faild:(ETResponseErrorBlock)faild;
+/**
+ *  修改店铺的头像
+ */
+
+-(void)upLoadShopInfoWithId:(NSString *)shopid photo:(NSString *)photo success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
+
+/**
+ *  修改店铺的名称
+ */
+
+-(void)upLoadShopInfoWithId:(NSString *)shopid shopname:(NSString *)shopname success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
+
+/**
+ *  修改店铺的地址
+ */
+
+-(void)upLoadShopInfoWithId:(NSString *)shopid address:(NSString *)address success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
 
 @end

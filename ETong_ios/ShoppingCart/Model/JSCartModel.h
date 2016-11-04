@@ -29,6 +29,12 @@
 
 @property (nonatomic, copy) NSString *s_name;
 
+@property (nonatomic, strong) NSArray *s_property;
+
+@property (nonatomic, strong) NSString *s_deliverytype;
+
+@property (nonatomic, strong) NSString *s_freight;
+
 //商品是否被选中
 @property (nonatomic, assign) BOOL isSelect;
 

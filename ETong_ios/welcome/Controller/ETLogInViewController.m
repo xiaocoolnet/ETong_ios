@@ -35,6 +35,11 @@
     // Do any additional setup after loading the view from its nib.
     [self configureUI];
     [self autoLogin];
+    if ([self.type isEqualToString:@"login"]) {
+        [self.navigationItem setHidesBackButton:NO];
+    }else{
+        [self.navigationItem setHidesBackButton:YES];
+    }
 }
 
 - (void)configureUI{
@@ -52,7 +57,7 @@
     if (logInfo) {
         _phoneNumber.text = logInfo[USER_NAME];
         _pwdNumber.text = logInfo[USER_PWD];
-        [self loginAction];
+//        [self loginAction];
     }
 }
 

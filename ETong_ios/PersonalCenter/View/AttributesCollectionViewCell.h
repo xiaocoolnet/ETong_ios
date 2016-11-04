@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomBtn.h"
 
 @interface AttributesCollectionViewCell : UICollectionViewCell
 
-@property (nonatomic, strong) UIButton *btn;
+@property (nonatomic, strong) CustomBtn *btn;
 
 @end

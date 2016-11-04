@@ -15,6 +15,9 @@
 @property (weak, nonatomic) IBOutlet UILabel        *goodsNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel        *GoodsPricesLabel;
 @property (weak, nonatomic) IBOutlet UIImageView    *goodsImageView;
+@property (weak, nonatomic) IBOutlet UILabel *typeLab;
+@property (nonatomic, strong) NSString *typenameStr;
+@property (nonatomic,strong) NSString *propertynameStr;
 
 @end
 
@@ -35,6 +38,18 @@
     self.nummberCount.currentCountNumber = model.p_quantity;
     self.selectShopGoodsButton.selected  = model.isSelect;
     self.nummberCount.shopid = model.p_id;
+    NSString *typename = [model.s_property.firstObject[@"propert_list"] firstObject][@"typename"];
+    NSString *propertyname = [model.s_property.firstObject[@"propert_list"] firstObject][@"propertyname"];
+    if (model.s_property.count >= 2) {
+    
+        self.typenameStr = [model.s_property[2][@"propert_list"] firstObject][@"typename"];
+        self.propertynameStr = [model.s_property[2][@"propert_list"] firstObject][@"propertyname"];
+        self.typeLab.text = [NSString stringWithFormat:@"%@:%@ %@:%@",typename,propertyname,self.typenameStr,self.propertynameStr];
+    }
+//    if (model.s_property.count == 1) {
+//        self.typeLab.text = [NSString stringWithFormat:@"%@:%@",typename,propertyname];
+//    }
+   
     [self.goodsImageView sd_setImageWithURL:[NSURL URLWithString:model.p_imageUrl]];
 }
 

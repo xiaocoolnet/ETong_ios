@@ -173,10 +173,14 @@
 // 跳转详情页
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     ETGoodsDetailController *vc = [[ETGoodsDetailController alloc] initWithNibName:@"ETGoodsDetailController" bundle:nil];
-    vc.goodModel = self.dataArray[indexPath.item];
-    vc.goodModel.uid = self.shopModel.uid;
+    ETGoodsDataModel *model = self.dataArray[indexPath.item];
+//    vc.goodModel = self.dataArray[indexPath.item];
+//    vc.goodModel.uid = self.shopModel.uid;
     vc.hidesBottomBarWhenPushed = YES;
     vc.navgationType = @"1";
+    vc.goodsid = model.id;
+    vc.shopid = model.shopid;
+    NSLog(@"2345678=%@",model.id);
     [self.navigationController pushViewController:vc animated:YES];
 }
 

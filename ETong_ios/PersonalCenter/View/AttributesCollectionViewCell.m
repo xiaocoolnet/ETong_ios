@@ -15,7 +15,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        self.btn = [[UIButton alloc] init];
+        self.btn = [[CustomBtn alloc] init];
         
 //        self.btn.titleLabel.textAlignment = NSTextAlignmentCenter;
         

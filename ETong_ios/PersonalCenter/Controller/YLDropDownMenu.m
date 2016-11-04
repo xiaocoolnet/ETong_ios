@@ -64,7 +64,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    NSString *stringInt = [NSString stringWithFormat:@"%ld",(long)indexPath.row + 1];
     self.finishBlock(self.dataSource[indexPath.row]);
+    self.finishRow(stringInt);
 }
 
 

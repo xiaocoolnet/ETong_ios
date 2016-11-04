@@ -10,4 +10,12 @@
 
 @implementation ETHttpModel
 
++ (NSDictionary *)replacedKeyFromPropertyName
+{
+    return @{
+             @"datas" : @"data",
+             };
+}
+
+
 @end

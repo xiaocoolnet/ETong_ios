@@ -1,18 +1,18 @@
 //
-//  SettleViewController.m
+//  PayGoodsViewController.m
 //  ETong_ios
 //
-//  Created by 沈晓龙 on 16/9/29.
+//  Created by 沈晓龙 on 16/11/3.
 //  Copyright © 2016年 北京校酷网络科技有限公司. All rights reserved.
 //
 
-#import "SettleViewController.h"
+#import "PayGoodsViewController.h"
 #import "SettleTableViewCell.h"
 #import "JSCartModel.h"
 #import "ETShopHelper.h"
 #import "JSCartViewController.h"
 
-@interface SettleViewController ()<UITableViewDelegate, UITableViewDataSource, choosenameidArray>
+@interface PayGoodsViewController ()<UITableViewDelegate, UITableViewDataSource, choosenameidArray>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UITextField *textView;
@@ -20,12 +20,11 @@
 @property (nonatomic, strong) NSString *phone;
 @property (nonatomic, strong) NSString *address;
 @property (strong, nonatomic) ETShopHelper *helper;
-@property (strong, nonatomic) NSString *deliverytype;
-@property (strong, nonatomic) NSString *deliverymoney;
+@property (strong, nonatomic) NSMutableArray *dataArray;
 
 @end
 
-@implementation SettleViewController
+@implementation PayGoodsViewController
 
 -(ETShopHelper *)helper{
     if (!_helper) {
@@ -47,7 +46,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self addTableView];
-//    [self.tableView reloadData];
+    //    [self.tableView reloadData];
 }
 
 #pragma mark - 添加底部视图
@@ -85,28 +84,28 @@
     if (nameStr.length == 0 || phoneStr.length == 0 || addressStr.length == 0) {
         [SVProgressHUD showSuccessWithStatus:@"请添加地址"];
     }else{
-        
-        NSMutableArray *arr = [[NSMutableArray alloc] init];
-        for (int i = 0; i < self.dataArray.count; i++) {
-            arr = self.dataArray[i];
-            for (int j = 0; j < arr.count; j++) {
-                JSCartModel *model = arr[j];
-                NSString *moeny = [NSString stringWithFormat:@"%.2f",model.p_price*model.p_quantity];
-                NSString *goodid = model.p_id;
-                NSLog(@"%@",goodid);
-                NSString *num = [NSString stringWithFormat:@"%.2ld",(long)model.p_quantity];
-                [self.helper PayInfoWithUserid:[ETUserInfo sharedETUserInfo].Id peoplename:nameStr address:addressStr goodsid:goodid goodnum:num mobile:phoneStr remark:self.textView.text money:moeny deliverytype:model.s_deliverytype deliverymoney:model.s_freight success:^(NSDictionary *response) {
-                    st_dispatch_async_main(^{
-                        [SVProgressHUD showSuccessWithStatus:@"结算成功"];
-                        [self deleteShopCar];
-                        [self.navigationController popViewControllerAnimated:YES];
-                    });
-                    
-                } faild:^(NSString *response, NSError *error) {
-                    [SVProgressHUD showSuccessWithStatus:@"结算失败"];
-                }];
-            }
-        }
+//        
+//        NSMutableArray *arr = [[NSMutableArray alloc] init];
+//        for (int i = 0; i < self.dataArray.count; i++) {
+//            arr = self.dataArray[i];
+//            for (int j = 0; j < arr.count; j++) {
+//                JSCartModel *model = arr[j];
+//                NSString *moeny = [NSString stringWithFormat:@"%.2f",model.p_price*model.p_quantity];
+//                NSString *goodid = model.p_id;
+//                NSLog(@"%@",goodid);
+//                NSString *num = [NSString stringWithFormat:@"%.2ld",(long)model.p_quantity];
+//                [self.helper PayInfoWithUserid:[ETUserInfo sharedETUserInfo].Id peoplename:nameStr address:addressStr goodsid:goodid goodnum:num mobile:phoneStr remark:self.textView.text money:moeny success:^(NSDictionary *response) {
+//                    st_dispatch_async_main(^{
+//                        [SVProgressHUD showSuccessWithStatus:@"结算成功"];
+//                        [self deleteShopCar];
+//                        [self.navigationController popViewControllerAnimated:YES];
+//                    });
+//                    
+//                } faild:^(NSString *response, NSError *error) {
+//                    [SVProgressHUD showSuccessWithStatus:@"结算失败"];
+//                }];
+//            }
+//        }
     }
 }
 
@@ -312,7 +311,7 @@
         NSString *propertynameStr = [model.s_property[2][@"propert_list"] firstObject][@"propertyname"];
         cell.typeLab.text = [NSString stringWithFormat:@"%@:%@ %@:%@",typename,propertyname,typenameStr,propertynameStr];
     }
-
+    
     return cell;
 }
 
@@ -323,6 +322,5 @@
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
 }
-
 
 @end

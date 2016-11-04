@@ -25,6 +25,7 @@
 #import "EBuyingViewController.h"
 #import "NowDayViewController.h"
 #import "NewPeopleViewController.h"
+#import "AllItemizeViewController.h"
 
 @interface LocationViewController ()<SDCycleScrollViewDelegate, CLLocationManagerDelegate,UITableViewDelegate,UITableViewDataSource>
 
@@ -172,9 +173,14 @@
 }
 
 - (void)rightNavBtnAction:(UIButton*)btn{
-    ETLogInViewController * vc = [[ETLogInViewController alloc]initWithNibName:@"ETLogInViewController" bundle:nil];
-    vc.hidesBottomBarWhenPushed = true;
-    [self.navigationController pushViewController:vc animated:true];
+    if (![ETUserInfo sharedETUserInfo].isLogin) {
+        ETLogInViewController * vc = [[ETLogInViewController alloc]initWithNibName:@"ETLogInViewController" bundle:nil];
+        vc.hidesBottomBarWhenPushed = true;
+        vc.type = @"login";
+        [self.navigationController pushViewController:vc animated:true];
+        return;
+    }
+    [SVProgressHUD showErrorWithStatus:@"您已登录"];
 }
 
 -(void)leftNavBtnAction:(UIButton *)btn{
@@ -215,7 +221,8 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     ETGoodsDetailController *controller = [[ETGoodsDetailController alloc]init];
     ETGoodsDataModel *model = self.likeArray[indexPath.row];
-    controller.goodModel = model;
+    controller.goodsid = model.id;
+    controller.shopid = model.shopid;
     controller.hidesBottomBarWhenPushed = true;
     [self.navigationController pushViewController:controller animated:true];
 }
@@ -281,7 +288,7 @@
 
 #pragma mark - 全部
 - (IBAction)ClickAllBtn:(id)sender {
-    ALLViewController *vc = [[ALLViewController alloc] init];
+    AllItemizeViewController *vc = [[AllItemizeViewController alloc] init];
     vc.title = @"全部";
     vc.cityStr = self.cityStr;
     vc.hidesBottomBarWhenPushed = true;

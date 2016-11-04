@@ -11,6 +11,7 @@
 @interface GoodsAttributesView : UIView <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, strong) NSString *goodid;
+@property (nonatomic, strong) NSString *shopid;
 @property (nonatomic, weak) UIView *contentView;
 @property (nonatomic, weak) UIImageView *iconImgView;
 @property (nonatomic, weak) UILabel *goodsNameLbl;
@@ -22,10 +23,13 @@
 @property (nonatomic, strong) NSString *imgStr;
 @property (nonatomic, strong) NSString *nameStr;
 @property (nonatomic, strong) NSString *priceStr;
+@property (nonatomic, strong) NSString *proidStr;
+@property (nonatomic, strong) NSMutableArray *dataSource;
 /** 购买数量 */
 @property (nonatomic, assign) int buyNum;
 /** 购买数量Lbl */
 @property (nonatomic, weak) UILabel *buyNumsLbl;
+
 
 /**
  *  显示属性选择视图
@@ -37,5 +41,7 @@
  *  属性视图的消失
  */
 - (void)removeView;
+
+@property (nonatomic, copy) void (^sureBtnsClick)(NSString *num, NSString *attr_id);
 
 @end

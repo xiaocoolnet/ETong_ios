@@ -24,5 +24,6 @@ singleton_interface(ETUserInfo)
 @property (copy, nonatomic) NSString *city;
 @property (copy, nonatomic) NSString *status;
 @property (copy, nonatomic) NSString *shopid;
+@property (copy, nonatomic) NSString *islocal;
 @property (assign, nonatomic) BOOL isLogin;
 @end

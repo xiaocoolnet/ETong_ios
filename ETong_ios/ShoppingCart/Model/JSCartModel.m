@@ -10,4 +10,11 @@
 
 @implementation JSCartModel
 
++ (NSDictionary *)objectClassInArray{
+    return @{
+             @"s_property" : @"s_propertyList"
+             
+             };
+}
+
 @end

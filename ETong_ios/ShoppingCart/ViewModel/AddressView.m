@@ -49,24 +49,24 @@
     CGFloat width = self.frame.size.width;
     UIColor *color = [UIColor colorWithRed:242/255.0 green:243/255.0 blue:249/255.0 alpha:1];
     UIColor *btnColor = [UIColor colorWithRed:65.0/255 green:164.0/255 blue:249.0/255 alpha:1];
-    UIView *selectView = [[UIView alloc] initWithFrame:CGRectMake(0, height - 210, width, 30)];
+    UIView *selectView = [[UIView alloc] initWithFrame:CGRectMake(0, height - 250, width, 30)];
     selectView.backgroundColor = color;
     UIButton *cancleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [cancleBtn setTitle:@"取消" forState:0];
     [cancleBtn setTitleColor:btnColor forState:0];
-    cancleBtn.frame = CGRectMake(0, 0, 60, 40);
+    cancleBtn.frame = CGRectMake(0, 0, 60, 30);
     [cancleBtn addTarget:self action:@selector(dateCancleAction) forControlEvents:UIControlEventTouchUpInside];
     [selectView addSubview:cancleBtn];
     
     UIButton *ensureBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [ensureBtn setTitle:@"确定" forState:0];
     [ensureBtn setTitleColor:btnColor forState:0];
-    ensureBtn.frame = CGRectMake(width - 60, 0, 60, 40);
+    ensureBtn.frame = CGRectMake(width - 60, 0, 60, 30);
     [ensureBtn addTarget:self action:@selector(dateEnsureAction) forControlEvents:UIControlEventTouchUpInside];
     [selectView addSubview:ensureBtn];
     [self addSubview:selectView];
     
-    self.pickView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, height - 180 , width,  180)];
+    self.pickView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, height - 220 , width,  220)];
     self.pickView.delegate   = self;
     self.pickView.dataSource = self;
     self.pickView.backgroundColor = color;
