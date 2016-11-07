@@ -148,6 +148,8 @@
 		64BE03B81DCB1416002CC566 /* PayGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BE03B71DCB1416002CC566 /* PayGoodsViewController.m */; };
 		64BE03BA1DCC81FA002CC566 /* ChangeShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BE03B91DCC81FA002CC566 /* ChangeShopViewController.swift */; };
 		64BE03BD1DCC899B002CC566 /* AllItemizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BE03BC1DCC899B002CC566 /* AllItemizeViewController.m */; };
+		64BE03C01DD01A9E002CC566 /* SpacialSaleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BE03BF1DD01A9E002CC566 /* SpacialSaleController.m */; };
+		64BE03C31DD02B71002CC566 /* CZCountDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BE03C21DD02B71002CC566 /* CZCountDownView.m */; };
 		64C2D2201DAE1E27002C8272 /* FootprintsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C2D21F1DAE1E27002C8272 /* FootprintsViewController.m */; };
 		64C2D2241DAE1EC5002C8272 /* FootprintsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C2D2221DAE1EC5002C8272 /* FootprintsTableViewCell.m */; };
 		64C2D2251DAE1EC5002C8272 /* FootprintsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64C2D2231DAE1EC5002C8272 /* FootprintsTableViewCell.xib */; };
@@ -251,8 +253,6 @@
 		F6C0EA091D913C4D002654DE /* ETDailySpecialController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6C0EA071D913C4D002654DE /* ETDailySpecialController.xib */; };
 		F6C36AD51D937A71008737D5 /* ETDailySpacialCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C36AD31D937A71008737D5 /* ETDailySpacialCell.m */; };
 		F6C36AD61D937A71008737D5 /* ETDailySpacialCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6C36AD41D937A71008737D5 /* ETDailySpacialCell.xib */; };
-		F6C36ADA1D9388A3008737D5 /* ETSpacialSaleController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C36AD81D9388A3008737D5 /* ETSpacialSaleController.m */; };
-		F6C36ADB1D9388A3008737D5 /* ETSpacialSaleController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6C36AD91D9388A3008737D5 /* ETSpacialSaleController.xib */; };
 		F6C36AE41D93CCD3008737D5 /* ETSpecialSaleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C36AE21D93CCD3008737D5 /* ETSpecialSaleCell.m */; };
 		F6C36AE51D93CCD3008737D5 /* ETSpecialSaleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6C36AE31D93CCD3008737D5 /* ETSpecialSaleCell.xib */; };
 		F6C94C491D58AA4B00280E86 /* ETGoodsLoopController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C94C471D58AA4B00280E86 /* ETGoodsLoopController.swift */; };
@@ -533,6 +533,10 @@
 		64BE03B91DCC81FA002CC566 /* ChangeShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeShopViewController.swift; sourceTree = "<group>"; };
 		64BE03BB1DCC899B002CC566 /* AllItemizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllItemizeViewController.h; sourceTree = "<group>"; };
 		64BE03BC1DCC899B002CC566 /* AllItemizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllItemizeViewController.m; sourceTree = "<group>"; };
+		64BE03BE1DD01A9E002CC566 /* SpacialSaleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpacialSaleController.h; sourceTree = "<group>"; };
+		64BE03BF1DD01A9E002CC566 /* SpacialSaleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpacialSaleController.m; sourceTree = "<group>"; };
+		64BE03C11DD02B71002CC566 /* CZCountDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZCountDownView.h; sourceTree = "<group>"; };
+		64BE03C21DD02B71002CC566 /* CZCountDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZCountDownView.m; sourceTree = "<group>"; };
 		64C2D21E1DAE1E27002C8272 /* FootprintsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FootprintsViewController.h; sourceTree = "<group>"; };
 		64C2D21F1DAE1E27002C8272 /* FootprintsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FootprintsViewController.m; sourceTree = "<group>"; };
 		64C2D2211DAE1EC5002C8272 /* FootprintsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FootprintsTableViewCell.h; sourceTree = "<group>"; };
@@ -679,9 +683,6 @@
 		F6C36AD21D937A71008737D5 /* ETDailySpacialCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETDailySpacialCell.h; sourceTree = "<group>"; };
 		F6C36AD31D937A71008737D5 /* ETDailySpacialCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETDailySpacialCell.m; sourceTree = "<group>"; };
 		F6C36AD41D937A71008737D5 /* ETDailySpacialCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETDailySpacialCell.xib; sourceTree = "<group>"; };
-		F6C36AD71D9388A3008737D5 /* ETSpacialSaleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSpacialSaleController.h; sourceTree = "<group>"; };
-		F6C36AD81D9388A3008737D5 /* ETSpacialSaleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSpacialSaleController.m; sourceTree = "<group>"; };
-		F6C36AD91D9388A3008737D5 /* ETSpacialSaleController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETSpacialSaleController.xib; sourceTree = "<group>"; };
 		F6C36AE11D93CCD3008737D5 /* ETSpecialSaleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSpecialSaleCell.h; sourceTree = "<group>"; };
 		F6C36AE21D93CCD3008737D5 /* ETSpecialSaleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSpecialSaleCell.m; sourceTree = "<group>"; };
 		F6C36AE31D93CCD3008737D5 /* ETSpecialSaleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETSpecialSaleCell.xib; sourceTree = "<group>"; };
@@ -1767,9 +1768,10 @@
 				F6C0EA051D913C4D002654DE /* ETDailySpecialController.h */,
 				F6C0EA061D913C4D002654DE /* ETDailySpecialController.m */,
 				F6C0EA071D913C4D002654DE /* ETDailySpecialController.xib */,
-				F6C36AD71D9388A3008737D5 /* ETSpacialSaleController.h */,
-				F6C36AD81D9388A3008737D5 /* ETSpacialSaleController.m */,
-				F6C36AD91D9388A3008737D5 /* ETSpacialSaleController.xib */,
+				64BE03BE1DD01A9E002CC566 /* SpacialSaleController.h */,
+				64BE03BF1DD01A9E002CC566 /* SpacialSaleController.m */,
+				64BE03C11DD02B71002CC566 /* CZCountDownView.h */,
+				64BE03C21DD02B71002CC566 /* CZCountDownView.m */,
 				640F61D11D93AAF600614657 /* NewProductsViewController.h */,
 				640F61D21D93AAF600614657 /* NewProductsViewController.m */,
 				640F61D41D93B15A00614657 /* QualityLifeViewController.h */,
@@ -1898,7 +1900,6 @@
 				F64788A61D41BC3000294225 /* ETMyZoneController.xib in Resources */,
 				F64308941D61A3640037FD9F /* ETEditInfoController.xib in Resources */,
 				F65BF3301D3F4FD70003DB35 /* LocationViewController.xib in Resources */,
-				F6C36ADB1D9388A3008737D5 /* ETSpacialSaleController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1991,7 +1992,6 @@
 				6493B8401DAA1AE5008EE7C8 /* DistanceAllBuyingViewController.m in Sources */,
 				F6CF10B71D4B83C400555C4A /* ETShopHelper.m in Sources */,
 				64690E771DB4741400D41D49 /* YLDropDownMenu.m in Sources */,
-				F6C36ADA1D9388A3008737D5 /* ETSpacialSaleController.m in Sources */,
 				64690EBA1DBF567600D41D49 /* SearchResultViewController.swift in Sources */,
 				6493B83A1DAA1ABE008EE7C8 /* EBuyingViewController.m in Sources */,
 				649AF3261D97BA1E00D8B840 /* DistanceHotelViewController.m in Sources */,
@@ -2022,6 +2022,8 @@
 				645C92831DC0A27A00D2ED3D /* AttributesModel.m in Sources */,
 				645C927A1DC0806100D2ED3D /* qrencode.c in Sources */,
 				6493B8341DA9E61A008EE7C8 /* CancleOrderViewController.swift in Sources */,
+				64BE03C31DD02B71002CC566 /* CZCountDownView.m in Sources */,
+				64BE03C01DD01A9E002CC566 /* SpacialSaleController.m in Sources */,
 				640F61D31D93AAF600614657 /* NewProductsViewController.m in Sources */,
 				F61E82311D474463001E16B5 /* ETTimeManager.m in Sources */,
 				F65E00331D868688005FDD83 /* GoodAttributesView.m in Sources */,

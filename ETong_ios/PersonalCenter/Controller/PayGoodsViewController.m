@@ -8,7 +8,6 @@
 
 #import "PayGoodsViewController.h"
 #import "SettleTableViewCell.h"
-#import "JSCartModel.h"
 #import "ETShopHelper.h"
 #import "JSCartViewController.h"
 
@@ -20,7 +19,6 @@
 @property (nonatomic, strong) NSString *phone;
 @property (nonatomic, strong) NSString *address;
 @property (strong, nonatomic) ETShopHelper *helper;
-@property (strong, nonatomic) NSMutableArray *dataArray;
 
 @end
 
@@ -52,23 +50,19 @@
 #pragma mark - 添加底部视图
 -(void) addButton{
     
-    NSMutableArray *arr = [[NSMutableArray alloc] init];
-    float allPrice = 0;
-    for (int i = 0; i < self.dataArray.count; i++) {
-        arr = self.dataArray[i];
-        for (int j = 0; j < arr.count; j++) {
-            JSCartModel *model = arr[j];
-            allPrice += model.p_price * model.p_quantity;
-        }
-    }
+    float price = 0;
+    float priceStr = [self.model.price floatValue];
+    float numFloat = [self.goodnum floatValue];
+    price = priceStr * numFloat;
     
-    UILabel *allPriceLab = [[UILabel alloc] initWithFrame:CGRectMake(0, Screen_frame.size.height - 64 - 50, Screen_frame.size.width / 2.0, 50)];
+    float floatString = [self.model.freight floatValue];
+    UILabel *allPriceLab = [[UILabel alloc] initWithFrame:CGRectMake(0, Screen_frame.size.height - 50, Screen_frame.size.width / 2.0, 50)];
     allPriceLab.backgroundColor = [UIColor whiteColor];
-    allPriceLab.text = [@"合计:￥" stringByAppendingString: [NSString stringWithFormat:@"%.2f",allPrice]];
+    allPriceLab.text = [@"合计:￥" stringByAppendingString: [NSString stringWithFormat:@"%.2f",price + floatString]];
     allPriceLab.textColor = [UIColor redColor];
     [self.view addSubview:allPriceLab];
     
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(Screen_frame.size.width/2.0, Screen_frame.size.height - 64 - 50, Screen_frame.size.width/2.0, 50)];
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(Screen_frame.size.width/2.0, Screen_frame.size.height - 50, Screen_frame.size.width/2.0, 50)];
     btn.backgroundColor = [UIColor redColor];
     [btn setTitle:@"提交订单" forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(clickBtn) forControlEvents:UIControlEventTouchUpInside];
@@ -84,51 +78,30 @@
     if (nameStr.length == 0 || phoneStr.length == 0 || addressStr.length == 0) {
         [SVProgressHUD showSuccessWithStatus:@"请添加地址"];
     }else{
-//        
-//        NSMutableArray *arr = [[NSMutableArray alloc] init];
-//        for (int i = 0; i < self.dataArray.count; i++) {
-//            arr = self.dataArray[i];
-//            for (int j = 0; j < arr.count; j++) {
-//                JSCartModel *model = arr[j];
-//                NSString *moeny = [NSString stringWithFormat:@"%.2f",model.p_price*model.p_quantity];
-//                NSString *goodid = model.p_id;
-//                NSLog(@"%@",goodid);
-//                NSString *num = [NSString stringWithFormat:@"%.2ld",(long)model.p_quantity];
-//                [self.helper PayInfoWithUserid:[ETUserInfo sharedETUserInfo].Id peoplename:nameStr address:addressStr goodsid:goodid goodnum:num mobile:phoneStr remark:self.textView.text money:moeny success:^(NSDictionary *response) {
-//                    st_dispatch_async_main(^{
-//                        [SVProgressHUD showSuccessWithStatus:@"结算成功"];
-//                        [self deleteShopCar];
-//                        [self.navigationController popViewControllerAnimated:YES];
-//                    });
-//                    
-//                } faild:^(NSString *response, NSError *error) {
-//                    [SVProgressHUD showSuccessWithStatus:@"结算失败"];
-//                }];
-//            }
-//        }
+        float priceStr = [self.model.price floatValue];
+        float numFloat = [self.goodnum floatValue];
+        NSString *moeny = [NSString stringWithFormat:@"%.2f",priceStr*numFloat];
+        NSString *goodid = self.model.id;
+        NSLog(@"%@",goodid);
+        NSString *num = self.goodnum;
+        [self.helper PayInfoWithUserid:[ETUserInfo sharedETUserInfo].Id peoplename:nameStr address:addressStr goodsid:goodid goodnum:num mobile:phoneStr remark:self.textView.text money:moeny deliverytype:self.model.deliverytype deliverymoney:self.model.freight success:^(NSDictionary *response) {
+            st_dispatch_async_main(^{
+                [SVProgressHUD showSuccessWithStatus:@"结算成功"];
+                [self.navigationController popViewControllerAnimated:YES];
+            });
+            
+        } faild:^(NSString *response, NSError *error) {
+            [SVProgressHUD showSuccessWithStatus:@"结算失败"];
+        }];
     }
+    
 }
 
--(void)deleteShopCar{
-    NSMutableArray *arr = [[NSMutableArray alloc] init];
-    for (int i = 0; i < self.dataArray.count; i++) {
-        arr = self.dataArray[i];
-        for (int j = 0; j < arr.count; j++) {
-            JSCartModel *model = arr[j];
-            NSString *goodid = model.p_id;
-            [self.helper deleteShoppingCartWithGoodsid:goodid success:^(NSDictionary *response) {
-                
-            } faild:^(NSString *response, NSError *error) {
-                
-            }];
-        }
-    }
-}
 
 #pragma mark - 添加TableView
 -(void)addTableView
 {
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, Screen_frame.size.width, Screen_frame.size.height - 64 - 60) style:(UITableViewStyleGrouped)];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, Screen_frame.size.width, Screen_frame.size.height - 64 - 60) style:(UITableViewStyleGrouped)];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.backgroundColor = [UIColor colorWithRed:241/255.0 green:241/255.0 blue:241/255.0 alpha:1.0];
@@ -201,11 +174,11 @@
 /// 视图(tableView)
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return self.dataArray.count;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.dataArray[section] count];
+    return 1;
 }
 #pragma mark - cell高
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -223,8 +196,6 @@
 #pragma mark - 分区头设置
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     
-    JSCartModel *model = [self.dataArray[section] firstObject];
-    
     UIView *view = [[UIView alloc] init];
     view.frame = CGRectMake(0, 0, self.view.frame.size.width, 40);
     view.backgroundColor = [UIColor whiteColor];
@@ -234,7 +205,7 @@
     [view addSubview:img];
     UILabel *name = [[UILabel alloc] init];
     name.frame = CGRectMake(50, 0, self.view.frame.size.width - 60, 40);
-    name.text = model.s_name;
+    name.text = self.model.goodsname;
     
     [view addSubview:name];
     return view;
@@ -243,10 +214,9 @@
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     
     float price = 0;
-    for (int i = 0; i < [self.dataArray[section] count]; i++) {
-        JSCartModel *model = self.dataArray[section][i];
-        price += model.p_price*model.p_quantity;
-    }
+    float priceStr = [self.model.price floatValue];
+    float numFloat = [self.goodnum floatValue];
+    price = priceStr * numFloat;
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
     view.backgroundColor = [UIColor whiteColor];
@@ -256,7 +226,8 @@
     [view addSubview:wayLab];
     
     UILabel *fastLab = [[UILabel alloc] initWithFrame:CGRectMake(Screen_frame.size.width - 140, 5, 130, 30)];
-    fastLab.text = @"快递 免递";
+    fastLab.text = [NSString stringWithFormat:@"快递: %@",self.model.freight];
+    
     fastLab.textAlignment = NSTextAlignmentRight;
     [view addSubview:fastLab];
     
@@ -298,18 +269,20 @@
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     SettleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    JSCartModel *model = self.dataArray[indexPath.section][indexPath.row];
-    cell.nameLab.text = model.p_name;
-    cell.priceLab.text = [@"￥" stringByAppendingString: [NSString stringWithFormat:@"%.2f",model.p_price]];
-    cell.numLab.text = [NSString stringWithFormat:@"数量:%ld",(long)model.p_quantity];
-    [cell.imgView sd_setImageWithURL:[NSURL URLWithString:model.p_imageUrl]];
-    NSString *typename = [model.s_property.firstObject[@"propert_list"] firstObject][@"typename"];
-    NSString *propertyname = [model.s_property.firstObject[@"propert_list"] firstObject][@"propertyname"];
-    if (model.s_property.count >= 2) {
+    cell.nameLab.text = self.model.goodsname;
+    cell.priceLab.text = self.model.price;
+    cell.numLab.text = self.goodnum;
+    // 将string字符串转换为array数组
+    NSArray  *array = [self.model.picture componentsSeparatedByString:@","]; //--分隔符
+    NSString *avatarUrlStr = [NSString stringWithFormat:@"%@/%@",kIMAGE_URL_HEAD,array.firstObject];
+    [cell.imgView sd_setImageWithURL:[NSURL URLWithString:avatarUrlStr] placeholderImage:[UIImage imageNamed:@"ic_xihuan"]];
+    if (self.typeArr.count >= 2) {
         
-        NSString *typenameStr = [model.s_property[2][@"propert_list"] firstObject][@"typename"];
-        NSString *propertynameStr = [model.s_property[2][@"propert_list"] firstObject][@"propertyname"];
-        cell.typeLab.text = [NSString stringWithFormat:@"%@:%@ %@:%@",typename,propertyname,typenameStr,propertynameStr];
+        NSString *typenameStr = self.typeArr.firstObject;
+        NSString *propertynameStr = self.typeArr[2];
+        cell.typeLab.text = [NSString stringWithFormat:@"%@ %@",typenameStr,propertynameStr];
+    }else{
+        cell.typeLab.text = self.typeArr.firstObject;
     }
     
     return cell;

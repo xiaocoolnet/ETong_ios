@@ -9,6 +9,7 @@
 #import "EBuyingViewController.h"
 #import "AllEBuyingViewController.h"
 #import "DistanceAllBuyingViewController.h"
+#import "CZCountDownView.h"
 
 @interface EBuyingViewController ()
 
@@ -36,12 +37,33 @@
 }
 - (void)configureUI{
     
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 44, Screen_frame.size.width, 44)];
+    view.backgroundColor = [UIColor colorWithRed:253/255.0 green:74/255.0 blue:75/255.0 alpha:1.0];
+    [self.view addSubview:view];
+    
     UILabel *lable = [[UILabel alloc] init];
-    lable.frame = CGRectMake(0, 44, self.view.frame.size.width, 44);
-    lable.text = @"距结束仅剩02：02：02";
-    lable.textAlignment = NSTextAlignmentCenter;
-    lable.backgroundColor = [UIColor colorWithRed:253/255.0 green:74/255.0 blue:75/255.0 alpha:1.0];
-    [self.view addSubview:lable];
+    lable.frame = CGRectMake(0, 0, 100, 44);
+    lable.text = @"距结束仅剩";
+    lable.textAlignment = NSTextAlignmentRight;
+    lable.textColor = [UIColor whiteColor];
+    [view addSubview:lable];
+    
+    NSTimeInterval interval = [[NSDate date] timeIntervalSince1970];
+    NSInteger time = round(interval);
+    
+    // 封装后
+    CZCountDownView *countDown = [CZCountDownView countDown];
+    countDown.frame = CGRectMake(110, 0, Screen_frame.size.width - 120, 44);
+    countDown.timestamp = (1478833871 - time);
+    countDown.timerStopBlock = ^{
+        NSLog(@"时间停止");
+    };
+    [view addSubview:countDown];
+    
+    CZCountDownView *c1 = [CZCountDownView countDown];
+    CZCountDownView *c2 = [CZCountDownView countDown];
+    NSLog(@"%p--%p",c1,c2);
+
 }
 
 - (void)initViewControllers {

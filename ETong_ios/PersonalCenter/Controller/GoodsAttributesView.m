@@ -32,7 +32,7 @@
         [self addBuyGoodNum];
 //        [self getGoodsData];
         self.dataSource = [[NSMutableArray alloc] init];
-        
+        self.typeArr = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -97,7 +97,7 @@
     [_sureBtn setTitle:@"确定" forState:UIControlStateNormal];
     [_sureBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     _sureBtn.frame = CGRectMake(0, contentView.frame.size.height - 40, kScreenW, 40);
-    [_sureBtn addTarget:self action:@selector(sureBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    [_sureBtn addTarget:self action:@selector(sureClick) forControlEvents:UIControlEventTouchUpInside];
     [contentView addSubview:_sureBtn];
     
     [self addCollectionView];
@@ -181,12 +181,15 @@
     }
     sender.backgroundColor = [UIColor redColor];
     self.proidStr = modelList.proid;
+    NSString *typeStr = [NSString stringWithFormat:@"%@: %@",model.name,modelList.name];
     NSLog(@"%@",self.proidStr);
 //    if (![self.dataSource containsObject:self.proidStr]) {
 //        [self.dataSource addObject:self.proidStr];
 //    }
     self.dataSource[sender.flag] = self.proidStr;
+    self.typeArr[sender.flag] = typeStr;
     NSLog(@"%@",self.dataSource);
+    NSLog(@"%@",self.typeArr);
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
@@ -284,6 +287,7 @@
                 AttributesModel *model = [AttributesModel mj_objectWithKeyValues:response[i]];
                 [self.dataArray addObject:model];
                 [self.dataSource addObject:@""];
+                [self.typeArr addObject:@""];
             }
             NSLog(@"%lu",(unsigned long)self.dataArray.count);
             [self.collection reloadData];
@@ -353,7 +357,7 @@
 }
 
 #pragma mark - 按钮点击事件
-- (void)sureBtnClick {
+- (void)sureClick {
     
     NSLog(@"qqqweddf=%lu",[self.dataSource.firstObject length]);
     
@@ -370,8 +374,9 @@
     // 购买数量
     NSString *num = self.buyNumsLbl.text;
     NSString *attr_id=[self.dataSource componentsJoinedByString:@","];
-    if (self.sureBtnsClick) {
-        self.sureBtnsClick(num, attr_id);
+    NSMutableArray *arr = self.typeArr;
+    if (self.sureBtnClicks) {
+        self.sureBtnClicks(num, attr_id,arr);
     }
     __block GoodsAttributesView *blockSelf = self;
 //    [self.help addShoppingCartWithShopid:self.shopid goodsid:self.goodid goodsnum:self.buyNumsLbl.text proid:ns success:^(NSDictionary *response) {

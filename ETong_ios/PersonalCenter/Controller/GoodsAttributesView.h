@@ -25,6 +25,7 @@
 @property (nonatomic, strong) NSString *priceStr;
 @property (nonatomic, strong) NSString *proidStr;
 @property (nonatomic, strong) NSMutableArray *dataSource;
+@property (nonatomic, strong) NSMutableArray *typeArr;
 /** 购买数量 */
 @property (nonatomic, assign) int buyNum;
 /** 购买数量Lbl */
@@ -42,6 +43,6 @@
  */
 - (void)removeView;
 
-@property (nonatomic, copy) void (^sureBtnsClick)(NSString *num, NSString *attr_id);
+@property (nonatomic, copy) void (^sureBtnClicks)(NSString *num, NSString *attr_id, NSMutableArray *typeArr);
 
 @end

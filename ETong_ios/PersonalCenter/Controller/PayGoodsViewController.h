@@ -11,5 +11,8 @@
 @interface PayGoodsViewController : UIViewController
 
 @property (strong, nonatomic) NSString *goodnum;
+@property (nonatomic, strong) ETGoodsDataModel *model;
+@property (nonatomic, strong) NSMutableArray *typeArr;
+@property (nonatomic, strong) NSString *proidStr;
 
 @end

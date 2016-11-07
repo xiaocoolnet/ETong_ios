@@ -14,6 +14,7 @@
                 <outlet property="imageBackView" destination="ogR-S0-XQi" id="Qdx-br-aT6"/>
                 <outlet property="judgeList" destination="1rS-Nh-MEG" id="Hct-NP-rrh"/>
                 <outlet property="price" destination="b0o-k4-a9N" id="hzc-4N-YTg"/>
+                <outlet property="secView" destination="xTR-IJ-G0z" id="QAI-Kh-3MU"/>
                 <outlet property="shenma" destination="4My-e3-JzE" id="NpW-z7-1xf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -107,18 +108,22 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="对商品的描述" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeD-lb-a5T">
-                                        <rect key="frame" x="8" y="49" width="304" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="对商品的描述" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeD-lb-a5T">
+                                        <rect key="frame" x="8" y="41" width="304" height="51"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="FeD-lb-a5T" secondAttribute="trailing" constant="8" id="Mld-0j-RnN"/>
                                     <constraint firstAttribute="trailing" secondItem="Lxm-6Z-8H0" secondAttribute="trailing" id="UMl-fb-LC6"/>
+                                    <constraint firstItem="FeD-lb-a5T" firstAttribute="top" secondItem="Lxm-6Z-8H0" secondAttribute="bottom" id="Uca-Ha-ANY"/>
                                     <constraint firstItem="Lxm-6Z-8H0" firstAttribute="leading" secondItem="xTR-IJ-G0z" secondAttribute="leading" id="a4Z-Z4-Hrn"/>
                                     <constraint firstItem="Lxm-6Z-8H0" firstAttribute="top" secondItem="xTR-IJ-G0z" secondAttribute="top" constant="40" id="e3U-wm-tzb"/>
+                                    <constraint firstAttribute="bottom" secondItem="FeD-lb-a5T" secondAttribute="bottom" constant="8" id="fvh-2A-xhz"/>
+                                    <constraint firstItem="FeD-lb-a5T" firstAttribute="leading" secondItem="xTR-IJ-G0z" secondAttribute="leading" constant="8" id="yAX-iO-kik"/>
                                 </constraints>
                             </view>
                         </subviews>

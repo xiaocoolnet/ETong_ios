@@ -113,6 +113,30 @@
     [cell.priceBtn setTitle:[NSString stringWithFormat:@"￥%@马上抢",model.price] forState:UIControlStateNormal];
     cell.priceBtn.tag = indexPath.row;
     [cell.priceBtn addTarget:self action:@selector(clickPriceBtn:) forControlEvents:UIControlEventTouchUpInside];
+    qqq *carmodel = model.shop_list.firstObject;
+    if ([carmodel.level isEqualToString:@"0"]) {
+        cell.levelImg.image = [UIImage imageNamed:@"ic_yellowstar_0"];
+    }else if ([carmodel.level isEqualToString:@"0.5"]) {
+        cell.levelImg.image = [UIImage imageNamed:@"ic_yellowstar_0_5"];
+    }else if ([carmodel.level isEqualToString:@"1"]) {
+        cell.levelImg.image = [UIImage imageNamed:@"ic_yellowstar_1"];
+    }else if ([carmodel.level isEqualToString:@"1.5"]) {
+        cell.levelImg.image = [UIImage imageNamed:@"ic_yellowstar_1_5"];
+    }else if ([carmodel.level isEqualToString:@"2"]) {
+        cell.levelImg.image = [UIImage imageNamed:@"ic_yellowstar_2"];
+    }else if ([carmodel.level isEqualToString:@"2.5"]) {
+        cell.levelImg.image = [UIImage imageNamed:@"ic_yellowstar_2_5"];
+    }else if ([carmodel.level isEqualToString:@"3"]) {
+        cell.levelImg.image = [UIImage imageNamed:@"ic_yellowstar_3"];
+    }else if ([carmodel.level isEqualToString:@"3.5"]) {
+        cell.levelImg.image = [UIImage imageNamed:@"ic_yellowstar_3_5"];
+    }else if ([carmodel.level isEqualToString:@"4"]) {
+        cell.levelImg.image = [UIImage imageNamed:@"ic_yellowstar_4"];
+    }else if ([carmodel.level isEqualToString:@"4.5"]) {
+        cell.levelImg.image = [UIImage imageNamed:@"ic_yellowstar_4_5"];
+    }else if ([carmodel.level isEqualToString:@"5"]) {
+        cell.levelImg.image = [UIImage imageNamed:@"ic_yellowstar_5"];
+    }
     return cell;
 }
 

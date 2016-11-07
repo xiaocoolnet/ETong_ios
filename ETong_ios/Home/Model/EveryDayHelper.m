@@ -108,7 +108,7 @@
 }
 #pragma mark - 本地新客专享
 -(void)NewPeoplesuccess:(ResponseBlock)success faild:(ETResponseErrorBlock)faild{
-    NSDictionary *para = @{@"a":@"IsPrice"};
+    NSDictionary *para = @{@"a":@"IsNew"};
     [self.manager GET:kURL_HEAD parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         HttpModel *model = [HttpModel mj_objectWithKeyValues:responseObject];
         if ([model.status isEqualToString:@"success"]) {

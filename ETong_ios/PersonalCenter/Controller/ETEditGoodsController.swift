@@ -13,6 +13,7 @@ class ETEditGoodsController: UITableViewController,SortPickerDelegate {
     var titleDataSource = [["商品轮播图","商品描述","商品标题","分类"],["品牌","货号"],["商品规格","现价","原价","运费","库存"],["宝贝详情","发货地"]]
     var goodModel:ETGoodsDataModel?
     var pickerView : SortView?
+    var helper = ETShopHelper()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,6 +78,14 @@ class ETEditGoodsController: UITableViewController,SortPickerDelegate {
     }
     func JSAddressPickerRerurnBlockWithProvince(province: String!, city: String!, town: String!) {
         
-        self.pickerView!.removeFromSuperview()
+        helper.updateGoodsTypeWithGoodsid(self.goodModel?.id, type: town, success: { (dic) in
+//            print(dic)
+            SVProgressHUD.showSuccessWithStatus("修改商品分类成功")
+            self.pickerView!.removeFromSuperview()
+            
+            }, faild: { (str, error) in
+                
+        })
+        
     }
 }

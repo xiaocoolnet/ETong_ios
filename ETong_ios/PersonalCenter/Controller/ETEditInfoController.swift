@@ -74,7 +74,6 @@ class ETEditInfoController: UIViewController {
             })
         }
         
-        
         // 品牌
         if infoType == 10 {
             
@@ -84,7 +83,33 @@ class ETEditInfoController: UIViewController {
                     
             })
         }
-        //
+        
+        // 货号
+        if infoType == 11 {
+            helper.updateGoodsBrandWithGoodsid(goodsModel?.id, artno: infoView.text, success: { (dic) in
+                print(dic)
+                }, faild: { (str, error) in
+                    
+            })
+        }
+        
+        // 运费
+        if infoType == 23 {
+            helper.updateGoodsBrandWithGoodsid(goodsModel?.id, freight: infoView.text, success: { (dic) in
+                print(dic)
+                }, faild: { (str, error) in
+                    
+            })
+        }
+        
+        // 发货地
+        if infoType == 31 {
+            helper.updateGoodsAddressWithGoodsid(goodsModel?.id, address: infoView.text, success: { (dic) in
+                print(dic)
+                }, faild: { (str, error) in
+                    
+            })
+        }
         navigationController?.popViewControllerAnimated(true)
     }
 

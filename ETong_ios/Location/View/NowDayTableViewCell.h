@@ -11,14 +11,11 @@
 @interface NowDayTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *imgView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLab;
-@property (weak, nonatomic) IBOutlet UIImageView *oneImg;
 @property (weak, nonatomic) IBOutlet UILabel *opriceLab;
 @property (weak, nonatomic) IBOutlet UILabel *priceLab;
 @property (weak, nonatomic) IBOutlet UILabel *distanceLab;
 @property (weak, nonatomic) IBOutlet UIButton *priceBtn;
-@property (weak, nonatomic) IBOutlet UIImageView *twoImg;
-@property (weak, nonatomic) IBOutlet UIImageView *threeImg;
-@property (weak, nonatomic) IBOutlet UIImageView *fourImg;
-@property (weak, nonatomic) IBOutlet UIImageView *lastImg;
+@property (weak, nonatomic) IBOutlet UIImageView *levelImg;
+
 
 @end

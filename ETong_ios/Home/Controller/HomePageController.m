@@ -11,7 +11,7 @@
 #import "ETZBarScanController.h"
 #import "ETLimitTimeController.h"
 #import "ETDailySpecialController.h"
-#import "ETSpacialSaleController.h"
+#import "SpacialSaleController.h"
 #import "NewProductsViewController.h"
 #import "QualityLifeViewController.h"
 #import "FreeViewController.h"
@@ -267,7 +267,8 @@
     [self.navigationController pushViewController:cotroller animated:true];
 }
 - (IBAction)dailySpecialSaleAction:(id)sender {
-    ETSpacialSaleController *controller = [[ETSpacialSaleController alloc]initWithNibName:@"ETSpacialSaleController" bundle:nil];
+//    SpacialSaleController *controller = [[SpacialSaleController alloc]initWithNibName:@"ETSpacialSaleController" bundle:nil];
+    SpacialSaleController *controller = [[SpacialSaleController alloc] init];
     [self.navigationController pushViewController:controller animated:true];
 }
 - (IBAction)qualityLifeAction:(id)sender {

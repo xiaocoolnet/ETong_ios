@@ -79,6 +79,7 @@ class SpecificationViewController: UIViewController, UITableViewDelegate, UITabl
         let vc = SelectViewController()
         vc.goodid = goodsModel?.id
         vc.goodModel = self.dataSource[indexPath.row] as? AttributesModel
+        vc.type = ((self.dataSource[indexPath.row] as? AttributesModel)?.termid)!
         self.navigationController?.pushViewController(vc, animated: true)
     }
 

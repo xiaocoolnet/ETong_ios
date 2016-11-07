@@ -1,13 +1,13 @@
 //
-//  ETSpacialSaleController.h
+//  SpacialSaleController.h
 //  ETong_ios
 //
-//  Created by xiaocool on 16/9/22.
+//  Created by 沈晓龙 on 16/11/7.
 //  Copyright © 2016年 北京校酷网络科技有限公司. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ETSpacialSaleController : UIViewController
+@interface SpacialSaleController : UIViewController
 
 @end

@@ -14,6 +14,9 @@ class SelectViewController: UIViewController, UICollectionViewDelegate,UICollect
     var goodid:NSString?
     var collectV:UICollectionView?
     var flowLayout = UICollectionViewFlowLayout()
+    var dataArray = NSMutableArray()
+    var helper:ETShopHelper = ETShopHelper()
+    var type = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +28,7 @@ class SelectViewController: UIViewController, UICollectionViewDelegate,UICollect
         let btn = UIButton()
         btn.frame = CGRectMake(10, self.view.frame.size.height - 200, self.view.frame.size.width - 20, 50)
         btn.setTitle("立即上传", forState: .Normal)
+        btn.addTarget(self, action: #selector(self.clickSureBtn), forControlEvents: .TouchUpInside)
         btn.backgroundColor = UIColor(red: 253/255, green: 74/255, blue: 75/255, alpha: 1)
         self.view.addSubview(btn)
         
@@ -67,7 +71,7 @@ class SelectViewController: UIViewController, UICollectionViewDelegate,UICollect
         cell.btn.setTitle(arr.name, forState: .Normal)
         cell.btn.setTitleColor(UIColor.whiteColor(), forState: .Selected)
         cell.btn.selected = false
-        
+        cell.btn.tag = indexPath.item
         cell.btn.addTarget(self, action: #selector(self.ClickSelectBtn), forControlEvents: .TouchUpInside)
         cell.contentView.addSubview(cell.btn)
         
@@ -81,10 +85,35 @@ class SelectViewController: UIViewController, UICollectionViewDelegate,UICollect
     
     func ClickSelectBtn(sender:UIButton){
         sender.selected = !sender.selected
+        let arr = self.goodModel?.plist[sender.tag] as! propertyList
+        let strId = arr.id
         if sender.selected == true {
             sender.backgroundColor = UIColor(red: 253/255, green: 74/255, blue: 75/255, alpha: 1)
+           self.dataArray.addObject(strId)
         }else{
             sender.backgroundColor = UIColor.whiteColor()
+            self.dataArray.removeObject(strId)
+        }
+        print(self.dataArray);
+    }
+    
+    func clickSureBtn(){
+        if self.dataArray.count == 0 {
+            SVProgressHUD.showSuccessWithStatus("请选择规格")
+            return
+        }
+        let propertylist = self.dataArray.componentsJoinedByString(",")
+        print(propertylist)
+        helper.AddGoodsAttributesInfoWithGoodsid(self.goodid as! String, type: self.type, propertylist: propertylist, success: {[unowned self] (dic) in
+            st_dispatch_async_main({
+                
+                SVProgressHUD.showSuccessWithStatus("修改成功")
+                self.navigationController?.popViewControllerAnimated(true)
+            })
+        }) { (str, err) in
+            st_dispatch_async_main({
+                SVProgressHUD.showSuccessWithStatus("修改失败")
+            })
         }
     }
 }

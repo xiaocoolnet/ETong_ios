@@ -16,7 +16,6 @@
 #import "AroundTravelViewController.h"
 #import "LifeViewController.h"
 #import "RechargeViewController.h"
-#import "ALLViewController.h"
 #import "KTVViewController.h"
 #import "TakeOutViewController.h"
 #import "ETLocationLikeCell.h"

@@ -9,6 +9,7 @@ import UIKit
 
 class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITableViewDelegate,UITableViewDataSource {
     
+    @IBOutlet weak var secView: UIView!
     @IBOutlet weak var imageBackView:UIView!
     @IBOutlet weak var goodsName:UILabel!
     @IBOutlet weak var express:UILabel!
@@ -79,7 +80,9 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
         express.text = "快递: " + (goodModel?.freight)!
         shenma.text = goodModel!.address
         descript.text = goodModel!.description
-        
+        descript.numberOfLines = 0
+        descript.sizeToFit()
+//        secView.frame.size.height = descript.frame.size.height + 41 + 8
         
     }
     
@@ -121,17 +124,8 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
          editView.shopid = goodModel?.shopid
          let strArray = goodModel!.picture.componentsSeparatedByString(",")
          editView.imgStr = kIMAGE_URL_HEAD + strArray.first!
-//        editView.goodAttrsArr = valueArr as [AnyObject]
-//        
-//        editView.sureBtnsClick = {(str:String!,str2:String!) in
-//            ETShopHelper().addShoppingCartWithShopid(self.goodModel?.shopid, goodsid: self.goodModel?.id, goodsnum: "1", success: { (_: [NSObject : AnyObject]!) in
-//                
-//            }) { (String, NSError) in
-//                
-//            }
-//        }
         
-        editView.sureBtnsClick = {(str:String!,str2:String!) in
+        editView.sureBtnClicks = {(str:String!,str2:String!,typeArr:NSMutableArray!) in
             ETShopHelper().addShoppingCartWithShopid(self.goodModel?.shopid, goodsid: self.goodModel?.id, goodsnum: str, proid: str2, deliverytype: self.goodModel?.deliverytype, freight:self.goodModel?.freight, success: { (_: [NSObject : AnyObject]!) in
                 
                 SVProgressHUD.showSuccessWithStatus("加入购物车成功")
@@ -149,7 +143,32 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
     }
     
     @IBAction func immediatelyBuy(sender: AnyObject) {
-       showPropertyView()
+        if goodModel == nil {
+            return;
+        }
+        if (!ETUserInfo.sharedETUserInfo().isLogin) {
+            SVProgressHUD.showErrorWithStatus("请先登录")
+            return
+        }
+        let editView = GoodsAttributesView(frame: CGRectMake(0, 0, self.navigationController!.view.frame.width, self.navigationController!.view.frame.height))
+        editView.goodid = goodModel?.id
+        editView.nameStr = goodModel?.goodsname
+        editView.priceStr = goodModel?.price
+        editView.shopid = goodModel?.shopid
+        let strArray = goodModel!.picture.componentsSeparatedByString(",")
+        editView.imgStr = kIMAGE_URL_HEAD + strArray.first!
+        editView.sureBtnClicks = {(str:String!,str2:String!,typeArr:NSMutableArray!) in
+            
+            let vc = PayGoodsViewController()
+            vc.goodnum = str
+            vc.proidStr = str2
+            vc.model = self.goodModel
+            vc.typeArr = typeArr
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }
+        editView.showInView(self.navigationController?.view)
+        print(goodModel?.id)
     }
     
     // 店铺
@@ -169,11 +188,7 @@ class ETGoodsDetailController: UIViewController,SDCycleScrollViewDelegate,UITabl
             SVProgressHUD.showErrorWithStatus("请先登录")
             return
         }
-//        ETShopHelper().addShoppingCartWithShopid(goodModel?.shopid, goodsid: goodModel?.id, goodsnum: "1", success: { (_: [NSObject : AnyObject]!) in
-//            
-//            }) { (String, NSError) in
-//                
-//        }
+
         showPropertyView()
     }
     

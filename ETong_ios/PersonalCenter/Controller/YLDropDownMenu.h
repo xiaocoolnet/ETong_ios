@@ -16,6 +16,7 @@ typedef void(^selectBlock) (NSString *row);
 @property (nonatomic, strong)UIView *topView;
 @property (nonatomic, strong)NSArray *dataSource;
 @property (nonatomic, copy)NSString *textTitle;
+@property (nonatomic, strong) NSString *type;
 @property (nonatomic, copy)selectBlock finishBlock;
 @property (nonatomic, strong) selectBlock finishRow;
 

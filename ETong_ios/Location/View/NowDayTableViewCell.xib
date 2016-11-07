@@ -31,41 +31,6 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_huiyuan" translatesAutoresizingMaskIntoConstraints="NO" id="hWr-lc-XOq">
-                        <rect key="frame" x="100" y="40" width="20" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="Cps-Lm-GVg"/>
-                            <constraint firstAttribute="width" constant="20" id="rek-nn-8kF"/>
-                        </constraints>
-                    </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_huiyuan" translatesAutoresizingMaskIntoConstraints="NO" id="yAd-Lt-9Bd">
-                        <rect key="frame" x="125" y="40" width="20" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="20" id="2tQ-Eh-z0i"/>
-                            <constraint firstAttribute="height" constant="20" id="SYI-C2-IZo"/>
-                        </constraints>
-                    </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_huiyuan" translatesAutoresizingMaskIntoConstraints="NO" id="4Ml-mr-pbj">
-                        <rect key="frame" x="150" y="40" width="20" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="0Q1-zy-hh1"/>
-                            <constraint firstAttribute="width" constant="20" id="BrE-Aq-BKi"/>
-                        </constraints>
-                    </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_huiyuan" translatesAutoresizingMaskIntoConstraints="NO" id="8Rr-mu-hK3">
-                        <rect key="frame" x="175" y="40" width="20" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="20" id="Jwd-BI-wNh"/>
-                            <constraint firstAttribute="height" constant="20" id="WCi-gK-jcV"/>
-                        </constraints>
-                    </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_huiyuan" translatesAutoresizingMaskIntoConstraints="NO" id="a7G-aB-emq">
-                        <rect key="frame" x="200" y="40" width="20" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="20" id="kLO-6d-A09"/>
-                            <constraint firstAttribute="height" constant="20" id="x2D-DH-Wft"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;500m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7j-HU-0Tf">
                         <rect key="frame" x="267" y="10" width="47" height="20"/>
                         <constraints>
@@ -116,55 +81,50 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_yellowstar_4" translatesAutoresizingMaskIntoConstraints="NO" id="wud-5E-1qf">
+                        <rect key="frame" x="100" y="40" width="130" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="130" id="v0X-qT-EXm"/>
+                            <constraint firstAttribute="height" constant="20" id="wb1-B2-BWk"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="a7G-aB-emq" firstAttribute="leading" secondItem="8Rr-mu-hK3" secondAttribute="trailing" constant="5" id="8Me-zf-YVR"/>
+                    <constraint firstItem="OmB-nI-Lzf" firstAttribute="top" secondItem="fM2-gS-bJ0" secondAttribute="top" id="8ht-RV-gtD"/>
                     <constraint firstItem="XWQ-pN-LLf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="8lN-vL-7FU"/>
+                    <constraint firstItem="wE0-So-ssy" firstAttribute="top" secondItem="wud-5E-1qf" secondAttribute="bottom" constant="10" id="EiJ-vQ-PCW"/>
                     <constraint firstAttribute="trailingMargin" secondItem="zfi-Df-eoe" secondAttribute="trailing" constant="62" id="HzV-c2-uoo"/>
                     <constraint firstItem="X7j-HU-0Tf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="Ii9-VL-dcc"/>
                     <constraint firstItem="iLz-Tf-QwP" firstAttribute="top" secondItem="XWQ-pN-LLf" secondAttribute="bottom" constant="10" id="Ixo-Pu-EkK"/>
-                    <constraint firstItem="4Ml-mr-pbj" firstAttribute="top" secondItem="zfi-Df-eoe" secondAttribute="bottom" constant="10" id="JMo-o7-p4e"/>
                     <constraint firstItem="iLz-Tf-QwP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="K52-oB-dRd"/>
-                    <constraint firstItem="yAd-Lt-9Bd" firstAttribute="top" secondItem="zfi-Df-eoe" secondAttribute="bottom" constant="10" id="Lhh-aM-k3L"/>
-                    <constraint firstItem="yAd-Lt-9Bd" firstAttribute="leading" secondItem="hWr-lc-XOq" secondAttribute="trailing" constant="5" id="Rtv-lg-JDH"/>
+                    <constraint firstItem="OmB-nI-Lzf" firstAttribute="baseline" secondItem="wE0-So-ssy" secondAttribute="baseline" id="Tp5-df-p2l"/>
                     <constraint firstItem="X7j-HU-0Tf" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="2" id="XfJ-0s-Cbi"/>
-                    <constraint firstItem="hWr-lc-XOq" firstAttribute="top" secondItem="zfi-Df-eoe" secondAttribute="bottom" constant="10" id="Xo2-Uw-Bw6"/>
-                    <constraint firstItem="8Rr-mu-hK3" firstAttribute="top" secondItem="zfi-Df-eoe" secondAttribute="bottom" constant="10" id="YFL-lF-XhE"/>
                     <constraint firstAttribute="trailingMargin" secondItem="iLz-Tf-QwP" secondAttribute="trailing" constant="-8" id="aBr-yO-4Ub"/>
                     <constraint firstItem="XWQ-pN-LLf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="aCn-0Z-h7q"/>
-                    <constraint firstItem="4Ml-mr-pbj" firstAttribute="leading" secondItem="yAd-Lt-9Bd" secondAttribute="trailing" constant="5" id="bhh-6s-DBS"/>
-                    <constraint firstItem="8Rr-mu-hK3" firstAttribute="leading" secondItem="4Ml-mr-pbj" secondAttribute="trailing" constant="5" id="e5v-kQ-vyP"/>
-                    <constraint firstItem="OmB-nI-Lzf" firstAttribute="top" secondItem="yAd-Lt-9Bd" secondAttribute="bottom" constant="15" id="f8B-hG-jeK"/>
-                    <constraint firstItem="fM2-gS-bJ0" firstAttribute="top" secondItem="a7G-aB-emq" secondAttribute="bottom" constant="15" id="gKD-Ob-0b7"/>
-                    <constraint firstItem="a7G-aB-emq" firstAttribute="top" secondItem="zfi-Df-eoe" secondAttribute="bottom" constant="10" id="j8O-Hm-nHU"/>
                     <constraint firstItem="fM2-gS-bJ0" firstAttribute="leading" secondItem="OmB-nI-Lzf" secondAttribute="trailing" id="jj1-8i-tyJ"/>
+                    <constraint firstItem="wud-5E-1qf" firstAttribute="top" secondItem="zfi-Df-eoe" secondAttribute="bottom" constant="10" id="jsZ-0r-YBy"/>
                     <constraint firstItem="zfi-Df-eoe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="mQ1-do-73R"/>
                     <constraint firstItem="OmB-nI-Lzf" firstAttribute="leading" secondItem="XWQ-pN-LLf" secondAttribute="trailing" constant="10" id="mri-iq-cuv"/>
+                    <constraint firstItem="wud-5E-1qf" firstAttribute="leading" secondItem="XWQ-pN-LLf" secondAttribute="trailing" constant="10" id="ncF-rW-6as"/>
                     <constraint firstAttribute="trailingMargin" secondItem="fM2-gS-bJ0" secondAttribute="trailing" constant="162" id="nfs-UE-Qry"/>
                     <constraint firstAttribute="trailingMargin" secondItem="wE0-So-ssy" secondAttribute="trailing" constant="2" id="u61-l3-dPv"/>
                     <constraint firstItem="zfi-Df-eoe" firstAttribute="leading" secondItem="XWQ-pN-LLf" secondAttribute="trailing" constant="10" id="vk0-r3-62V"/>
-                    <constraint firstItem="wE0-So-ssy" firstAttribute="top" secondItem="a7G-aB-emq" secondAttribute="bottom" constant="10" id="vqB-Ie-Y9T"/>
-                    <constraint firstItem="hWr-lc-XOq" firstAttribute="leading" secondItem="XWQ-pN-LLf" secondAttribute="trailing" constant="10" id="wzR-N2-xSz"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="distanceLab" destination="X7j-HU-0Tf" id="2w9-ht-92W"/>
-                <outlet property="fourImg" destination="8Rr-mu-hK3" id="r5t-6o-eP9"/>
                 <outlet property="imgView" destination="XWQ-pN-LLf" id="osN-nR-98c"/>
-                <outlet property="lastImg" destination="a7G-aB-emq" id="Cox-1h-PpY"/>
+                <outlet property="levelImg" destination="wud-5E-1qf" id="tkj-Mk-2Wa"/>
                 <outlet property="nameLab" destination="zfi-Df-eoe" id="Rb1-Gt-SaE"/>
-                <outlet property="oneImg" destination="hWr-lc-XOq" id="YfQ-Ft-JOO"/>
                 <outlet property="opriceLab" destination="OmB-nI-Lzf" id="uub-ND-IuR"/>
                 <outlet property="priceBtn" destination="wE0-So-ssy" id="NQi-71-QYH"/>
                 <outlet property="priceLab" destination="fM2-gS-bJ0" id="yvt-jl-ZYF"/>
-                <outlet property="threeImg" destination="4Ml-mr-pbj" id="xek-PV-tYg"/>
-                <outlet property="twoImg" destination="yAd-Lt-9Bd" id="u05-ep-teI"/>
             </connections>
             <point key="canvasLocation" x="249" y="171.5"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="ic_huiyuan" width="50" height="50"/>
         <image name="ic_xihuan" width="185" height="185"/>
+        <image name="ic_yellowstar_4" width="150" height="23"/>
     </resources>
 </document>

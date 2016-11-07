@@ -72,6 +72,12 @@
 - (void)updateGoodsDescriptionWithGoodsid:(NSString *)goodsid description:(NSString *)description success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
 //修改商品品牌
 - (void)updateGoodsBrandWithGoodsid:(NSString *)goodsid band:(NSString *)band success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
+//修稿商品货号
+- (void)updateGoodsBrandWithGoodsid:(NSString *)goodsid artno:(NSString *)artno success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
+// 修改商品运费
+- (void)updateGoodsBrandWithGoodsid:(NSString *)goodsid freight:(NSString *)freight success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
+// 修改商品发货地
+- (void)updateGoodsAddressWithGoodsid:(NSString *)goodsid address:(NSString *)address success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
 //修改商品类型
 - (void)updateGoodsTypeWithGoodsid:(NSString *)goodsid type:(NSString *)type success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
 //获取商品对应附加属性列表
@@ -231,6 +237,11 @@
 - (void)GetGoodsAttributesInfoWithType:(NSString *)goodstype
                                   success:(ETResponseBlock)success
                                     faild:(ETResponseErrorBlock)faild;
+/**
+ *  获取附加属性
+ */
+-(void)AddGoodsAttributesInfoWithGoodsid:(NSString *)goodsid type:(NSString *)type propertylist:(NSString *)propertylist success:(ETResponseBlock)success faild:(ETResponseErrorBlock)faild;
+
 
 /**
  *  获取商品分类

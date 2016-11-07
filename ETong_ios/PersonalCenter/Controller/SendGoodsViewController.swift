@@ -94,6 +94,7 @@ class SendGoodsViewController: UIViewController, UITextFieldDelegate {
     func dropDoenMenu(btn:UIButton){
         let menuView = YLDropDownMenu(frame: CGRectMake(20, 182, self.view.frame.size.width - 40, 240))
         menuView.dataSource = ["顺风快递","圆通快递","申通快递","韵达快递","百世快递","邮政快递","EMS"]
+        menuView.type = "1"
         self.view.addSubview(menuView)
         menuView.backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 242/255, alpha: 1)
         menuView.finishBlock = { (AnyObject) -> () in

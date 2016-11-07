@@ -75,6 +75,7 @@
 @property (nonatomic, copy) NSString *pays;
 @property (nonatomic, copy) NSString *photo;
 @property (nonatomic, copy) NSString *uid;
+@property (nonatomic, copy) NSString *termid;
 
 -(JSCartModel *)converToJSCartModel;
 
