@@ -61,6 +61,9 @@ class ETEditGoodsController: UITableViewController,SortPickerDelegate {
             pickerView!.delegate = self
             pickerView!.font = UIFont.systemFontOfSize(16)
             self.view.addSubview(pickerView!)
+        }else if indexPath.section * 10 + indexPath.row == 30 {
+            let vc = ChangeDetailViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
         }else{
             
             let vc = ETEditInfoController(nibName: "ETEditInfoController", bundle: nil)

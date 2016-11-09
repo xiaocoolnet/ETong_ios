@@ -35,3 +35,5 @@
 #import "propertyList.h"
 #import "GoShopViewController.h"
 #import "PayGoodsViewController.h"
+#import "BRPlaceholderTextView.h"
+#import "TZImagePickerController.h"

@@ -150,6 +150,20 @@
 		64BE03BD1DCC899B002CC566 /* AllItemizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BE03BC1DCC899B002CC566 /* AllItemizeViewController.m */; };
 		64BE03C01DD01A9E002CC566 /* SpacialSaleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BE03BF1DD01A9E002CC566 /* SpacialSaleController.m */; };
 		64BE03C31DD02B71002CC566 /* CZCountDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BE03C21DD02B71002CC566 /* CZCountDownView.m */; };
+		64BE03C51DD06180002CC566 /* ChangeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BE03C41DD06180002CC566 /* ChangeDetailViewController.swift */; };
+		64BE03C81DD06234002CC566 /* BRPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BE03C71DD06234002CC566 /* BRPlaceholderTextView.m */; };
+		64BE03CB1DD068C3002CC566 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BE03C91DD068C3002CC566 /* PhotoCollectionViewCell.swift */; };
+		64BE03CC1DD068C3002CC566 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64BE03CA1DD068C3002CC566 /* PhotoCollectionViewCell.xib */; };
+		64BE03E11DD07B22002CC566 /* TZAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BE03CF1DD07B22002CC566 /* TZAssetCell.m */; };
+		64BE03E21DD07B22002CC566 /* TZAssetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BE03D11DD07B22002CC566 /* TZAssetModel.m */; };
+		64BE03E31DD07B22002CC566 /* TZImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BE03D31DD07B22002CC566 /* TZImageManager.m */; };
+		64BE03E41DD07B22002CC566 /* TZImagePickerController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 64BE03D41DD07B22002CC566 /* TZImagePickerController.bundle */; };
+		64BE03E51DD07B22002CC566 /* TZImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BE03D61DD07B22002CC566 /* TZImagePickerController.m */; };
+		64BE03E61DD07B22002CC566 /* TZPhotoPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BE03D81DD07B22002CC566 /* TZPhotoPickerController.m */; };
+		64BE03E71DD07B22002CC566 /* TZPhotoPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BE03DA1DD07B22002CC566 /* TZPhotoPreviewCell.m */; };
+		64BE03E81DD07B22002CC566 /* TZPhotoPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BE03DC1DD07B22002CC566 /* TZPhotoPreviewController.m */; };
+		64BE03E91DD07B22002CC566 /* TZVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BE03DE1DD07B22002CC566 /* TZVideoPlayerController.m */; };
+		64BE03EA1DD07B22002CC566 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BE03E01DD07B22002CC566 /* UIView+Layout.m */; };
 		64C2D2201DAE1E27002C8272 /* FootprintsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C2D21F1DAE1E27002C8272 /* FootprintsViewController.m */; };
 		64C2D2241DAE1EC5002C8272 /* FootprintsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C2D2221DAE1EC5002C8272 /* FootprintsTableViewCell.m */; };
 		64C2D2251DAE1EC5002C8272 /* FootprintsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64C2D2231DAE1EC5002C8272 /* FootprintsTableViewCell.xib */; };
@@ -537,6 +551,30 @@
 		64BE03BF1DD01A9E002CC566 /* SpacialSaleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpacialSaleController.m; sourceTree = "<group>"; };
 		64BE03C11DD02B71002CC566 /* CZCountDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZCountDownView.h; sourceTree = "<group>"; };
 		64BE03C21DD02B71002CC566 /* CZCountDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZCountDownView.m; sourceTree = "<group>"; };
+		64BE03C41DD06180002CC566 /* ChangeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeDetailViewController.swift; sourceTree = "<group>"; };
+		64BE03C61DD06234002CC566 /* BRPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRPlaceholderTextView.h; sourceTree = "<group>"; };
+		64BE03C71DD06234002CC566 /* BRPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRPlaceholderTextView.m; sourceTree = "<group>"; };
+		64BE03C91DD068C3002CC566 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		64BE03CA1DD068C3002CC566 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		64BE03CE1DD07B22002CC566 /* TZAssetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZAssetCell.h; sourceTree = "<group>"; };
+		64BE03CF1DD07B22002CC566 /* TZAssetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZAssetCell.m; sourceTree = "<group>"; };
+		64BE03D01DD07B22002CC566 /* TZAssetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZAssetModel.h; sourceTree = "<group>"; };
+		64BE03D11DD07B22002CC566 /* TZAssetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZAssetModel.m; sourceTree = "<group>"; };
+		64BE03D21DD07B22002CC566 /* TZImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZImageManager.h; sourceTree = "<group>"; };
+		64BE03D31DD07B22002CC566 /* TZImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZImageManager.m; sourceTree = "<group>"; };
+		64BE03D41DD07B22002CC566 /* TZImagePickerController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TZImagePickerController.bundle; sourceTree = "<group>"; };
+		64BE03D51DD07B22002CC566 /* TZImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZImagePickerController.h; sourceTree = "<group>"; };
+		64BE03D61DD07B22002CC566 /* TZImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZImagePickerController.m; sourceTree = "<group>"; };
+		64BE03D71DD07B22002CC566 /* TZPhotoPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZPhotoPickerController.h; sourceTree = "<group>"; };
+		64BE03D81DD07B22002CC566 /* TZPhotoPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZPhotoPickerController.m; sourceTree = "<group>"; };
+		64BE03D91DD07B22002CC566 /* TZPhotoPreviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZPhotoPreviewCell.h; sourceTree = "<group>"; };
+		64BE03DA1DD07B22002CC566 /* TZPhotoPreviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZPhotoPreviewCell.m; sourceTree = "<group>"; };
+		64BE03DB1DD07B22002CC566 /* TZPhotoPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZPhotoPreviewController.h; sourceTree = "<group>"; };
+		64BE03DC1DD07B22002CC566 /* TZPhotoPreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZPhotoPreviewController.m; sourceTree = "<group>"; };
+		64BE03DD1DD07B22002CC566 /* TZVideoPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZVideoPlayerController.h; sourceTree = "<group>"; };
+		64BE03DE1DD07B22002CC566 /* TZVideoPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZVideoPlayerController.m; sourceTree = "<group>"; };
+		64BE03DF1DD07B22002CC566 /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
+		64BE03E01DD07B22002CC566 /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
 		64C2D21E1DAE1E27002C8272 /* FootprintsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FootprintsViewController.h; sourceTree = "<group>"; };
 		64C2D21F1DAE1E27002C8272 /* FootprintsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FootprintsViewController.m; sourceTree = "<group>"; };
 		64C2D2211DAE1EC5002C8272 /* FootprintsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FootprintsTableViewCell.h; sourceTree = "<group>"; };
@@ -1097,6 +1135,32 @@
 			name = "新客专享";
 			sourceTree = "<group>";
 		};
+		64BE03CD1DD07B22002CC566 /* TZImagePickerController */ = {
+			isa = PBXGroup;
+			children = (
+				64BE03CE1DD07B22002CC566 /* TZAssetCell.h */,
+				64BE03CF1DD07B22002CC566 /* TZAssetCell.m */,
+				64BE03D01DD07B22002CC566 /* TZAssetModel.h */,
+				64BE03D11DD07B22002CC566 /* TZAssetModel.m */,
+				64BE03D21DD07B22002CC566 /* TZImageManager.h */,
+				64BE03D31DD07B22002CC566 /* TZImageManager.m */,
+				64BE03D41DD07B22002CC566 /* TZImagePickerController.bundle */,
+				64BE03D51DD07B22002CC566 /* TZImagePickerController.h */,
+				64BE03D61DD07B22002CC566 /* TZImagePickerController.m */,
+				64BE03D71DD07B22002CC566 /* TZPhotoPickerController.h */,
+				64BE03D81DD07B22002CC566 /* TZPhotoPickerController.m */,
+				64BE03D91DD07B22002CC566 /* TZPhotoPreviewCell.h */,
+				64BE03DA1DD07B22002CC566 /* TZPhotoPreviewCell.m */,
+				64BE03DB1DD07B22002CC566 /* TZPhotoPreviewController.h */,
+				64BE03DC1DD07B22002CC566 /* TZPhotoPreviewController.m */,
+				64BE03DD1DD07B22002CC566 /* TZVideoPlayerController.h */,
+				64BE03DE1DD07B22002CC566 /* TZVideoPlayerController.m */,
+				64BE03DF1DD07B22002CC566 /* UIView+Layout.h */,
+				64BE03E01DD07B22002CC566 /* UIView+Layout.m */,
+			);
+			path = TZImagePickerController;
+			sourceTree = "<group>";
+		};
 		64C2D21D1DAE1B09002C8272 /* 我的足迹 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1169,6 +1233,7 @@
 				F64308921D61A3640037FD9F /* ETEditInfoController.xib */,
 				645C927F1DC09F7700D2ED3D /* SpecificationViewController.swift */,
 				645C92841DC0AA3100D2ED3D /* SelectViewController.swift */,
+				64BE03C41DD06180002CC566 /* ChangeDetailViewController.swift */,
 			);
 			name = GoodsManager;
 			sourceTree = "<group>";
@@ -1564,6 +1629,8 @@
 				645C92F71DC48C0500D2ED3D /* AttributesCollectionViewCell.m */,
 				64249F691DC88E4200AD9A67 /* CustomBtn.h */,
 				64249F6A1DC88E4200AD9A67 /* CustomBtn.m */,
+				64BE03C91DD068C3002CC566 /* PhotoCollectionViewCell.swift */,
+				64BE03CA1DD068C3002CC566 /* PhotoCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1584,6 +1651,9 @@
 		F65BF3411D3F585B0003DB35 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				64BE03CD1DD07B22002CC566 /* TZImagePickerController */,
+				64BE03C61DD06234002CC566 /* BRPlaceholderTextView.h */,
+				64BE03C71DD06234002CC566 /* BRPlaceholderTextView.m */,
 				645C92661DC0806100D2ED3D /* libqrencode */,
 				F65E00231D86854C005FDD83 /* Category */,
 				F6286FE11D4A096C0052ADC3 /* ConnectModel.h */,
@@ -1849,6 +1919,7 @@
 				64690EAC1DBF45B200D41D49 /* DaiUserTableViewCell.xib in Resources */,
 				F65149DF1D4F356100ECFFFD /* ETUploadGoodsController.xib in Resources */,
 				F65BF3051D3F1CA80003DB35 /* Assets.xcassets in Resources */,
+				64BE03E41DD07B22002CC566 /* TZImagePickerController.bundle in Resources */,
 				F6286FEE1D4A19130052ADC3 /* ETShopAuthController.xib in Resources */,
 				F6C0EA091D913C4D002654DE /* ETDailySpecialController.xib in Resources */,
 				F6C94C4E1D58AC1E00280E86 /* ETGoodsLoopCell.xib in Resources */,
@@ -1870,6 +1941,7 @@
 				F62CF4761D431C600070BA2E /* ETDailyMarketCell.xib in Resources */,
 				F6F840971D8FB8D2007163A2 /* ETLimitTimeController.xib in Resources */,
 				F6F840A11D8FC6E4007163A2 /* ETLimitSaleCell.xib in Resources */,
+				64BE03CC1DD068C3002CC566 /* PhotoCollectionViewCell.xib in Resources */,
 				F65149F81D4F5BD700ECFFFD /* ETWaitDeliverController.xib in Resources */,
 				F6C09BED1D5081D4001C2987 /* ETCUserInfoController.xib in Resources */,
 				F62CF47B1D4320720070BA2E /* ETGuessYLikeCell.xib in Resources */,
@@ -1966,6 +2038,7 @@
 				F65BF2FD1D3F1CA80003DB35 /* AppDelegate.m in Sources */,
 				649AF35C1D9910A200D8B840 /* ALLViewController.m in Sources */,
 				F6C36AD51D937A71008737D5 /* ETDailySpacialCell.m in Sources */,
+				64BE03E11DD07B22002CC566 /* TZAssetCell.m in Sources */,
 				F6C0EA081D913C4D002654DE /* ETDailySpecialController.m in Sources */,
 				649AF2F41D9612E500D8B840 /* EveryDayHelper.m in Sources */,
 				645C928A1DC0B92600D2ED3D /* propertyList.m in Sources */,
@@ -1999,6 +2072,7 @@
 				64690EBC1DBF575900D41D49 /* ThreeSearchViewController.swift in Sources */,
 				F64788A51D41BC3000294225 /* ETMyZoneController.m in Sources */,
 				647A3E021D9A1FD2000B6802 /* DaiSureViewController.swift in Sources */,
+				64BE03CB1DD068C3002CC566 /* PhotoCollectionViewCell.swift in Sources */,
 				64C2D2331DAF23A9002C8272 /* modelFrame.m in Sources */,
 				F6FED1D21D44BDEB00C5C776 /* ETFgetPwdController.m in Sources */,
 				645C92F21DC3415D00D2ED3D /* EAgentViewController.m in Sources */,
@@ -2020,6 +2094,8 @@
 				F6508EF71D66FD020019BFFB /* ETGoodsSelectView.swift in Sources */,
 				F65149FB1D4F5C4000ECFFFD /* ETWaitSignController.swift in Sources */,
 				645C92831DC0A27A00D2ED3D /* AttributesModel.m in Sources */,
+				64BE03E31DD07B22002CC566 /* TZImageManager.m in Sources */,
+				64BE03C81DD06234002CC566 /* BRPlaceholderTextView.m in Sources */,
 				645C927A1DC0806100D2ED3D /* qrencode.c in Sources */,
 				6493B8341DA9E61A008EE7C8 /* CancleOrderViewController.swift in Sources */,
 				64BE03C31DD02B71002CC566 /* CZCountDownView.m in Sources */,
@@ -2029,6 +2105,7 @@
 				F65E00331D868688005FDD83 /* GoodAttributesView.m in Sources */,
 				F643088F1D618FA90037FD9F /* ETEditGoodsController.swift in Sources */,
 				64C2D2241DAE1EC5002C8272 /* FootprintsTableViewCell.m in Sources */,
+				64BE03E71DD07B22002CC566 /* TZPhotoPreviewCell.m in Sources */,
 				645C92781DC0806100D2ED3D /* mask.c in Sources */,
 				64690EA41DBF0AFA00D41D49 /* SortCollectionViewCell.m in Sources */,
 				649AF2E91D95121E00D8B840 /* GoodShopViewController.m in Sources */,
@@ -2042,6 +2119,7 @@
 				F6545D811D5360E20007C42C /* ETShopModel.m in Sources */,
 				F65149F71D4F5BD700ECFFFD /* ETWaitDeliverController.swift in Sources */,
 				F6F840961D8FB8D2007163A2 /* ETLimitTimeController.m in Sources */,
+				64BE03C51DD06180002CC566 /* ChangeDetailViewController.swift in Sources */,
 				64ABB1651DACDE1B00768D45 /* AllShopDetailViewController.m in Sources */,
 				64690EA11DBF00E900D41D49 /* ClassificationViewController.m in Sources */,
 				645C927C1DC0806100D2ED3D /* qrspec.c in Sources */,
@@ -2058,6 +2136,7 @@
 				64D5DE141DB0BAE300F0D3D9 /* OrderDetailsTableViewCell.swift in Sources */,
 				F6286FE81D4A18210052ADC3 /* ETShopBeginAuthVC.m in Sources */,
 				649AF35F1D99116B00D8B840 /* AllTableViewCell.m in Sources */,
+				64BE03E91DD07B22002CC566 /* TZVideoPlayerController.m in Sources */,
 				6493B83D1DAA1AD0008EE7C8 /* AllEBuyingViewController.m in Sources */,
 				F6FED1CD1D44A0F700C5C776 /* ETLogInViewController.m in Sources */,
 				F632721F1D4DE90100A3C0FF /* ETShopManagerController.swift in Sources */,
@@ -2068,6 +2147,7 @@
 				645C92F81DC48C0500D2ED3D /* AttributesCollectionViewCell.m in Sources */,
 				F6EAB5351D84FCA2008FF8FA /* JSCartHeaderView.m in Sources */,
 				F6F840A01D8FC6E4007163A2 /* ETLimitSaleCell.m in Sources */,
+				64BE03E21DD07B22002CC566 /* TZAssetModel.m in Sources */,
 				F6EAB5391D84FCA2008FF8FA /* JSCartViewModel.m in Sources */,
 				649AF3441D98F58B00D8B840 /* LifeViewController.m in Sources */,
 				F6CEAF701D58763300518835 /* ETGoodsDataModel.m in Sources */,
@@ -2079,6 +2159,7 @@
 				F6177C621D460BCF00A2CB67 /* ETBaseHelper.m in Sources */,
 				645C927E1DC0806100D2ED3D /* split.c in Sources */,
 				6493B82A1D9E6DA9008EE7C8 /* YiAppraiseTableViewCell.m in Sources */,
+				64BE03E61DD07B22002CC566 /* TZPhotoPickerController.m in Sources */,
 				649AF2EC1D95142000D8B840 /* GoodShopCollectionViewCell.m in Sources */,
 				6493B7D81D9B992B008EE7C8 /* CollectModel.m in Sources */,
 				640F61E51D93D79C00614657 /* FreeTableViewCell.m in Sources */,
@@ -2111,6 +2192,7 @@
 				64D5DE111DB0B3B500F0D3D9 /* OrderDetailsViewController.swift in Sources */,
 				649AF31C1D97A88E00D8B840 /* FoodTableViewCell.m in Sources */,
 				6493B7DC1D9BA96B008EE7C8 /* EvaluateViewController.m in Sources */,
+				64BE03E51DD07B22002CC566 /* TZImagePickerController.m in Sources */,
 				649AF34E1D98F81000D8B840 /* KTVViewController.m in Sources */,
 				F65149EA1D4F4F7D00ECFFFD /* ETOrderManagerController.swift in Sources */,
 				F65BF3111D3F31CB0003DB35 /* ETRootController.m in Sources */,
@@ -2151,6 +2233,7 @@
 				64690EB11DBF522200D41D49 /* SortGoodViewController.swift in Sources */,
 				F6F6E07E1D99168D00C02257 /* ETHttpArrayModel.m in Sources */,
 				645C927B1DC0806100D2ED3D /* qrinput.c in Sources */,
+				64BE03EA1DD07B22002CC566 /* UIView+Layout.m in Sources */,
 				645C928F1DC1D4B600D2ED3D /* GoShopViewController.m in Sources */,
 				F6177C5F1D46054700A2CB67 /* ETWelcomeHelper.m in Sources */,
 				645C92771DC0806100D2ED3D /* bitstream.c in Sources */,
@@ -2163,6 +2246,7 @@
 				F6F6E0781D98FB1D00C02257 /* ETPropertyModel.m in Sources */,
 				6493B8201D9E546C008EE7C8 /* YesAppraiseViewController.m in Sources */,
 				F65BF33E1D3F50390003DB35 /* PersonViewController.m in Sources */,
+				64BE03E81DD07B22002CC566 /* TZPhotoPreviewController.m in Sources */,
 				647A3DFE1D9A1FA5000B6802 /* DaiSippingViewController.swift in Sources */,
 				64ABB1621DACD0F600768D45 /* LocationModel.m in Sources */,
 				F6545D7D1D533F480007C42C /* ETGMOffShelfCell.swift in Sources */,

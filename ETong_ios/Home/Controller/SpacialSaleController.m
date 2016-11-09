@@ -74,7 +74,7 @@
     UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc]init];
     layout.minimumLineSpacing=5; //设置每一行的间距
     layout.minimumInteritemSpacing = 5;
-    layout.itemSize=CGSizeMake(kScreenWidth/2-15, 220);  //设置每个单元格的大小
+    layout.itemSize=CGSizeMake((kScreenWidth-15)/2, 220);  //设置每个单元格的大小
 //    layout.sectionInset=UIEdgeInsetsMake(5, 5, 5, 5);
     layout.headerReferenceSize=CGSizeMake(self.view.frame.size.width, 170); //设置collectionView头视图的大小
     
