@@ -94,6 +94,7 @@
     UINavigationController *personNav = [self setTabBarItemWithController:self.person normalImageName:@"ic_wode_hui" SelectName:@"ic_wode_red"];
     
     self.viewControllers = @[homeNav,locNav,eZoneNav,shopNav,personNav];
+    
 }
 
 @end
