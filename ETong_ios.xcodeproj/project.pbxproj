@@ -112,6 +112,9 @@
 		6493B8491DAA2B8D008EE7C8 /* NowDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6493B8481DAA2B8D008EE7C8 /* NowDayViewController.m */; };
 		6493B84D1DAA31D8008EE7C8 /* NowDayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6493B84B1DAA31D8008EE7C8 /* NowDayTableViewCell.m */; };
 		6493B84E1DAA31D8008EE7C8 /* NowDayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6493B84C1DAA31D8008EE7C8 /* NowDayTableViewCell.xib */; };
+		649780C51DE29BB8003E1A53 /* ETMyShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649780C41DE29BB8003E1A53 /* ETMyShopViewController.swift */; };
+		649780C81DE29D41003E1A53 /* ETMyShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649780C61DE29D41003E1A53 /* ETMyShopCollectionViewCell.swift */; };
+		649780C91DE29D41003E1A53 /* ETMyShopCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 649780C71DE29D41003E1A53 /* ETMyShopCollectionViewCell.xib */; };
 		649AF2E41D94FF2E00D8B840 /* LikeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF2E31D94FF2E00D8B840 /* LikeModel.m */; };
 		649AF2E91D95121E00D8B840 /* GoodShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF2E81D95121E00D8B840 /* GoodShopViewController.m */; };
 		649AF2EC1D95142000D8B840 /* GoodShopCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 649AF2EB1D95142000D8B840 /* GoodShopCollectionViewCell.m */; };
@@ -478,6 +481,9 @@
 		6493B84A1DAA31D8008EE7C8 /* NowDayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NowDayTableViewCell.h; sourceTree = "<group>"; };
 		6493B84B1DAA31D8008EE7C8 /* NowDayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NowDayTableViewCell.m; sourceTree = "<group>"; };
 		6493B84C1DAA31D8008EE7C8 /* NowDayTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NowDayTableViewCell.xib; sourceTree = "<group>"; };
+		649780C41DE29BB8003E1A53 /* ETMyShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETMyShopViewController.swift; sourceTree = "<group>"; };
+		649780C61DE29D41003E1A53 /* ETMyShopCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETMyShopCollectionViewCell.swift; sourceTree = "<group>"; };
+		649780C71DE29D41003E1A53 /* ETMyShopCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETMyShopCollectionViewCell.xib; sourceTree = "<group>"; };
 		649AF2E21D94FF2E00D8B840 /* LikeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LikeModel.h; path = ETong_ios/Tools/LikeModel.h; sourceTree = SOURCE_ROOT; };
 		649AF2E31D94FF2E00D8B840 /* LikeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LikeModel.m; path = ETong_ios/Tools/LikeModel.m; sourceTree = SOURCE_ROOT; };
 		649AF2E71D95121E00D8B840 /* GoodShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodShopViewController.h; sourceTree = "<group>"; };
@@ -1631,6 +1637,8 @@
 				64249F6A1DC88E4200AD9A67 /* CustomBtn.m */,
 				64BE03C91DD068C3002CC566 /* PhotoCollectionViewCell.swift */,
 				64BE03CA1DD068C3002CC566 /* PhotoCollectionViewCell.xib */,
+				649780C61DE29D41003E1A53 /* ETMyShopCollectionViewCell.swift */,
+				649780C71DE29D41003E1A53 /* ETMyShopCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1758,6 +1766,7 @@
 				F65149EC1D4F566A00ECFFFD /* OrderManager */,
 				F67B3DA51D4D9F8C00F2B544 /* ETMyShopController.swift */,
 				F67B3DA61D4D9F8C00F2B544 /* ETMyShopController.xib */,
+				649780C41DE29BB8003E1A53 /* ETMyShopViewController.swift */,
 				F632721D1D4DE90100A3C0FF /* ETShopManagerController.swift */,
 				F632721E1D4DE90100A3C0FF /* ETShopManagerController.xib */,
 				64BE03B91DCC81FA002CC566 /* ChangeShopViewController.swift */,
@@ -1956,6 +1965,7 @@
 				F64788AB1D41BCDD00294225 /* ETSidelineZoneController.xib in Resources */,
 				F6C09BF11D509A73001C2987 /* ETSingleInfoController.xib in Resources */,
 				F6C94C4A1D58AA4B00280E86 /* ETGoodsLoopController.xib in Resources */,
+				649780C91DE29D41003E1A53 /* ETMyShopCollectionViewCell.xib in Resources */,
 				647A3DEB1D9A0B3C000B6802 /* TakeOutTableViewCell.xib in Resources */,
 				F65BF33F1D3F50390003DB35 /* PersonViewController.xib in Resources */,
 				647A3E0B1D9A4E8E000B6802 /* AllOrderTableViewCell.xib in Resources */,
@@ -2211,6 +2221,7 @@
 				6493B7CA1D9B6B67008EE7C8 /* CollectViewController.m in Sources */,
 				64690EB41DBF544800D41D49 /* TwoSearchViewController.m in Sources */,
 				6493B7FC1D9CE5F3008EE7C8 /* SettleViewController.m in Sources */,
+				649780C51DE29BB8003E1A53 /* ETMyShopViewController.swift in Sources */,
 				649AF2F51D9612E500D8B840 /* NewProductModel.m in Sources */,
 				645C928C1DC1A6ED00D2ED3D /* TextPicViewController.swift in Sources */,
 				649AF3471D98F61600D8B840 /* AllLifeViewController.m in Sources */,
@@ -2250,6 +2261,7 @@
 				647A3DFE1D9A1FA5000B6802 /* DaiSippingViewController.swift in Sources */,
 				64ABB1621DACD0F600768D45 /* LocationModel.m in Sources */,
 				F6545D7D1D533F480007C42C /* ETGMOffShelfCell.swift in Sources */,
+				649780C81DE29D41003E1A53 /* ETMyShopCollectionViewCell.swift in Sources */,
 				64C2D2301DAF23A9002C8272 /* CustomTableViewCell.m in Sources */,
 				F65149EF1D4F56A000ECFFFD /* ETAllOrderController.swift in Sources */,
 				6493B8171D9E5119008EE7C8 /* AfterSaleViewController.swift in Sources */,

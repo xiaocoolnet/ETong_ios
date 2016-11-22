@@ -13,7 +13,6 @@ class ETMyShopController: UIViewController {
     @IBOutlet weak var shopImage:UIButton!
     @IBOutlet weak var avatarBack:UIView!
     var helper:ETShopHelper = ETShopHelper()
-    
     var model:ETShopModel?
     
     override func viewWillAppear(animated: Bool) {

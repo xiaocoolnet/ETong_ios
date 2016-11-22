@@ -190,7 +190,8 @@
         
         st_dispatch_async_main(^{
 //            ETShopModel *model = [ETShopModel mj_objectWithKeyValues:response];
-            ETMyShopController *vc = [[ETMyShopController alloc] initWithNibName:@"ETMyShopController" bundle:nil];
+//            ETMyShopController *vc = [[ETMyShopController alloc] initWithNibName:@"ETMyShopController" bundle:nil];
+            ETMyShopViewController *vc = [[ETMyShopViewController alloc] init];
 //            vc.model = model;
             vc.hidesBottomBarWhenPushed = true;
             [weakSelf.navigationController pushViewController:vc animated:true];
